@@ -1,0 +1,21 @@
+/* Light Theme Styles */
+.light-theme {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.light-theme .card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.light-theme .button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.light-theme .button:hover {
+  background-color: var(--accent-hover);
+}
+
