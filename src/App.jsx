@@ -1,21 +1,21 @@
 import { useTheme } from './context/ThemeContext';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import Home from './pages/Home';
 import './styles/variables.css';
+import './styles/colors.css';
 import './styles/global.css';
-import './styles/themes/light.css';
-import './styles/themes/dark.css';
 
 function App() {
-  const { theme, toggleTheme } = useTheme();
+  useTheme(); // This sets data-theme attribute on document root
 
   return (
-    <div className={`${theme}-theme`}>
-      <div className="container" style={{ paddingTop: '40px' }}>
-        <h1>Welcome to Blockchain React App</h1>
-        <p>Current theme: {theme}</p>
-        <button className="button" onClick={toggleTheme}>
-          Toggle Theme ({theme === 'light' ? 'Dark' : 'Light'})
-        </button>
-      </div>
+    <div className="app-wrapper">
+      <Header />
+      <main className="main-content">
+        <Home />
+      </main>
+      <Footer />
     </div>
   );
 }
