@@ -1,19 +1,29 @@
+import { Route, Routes } from 'react-router-dom';
 import { useTheme } from './context/ThemeContext';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
-import './styles/variables.css';
-import './styles/colors.css';
-import './styles/global.css';
+import About from './pages/About';
+import Services from './pages/Services';
+import Industries from './pages/Industries';
+import CaseStudies from './pages/CaseStudies';
+import Blog from './pages/Blog';
 
 function App() {
   useTheme(); // This sets data-theme attribute on document root
 
   return (
-    <div className="app-wrapper">
+    <div className="min-h-screen flex flex-col bg-white text-black transition-colors duration-300 dark:bg-black dark:text-white">
       <Header />
-      <main className="main-content">
-        <Home />
+      <main className="flex-1 w-full">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
       </main>
       <Footer />
     </div>
