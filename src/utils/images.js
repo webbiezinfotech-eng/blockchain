@@ -14,6 +14,14 @@ import homeSec2_8 from '../assets/imgs/home_sec2_8.png';
 import homeSec2_9 from '../assets/imgs/home_sec2_9.png';
 import homeSec2_10 from '../assets/imgs/home_sec2_10.png';
 
+// Why Trust Section Images
+import homeSec3_1 from '../assets/imgs/home_sec3_1.png';
+import homeSec3_2 from '../assets/imgs/home_sec3_2.png';
+import homeSec3_3 from '../assets/imgs/home_sec3_3.png';
+import homeSec3_4 from '../assets/imgs/home_sec3_4.png';
+import homeSec3_5 from '../assets/imgs/home_sec3_5.png';
+import homeSec3_6 from '../assets/imgs/home_sec3_6.png';
+
 export const heroImages = {
   light: lightHeroImage,
   dark: darkHeroImage,
@@ -32,6 +40,15 @@ export const serviceImages = [
   homeSec2_10,
 ];
 
+export const trustSectionImages = [
+  homeSec3_1,
+  homeSec3_2,
+  homeSec3_3,
+  homeSec3_4,
+  homeSec3_5,
+  homeSec3_6,
+];
+
 // Export individual images if needed
 export {
   lightHeroImage,
@@ -46,5 +63,11 @@ export {
   homeSec2_8,
   homeSec2_9,
   homeSec2_10,
+  homeSec3_1,
+  homeSec3_2,
+  homeSec3_3,
+  homeSec3_4,
+  homeSec3_5,
+  homeSec3_6,
 };
 
