@@ -1,3 +1,5 @@
+import { SERVICES } from '../constants/services';
+
 const Services = () => {
   return (
     <div className="bg-white transition-colors duration-300 dark:bg-black">
@@ -6,15 +8,18 @@ const Services = () => {
           Services
         </h1>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, i) => (
+          {SERVICES.map((s) => (
             <div
-              key={i}
-              className="overflow-hidden rounded-2xl border border-black/15 bg-black/[0.03] transition-colors duration-300 dark:border-white/15 dark:bg-white/[0.03]"
+              key={s.id}
+              id={s.id}
+              className="scroll-mt-28 overflow-hidden rounded-2xl border border-black/15 bg-black/[0.03] transition-colors duration-300 dark:border-white/15 dark:bg-white/[0.03]"
             >
               <div className="p-5">
                 <div className="text-sm font-semibold tracking-wide text-black/70 transition-colors duration-300 dark:text-white/70">MEDIA</div>
                 <div className="mt-4 aspect-[16/10] w-full rounded-xl bg-[radial-gradient(circle_at_25%_25%,rgba(0,99,182,0.5)_0%,rgba(0,0,0,0)_70%)] dark:bg-[radial-gradient(circle_at_25%_25%,rgba(0,99,182,0.45)_0%,rgba(0,0,0,0)_72%)]" />
-                <h3 className="mt-4 font-heading text-xl font-bold uppercase text-black transition-colors duration-300 dark:text-white">Service Title</h3>
+                <h3 className="mt-4 font-heading text-xl font-bold text-black transition-colors duration-300 dark:text-white">
+                  {s.title}
+                </h3>
                 <p className="mt-2 text-sm leading-6 text-black/70 transition-colors duration-300 dark:text-white/70">
                   Short description will go here.
                 </p>

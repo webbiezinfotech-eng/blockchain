@@ -6,10 +6,10 @@ const ServiceCard = ({ title, description, image, isExpanded = false }) => {
 
   return (
     <div
-      className={`group relative flex-shrink-0 overflow-hidden border border-brand-blue/30 bg-black/[0.03] shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-500 ease-in-out dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)]
+      className={`group relative flex-shrink-0 overflow-hidden border border-brand-blue/30 bg-black/[0.03] shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-500 ease-in-out dark:border-white/40 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)]
         ${isExpandedState 
-          ? 'w-[400px] h-[500px] rounded-[70px] shadow-[0_16px_48px_rgba(0,0,0,0.25)] -translate-y-2 z-10 dark:shadow-[0_16px_48px_rgba(0,0,0,0.55)] md:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_24px_64px_rgba(0,0,0,0.65)]' 
-          : 'w-[160px] h-[450px] rounded-[70px]'
+          ? 'w-[300px] h-[360px] sm:w-[360px] sm:h-[420px] md:w-[460px] md:h-[460px] rounded-[70px] border-2 border-brand-blue/40 shadow-[0_16px_48px_rgba(0,0,0,0.25)] -translate-y-2 z-10 dark:border-white dark:shadow-[0_16px_48px_rgba(0,0,0,0.55)] md:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_24px_64px_rgba(0,0,0,0.65)]' 
+          : 'w-32 h-[450px] rounded-[70px]'
         }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -45,19 +45,13 @@ const ServiceCard = ({ title, description, image, isExpanded = false }) => {
             </div>
           </div>
         ) : (
-          // Compact State - Vertical Title on right side, stacked from bottom to top
-          <div className="absolute inset-0 flex items-center justify-end pr-3 sm:pr-4">
-            <div className="flex flex-col items-center justify-center gap-0.5 sm:gap-1">
-              {title.split('').reverse().map((char, index) => (
-                <span 
-                  key={index}
-                  className="font-heading font-bold text-white uppercase text-sm sm:text-base md:text-lg transition-all duration-500 block"
-                  style={{ letterSpacing: '0.05em' }}
-                >
-                  {char === ' ' ? '\u00A0' : char}
-                </span>
-              ))}
-            </div>
+          // Compact State - Vertical (rotated) Title
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span
+              className="font-heading font-bold text-white text-base sm:text-lg md:text-xl tracking-wide whitespace-nowrap -rotate-90 origin-center transition-all duration-500"
+            >
+              {title}
+            </span>
           </div>
         )}
       </div>

@@ -989,3 +989,12 @@ h1, h2, h3, h4, h5, h6 {
   scrollbar-width: thin;
   scrollbar-color: #0063B6 #f1f1f1;
 }
+
+/* Dark theme scrollbar styling for FAQ (and other custom-scrollbar areas) */
+[data-theme="dark"] .custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .custom-scrollbar {
+  scrollbar-color: #0063B6 rgba(255, 255, 255, 0.12);
+}

@@ -71,34 +71,27 @@ const Home = () => {
   };
 
   const [cardsPerView, setCardsPerView] = useState(getCardsPerView());
-  const totalSlides = Math.max(1, Math.ceil((serviceCards.length - cardsPerView) / cardsPerView) + 1);
+  // We advance the carousel by 1 card per click (not by a full "page"),
+  // so the max slide index is (totalCards - cardsPerView).
+  const maxServiceSlide = Math.max(0, serviceCards.length - cardsPerView);
 
   useEffect(() => {
     const handleResize = () => {
       const newCardsPerView = getCardsPerView();
       setCardsPerView(newCardsPerView);
-      const newTotalSlides = Math.max(1, Math.ceil((serviceCards.length - newCardsPerView) / newCardsPerView) + 1);
-      if (currentSlide >= newTotalSlides) {
-        setCurrentSlide(Math.max(0, newTotalSlides - 1));
-      }
+      const newMaxServiceSlide = Math.max(0, serviceCards.length - newCardsPerView);
+      // Avoid stale closure by clamping via functional update.
+      setCurrentSlide((prev) => Math.min(prev, newMaxServiceSlide));
     };
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Auto carousel for work cards
-  useEffect(() => {
-    const maxSlides = Math.max(0, 5 - 3); // 5 total cards, showing 3 at a time
-    const interval = setInterval(() => {
-      setCurrentWorkSlide((prev) => (prev >= maxSlides ? 0 : prev + 1));
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  const workCardsPerView = 3;
 
   const nextSlide = () => {
-    const newTotalSlides = Math.max(1, Math.ceil((serviceCards.length - cardsPerView) / cardsPerView) + 1);
-    setCurrentSlide((prev) => Math.min(prev + 1, newTotalSlides - 1));
+    setCurrentSlide((prev) => Math.min(prev + 1, maxServiceSlide));
   };
 
   const prevSlide = () => {
@@ -120,8 +113,21 @@ const Home = () => {
     { id: 2, title: "AI-Powered Fraud Detection System for a Crypto Exchange", description: "Integrated AI bots that analyze threat patterns, transaction anomalies and malicious behaviors in real-time — reducing fraudulent activity by 90%." },
     { id: 3, title: "Real-World Asset Tokenization Platform", description: "Created an RWA token marketplace allowing users to tokenize and trade physical assets — including real estate, art, and commodities." },
     { id: 4, title: "Enterprise Blockchain Solution", description: "Developed a comprehensive blockchain infrastructure for enterprise clients, enabling secure transactions, transparent record-keeping, and automated compliance." },
-    { id: 5, title: "NFT Marketplace with Cross-Chain Support", description: "Built a multi-chain NFT marketplace supporting Ethereum, Polygon, and Solana networks, with seamless cross-chain trading capabilities." }
+    { id: 5, title: "NFT Marketplace with Cross-Chain Support", description: "Built a multi-chain NFT marketplace supporting Ethereum, Polygon, and Solana networks, with seamless cross-chain trading capabilities." },
+    // Dummy cards (as requested)
+    { id: 6, title: "Blockchain Gaming Platform", description: "Launched a play-to-earn gaming ecosystem with NFT assets, in-game marketplaces, and scalable on-chain reward mechanics across multiple networks." },
+    { id: 7, title: "Token Launchpad & Vesting System", description: "Built a secure IDO launchpad with investor tiers, whitelisting, automated vesting schedules, and analytics dashboards for token launches." }
   ];
+
+  const maxWorkSlides = Math.max(0, workCards.length - workCardsPerView);
+
+  // Auto carousel for work cards (based on real card count)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWorkSlide((prev) => (prev >= maxWorkSlides ? 0 : prev + 1));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [maxWorkSlides]);
 
   const techStackItems = [
     { id: 0, name: "Frontend Capabilities", title: "Frontend Capabilities", description: "Delivering sleek, responsive, and high-performance user interfaces for every blockchain application.", techStack: ["React.js", "Next.js", "Web3.js", "Ethers.js", "Tailwind CSS"], image: frontendCap },
@@ -196,6 +202,14 @@ const Home = () => {
 
   const [selectedFaq, setSelectedFaq] = useState(0);
   const faqRefs = useRef([]);
+  const faqScrollContainerRef = useRef(null);
+  const faqIndicatorTrackRef = useRef(null);
+  const faqIndicatorThumbRef = useRef(null);
+  const faqRafRef = useRef(null);
+  const isFaqThumbDraggingRef = useRef(false);
+  const [faqScrollRatio, setFaqScrollRatio] = useState(0);
+  const [faqIndicatorTrackH, setFaqIndicatorTrackH] = useState(0);
+  const [faqIndicatorThumbH, setFaqIndicatorThumbH] = useState(120);
 
   const faqs = [
     {
@@ -237,6 +251,85 @@ const Home = () => {
     }
   };
 
+  const updateFaqScrollRatio = () => {
+    const el = faqScrollContainerRef.current;
+    if (!el) return;
+    const maxScroll = el.scrollHeight - el.clientHeight;
+    const ratio = maxScroll <= 0 ? 0 : el.scrollTop / maxScroll;
+    setFaqScrollRatio(Number.isFinite(ratio) ? Math.min(1, Math.max(0, ratio)) : 0);
+  };
+
+  const scrollFaqToRatio = (ratio) => {
+    const el = faqScrollContainerRef.current;
+    if (!el) return;
+    const maxScroll = el.scrollHeight - el.clientHeight;
+    el.scrollTop = Math.min(maxScroll, Math.max(0, ratio * maxScroll));
+  };
+
+  const handleFaqScroll = () => {
+    if (faqRafRef.current) cancelAnimationFrame(faqRafRef.current);
+    faqRafRef.current = requestAnimationFrame(() => {
+      updateFaqScrollRatio();
+    });
+  };
+
+  const getFaqRatioFromPointerEvent = (e) => {
+    const track = faqIndicatorTrackRef.current;
+    const thumb = faqIndicatorThumbRef.current;
+    if (!track) return 0;
+    const rect = track.getBoundingClientRect();
+    const thumbH = thumb?.offsetHeight ?? 0;
+    const usable = Math.max(1, rect.height - thumbH);
+    const y = e.clientY - rect.top - thumbH / 2;
+    return Math.min(1, Math.max(0, y / usable));
+  };
+
+  const handleFaqIndicatorPointerDown = (e) => {
+    // Clicking the track jumps the scroll position.
+    const ratio = getFaqRatioFromPointerEvent(e);
+    scrollFaqToRatio(ratio);
+    updateFaqScrollRatio();
+  };
+
+  const handleFaqThumbPointerDown = (e) => {
+    e.preventDefault();
+    isFaqThumbDraggingRef.current = true;
+    e.currentTarget.setPointerCapture?.(e.pointerId);
+  };
+
+  const handleFaqThumbPointerMove = (e) => {
+    if (!isFaqThumbDraggingRef.current) return;
+    const ratio = getFaqRatioFromPointerEvent(e);
+    scrollFaqToRatio(ratio);
+    updateFaqScrollRatio();
+  };
+
+  const handleFaqThumbPointerUp = (e) => {
+    isFaqThumbDraggingRef.current = false;
+    e.currentTarget.releasePointerCapture?.(e.pointerId);
+  };
+
+  useEffect(() => {
+    updateFaqScrollRatio();
+    const trackEl = faqIndicatorTrackRef.current;
+    const thumbEl = faqIndicatorThumbRef.current;
+    if (!trackEl || !thumbEl) return;
+
+    const ro = new ResizeObserver(() => {
+      setFaqIndicatorTrackH(trackEl.getBoundingClientRect().height);
+      setFaqIndicatorThumbH(thumbEl.getBoundingClientRect().height);
+    });
+
+    ro.observe(trackEl);
+    ro.observe(thumbEl);
+
+    return () => {
+      if (faqRafRef.current) cancelAnimationFrame(faqRafRef.current);
+      ro.disconnect();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero Section */}
@@ -246,8 +339,8 @@ const Home = () => {
           <div className="ml-[30px] flex w-full flex-col justify-start gap-4 leading-[1.4] sm:gap-6 md:gap-8 lg:gap-10">
             <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
               <div className="block w-full text-[32px] text-black transition-colors duration-300 dark:text-white sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">BUILD THE FUTURE WITH</div>
-              <div className="block w-full text-[36px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:2px_#ffffff] sm:text-[44px] md:text-[52px] lg:text-[60px] xl:text-[70px]">WORLD-CLASS BLOCKCHAIN</div>
-              <div className="block w-full text-[36px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:2px_#ffffff] sm:text-[44px] md:text-[52px] lg:text-[60px] xl:text-[70px]">& AI DEVELOPMENT</div>
+              <div className="block w-full text-[36px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:text-[44px] md:text-[52px] lg:text-[60px] xl:text-[70px]">WORLD-CLASS BLOCKCHAIN</div>
+              <div className="block w-full text-[36px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:text-[44px] md:text-[52px] lg:text-[60px] xl:text-[70px]">& AI DEVELOPMENT</div>
             </h1>
 
             <p className="w-full max-w-[600px] text-xs leading-[1.6] text-black transition-colors duration-300 dark:text-white/80 sm:text-sm sm:leading-[1.65] md:text-base lg:text-lg">
@@ -280,11 +373,11 @@ const Home = () => {
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%]">
                 <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
                   <span className="text-black dark:text-white">OUR </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">CORE BLOCKCHAIN </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">CORE BLOCKCHAIN </span>
                   <span className="text-black dark:text-white">& </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">AI DEVELOPMENT</span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">AI DEVELOPMENT</span>
                 </div>
-                <div className="block mt-1 text-[32px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:2px_#ffffff] sm:mt-2 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">SERVICES</div>
+                <div className="block mt-1 text-[32px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:mt-2 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">SERVICES</div>
               </h2>
 
               <p className="mx-auto mt-3 max-w-full text-center text-xs leading-[1.6] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-4 sm:text-sm sm:leading-[1.65] md:mt-6 md:max-w-[920px] md:text-base lg:text-lg">
@@ -341,7 +434,7 @@ const Home = () => {
                   </button>
                   <button
                     onClick={nextSlide}
-                    disabled={currentSlide >= totalSlides - 1}
+                    disabled={currentSlide >= maxServiceSlide}
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-black/20 bg-white transition-all duration-300 hover:bg-black hover:text-white  disabled:cursor-not-allowed dark:border-white/20 dark:bg-black dark:hover:bg-white dark:hover:text-black sm:h-12 sm:w-12"
                     aria-label="Next slide"
                   >
@@ -359,28 +452,31 @@ const Home = () => {
         <div ref={trustRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
           <section className={`sticky top-0 z-[20] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16`}>
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
-              <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px]">
+              <h2 className="mx-auto max-w-full px-2 text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] sm:px-4 md:px-6">
                 <div className="block text-[36px] transition-colors duration-300 sm:text-[48px] md:text-[60px] lg:text-[70px]">
                   <span className="text-black dark:text-white">WHY </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">BUSINESS </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">BUSINESS </span>
                   <span className="text-black dark:text-white">TRUST </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">BLOCKCHAIN </span>
-                  <span className="text-black dark:text-white">APP</span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">BLOCKCHAIN </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">APP</span>
                 </div>
                 <div className="block mt-1 text-[36px] transition-colors duration-300 sm:mt-2 sm:text-[48px] md:text-[60px] lg:text-[70px]">
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">ADVISOR</span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">ADVISOR</span>
                 </div>
               </h2>
 
-              <div className="mt-6 flex flex-col gap-4 sm:mt-8 sm:gap-6 md:mt-12 md:gap-8">
+              <div className="mt-6 flex flex-col gap-4 px-2 sm:mt-8 sm:gap-6 sm:px-4 md:mt-12 md:gap-8 md:px-6">
                 {whyTrustCards.map((card) => (
-                  <div key={card.id} className="rounded-lg border border-black/15 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:border-white/15 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-4 md:rounded-2xl md:p-5 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
+                  <div
+                    key={card.id}
+                    className="mx-auto w-full max-w-[1100px] rounded-lg border border-black/15 bg-black/[0.03] p-5 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:border-white dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-6 md:rounded-2xl md:p-7 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]"
+                  >
                     <div className="grid grid-cols-1 items-start gap-3 sm:gap-4 md:items-center md:grid-cols-[1fr_200px] lg:gap-6 lg:grid-cols-[1fr_220px]">
-                      <div>
-                        <h3 className="font-heading text-base font-bold text-black transition-colors duration-300 dark:text-white sm:text-lg md:text-xl lg:text-xl line-clamp-2">
+                      <div className="w-full md:w-[600px] lg:w-[680px]">
+                        <h3 className="font-heading text-lg font-bold text-black transition-colors duration-300 dark:text-white sm:text-xl md:text-2xl lg:text-2xl line-clamp-2">
                           {card.title}
                         </h3>
-                        <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-2 sm:text-sm sm:leading-[1.6] md:text-sm line-clamp-2">
+                        <p className="mt-2 min-h-[3.1em] overflow-hidden text-base leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-3 sm:text-lg sm:leading-[1.6] md:text-lg [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
                           {card.description}
                         </p>
                       </div>
@@ -390,7 +486,7 @@ const Home = () => {
                             <img 
                               src={card.image} 
                               alt={card.title}
-                              className="w-full h-auto object-contain max-h-[120px] sm:max-h-[140px] md:max-h-[150px]"
+                              className="w-full h-auto object-contain max-h-[140px] sm:max-h-[170px] md:max-h-[190px]"
                             />
                           )}
                         </div>
@@ -412,7 +508,7 @@ const Home = () => {
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px]">
                 <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
                   <span className="text-black dark:text-white">SERVING </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">MULTIPLE GLOBAL INDUSTRIES</span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">MULTIPLE GLOBAL INDUSTRIES</span>
                 </div>
               </h2>
 
@@ -422,7 +518,7 @@ const Home = () => {
                   <div className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)] md:col-start-1 md:col-end-3 lg:col-start-2 lg:col-end-3">
                     <div className="flex flex-col gap-4">
                       <div className="flex items-center justify-between gap-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand-blue text-base font-bold text-white transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-white text-base font-bold text-brand-blue transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
                           {industriesCards[0].number}
                         </div>
                         <div className="h-16 w-16 flex-shrink-0 rounded bg-black/[0.05] transition-colors duration-300 dark:bg-white/[0.05] sm:h-20 sm:w-20 md:h-16 md:w-16">
@@ -430,7 +526,7 @@ const Home = () => {
                         </div>
                       </div>
                       <div className="mt-2">
-                        <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 sm:text-lg md:text-xl">
+                        <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 dark:text-white sm:text-lg md:text-xl">
                           {industriesCards[0].title}
                         </h3>
                         <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-3 sm:text-sm sm:leading-[1.6] md:text-base">
@@ -447,7 +543,7 @@ const Home = () => {
                     <div key={card.id} className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 lg:w-[calc(33.333%-1.07rem)] md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
                       <div className="flex flex-col gap-4">
                         <div className="flex items-center justify-between gap-4">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand-blue text-base font-bold text-white transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-white text-base font-bold text-brand-blue transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
                             {card.number}
                           </div>
                           <div className="h-16 w-16 flex-shrink-0 rounded bg-black/[0.05] transition-colors duration-300 dark:bg-white/[0.05] sm:h-20 sm:w-20 md:h-16 md:w-16">
@@ -455,7 +551,7 @@ const Home = () => {
                           </div>
                         </div>
                         <div className="mt-2">
-                          <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 sm:text-lg md:text-xl">
+                          <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 dark:text-white sm:text-lg md:text-xl">
                             {card.title}
                           </h3>
                           <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-3 sm:text-sm sm:leading-[1.6] md:text-base">
@@ -473,7 +569,7 @@ const Home = () => {
                     <div key={card.id} className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
                       <div className="flex flex-col gap-4">
                         <div className="flex items-center justify-between gap-4">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand-blue text-base font-bold text-white transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-white text-base font-bold text-brand-blue transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
                             {card.number}
                           </div>
                           <div className="h-16 w-16 flex-shrink-0 rounded bg-black/[0.05] transition-colors duration-300 dark:bg-white/[0.05] sm:h-20 sm:w-20 md:h-16 md:w-16">
@@ -481,7 +577,7 @@ const Home = () => {
                           </div>
                         </div>
                         <div className="mt-2">
-                          <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 sm:text-lg md:text-xl">
+                          <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 dark:text-white sm:text-lg md:text-xl">
                             {card.title}
                           </h3>
                           <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-3 sm:text-sm sm:leading-[1.6] md:text-base">
@@ -504,28 +600,30 @@ const Home = () => {
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px]">
                 <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
                   <span className="text-black dark:text-white">OUR </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">WORK </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">WORK </span>
                   <span className="text-black dark:text-white">THAT </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">DELIVERS IMPACT</span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">DELIVERS IMPACT</span>
                 </div>
                 <div className="mx-auto mt-4 h-1 w-24 border-b-2 border-brand-blue sm:mt-5 md:mt-6"></div>
               </h2>
 
-              <div className="mt-6 overflow-hidden sm:mt-8 md:mt-10">
+              <div className="mt-6 overflow-hidden sm:mt-8 md:mt-10 max-w-5xl mx-auto">
                 <div 
-                  className="flex transition-transform duration-500 ease-in-out gap-2"
+                  className="flex transition-transform duration-500 ease-in-out gap-6 sm:gap-8"
                   ref={workCarouselRef}
                   style={{ 
-                    transform: `translateX(calc(-${currentWorkSlide * (100 / 3)}% - ${currentWorkSlide * 0.5}rem))`
+                    // Keep the same visual style as testimonials cards; slide by 1 card (33.333%) + gap.
+                    transform: `translateX(calc(-${currentWorkSlide * (100 / 3)}% - ${currentWorkSlide * 2}rem))`
                   }}
                 >
                   {workCards.map((card) => (
                     <div key={card.id} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3">
-                      <div className="w-[70%] mx-auto rounded-lg border border-brand-blue/30 bg-black/[0.03] p-3 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-4 md:rounded-2xl md:p-4 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
-                        <h3 className="font-heading text-sm font-bold text-brand-blue transition-colors duration-300 sm:text-base md:text-lg mb-2 pb-2 border-b-2 border-brand-blue">
+                      <div className="mx-auto flex h-[300px] w-full max-w-[360px] flex-col rounded-xl border border-black/25 bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.18)] hover:-translate-y-1 dark:border-white/80 dark:bg-[#0b0b0b] dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)] dark:hover:shadow-[0_18px_60px_rgba(0,0,0,0.75)] sm:p-7">
+                        <h3 className="font-heading text-lg font-bold text-black transition-colors duration-300 dark:text-white sm:text-xl">
                           {card.title}
                         </h3>
-                        <p className="text-xs leading-[1.55] text-black transition-colors duration-300 dark:text-white sm:text-sm md:text-sm pt-2">
+                        <div className="mt-4 h-px w-full bg-brand-blue/70" />
+                        <p className="mt-5 text-sm leading-[1.65] text-black/80 transition-colors duration-300 dark:text-white/80 sm:text-base">
                           {card.description}
                         </p>
                       </div>
@@ -535,7 +633,7 @@ const Home = () => {
                 
                 {/* Pagination Dots */}
                 <div className="mt-6 flex justify-center gap-2 sm:mt-8">
-                  {[0, 1, 2].map((index) => (
+                  {Array.from({ length: maxWorkSlides + 1 }).map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentWorkSlide(index)}
@@ -559,15 +657,16 @@ const Home = () => {
         <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
           <section className="sticky top-0 z-[35] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
-              <h2 className="ml-auto max-w-full text-right font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[800px]">
-                <div className="block text-[28px] transition-colors duration-300 sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
-                  <div className="block">
+              <h2 className="ml-auto max-w-full text-right font-heading font-bold uppercase leading-[1.25] tracking-[0%] sm:max-w-[900px]">
+                <div className="block text-[22px] transition-colors duration-300 sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px]">
+                  {/* Force exactly 2 lines */}
+                  <div className="block whitespace-nowrap">
                     <span className="text-black dark:text-white">THE </span>
-                    <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">ULTRA-STABLE TECH STACK</span>
+                    <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">ULTRA-STABLE TECH STACK</span>
                   </div>
-                  <div className="block">
+                  <div className="block whitespace-nowrap">
                     <span className="text-black dark:text-white">POWERING OUR </span>
-                    <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">WEB3 SOLUTIONS</span>
+                    <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">WEB3 SOLUTIONS</span>
                   </div>
                 </div>
               </h2>
@@ -581,11 +680,11 @@ const Home = () => {
                       onClick={() => setSelectedTechStack(index)}
                       className={`rounded-lg border p-2 sm:p-2.5 text-left transition-all duration-300 ${
                         selectedTechStack === index
-                          ? 'border-brand-blue bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20'
+                          ? 'border-brand-blue bg-brand-blue/10 text-brand-white dark:bg-brand-blue/20 dark:text-white'
                           : 'border-black/20 bg-black/[0.03] text-black hover:border-brand-blue/50 dark:border-white/20 dark:bg-white/[0.03] dark:text-white dark:hover:border-brand-blue/50'
                       }`}
                     >
-                      <span className="font-heading text-xs font-normal sm:text-sm md:text-base">
+                      <span className="font-heading text-xs dark:text-white font-normal sm:text-sm md:text-base">
                         {item.name}
                       </span>
                     </button>
@@ -598,7 +697,7 @@ const Home = () => {
                     <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_300px] md:gap-8 lg:grid-cols-[1fr_350px]">
                       {/* Content */}
                       <div key={selectedTechStack} className="flex flex-col gap-4 animate-fade-in">
-                        <h3 className="font-heading text-xl font-bold text-brand-blue transition-all duration-500 ease-in-out sm:text-2xl md:text-3xl">
+                        <h3 className="font-heading text-xl font-bold text-brand-blue dark:text-white transition-all duration-500 ease-in-out sm:text-2xl md:text-3xl">
                           {techStackItems[selectedTechStack].title}
                         </h3>
                         <p className="text-sm leading-relaxed text-black/80 transition-all duration-500 ease-in-out dark:text-white/80 sm:text-base md:text-lg">
@@ -647,13 +746,13 @@ const Home = () => {
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
                 <div className="block text-[28px] transition-colors duration-300 sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
                   <span className="text-black dark:text-white">OUR </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">WIDE RANGE </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">WIDE RANGE </span>
                   <span className="text-black dark:text-white">OF </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">WEB3 </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">WEB3 </span>
                   <span className="text-black dark:text-white">& </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">BLOCKCHAIN </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">DEVELOPMENT </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">SERVICES</span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">BLOCKCHAIN </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">DEVELOPMENT </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">SERVICES</span>
                 </div>
               </h2>
 
@@ -679,7 +778,7 @@ const Home = () => {
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
                 <div className="block text-[28px] transition-colors duration-300 sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
                   <span className="text-black dark:text-white">WHAT OUR </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">CLIENTS SAY</span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">CLIENTS SAY</span>
                 </div>
               </h2>
               
@@ -690,7 +789,7 @@ const Home = () => {
                 {testimonials.map((testimonial) => (
                   <div 
                     key={testimonial.id}
-                    className="flex flex-col h-full rounded-lg border border-gray-200 bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.15)] hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800 dark:shadow-[0_4px_12px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] sm:p-8"
+                    className="flex flex-col h-full rounded-lg border border-gray-200 bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.15)] hover:-translate-y-1 dark:border-white/30 dark:bg-transparent dark:shadow-[0_4px_12px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] sm:p-8"
                   >
                     <p className="text-sm sm:text-base md:text-lg leading-relaxed text-black/80 mb-auto transition-colors duration-300 dark:text-white/80 flex-grow">
                       "{testimonial.quote}"
@@ -698,10 +797,10 @@ const Home = () => {
                     {/* Blue Underline */}
                     <div className="w-full h-0.5 bg-brand-blue mb-4 mt-4"></div>
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-brand-blue/20 flex items-center justify-center flex-shrink-0">
-                        <div className="w-10 h-10 rounded-full bg-brand-blue/30"></div>
+                      <div className="w-12 h-12 rounded-full bg-brand-blue/20 flex items-center justify-center flex-shrink-0 dark:bg-white/20 dark:ring-1 dark:ring-white/40">
+                        <div className="w-10 h-10 rounded-full bg-brand-blue/30 dark:bg-white/30"></div>
                       </div>
-                      <p className="font-heading font-semibold text-brand-blue text-sm sm:text-base md:text-lg">
+                      <p className="font-heading font-semibold text-brand-blue text-sm sm:text-base md:text-lg dark:text-white">
                         {testimonial.name}
                       </p>
                     </div>
@@ -714,25 +813,25 @@ const Home = () => {
 
         {/* Ready to Build Section */}
         <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
-          <section className="sticky top-0 z-[50] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+          <section className="sticky top-0 z-[50] bg-white pb-10 pt-2 transition-all duration-700 dark:bg-black sm:top-0  sm:pt-4 md:top-0 ">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center">
                 {/* Left Side - Text Content */}
-                <div className="flex flex-col gap-6 sm:gap-8">
-                  <h2 className="font-heading font-bold uppercase leading-[1.1] tracking-[0%] text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
-                    <div className="block text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">
+                <div className="m-[30px] flex flex-col gap-6 sm:gap-8">
+                  <h2 className="font-heading font-bold uppercase leading-[1.05] tracking-[0%] text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
+                    <div className="block text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">
                       READY TO BUILD THE
                     </div>
-                    <div className="block text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">
+                    <div className="block text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">
                       FUTURE?
                     </div>
                   </h2>
                   
-                  <p className="text-sm sm:text-base md:text-lg leading-relaxed text-black/80 transition-colors duration-300 dark:text-white/80 max-w-[600px]">
+                  <p className="text-sm sm:text-base md:text-lg leading-[1.45] text-black/80 transition-colors duration-300 dark:text-white/80 max-w-[600px]">
                     Whether you're launching a token, developing a DeFi platform, designing an enterprise blockchain solution, or integrating AI — we're here to bring your vision to life with world-class engineering.
                   </p>
                   
-                  <button className="mt-2 flex w-fit items-center gap-2 rounded border-2 border-brand-blue bg-white px-6 py-3 text-sm font-semibold text-brand-blue transition-all duration-300 hover:bg-brand-blue hover:text-white dark:border-white/60 dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black sm:mt-4 sm:px-8 sm:py-4 sm:text-base">
+                  <button className="mt-2 flex w-fit items-center gap-2 rounded-md border border-brand-blue bg-white px-5 py-2.5 text-sm font-semibold text-brand-blue transition-all duration-300 hover:bg-brand-blue hover:text-white dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black sm:mt-4 sm:px-6 sm:py-3">
                     Get a Quote →
                   </button>
                 </div>
@@ -754,8 +853,8 @@ const Home = () => {
           <section className="sticky top-0 z-[55] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
-                <div className="block text-[28px] transition-colors duration-300 sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">FREQUENTLY ASKED QUESTIONS</span>
+                <div className="block text-[34px] leading-[1] tracking-[0.02em] transition-colors duration-300 sm:text-[46px] md:text-[56px] lg:text-[68px] xl:text-[78px]">
+                  <span className="text-brand-blue dark:text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">FREQUENTLY ASKED QUESTIONS</span>
                 </div>
               </h2>
 
@@ -766,17 +865,17 @@ const Home = () => {
                     <button
                       key={faq.id}
                       onClick={() => handleFaqClick(index)}
-                      className={`text-left rounded-lg border p-3 sm:p-4 transition-all duration-300 ${
+                      className={`text-left rounded-lg border p-0 transition-all duration-300 ${
                         selectedFaq === index
-                          ? 'border-brand-blue bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20'
-                          : 'border-gray-200 bg-gray-50 text-black hover:border-brand-blue/50 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:border-brand-blue/50'
+                          ? 'border-brand-blue bg-brand-blue/10 text-brand-blue dark:bg-transparent dark:text-white dark:shadow-[0_0_0_1px_rgba(0,99,182,0.55)]'
+                          : 'border-gray-200 bg-gray-50 text-black hover:border-brand-blue/50 dark:border-white/25 dark:bg-transparent dark:text-white/90 dark:hover:border-white/60'
                       }`}
                     >
-                      <div className="flex items-start gap-2.5">
-                        <span className="font-heading font-normal text-xs sm:text-sm flex-shrink-0">
+                      <div className="flex items-start gap-2.5 px-3 py-2 sm:px-4 sm:py-2.5">
+                        <span className="font-normal text-sm sm:text-base md:text-lg flex-shrink-0">
                           {faq.id}.
                         </span>
-                        <span className="font-heading text-xs sm:text-sm font-normal leading-relaxed">
+                        <span className="text-sm sm:text-base md:text-lg font-normal leading-snug">
                           {faq.question}
                         </span>
                       </div>
@@ -786,28 +885,52 @@ const Home = () => {
 
                 {/* Vertical Line - Blue Scroll Indicator */}
                 <div className="hidden lg:flex items-start justify-center">
-                  <div className="w-2 h-[500px] bg-brand-blue rounded-full"></div>
+                  <div
+                    ref={faqIndicatorTrackRef}
+                    className="relative w-[6px] h-[360px] sm:h-[420px] lg:h-[440px] rounded-full bg-white/20 cursor-pointer"
+                    onPointerDown={handleFaqIndicatorPointerDown}
+                    role="scrollbar"
+                    aria-orientation="vertical"
+                    aria-controls="faq-answers-scroll"
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    aria-valuenow={Math.round(faqScrollRatio * 100)}
+                    tabIndex={0}
+                  >
+                    <div
+                      ref={faqIndicatorThumbRef}
+                      className="absolute left-0 right-0 top-0 h-[120px] rounded-full bg-brand-blue shadow-[0_0_18px_rgba(0,99,182,0.55)] cursor-grab active:cursor-grabbing"
+                      style={{
+                        transform: `translateY(${Math.max(0, faqScrollRatio * Math.max(0, faqIndicatorTrackH - faqIndicatorThumbH))}px)`,
+                      }}
+                      onPointerDown={handleFaqThumbPointerDown}
+                      onPointerMove={handleFaqThumbPointerMove}
+                      onPointerUp={handleFaqThumbPointerUp}
+                      onPointerCancel={handleFaqThumbPointerUp}
+                    />
+                  </div>
                 </div>
 
                 {/* Right Side - Answers Section */}
-                <div className="h-[500px] overflow-y-auto pr-2 custom-scrollbar">
-                  <div className="space-y-0">
+                <div
+                  id="faq-answers-scroll"
+                  ref={faqScrollContainerRef}
+                  onScroll={handleFaqScroll}
+                  className="h-[360px] sm:h-[420px] lg:h-[440px] overflow-y-auto pr-2 custom-scrollbar"
+                >
+                  <div className="rounded-lg border border-gray-200 bg-white p-4 transition-all duration-300 dark:border-white/25 dark:bg-transparent">
                     {faqs.map((faq, index) => (
-                      <div
-                        key={faq.id}
-                        ref={(el) => (faqRefs.current[index] = el)}
-                        className="rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 dark:border-gray-700 dark:bg-gray-800"
-                      >
-                        <h3 className="font-heading font-bold text-base sm:text-lg mb-3 text-black dark:text-white">
+                      <div key={faq.id} ref={(el) => (faqRefs.current[index] = el)} className="py-6 first:pt-0 last:pb-0">
+                        <h3 className="font-normal text-base sm:text-lg md:text-xl mb-3 text-black dark:text-white">
                           {faq.id}. {faq.question}
                         </h3>
-                        <p className="text-sm sm:text-base leading-relaxed text-black/80 dark:text-white/80 mb-2">
+                        <p className="text-sm sm:text-base md:text-lg leading-[1.5] text-black/80 dark:text-white/80 mb-2">
                           {faq.answer}
                         </p>
                         {faq.bulletPoints && (
                           <ul className="mt-3 space-y-1.5">
                             {faq.bulletPoints.map((point, idx) => (
-                              <li key={idx} className="text-sm sm:text-base leading-relaxed text-black/80 dark:text-white/80 flex items-start gap-2">
+                              <li key={idx} className="text-sm sm:text-base md:text-lg leading-[1.5] text-black/80 dark:text-white/80 flex items-start gap-2">
                                 <span className="text-brand-blue mt-1.5">•</span>
                                 <span>{point}</span>
                               </li>
@@ -815,7 +938,7 @@ const Home = () => {
                           </ul>
                         )}
                         {index < faqs.length - 1 && (
-                          <div className="mt-6 mb-6 border-t border-gray-200 dark:border-gray-700"></div>
+                          <div className="mt-6 border-t border-gray-200 dark:border-white/20" />
                         )}
                       </div>
                     ))}
@@ -931,3 +1054,4 @@ const Home = () => {
 };
 
 export default Home;
+
