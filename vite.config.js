@@ -12,5 +12,10 @@ export default defineConfig({
       plugins: [tailwindcss({ config: './tailwind.config.cjs' }), autoprefixer()],
     },
   },
+  server: {
+    hmr: {
+      overlay: true,
+    },
+  },
 })
 

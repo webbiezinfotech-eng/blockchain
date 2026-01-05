@@ -3,10 +3,12 @@ import { NavLink } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import lightLogo from '../../assets/imgs/light_logo.png';
 import darkLogo from '../../assets/imgs/dark_logo.png';
+import { SERVICES } from '../../constants/services';
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesMobileOpen, setIsServicesMobileOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-[1000] bg-white border-b border-gray-100 transition-colors duration-300 dark:bg-black dark:border-white/10">
@@ -45,16 +47,48 @@ const Header = () => {
           >
             About
           </NavLink>
-          <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              `relative text-sm font-medium transition-colors duration-300 lg:text-base ${
-                isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
-              }`
-            }
-          >
-            Services
-          </NavLink>
+          <div className="relative group">
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                `relative inline-flex items-center gap-1 text-sm font-medium transition-colors duration-300 lg:text-base ${
+                  isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+                }`
+              }
+              aria-haspopup="menu"
+            >
+              Services
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 20 20"
+                fill="none"
+                className="opacity-70 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                aria-hidden="true"
+              >
+                <path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </NavLink>
+
+            <div
+              className="invisible absolute left-0 top-full z-[1001] mt-3 w-[520px] rounded-2xl border border-black/10 bg-white p-3 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 dark:border-white/10 dark:bg-black"
+              role="menu"
+              aria-label="Services submenu"
+            >
+              <div className="grid grid-cols-1 gap-1 lg:grid-cols-2">
+                {SERVICES.map((s) => (
+                  <NavLink
+                    key={s.id}
+                    to={s.route}
+                    className="rounded-xl px-3 py-2 text-sm font-medium text-black/80 transition-colors hover:bg-black/[0.04] hover:text-black dark:text-white/80 dark:hover:bg-white/[0.06] dark:hover:text-white"
+                    role="menuitem"
+                  >
+                    {s.title}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          </div>
           <NavLink
             to="/industries"
             className={({ isActive }) =>
@@ -196,17 +230,45 @@ const Header = () => {
               >
                 About
               </NavLink>
-              <NavLink
-                to="/services"
-                className={({ isActive }) =>
-                  `text-base font-medium transition-colors duration-300 ${
-                    isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
-                  }`
-                }
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Services
-              </NavLink>
+              <div>
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-between text-left text-base font-medium text-black transition-colors duration-300 hover:text-brand-blue dark:text-white dark:hover:text-brand-blue"
+                  onClick={() => setIsServicesMobileOpen((v) => !v)}
+                  aria-expanded={isServicesMobileOpen}
+                  aria-controls="mobile-services-submenu"
+                >
+                  <span>Services</span>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    className={`transition-transform duration-200 ${isServicesMobileOpen ? 'rotate-180' : ''}`}
+                    aria-hidden="true"
+                  >
+                    <path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+
+                {isServicesMobileOpen && (
+                  <div id="mobile-services-submenu" className="mt-3 flex flex-col gap-2 pl-3">
+                    {SERVICES.map((s) => (
+                      <NavLink
+                        key={s.id}
+                        to={s.route}
+                        className="text-sm font-medium text-black/80 transition-colors duration-300 hover:text-brand-blue dark:text-white/80 dark:hover:text-brand-blue"
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          setIsServicesMobileOpen(false);
+                        }}
+                      >
+                        {s.title}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
               <NavLink
                 to="/industries"
                 className={({ isActive }) =>

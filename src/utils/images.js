@@ -1,6 +1,6 @@
 // Hero Images
 import lightHeroImage from '../assets/imgs/hero_lightteme.png';
-import darkHeroImage from '../assets/imgs/WhatsApp Image 2025-11-29 at 00.06.54_e2c49acd 1.png';
+import darkHeroImage from '../assets/imgs/darkhome.png';
 
 // Service Section Images
 import homeSec2_1 from '../assets/imgs/home_sec2_1.png';

@@ -1,30 +1,23 @@
+import { useTheme } from '../../context/ThemeContext';
+import lightLogo from '../../assets/imgs/light_logo.png';
+import darkLogo from '../../assets/imgs/dark_logo.png';
+
 const Footer = () => {
+  const { theme } = useTheme();
+
   return (
-    <footer className="mt-auto rounded-t-2xl bg-gray-100 transition-colors duration-300 dark:bg-[#1a1a1a]">
+    <footer className="mt-auto rounded-t-[40px] border border-b-0 border-black/10 bg-transparent transition-colors duration-300 dark:border-white/25 dark:bg-transparent">
       <div className="mx-auto max-w-layout px-4 pb-6 pt-8 sm:px-5 sm:pt-10 md:px-10 md:pb-8 md:pt-12 lg:pt-[60px] lg:pb-10">
         <div className="mb-8 grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {/* Left Column - Branding */}
           <div className="flex flex-col gap-4 sm:gap-6">
             <div className="flex items-center gap-3">
               <div className="flex items-center justify-center">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 40 40" fill="none">
-                  <path
-                    d="M20 5C15 5 10 8 10 13C10 18 15 21 20 21C25 21 30 18 30 13C30 8 25 5 20 5Z"
-                    stroke="#0063B6"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                  <path
-                    d="M20 19C15 19 10 22 10 27C10 32 15 35 20 35C25 35 30 32 30 27C30 22 25 19 20 19Z"
-                    stroke="#0063B6"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-              <div className="flex flex-col leading-[1.2]">
-                <div className="text-base font-bold text-black transition-colors duration-300 dark:text-white sm:text-lg">BLOCKCHAIN</div>
-                <div className="text-[10px] font-medium text-black transition-colors duration-300 dark:text-white sm:text-xs">APP ADVISOR</div>
+                <img
+                  src={theme === 'dark' ? darkLogo : lightLogo}
+                  alt="Blockchain App Advisor Logo"
+                  className="h-20 w-20 object-contain sm:h-24 sm:w-24 md:h-28 md:w-28"
+                />
               </div>
             </div>
             
@@ -107,8 +100,13 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-200 pt-6 text-right transition-colors duration-300 dark:border-white/10 sm:pt-8 lg:pt-[30px]">
-          <p className="m-0 text-xs text-gray-600 transition-colors duration-300 dark:text-gray-300 sm:text-sm">© 2026 Blockchain App Advisor. All Rights Reserved.</p>
+        <div className="text-right transition-colors duration-300">
+          <div className="flex justify-end">
+            <div className="w-40 border-t border-gray-200 dark:border-white/20" />
+          </div>
+          <p className="m-0 pt-0 text-xs text-gray-600 transition-colors duration-300 dark:text-gray-300 sm:text-sm">
+            © 2026 Blockchain App Advisor. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>
