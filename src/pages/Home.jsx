@@ -1,15 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
-import { heroImages, serviceImages, homeSec2_1, homeSec2_2, homeSec2_3, homeSec2_4, homeSec2_5, homeSec2_6, homeSec2_7, homeSec2_8, homeSec2_9, homeSec2_10, homeSec3_1, homeSec3_2, homeSec3_3, homeSec3_4, homeSec3_5, homeSec3_6 } from '../utils/images'; 
+import { heroImages, serviceImages, homeSec2_1, homeSec2_2, homeSec2_3, homeSec2_4, homeSec2_5, homeSec2_6, homeSec2_7, homeSec2_8, homeSec2_9, homeSec2_10, homeSec3_1, homeSec3_2, homeSec3_3, homeSec3_4, homeSec3_5, homeSec3_6, frontendCap, smartContractImg, airdropImg, layer2Img, blockchainApiImg, web3Img, walletImg, backendImg } from '../utils/images'; 
 import { useTheme } from '../context/ThemeContext';
+import ServiceCard from '../components/common/ServiceCard';
 
 const Home = () => {
   const { theme } = useTheme();
   const [isServicesVisible, setIsServicesVisible] = useState(false);
   const [isTrustVisible, setIsTrustVisible] = useState(false);
+  const [isIndustriesVisible, setIsIndustriesVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentWorkSlide, setCurrentWorkSlide] = useState(0);
+  const [selectedTechStack, setSelectedTechStack] = useState(0);
   const servicesRef = useRef(null);
   const trustRef = useRef(null);
+  const industriesRef = useRef(null);
   const carouselRef = useRef(null);
+  const workCarouselRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,6 +28,9 @@ const Home = () => {
             if (entry.target === trustRef.current) {
               setIsTrustVisible(true);
             }
+            if (entry.target === industriesRef.current) {
+              setIsIndustriesVisible(true);
+            }
           }
         });
       },
@@ -30,10 +39,12 @@ const Home = () => {
 
     if (servicesRef.current) observer.observe(servicesRef.current);
     if (trustRef.current) observer.observe(trustRef.current);
+    if (industriesRef.current) observer.observe(industriesRef.current);
 
     return () => {
       if (servicesRef.current) observer.unobserve(servicesRef.current);
       if (trustRef.current) observer.unobserve(trustRef.current);
+      if (industriesRef.current) observer.unobserve(industriesRef.current);
     };
   }, []);
 
@@ -76,6 +87,15 @@ const Home = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Auto carousel for work cards
+  useEffect(() => {
+    const maxSlides = Math.max(0, 5 - 3); // 5 total cards, showing 3 at a time
+    const interval = setInterval(() => {
+      setCurrentWorkSlide((prev) => (prev >= maxSlides ? 0 : prev + 1));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const nextSlide = () => {
     const newTotalSlides = Math.max(1, Math.ceil((serviceCards.length - cardsPerView) / cardsPerView) + 1);
     setCurrentSlide((prev) => Math.min(prev + 1, newTotalSlides - 1));
@@ -94,6 +114,128 @@ const Home = () => {
     { id: 6, title: "Multi-Blockchain Expertise", description: "Ethereum, BSC, Solana, Polygon, Avalanche, Bitcoin L2, Cosmos, Hyperledger — you name it, we build on it.", image: homeSec3_6 },
     { id: 7, title: "Dedicated Post-Launch Support", description: "Your product doesn't stop at deployment. We provide maintenance, upgrades, version improvements and ongoing assistance.", image: homeSec3_6 }
   ];
+
+  const workCards = [
+    { id: 1, title: "Decentralized Investment Protocol", description: "We built a trustless DeFi ecosystem enabling global investors to participate in automated, AI-driven yield strategies — handling millions in TVL." },
+    { id: 2, title: "AI-Powered Fraud Detection System for a Crypto Exchange", description: "Integrated AI bots that analyze threat patterns, transaction anomalies and malicious behaviors in real-time — reducing fraudulent activity by 90%." },
+    { id: 3, title: "Real-World Asset Tokenization Platform", description: "Created an RWA token marketplace allowing users to tokenize and trade physical assets — including real estate, art, and commodities." },
+    { id: 4, title: "Enterprise Blockchain Solution", description: "Developed a comprehensive blockchain infrastructure for enterprise clients, enabling secure transactions, transparent record-keeping, and automated compliance." },
+    { id: 5, title: "NFT Marketplace with Cross-Chain Support", description: "Built a multi-chain NFT marketplace supporting Ethereum, Polygon, and Solana networks, with seamless cross-chain trading capabilities." }
+  ];
+
+  const techStackItems = [
+    { id: 0, name: "Frontend Capabilities", title: "Frontend Capabilities", description: "Delivering sleek, responsive, and high-performance user interfaces for every blockchain application.", techStack: ["React.js", "Next.js", "Web3.js", "Ethers.js", "Tailwind CSS"], image: frontendCap },
+    { id: 1, name: "Smart Contract", title: "Smart Contract", description: "User-friendly interfaces designed to interact seamlessly with on-chain smart contract logic.", techStack: [], image: smartContractImg },
+    { id: 2, name: "Airdrop", title: "Airdrop", description: "Frontend systems built to manage automated token/asset distributions across multiple wallets.", techStack: [], image: airdropImg },
+    { id: 3, name: "Layer 2", title: "Layer 2", description: "Optimized UI flows for fast, low-cost transactions on Layer-2 chains.", techStack: [], image: layer2Img },
+    { id: 4, name: "Blockchain APIs", title: "Blockchain APIs", description: "Integration-ready frontends powered by secure, scalable API connectivity.", techStack: [], image: blockchainApiImg },
+    { id: 5, name: "Web3 Growth Tools", title: "Web3 Growth Tools", description: "Interface modules designed to support user onboarding, analytics, and ecosystem expansion.", techStack: [], image: web3Img },
+    { id: 6, name: "Wallets", title: "Wallets", description: "Wallet-connect UI components supporting multi-chain access and authentication.", techStack: [], image: walletImg },
+    { id: 7, name: "Backend", title: "Backend", description: "Secure, reliable backend systems powering decentralized and hybrid blockchain applications.Secure, reliable backend systems powering decentralized and hybrid blockchain applications.", techStack: [], image: backendImg }
+  ];
+ 
+  const industriesCards = [
+    { id: 1, number: 1, title: "Fusion of Blockchain Intelligence + AI Automation", description: "We integrate decentralized architecture with advanced AI models to build systems that auto-optimize, self-analyze, and deliver smarter performance than traditional solutions." },
+    { id: 2, number: 2, title: "Military-Grade Security & Multi-Layer Audits", description: "Every product undergoes deep security screening – including automated scans, manual audits, penetration testing, and strict protocol review – ensuring zero exploitable gaps." },
+    { id: 3, number: 3, title: "Transparent Processes With Full Development Visibility", description: "From sprint planning to weekly progress demos and milestone reporting, clients stay fully informed at every stage of development – no surprises, no hidden elements." },
+    { id: 4, number: 4, title: "High-Performance, Future-Ready Architecture", description: "Our solutions are engineered for massive scalability, ensuring your platform handles increasing transactions, growing user loads, and rapid feature expansion without performance drops." },
+    { id: 5, number: 5, title: "Multi-Chain Mastery & Cross-Platform Expertise", description: "We build seamlessly across top networks like Ethereum, BSC, Solana, Polygon, Avalanche, Cosmos, Hyperledger, Bitcoin L2, and more – selecting the ideal chain for your specific use case." },
+    { id: 6, number: 6, title: "End-to-End Support From Launch to Growth", description: "Our commitment continues beyond deployment. We provide continuous monitoring, upgrades, optimizations, feature enhancements, and long-term technical support to ensure your product thrives." }
+  ];
+
+  const wideRangeCards = [
+    { 
+      id: 1, 
+      title: "Cryptocurrency", 
+      description: "Custom crypto-powered solutions, including token utilities, micro-payment systems, and digital asset integrations.",
+      image: homeSec2_5 
+    },
+    { 
+      id: 2, 
+      title: "Marketing", 
+      description: "Strategic marketing solutions to promote your blockchain projects, increase visibility, and drive user adoption.",
+      image: homeSec2_2 
+    },
+    { 
+      id: 3, 
+      title: "Fundraising", 
+      description: "Comprehensive fundraising strategies and token launch services to help you raise capital for your blockchain ventures.",
+      image: homeSec2_6 
+    },
+    { 
+      id: 4, 
+      title: "Decentralized Finance", 
+      description: "Build powerful DeFi platforms with lending, staking, yield farming, and other decentralized financial services.",
+      image: homeSec2_7 
+    },
+    { 
+      id: 5, 
+      title: "Smart Contract", 
+      description: "Secure, audited smart contracts for various use cases including DeFi, NFTs, governance, and automated workflows.",
+      image: homeSec2_3 
+    }
+  ];
+
+  const testimonials = [
+    {
+      id: 1,
+      quote: "Blockchain App Advisor helped us design a scalable DeFi protocol from scratch. The smart contracts were flawless and the audit was incredibly detailed.",
+      name: "Founder, FinTech Startup"
+    },
+    {
+      id: 2,
+      quote: "Our NFT marketplace went live within weeks. Their architecture planning and integration support were exceptional.",
+      name: "CEO, NFT Marketplace"
+    },
+    {
+      id: 3,
+      quote: "They built an AI-powered fraud detection system for our exchange. Transaction monitoring accuracy improved drastically.",
+      name: "CTO, Crypto Exchange"
+    }
+  ];
+
+  const [selectedFaq, setSelectedFaq] = useState(0);
+  const faqRefs = useRef([]);
+
+  const faqs = [
+    {
+      id: 1,
+      question: "What services does Blockchain App Advisor provide?",
+      answer: "We offer a complete suite of blockchain and AI development services including smart contract development, smart contract audits, token creation, DeFi platforms, DApps, NFT marketplaces, crypto exchanges, AI automation, and custom blockchain architecture."
+    },
+    {
+      id: 2,
+      question: "How long does it take to develop a blockchain application?",
+      answer: "Development timelines depend on project complexity.",
+      bulletPoints: [
+        "Simple smart contracts: 5-10 days",
+        "Tokens: 3-7 days",
+        "DApps / NFT marketplaces: 3-6 weeks"
+      ]
+    },
+    {
+      id: 3,
+      question: "Do you provide post-launch support?",
+      answer: "Yes, we provide comprehensive post-launch support including maintenance, upgrades, bug fixes, feature enhancements, and ongoing technical assistance to ensure your product continues to perform optimally."
+    },
+    {
+      id: 4,
+      question: "Can you audit my existing smart contracts?",
+      answer: "Absolutely. We offer thorough smart contract audit services that include automated scans, manual code review, logical testing, and detailed audit reports with recommendations for security improvements."
+    },
+    {
+      id: 5,
+      question: "Can you help with tokenomics along with token development?",
+      answer: "Yes, we provide complete tokenomics consulting and design services along with token development. We help you create sustainable token models, distribution strategies, and economic structures that align with your project goals."
+    }
+  ];
+
+  const handleFaqClick = (index) => {
+    setSelectedFaq(index);
+    if (faqRefs.current[index]) {
+      faqRefs.current[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
@@ -232,13 +374,13 @@ const Home = () => {
 
               <div className="mt-6 flex flex-col gap-4 sm:mt-8 sm:gap-6 md:mt-12 md:gap-8">
                 {whyTrustCards.map((card) => (
-                  <div key={card.id} className="rounded-lg border border-black/15 bg-black/[0.03] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] hover:-translate-y-1 hover:scale-[1.01] dark:border-white/15 dark:bg-white/[0.03] dark:shadow-[0_4px_16px_rgba(0,0,0,0.25)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.4)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 md:shadow-[0_8px_24px_rgba(0,0,0,0.12)] md:hover:shadow-[0_16px_48px_rgba(0,0,0,0.18)] dark:md:shadow-[0_8px_24px_rgba(0,0,0,0.3)] dark:md:hover:shadow-[0_16px_48px_rgba(0,0,0,0.5)]">
-                    <div className="grid grid-cols-1 items-start gap-4 sm:gap-5 md:items-center md:grid-cols-[1fr_280px] lg:gap-8 lg:grid-cols-[1fr_320px]">
+                  <div key={card.id} className="rounded-lg border border-black/15 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:border-white/15 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-4 md:rounded-2xl md:p-5 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
+                    <div className="grid grid-cols-1 items-start gap-3 sm:gap-4 md:items-center md:grid-cols-[1fr_200px] lg:gap-6 lg:grid-cols-[1fr_220px]">
                       <div>
-                        <h3 className="font-heading text-base font-bold text-black transition-colors duration-300 dark:text-white sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                        <h3 className="font-heading text-base font-bold text-black transition-colors duration-300 dark:text-white sm:text-lg md:text-xl lg:text-xl line-clamp-2">
                           {card.title}
                         </h3>
-                        <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-3 sm:text-sm sm:leading-[1.6] md:text-base">
+                        <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-2 sm:text-sm sm:leading-[1.6] md:text-sm line-clamp-2">
                           {card.description}
                         </p>
                       </div>
@@ -248,7 +390,7 @@ const Home = () => {
                             <img 
                               src={card.image} 
                               alt={card.title}
-                              className="w-full h-auto object-contain"
+                              className="w-full h-auto object-contain max-h-[120px] sm:max-h-[140px] md:max-h-[150px]"
                             />
                           )}
                         </div>
@@ -256,6 +398,529 @@ const Home = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </section>
+        </div>
+
+     
+
+        {/* Industries Section */}
+        <div ref={industriesRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+          <section className={`sticky top-0 z-[30] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16`}>
+            <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
+              <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px]">
+                <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
+                  <span className="text-black dark:text-white">SERVING </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">MULTIPLE GLOBAL INDUSTRIES</span>
+                </div>
+              </h2>
+
+              <div className="mt-6 flex flex-col gap-4 sm:mt-8 sm:gap-6 md:mt-12 md:gap-6 lg:gap-8">
+                {/* Card 1 - Centered */}
+                <div className="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-3">
+                  <div className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)] md:col-start-1 md:col-end-3 lg:col-start-2 lg:col-end-3">
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand-blue text-base font-bold text-white transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
+                          {industriesCards[0].number}
+                        </div>
+                        <div className="h-16 w-16 flex-shrink-0 rounded bg-black/[0.05] transition-colors duration-300 dark:bg-white/[0.05] sm:h-20 sm:w-20 md:h-16 md:w-16">
+                          {/* Icon placeholder - will be replaced with actual icons later */}
+                        </div>
+                      </div>
+                      <div className="mt-2">
+                        <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 sm:text-lg md:text-xl">
+                          {industriesCards[0].title}
+                        </h3>
+                        <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-3 sm:text-sm sm:leading-[1.6] md:text-base">
+                          {industriesCards[0].description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Cards 2-3 - In a row */}
+                <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 md:gap-6 lg:flex lg:justify-center lg:gap-8">
+                  {industriesCards.slice(1, 3).map((card) => (
+                    <div key={card.id} className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 lg:w-[calc(33.333%-1.07rem)] md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
+                      <div className="flex flex-col gap-4">
+                        <div className="flex items-center justify-between gap-4">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand-blue text-base font-bold text-white transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
+                            {card.number}
+                          </div>
+                          <div className="h-16 w-16 flex-shrink-0 rounded bg-black/[0.05] transition-colors duration-300 dark:bg-white/[0.05] sm:h-20 sm:w-20 md:h-16 md:w-16">
+                            {/* Icon placeholder - will be replaced with actual icons later */}
+                          </div>
+                        </div>
+                        <div className="mt-2">
+                          <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 sm:text-lg md:text-xl">
+                            {card.title}
+                          </h3>
+                          <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-3 sm:text-sm sm:leading-[1.6] md:text-base">
+                            {card.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Cards 4-5-6 - In a row */}
+                <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+                  {industriesCards.slice(3, 6).map((card) => (
+                    <div key={card.id} className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
+                      <div className="flex flex-col gap-4">
+                        <div className="flex items-center justify-between gap-4">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand-blue text-base font-bold text-white transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
+                            {card.number}
+                          </div>
+                          <div className="h-16 w-16 flex-shrink-0 rounded bg-black/[0.05] transition-colors duration-300 dark:bg-white/[0.05] sm:h-20 sm:w-20 md:h-16 md:w-16">
+                            {/* Icon placeholder - will be replaced with actual icons later */}
+                          </div>
+                        </div>
+                        <div className="mt-2">
+                          <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 sm:text-lg md:text-xl">
+                            {card.title}
+                          </h3>
+                          <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-3 sm:text-sm sm:leading-[1.6] md:text-base">
+                            {card.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+           {/* Our Work Section */}
+           <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+          <section className="sticky top-0 z-[25] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+            <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
+              <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px]">
+                <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
+                  <span className="text-black dark:text-white">OUR </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">WORK </span>
+                  <span className="text-black dark:text-white">THAT </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">DELIVERS IMPACT</span>
+                </div>
+                <div className="mx-auto mt-4 h-1 w-24 border-b-2 border-brand-blue sm:mt-5 md:mt-6"></div>
+              </h2>
+
+              <div className="mt-6 overflow-hidden sm:mt-8 md:mt-10">
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out gap-2"
+                  ref={workCarouselRef}
+                  style={{ 
+                    transform: `translateX(calc(-${currentWorkSlide * (100 / 3)}% - ${currentWorkSlide * 0.5}rem))`
+                  }}
+                >
+                  {workCards.map((card) => (
+                    <div key={card.id} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3">
+                      <div className="w-[70%] mx-auto rounded-lg border border-brand-blue/30 bg-black/[0.03] p-3 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-4 md:rounded-2xl md:p-4 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
+                        <h3 className="font-heading text-sm font-bold text-brand-blue transition-colors duration-300 sm:text-base md:text-lg mb-2 pb-2 border-b-2 border-brand-blue">
+                          {card.title}
+                        </h3>
+                        <p className="text-xs leading-[1.55] text-black transition-colors duration-300 dark:text-white sm:text-sm md:text-sm pt-2">
+                          {card.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Pagination Dots */}
+                <div className="mt-6 flex justify-center gap-2 sm:mt-8">
+                  {[0, 1, 2].map((index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentWorkSlide(index)}
+                      className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                        currentWorkSlide === index
+                          ? 'bg-brand-blue w-8'
+                          : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+       
+
+        {/* Tech Stack Section */}
+        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+          <section className="sticky top-0 z-[35] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+            <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
+              <h2 className="ml-auto max-w-full text-right font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[800px]">
+                <div className="block text-[28px] transition-colors duration-300 sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
+                  <div className="block">
+                    <span className="text-black dark:text-white">THE </span>
+                    <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">ULTRA-STABLE TECH STACK</span>
+                  </div>
+                  <div className="block">
+                    <span className="text-black dark:text-white">POWERING OUR </span>
+                    <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">WEB3 SOLUTIONS</span>
+                  </div>
+                </div>
+              </h2>
+
+              <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 md:mt-12 md:grid-cols-[300px_1fr] lg:grid-cols-[350px_1fr] lg:gap-8">
+                {/* Left Side - Buttons List */}
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  {techStackItems.map((item, index) => (
+                    <button
+                      key={item.id}
+                      onClick={() => setSelectedTechStack(index)}
+                      className={`rounded-lg border p-2 sm:p-2.5 text-left transition-all duration-300 ${
+                        selectedTechStack === index
+                          ? 'border-brand-blue bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20'
+                          : 'border-black/20 bg-black/[0.03] text-black hover:border-brand-blue/50 dark:border-white/20 dark:bg-white/[0.03] dark:text-white dark:hover:border-brand-blue/50'
+                      }`}
+                    >
+                      <span className="font-heading text-xs font-normal sm:text-sm md:text-base">
+                        {item.name}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Right Side - Content and Image */}
+                <div className="flex flex-col gap-6">
+                  <div className="rounded-lg bg-black/[0.03] p-6 transition-all duration-500 dark:bg-white/[0.03] sm:p-8 md:p-10">
+                    <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_300px] md:gap-8 lg:grid-cols-[1fr_350px]">
+                      {/* Content */}
+                      <div key={selectedTechStack} className="flex flex-col gap-4 animate-fade-in">
+                        <h3 className="font-heading text-xl font-bold text-brand-blue transition-all duration-500 ease-in-out sm:text-2xl md:text-3xl">
+                          {techStackItems[selectedTechStack].title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-black/80 transition-all duration-500 ease-in-out dark:text-white/80 sm:text-base md:text-lg">
+                          {techStackItems[selectedTechStack].description}
+                        </p>
+                        {techStackItems[selectedTechStack].techStack.length > 0 && (
+                          <div className="mt-4">
+                            <h4 className="mb-3 font-heading text-base font-semibold text-brand-blue transition-all duration-500 ease-in-out sm:text-lg">
+                              Tech We Use:
+                            </h4>
+                            <ul className="flex flex-col gap-2">
+                              {techStackItems[selectedTechStack].techStack.map((tech, idx) => (
+                                <li key={idx} className="text-sm text-black/80 transition-all duration-500 ease-in-out dark:text-white/80 sm:text-base">
+                                  • {tech}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* Image */}
+                      <div className="flex items-center justify-center rounded-lg">
+                        <div key={`img-${selectedTechStack}`} className="w-full h-[250px] sm:h-[300px] md:h-[350px] flex items-center justify-center p-4 animate-fade-in">
+                          {techStackItems[selectedTechStack].image && (
+                            <img 
+                              src={techStackItems[selectedTechStack].image} 
+                              alt={techStackItems[selectedTechStack].title}
+                              className="w-full h-full object-contain transition-all duration-500 ease-in-out"
+                            />
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+         {/* Wide Range Services Section */}
+         <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+          <section className="sticky top-0 z-[40] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+            <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
+              <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
+                <div className="block text-[28px] transition-colors duration-300 sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
+                  <span className="text-black dark:text-white">OUR </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">WIDE RANGE </span>
+                  <span className="text-black dark:text-white">OF </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">WEB3 </span>
+                  <span className="text-black dark:text-white">& </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">BLOCKCHAIN </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">DEVELOPMENT </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">SERVICES</span>
+                </div>
+              </h2>
+
+              <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-14 xl:gap-18 2xl:gap-24 items-center lg:items-end justify-center">
+                {wideRangeCards.map((card) => (
+                  <ServiceCard 
+                    key={card.id}
+                    title={card.title}
+                    description={card.description}
+                    image={card.image}
+                    isExpanded={false}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Testimonials Section */}
+        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+          <section className="sticky top-0 z-[45] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+            <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
+              <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
+                <div className="block text-[28px] transition-colors duration-300 sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
+                  <span className="text-black dark:text-white">WHAT OUR </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">CLIENTS SAY</span>
+                </div>
+              </h2>
+              
+              {/* Blue Line */}
+              {/* <div className="mx-auto w-24 h-1 bg-brand-blue mb-8 sm:mb-12 lg:mb-16"></div> */}
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
+                {testimonials.map((testimonial) => (
+                  <div 
+                    key={testimonial.id}
+                    className="flex flex-col h-full rounded-lg border border-gray-200 bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.15)] hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800 dark:shadow-[0_4px_12px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] sm:p-8"
+                  >
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed text-black/80 mb-auto transition-colors duration-300 dark:text-white/80 flex-grow">
+                      "{testimonial.quote}"
+                    </p>
+                    {/* Blue Underline */}
+                    <div className="w-full h-0.5 bg-brand-blue mb-4 mt-4"></div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-brand-blue/20 flex items-center justify-center flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-brand-blue/30"></div>
+                      </div>
+                      <p className="font-heading font-semibold text-brand-blue text-sm sm:text-base md:text-lg">
+                        {testimonial.name}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Ready to Build Section */}
+        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+          <section className="sticky top-0 z-[50] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+            <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center">
+                {/* Left Side - Text Content */}
+                <div className="flex flex-col gap-6 sm:gap-8">
+                  <h2 className="font-heading font-bold uppercase leading-[1.1] tracking-[0%] text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
+                    <div className="block text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">
+                      READY TO BUILD THE
+                    </div>
+                    <div className="block text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">
+                      FUTURE?
+                    </div>
+                  </h2>
+                  
+                  <p className="text-sm sm:text-base md:text-lg leading-relaxed text-black/80 transition-colors duration-300 dark:text-white/80 max-w-[600px]">
+                    Whether you're launching a token, developing a DeFi platform, designing an enterprise blockchain solution, or integrating AI — we're here to bring your vision to life with world-class engineering.
+                  </p>
+                  
+                  <button className="mt-2 flex w-fit items-center gap-2 rounded border-2 border-brand-blue bg-white px-6 py-3 text-sm font-semibold text-brand-blue transition-all duration-300 hover:bg-brand-blue hover:text-white dark:border-white/60 dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black sm:mt-4 sm:px-8 sm:py-4 sm:text-base">
+                    Get a Quote →
+                  </button>
+                </div>
+
+                {/* Right Side - Illustration/Image */}
+                <div className="flex items-center justify-center">
+                  <div className="w-full max-w-[500px] h-[400px] sm:h-[500px] rounded-lg bg-brand-blue/10 flex items-center justify-center">
+                    {/* Placeholder for illustration - can be replaced with actual image */}
+                    <div className="text-6xl sm:text-8xl">🤖</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+          <section className="sticky top-0 z-[55] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+            <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
+              <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
+                <div className="block text-[28px] transition-colors duration-300 sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:2px_#ffffff]">FREQUENTLY ASKED QUESTIONS</span>
+                </div>
+              </h2>
+
+              <div className="grid grid-cols-1 lg:grid-cols-[320px_auto_1fr] gap-6 sm:gap-8 lg:gap-8">
+                {/* Left Side - Questions List */}
+                <div className="flex flex-col gap-2.5 sm:gap-3">
+                  {faqs.map((faq, index) => (
+                    <button
+                      key={faq.id}
+                      onClick={() => handleFaqClick(index)}
+                      className={`text-left rounded-lg border p-3 sm:p-4 transition-all duration-300 ${
+                        selectedFaq === index
+                          ? 'border-brand-blue bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20'
+                          : 'border-gray-200 bg-gray-50 text-black hover:border-brand-blue/50 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:border-brand-blue/50'
+                      }`}
+                    >
+                      <div className="flex items-start gap-2.5">
+                        <span className="font-heading font-normal text-xs sm:text-sm flex-shrink-0">
+                          {faq.id}.
+                        </span>
+                        <span className="font-heading text-xs sm:text-sm font-normal leading-relaxed">
+                          {faq.question}
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Vertical Line - Blue Scroll Indicator */}
+                <div className="hidden lg:flex items-start justify-center">
+                  <div className="w-2 h-[500px] bg-brand-blue rounded-full"></div>
+                </div>
+
+                {/* Right Side - Answers Section */}
+                <div className="h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+                  <div className="space-y-0">
+                    {faqs.map((faq, index) => (
+                      <div
+                        key={faq.id}
+                        ref={(el) => (faqRefs.current[index] = el)}
+                        className="rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 dark:border-gray-700 dark:bg-gray-800"
+                      >
+                        <h3 className="font-heading font-bold text-base sm:text-lg mb-3 text-black dark:text-white">
+                          {faq.id}. {faq.question}
+                        </h3>
+                        <p className="text-sm sm:text-base leading-relaxed text-black/80 dark:text-white/80 mb-2">
+                          {faq.answer}
+                        </p>
+                        {faq.bulletPoints && (
+                          <ul className="mt-3 space-y-1.5">
+                            {faq.bulletPoints.map((point, idx) => (
+                              <li key={idx} className="text-sm sm:text-base leading-relaxed text-black/80 dark:text-white/80 flex items-start gap-2">
+                                <span className="text-brand-blue mt-1.5">•</span>
+                                <span>{point}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {index < faqs.length - 1 && (
+                          <div className="mt-6 mb-6 border-t border-gray-200 dark:border-gray-700"></div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Contact Form Section */}
+        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+          <section className="sticky top-0 z-[60] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+            <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+                {/* Left Side - Contact Form */}
+                <div className="lg:col-span-6 flex flex-col gap-4 sm:gap-6">
+                  <form className="flex flex-col gap-4 sm:gap-6">
+                    {/* Name and Phone - Side by Side */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                      <div className="rounded-[40px] border border-gray-300 bg-white p-3 shadow-md dark:border-white/20 dark:bg-gray-800">
+                        <input
+                          type="text"
+                          placeholder="Name"
+                          className="w-full bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none dark:text-white dark:placeholder-white/50"
+                        />
+                      </div>
+                      <div className="rounded-[40px] border border-gray-300 bg-white p-3 shadow-md dark:border-white/20 dark:bg-gray-800">
+                        <input
+                          type="tel"
+                          placeholder="Phone"
+                          className="w-full bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none dark:text-white dark:placeholder-white/50"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Email */}
+                    <div className="rounded-[40px] border border-gray-300 bg-white p-3 shadow-md dark:border-white/20 dark:bg-gray-800">
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        className="w-full bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none dark:text-white dark:placeholder-white/50"
+                      />
+                    </div>
+                    
+                    {/* Message */}
+                    <div className="rounded-[40px] border border-gray-300 bg-white p-3 shadow-md dark:border-white/20 dark:bg-gray-800">
+                      <textarea
+                        placeholder="Message"
+                        rows={6}
+                        className="w-full bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none resize-none dark:text-white dark:placeholder-white/50"
+                      ></textarea>
+                    </div>
+                    
+                    <button
+                      type="submit"
+                      className="mt-2 w-fit rounded-lg bg-brand-blue px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-blue/90 shadow-sm sm:px-10 sm:py-4 sm:text-base"
+                    >
+                      Submit
+                    </button>
+                  </form>
+                </div>
+
+                {/* Gap - col-1 */}
+                <div className="hidden lg:block lg:col-span-1"></div>
+
+                {/* Right Side - Contact Information */}
+                <div className="lg:col-span-5 flex flex-col gap-4 sm:gap-6">
+                  {/* Phone */}
+                  <div className="flex items-center gap-4 rounded-lg border border-gray-300 bg-white p-3 shadow-sm dark:border-white/20 dark:bg-gray-800">
+                    <div className="flex h-10 w-10 items-center justify-center flex-shrink-0">
+                      <svg className="h-5 w-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <p className="font-heading text-sm sm:text-base font-normal text-black dark:text-white">
+                      +91 xxxxx xxxxx
+                    </p>
+                  </div>
+
+                  {/* Email */}
+                  <div className="flex items-center gap-4 rounded-lg border border-gray-300 bg-white p-3 shadow-sm dark:border-white/20 dark:bg-gray-800">
+                    <div className="flex h-10 w-10 items-center justify-center flex-shrink-0">
+                      <svg className="h-5 w-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <p className="font-heading text-sm sm:text-base font-normal text-black dark:text-white">
+                      blockchainappadvisor@gmail.com
+                    </p>
+                  </div>
+
+                  {/* Address */}
+                  <div className="flex items-start gap-4 rounded-lg border border-gray-300 bg-white p-3 shadow-sm dark:border-white/20 dark:bg-gray-800">
+                    <div className="flex h-10 w-10 items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="h-5 w-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <p className="font-heading text-sm sm:text-base font-normal text-black dark:text-white">
+                      Address...
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </section>

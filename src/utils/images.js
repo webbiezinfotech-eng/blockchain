@@ -22,6 +22,16 @@ import homeSec3_4 from '../assets/imgs/home_sec3_4.png';
 import homeSec3_5 from '../assets/imgs/home_sec3_5.png';
 import homeSec3_6 from '../assets/imgs/home_sec3_6.png';
 
+// Tech Stack Section Images
+import frontendCap from '../assets/imgs/frontend_Cap.png';
+import smartContractImg from '../assets/imgs/smart_contract.png';
+import airdropImg from '../assets/imgs/airdrop.png';
+import layer2Img from '../assets/imgs/layer2.png';
+import blockchainApiImg from '../assets/imgs/blockchainapi.png';
+import web3Img from '../assets/imgs/web3.png';
+import walletImg from '../assets/imgs/wallet.png';
+import backendImg from '../assets/imgs/backend.png';
+
 export const heroImages = {
   light: lightHeroImage,
   dark: darkHeroImage,
@@ -69,5 +79,13 @@ export {
   homeSec3_4,
   homeSec3_5,
   homeSec3_6,
+  frontendCap,
+  smartContractImg,
+  airdropImg,
+  layer2Img,
+  blockchainApiImg,
+  web3Img,
+  walletImg,
+  backendImg,
 };
 
