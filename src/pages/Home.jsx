@@ -395,7 +395,7 @@ const Home = () => {
                     {serviceCards.map((card) => (
                       <div 
                         key={card.id} 
-                        className="flex-shrink-0 w-full h-[500px] md:w-[calc(50%-12px)] md:h-[500px] lg:w-[calc(33.333%-21.33px)] lg:h-[500px] overflow-hidden rounded-lg bg-black/[0.04] shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:-translate-y-1 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] sm:rounded-xl sm:shadow-[0_12px_40px_rgba(0,0,0,0.25)] dark:sm:shadow-[0_12px_40px_rgba(0,0,0,0.55)] md:rounded-2xl md:shadow-[0_18px_60px_rgba(0,0,0,0.35)] dark:md:shadow-[0_18px_60px_rgba(0,0,0,0.75)]"
+                        className="flex-shrink-0 w-full h-[500px] md:w-[calc(50%-12px)] md:h-[500px] lg:w-[calc(33.333%-21.33px)] lg:h-[500px] overflow-hidden rounded-lg border border-transparent bg-black/[0.04] shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/30 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] sm:rounded-xl sm:shadow-[0_12px_40px_rgba(0,0,0,0.25)] dark:sm:shadow-[0_12px_40px_rgba(0,0,0,0.55)] md:rounded-2xl md:shadow-[0_18px_60px_rgba(0,0,0,0.35)] dark:md:shadow-[0_18px_60px_rgba(0,0,0,0.75)]"
                       >
                         <div className="relative w-full h-full overflow-hidden">
                           <img 
@@ -465,11 +465,11 @@ const Home = () => {
                 </div>
               </h2>
 
-              <div className="mt-6 flex flex-col gap-4 px-2 sm:mt-8 sm:gap-6 sm:px-4 md:mt-12 md:gap-8 md:px-6">
+                <div className="mt-6 flex flex-col gap-4 px-2 sm:mt-8 sm:gap-6 sm:px-4 md:mt-12 md:gap-8 md:px-6">
                 {whyTrustCards.map((card) => (
                   <div
                     key={card.id}
-                    className="mx-auto w-full max-w-[1100px] rounded-lg border border-black/15 bg-black/[0.03] p-5 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:border-white dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-6 md:rounded-2xl md:p-7 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]"
+                    className="mx-auto w-full max-w-[1100px] rounded-lg border border-black/15 bg-black/[0.03] p-5 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:border-white/30 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-6 md:rounded-2xl md:p-7 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]"
                   >
                     <div className="grid grid-cols-1 items-start gap-3 sm:gap-4 md:items-center md:grid-cols-[1fr_200px] lg:gap-6 lg:grid-cols-[1fr_220px]">
                       <div className="w-full md:w-[600px] lg:w-[680px]">
@@ -515,7 +515,7 @@ const Home = () => {
               <div className="mt-6 flex flex-col gap-4 sm:mt-8 sm:gap-6 md:mt-12 md:gap-6 lg:gap-8">
                 {/* Card 1 - Centered */}
                 <div className="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-3">
-                  <div className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)] md:col-start-1 md:col-end-3 lg:col-start-2 lg:col-end-3">
+                  <div className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:border-white/30 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)] md:col-start-1 md:col-end-3 lg:col-start-2 lg:col-end-3">
                     <div className="flex flex-col gap-4">
                       <div className="flex items-center justify-between gap-4">
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-white text-base font-bold text-brand-blue transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
@@ -526,7 +526,7 @@ const Home = () => {
                         </div>
                       </div>
                       <div className="mt-2">
-                        <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 dark:text-white sm:text-lg md:text-xl">
+                        <h3 className="no-stroke font-heading text-base font-bold text-brand-blue transition-colors duration-300 dark:text-white sm:text-lg md:text-xl">
                           {industriesCards[0].title}
                         </h3>
                         <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-3 sm:text-sm sm:leading-[1.6] md:text-base">
@@ -540,7 +540,7 @@ const Home = () => {
                 {/* Cards 2-3 - In a row */}
                 <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 md:gap-6 lg:flex lg:justify-center lg:gap-8">
                   {industriesCards.slice(1, 3).map((card) => (
-                    <div key={card.id} className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 lg:w-[calc(33.333%-1.07rem)] md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
+                    <div key={card.id} className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:border-white/30 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 lg:w-[calc(33.333%-1.07rem)] md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
                       <div className="flex flex-col gap-4">
                         <div className="flex items-center justify-between gap-4">
                           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-white text-base font-bold text-brand-blue transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
@@ -551,7 +551,7 @@ const Home = () => {
                           </div>
                         </div>
                         <div className="mt-2">
-                          <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 dark:text-white sm:text-lg md:text-xl">
+                          <h3 className="no-stroke font-heading text-base font-bold text-brand-blue transition-colors duration-300 dark:text-white sm:text-lg md:text-xl">
                             {card.title}
                           </h3>
                           <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-3 sm:text-sm sm:leading-[1.6] md:text-base">
@@ -566,7 +566,7 @@ const Home = () => {
                 {/* Cards 4-5-6 - In a row */}
                 <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
                   {industriesCards.slice(3, 6).map((card) => (
-                    <div key={card.id} className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
+                    <div key={card.id} className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:border-white/30 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
                       <div className="flex flex-col gap-4">
                         <div className="flex items-center justify-between gap-4">
                           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-white text-base font-bold text-brand-blue transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
@@ -577,7 +577,7 @@ const Home = () => {
                           </div>
                         </div>
                         <div className="mt-2">
-                          <h3 className="font-heading text-base font-bold text-brand-blue transition-colors duration-300 dark:text-white sm:text-lg md:text-xl">
+                          <h3 className="no-stroke font-heading text-base font-bold text-brand-blue transition-colors duration-300 dark:text-white sm:text-lg md:text-xl">
                             {card.title}
                           </h3>
                           <p className="mt-2 text-xs leading-[1.55] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-3 sm:text-sm sm:leading-[1.6] md:text-base">
@@ -618,7 +618,7 @@ const Home = () => {
                 >
                   {workCards.map((card) => (
                     <div key={card.id} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3">
-                      <div className="mx-auto flex h-[300px] w-full max-w-[360px] flex-col rounded-xl border border-black/25 bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.18)] hover:-translate-y-1 dark:border-white/80 dark:bg-[#0b0b0b] dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)] dark:hover:shadow-[0_18px_60px_rgba(0,0,0,0.75)] sm:p-7">
+                      <div className="mx-auto flex h-[300px] w-full max-w-[360px] flex-col rounded-xl border border-black/25 bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.18)] hover:-translate-y-1 dark:border-white/30 dark:bg-[#0b0b0b] dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)] dark:hover:shadow-[0_18px_60px_rgba(0,0,0,0.75)] sm:p-7">
                         <h3 className="font-heading text-lg font-bold text-black transition-colors duration-300 dark:text-white sm:text-xl">
                           {card.title}
                         </h3>
@@ -681,7 +681,7 @@ const Home = () => {
                       className={`rounded-lg border p-2 sm:p-2.5 text-left transition-all duration-300 ${
                         selectedTechStack === index
                           ? 'border-brand-blue bg-brand-blue/10 text-brand-white dark:bg-brand-blue/20 dark:text-white'
-                          : 'border-black/20 bg-black/[0.03] text-black hover:border-brand-blue/50 dark:border-white/20 dark:bg-white/[0.03] dark:text-white dark:hover:border-brand-blue/50'
+                          : 'border-black/20 bg-black/[0.03] text-black hover:border-brand-blue/50 dark:border-white/30 dark:bg-white/[0.03] dark:text-white dark:hover:border-brand-blue/50'
                       }`}
                     >
                       <span className="font-heading text-xs dark:text-white font-normal sm:text-sm md:text-base">
@@ -800,7 +800,7 @@ const Home = () => {
                       <div className="w-12 h-12 rounded-full bg-brand-blue/20 flex items-center justify-center flex-shrink-0 dark:bg-white/20 dark:ring-1 dark:ring-white/40">
                         <div className="w-10 h-10 rounded-full bg-brand-blue/30 dark:bg-white/30"></div>
                       </div>
-                      <p className="font-heading font-semibold text-brand-blue text-sm sm:text-base md:text-lg dark:text-white">
+                      <p className="no-stroke font-heading font-semibold text-brand-blue text-sm sm:text-base md:text-lg dark:text-white">
                         {testimonial.name}
                       </p>
                     </div>
@@ -868,7 +868,7 @@ const Home = () => {
                       className={`text-left rounded-lg border p-0 transition-all duration-300 ${
                         selectedFaq === index
                           ? 'border-brand-blue bg-brand-blue/10 text-brand-blue dark:bg-transparent dark:text-white dark:shadow-[0_0_0_1px_rgba(0,99,182,0.55)]'
-                          : 'border-gray-200 bg-gray-50 text-black hover:border-brand-blue/50 dark:border-white/25 dark:bg-transparent dark:text-white/90 dark:hover:border-white/60'
+                          : 'border-gray-200 bg-gray-50 text-black hover:border-brand-blue/50 dark:border-white/30 dark:bg-transparent dark:text-white/90 dark:hover:border-white/60'
                       }`}
                     >
                       <div className="flex items-start gap-2.5 px-3 py-2 sm:px-4 sm:py-2.5">

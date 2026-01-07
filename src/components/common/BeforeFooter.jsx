@@ -1,6 +1,6 @@
-const BeforeFooter = ({ title, description, buttonText = 'Contact Us Today' }) => {
+const BeforeFooter = ({ title, description, buttonText = 'Contact Us Today', className = '' }) => {
   return (
-    <section className="bg-brand-blue py-16 md:py-20 lg:py-24">
+    <section className={`bg-brand-blue py-16 md:py-20 lg:py-24 ${className}`}>
       <div className="mx-auto max-w-layout px-5 text-center md:px-10">
         <h2 className="font-heading text-4xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl">
           {title}

@@ -56,11 +56,11 @@ const About = () => {
 
             {/* Right content */}
             <div className="max-w-[600px]">
-              <p className="text-sm sm:text-base md:text-lg leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white/80">
+              <p className="text-sm sm:text-base md:text-lg leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white dark:font-medium">
                 Blockchain App Advisor is a next-generation Blockchain & AI development company dedicated to building decentralized, automated, and enterprise-grade digital ecosystems. We help startups, enterprises, and global innovators harness the power of distributed technology to create meaningful business transformation.
               </p>
 
-              <p className="mt-6 text-sm sm:text-base md:text-lg leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white/80">
+              <p className="mt-6 text-sm sm:text-base md:text-lg leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white dark:font-medium">
                 From smart contract engineering to AI-driven automation and full-scale Web3 ecosystems, we bring unmatched expertise, innovation, and execution excellence to every project.
               </p>
             </div>
@@ -71,22 +71,22 @@ const About = () => {
       {/* Our Company Story Section (3rd Section) */}
       <section className="w-full bg-white py-4 transition-colors duration-300 dark:bg-black sm:py-6">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-20">
-          <div className="w-full rounded-[24px] border border-brand-blue/10 bg-[#c0e1e23b] p-5 transition-all duration-300 dark:border-white/10 dark:bg-white/[0.03] sm:p-8 lg:p-10">
+          <div className="w-full rounded-[24px] border border-brand-blue/10 bg-[#c0e1e23b] p-5 transition-all duration-300 dark:border-white/30 dark:bg-white/[0.03] sm:p-8 lg:p-10">
             <h2 className="font-heading font-bold leading-[1.2] tracking-[0.02em] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px]">
               <span className="text-black transition-colors duration-300 dark:text-white">Our </span>
               <span className="text-brand-blue">COMPANY STORY</span>
             </h2>
 
             <div className="mt-6 space-y-4 md:mt-8 lg:mt-10">
-              <p className="text-sm sm:text-base leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white/80">
+              <p className="text-sm sm:text-base leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white dark:font-medium">
                 Blockchain App Advisor began with a mission to make decentralized technology accessible and business-ready. As blockchain grew beyond cryptocurrencies, we saw the need for a development partner that understood both cutting-edge engineering and real-world business challenges.
               </p>
 
-              <p className="text-sm sm:text-base leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white/80">
+              <p className="text-sm sm:text-base leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white dark:font-medium">
                 What started as a small team of blockchain engineers evolved into a full-fledged Blockchain & AI expertise hub—serving clients across industries like finance, gaming, supply chain, healthcare, and more.
               </p>
 
-              <p className="text-sm sm:text-base leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white/80">
+              <p className="text-sm sm:text-base leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white dark:font-medium">
                 Today, we stand as a trusted partner for next-gen digital transformation, delivering secure, scalable, and intelligent solutions that shape the future of technology.
               </p>
             </div>
@@ -105,9 +105,9 @@ const About = () => {
 
           <div className="mt-12 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 lg:gap-12">
             {/* Mission Card */}
-            <div className="rounded-[24px] border border-brand-blue/20 bg-white p-8 transition-all duration-300 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.03] sm:p-10">
+            <div className="rounded-[24px] border border-brand-blue/20 bg-white p-8 transition-all duration-300 hover:shadow-lg dark:border-white/30 dark:bg-white/[0.03] sm:p-10">
               <div className="flex items-center justify-between">
-                <h3 className="font-heading text-xl font-bold uppercase text-brand-blue sm:text-2xl">OUR MISSION</h3>
+                <h3 className="no-stroke font-heading text-xl font-bold uppercase text-brand-blue sm:text-2xl">OUR MISSION</h3>
                 <div className="text-brand-blue">
                   <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
@@ -117,15 +117,15 @@ const About = () => {
                   </svg>
                 </div>
               </div>
-              <p className="mt-6 text-sm leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white/80 sm:text-base md:text-lg">
+              <p className="mt-6 text-sm leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white dark:font-medium sm:text-base md:text-lg">
                 To empower businesses with reliable, secure, and innovative Blockchain & AI solutions that drive automation, transparency, and digital trust worldwide
               </p>
             </div>
 
             {/* Vision Card */}
-            <div className="rounded-[24px] border border-brand-blue/20 bg-white p-8 transition-all duration-300 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.03] sm:p-10">
+            <div className="rounded-[24px] border border-brand-blue/20 bg-white p-8 transition-all duration-300 hover:shadow-lg dark:border-white/30 dark:bg-white/[0.03] sm:p-10">
               <div className="flex items-center justify-between">
-                <h3 className="font-heading text-xl font-bold uppercase text-brand-blue sm:text-2xl">OUR VISION</h3>
+                <h3 className="no-stroke font-heading text-xl font-bold uppercase text-brand-blue sm:text-2xl">OUR VISION</h3>
                 <div className="text-brand-blue">
                   <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -134,7 +134,7 @@ const About = () => {
                   </svg>
                 </div>
               </div>
-              <p className="mt-6 text-sm leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white/80 sm:text-base md:text-lg">
+              <p className="mt-6 text-sm leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white dark:font-medium sm:text-base md:text-lg">
                 To become a global leader in decentralized intelligence—where blockchain and AI merge to create smarter, autonomous, and high-performing digital ecosystems that redefine industries.
               </p>
             </div>
@@ -151,99 +151,88 @@ const About = () => {
           </h2>
 
           <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-            {/* Value 1: Innovation First */}
-            <div className="group relative overflow-hidden rounded-none rounded-tr-[120px] rounded-bl-[120px] bg-gradient-to-r from-[#8be1ea61] via-[#8be1ea61] to-white p-8 transition-all duration-500 hover:from-[#8be1ea80] hover:via-[#8be1ea80] dark:from-white/[0.05] dark:to-transparent sm:p-10">
-              <div className="absolute right-12 top-10 text-brand-blue transition-transform duration-500 group-hover:scale-110">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-                  <path d="M4 22h16" />
-                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
-                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
-                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
-                </svg>
+            {[
+              {
+                title: "Innovation First",
+                desc: "We constantly push boundaries to engineer new possibilities in Blockchain, AI, and automation.",
+                icon: (
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                    <path d="M4 22h16" />
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                  </svg>
+                )
+              },
+              {
+                title: "Transparency & Trust",
+                desc: "We follow clear communication, open development practices, and dependable partnerships.",
+                icon: (
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                )
+              },
+              {
+                title: "Security at the Core",
+                desc: "Every product we build follows rigorous security frameworks, audits, and defense-grade protection.",
+                icon: (
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                )
+              },
+              {
+                title: "Quality without Compromise",
+                desc: "From architecture to deployment—every line of code is engineered with precision.",
+                icon: (
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                )
+              },
+              {
+                title: "Long Term Collaboration",
+                desc: "We don't just build solutions—we support and scale them with you.",
+                icon: (
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                )
+              },
+              {
+                title: "Ethical Technology",
+                desc: "We develop responsibly, ensuring privacy, sustainability, and long-term value creation.",
+                icon: (
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 2v20" />
+                    <path d="M2 12h20" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                )
+              }
+            ].map((value, idx) => (
+              <div key={idx} className="group relative rounded-[24px] border border-brand-blue/10 bg-black/[0.03] p-8 transition-all duration-300 hover:border-brand-blue/30 hover:shadow-lg dark:border-white/30 dark:bg-transparent sm:p-10">
+                <div className="absolute right-8 top-8 text-brand-blue transition-transform duration-500 group-hover:scale-110">
+                  {value.icon}
+                </div>
+                <h3 className="font-heading text-xl font-bold text-black transition-colors duration-300 dark:text-white sm:text-2xl">{value.title}</h3>
+                <p className="mt-4 text-sm leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white dark:font-medium sm:text-base">
+                  {value.desc}
+                </p>
               </div>
-              <h3 className="font-heading text-xl font-bold text-black transition-colors duration-300 dark:text-white sm:text-2xl">Innovation First</h3>
-              <p className="mt-4 max-w-[80%] text-sm leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white/70 sm:text-base">
-                We constantly push boundaries to engineer new possibilities in Blockchain, AI, and automation.
-              </p>
-            </div>
-
-            {/* Value 2: Transparency & trust */}
-            <div className="group relative overflow-hidden rounded-none rounded-tr-[120px] rounded-bl-[120px] bg-gradient-to-r from-[#8be1ea61] via-[#8be1ea61] to-white p-8 transition-all duration-500 hover:from-[#8be1ea80] hover:via-[#8be1ea80] dark:from-white/[0.05] dark:to-transparent sm:p-10">
-              <div className="absolute right-12 top-10 text-brand-blue transition-transform duration-500 group-hover:scale-110">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-              <h3 className="font-heading text-xl font-bold text-black transition-colors duration-300 dark:text-white sm:text-2xl">Transparency & trust</h3>
-              <p className="mt-4 max-w-[80%] text-sm leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white/70 sm:text-base">
-                We follow clear communication, open development practices, and dependable partnerships.
-              </p>
-            </div>
-
-            {/* Value 3: Security at the core */}
-            <div className="group relative overflow-hidden rounded-none rounded-tr-[120px] rounded-bl-[120px] bg-gradient-to-r from-[#8be1ea61] via-[#8be1ea61] to-white p-8 transition-all duration-500 hover:from-[#8be1ea80] hover:via-[#8be1ea80] dark:from-white/[0.05] dark:to-transparent sm:p-10">
-              <div className="absolute right-12 top-10 text-brand-blue transition-transform duration-500 group-hover:scale-110">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  <path d="m9 12 2 2 4-4" />
-                </svg>
-              </div>
-              <h3 className="font-heading text-xl font-bold text-black transition-colors duration-300 dark:text-white sm:text-2xl">Security at the core</h3>
-              <p className="mt-4 max-w-[80%] text-sm leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white/70 sm:text-base">
-                Every product we build follows rigorous security frameworks, audits, and defense-grade protection.
-              </p>
-            </div>
-
-            {/* Value 4: Quality without compromise */}
-            <div className="group relative overflow-hidden rounded-none rounded-tr-[120px] rounded-bl-[120px] bg-gradient-to-r from-[#8be1ea61] via-[#8be1ea61] to-white p-8 transition-all duration-500 hover:from-[#8be1ea80] hover:via-[#8be1ea80] dark:from-white/[0.05] dark:to-transparent sm:p-10">
-              <div className="absolute right-12 top-10 text-brand-blue transition-transform duration-500 group-hover:scale-110">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m9 12 2 2 4-4" />
-                </svg>
-              </div>
-              <h3 className="font-heading text-xl font-bold text-black transition-colors duration-300 dark:text-white sm:text-2xl">Quality without compromise</h3>
-              <p className="mt-4 max-w-[80%] text-sm leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white/70 sm:text-base">
-                From architecture to deployment—every line of code is engineered with precision.
-              </p>
-            </div>
-
-            {/* Value 5: Long term collabration */}
-            <div className="group relative overflow-hidden rounded-none rounded-tr-[120px] rounded-bl-[120px] bg-gradient-to-r from-[#8be1ea61] via-[#8be1ea61] to-white p-8 transition-all duration-500 hover:from-[#8be1ea80] hover:via-[#8be1ea80] dark:from-white/[0.05] dark:to-transparent sm:p-10">
-              <div className="absolute right-12 top-10 text-brand-blue transition-transform duration-500 group-hover:scale-110">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-              <h3 className="font-heading text-xl font-bold text-black transition-colors duration-300 dark:text-white sm:text-2xl">Long term collabration</h3>
-              <p className="mt-4 max-w-[80%] text-sm leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white/70 sm:text-base">
-                We don't just build solutions—we support and scale them with you.
-              </p>
-            </div>
-
-            {/* Value 6: Ethical technology */}
-            <div className="group relative overflow-hidden rounded-none rounded-tr-[120px] rounded-bl-[120px] bg-gradient-to-r from-[#8be1ea61] via-[#8be1ea61] to-white p-8 transition-all duration-500 hover:from-[#8be1ea80] hover:via-[#8be1ea80] dark:from-white/[0.05] dark:to-transparent sm:p-10">
-              <div className="absolute right-12 top-10 text-brand-blue transition-transform duration-500 group-hover:scale-110">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 2v20" />
-                  <path d="M2 12h20" />
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                </svg>
-              </div>
-              <h3 className="font-heading text-xl font-bold text-black transition-colors duration-300 dark:text-white sm:text-2xl">Ethical technology</h3>
-              <p className="mt-4 max-w-[80%] text-sm leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white/70 sm:text-base">
-                We develop responsibly, ensuring privacy, sustainability, and long-term value creation.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -260,7 +249,7 @@ const About = () => {
               </h2>
 
               <div className="max-w-[750px] space-y-4">
-                <p className="font-sans text-sm font-normal leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white/80 sm:text-base md:text-lg">
+                <p className="font-sans text-sm font-medium leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white sm:text-base md:text-lg">
                   Behind Blockchain App Advisor is a team of expert blockchain developers, AI engineers, security auditors, architects, researchers, designers, and strategists.
                 </p>
 
@@ -275,7 +264,7 @@ const About = () => {
                       "Smart contract specialists with expertise in audits, tokenomics, and scalable system design",
                       "Leaders who combine technical mastery with strategic business understanding"
                     ].map((item, idx) => (
-                      <p key={idx} className="flex items-start gap-3 font-sans text-sm font-normal leading-[1.6] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-base">
+                      <p key={idx} className="flex items-start gap-3 font-sans text-sm font-medium leading-[1.6] text-black/75 transition-colors duration-300 dark:text-white sm:text-base">
                         <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-blue" />
                         <span>{item}</span>
                       </p>
@@ -283,7 +272,7 @@ const About = () => {
                   </div>
                 </div>
 
-                <p className="font-sans text-sm font-normal leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white/80 sm:text-base md:text-lg">
+                <p className="font-sans text-sm font-medium leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white sm:text-base md:text-lg">
                   Our leadership believes in empowering teams, encouraging innovation, and driving global impact through technology.
                 </p>
               </div>
@@ -323,13 +312,13 @@ const About = () => {
           <h2 className="text-center font-heading font-bold uppercase leading-[1.1] tracking-[0.02em] text-[34px] sm:text-[46px] md:text-[50px] lg:text-[55px]">
             TECHNOLOGY <span className="text-brand-blue">EXPERTISE</span>
           </h2>
-          <p className="mt-4 text-center font-sans text-sm font-normal text-black/80 dark:text-white/80 sm:text-base md:text-lg">
+          <p className="mt-4 text-center font-sans text-sm font-medium text-black/80 transition-colors duration-300 dark:text-white sm:text-base md:text-lg">
             We bring advanced expertise across all layers of Blockchain & AI ecosystems:
           </p>
 
           <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
             {/* Blockchain Expertise Card */}
-            <div className="group relative rounded-[24px] border border-brand-blue/30 bg-white p-8 transition-all duration-300 hover:border-brand-blue hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] sm:p-10">
+            <div className="group relative rounded-[24px] border border-brand-blue/30 bg-white p-8 transition-all duration-300 hover:border-brand-blue hover:shadow-xl dark:border-white/30 dark:bg-transparent sm:p-10">
               <div className="absolute right-8 top-8 text-brand-blue/60 group-hover:text-brand-blue transition-colors duration-300">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="3" />
@@ -337,7 +326,7 @@ const About = () => {
                   <path d="M12 7a5 5 0 0 1 5 5" />
                 </svg>
               </div>
-              <h3 className="font-heading text-2xl font-bold text-brand-blue sm:text-3xl">BLOCKCHAIN EXPERTISE</h3>
+              <h3 className="no-stroke font-heading text-2xl font-bold text-brand-blue sm:text-3xl">BLOCKCHAIN EXPERTISE</h3>
               <ul className="mt-8">
                 {[
                   "Smart Contract Development",
@@ -348,8 +337,8 @@ const About = () => {
                   "Enterprise Blockchain Integrations",
                   "Crypto Exchange & Wallet Solutions"
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 font-sans text-sm font-normal leading-none text-black/80 dark:text-white/80 sm:text-base py-1">
-                    <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-black/40 dark:bg-white/40" />
+                  <li key={idx} className="flex items-start gap-3 font-sans text-sm font-medium leading-none text-black/80 dark:text-white sm:text-base py-1">
+                    <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-black/40 dark:bg-white" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -357,7 +346,7 @@ const About = () => {
             </div>
 
             {/* AI Expertise Card */}
-            <div className="group relative rounded-[24px] border border-brand-blue/30 bg-white p-8 transition-all duration-300 hover:border-brand-blue hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] sm:p-10">
+            <div className="group relative rounded-[24px] border border-brand-blue/30 bg-white p-8 transition-all duration-300 hover:border-brand-blue hover:shadow-xl dark:border-white/30 dark:bg-transparent sm:p-10">
               <div className="absolute right-8 top-8 text-brand-blue/60 group-hover:text-brand-blue transition-colors duration-300">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" />
@@ -365,7 +354,7 @@ const About = () => {
                   <path d="M12 10a2 2 0 1 1-2 2 2 2 0 0 1 2-2z" />
                 </svg>
               </div>
-              <h3 className="font-heading text-2xl font-bold text-brand-blue sm:text-3xl">AI EXPERTISE</h3>
+              <h3 className="no-stroke font-heading text-2xl font-bold text-brand-blue sm:text-3xl">AI EXPERTISE</h3>
               <ul className="mt-8">
                 {[
                   "Intelligent Automation",
@@ -376,8 +365,8 @@ const About = () => {
                   "AI-driven fraud detection",
                   "Enterprise AI Optimization"
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 font-sans text-sm font-normal leading-none text-black/80 dark:text-white/80 sm:text-base py-1">
-                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-black/40 dark:bg-white/40" />
+                  <li key={idx} className="flex items-start gap-3 font-sans text-sm font-medium leading-none text-black/80 dark:text-white sm:text-base py-1">
+                    <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-black/40 dark:bg-white" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -386,8 +375,8 @@ const About = () => {
           </div>
 
           {/* Multi-Chain Development Card */}
-          <div className="group mt-10 w-full rounded-[24px] border border-brand-blue/30 bg-white p-8 transition-all duration-300 hover:border-brand-blue hover:shadow-xl dark:border-white/10 dark:bg-white/[0.03] sm:mt-12 sm:p-10 lg:p-12">
-            <h3 className="text-center font-heading text-2xl font-bold text-brand-blue sm:text-3xl uppercase">
+          <div className="group mt-10 w-full rounded-[24px] border border-brand-blue/30 bg-white p-8 transition-all duration-300 hover:border-brand-blue hover:shadow-xl dark:border-white/30 dark:bg-transparent sm:mt-12 sm:p-10 lg:p-12">
+            <h3 className="no-stroke text-center font-heading text-2xl font-bold text-brand-blue sm:text-3xl uppercase">
               MULTI-CHAIN DEVELOPMENT
             </h3>
             
@@ -396,13 +385,13 @@ const About = () => {
                 "Ethereum", "Binance Smart Chain", "Solana", "Polygon",
                 "Avalanche", "Cosmos", "Hyperledger", "Bitcoin L2 & more"
               ].map((tech, idx) => (
-                <div key={idx} className="flex items-center justify-center rounded-xl border border-black/10 bg-white px-2 py-3 text-center font-sans text-sm font-medium text-black/80 transition-all duration-300 hover:border-brand-blue hover:text-brand-blue dark:border-white/10 dark:bg-white/[0.05] dark:text-white/80 sm:text-base">
+                <div key={idx} className="flex items-center justify-center rounded-xl border border-black/10 bg-white px-2 py-3 text-center font-sans text-sm font-medium text-black/80 transition-all duration-300 hover:border-brand-blue hover:text-brand-blue dark:border-white/30 dark:bg-white/[0.05] dark:text-white sm:text-base">
                   {tech}
                 </div>
               ))}
             </div>
 
-            <p className="mt-10 text-center font-sans text-sm font-normal text-black/70 dark:text-white/70 sm:text-base">
+            <p className="mt-10 text-center font-sans text-sm font-medium text-black/70 transition-colors duration-300 dark:text-white sm:text-base">
               Our technological versatility ensures powerful, scalable, and future-ready solutions.
             </p>
           </div>
@@ -415,7 +404,7 @@ const About = () => {
           <h2 className="text-center font-heading font-bold uppercase leading-[1.1] tracking-[0.02em] text-[34px] sm:text-[46px] md:text-[50px] lg:text-[55px]">
             OUR <span className="text-brand-blue">APPROACH</span>
           </h2>
-          <p className="mt-4 text-center font-sans text-sm font-normal text-black/80 dark:text-white/80 sm:text-base md:text-lg">
+          <p className="mt-4 text-center font-sans text-sm font-medium text-black/80 transition-colors duration-300 dark:text-white sm:text-base md:text-lg">
             We believe that great technology is built through collaboration, transparency, and strategic planning.
           </p>
 
@@ -492,16 +481,16 @@ const About = () => {
                 <div className="absolute -inset-2 rounded-[24px] bg-brand-blue transition-transform duration-300 translate-x-1 translate-y-2 -rotate-[3deg] group-hover:translate-x-2 group-hover:translate-y-3 group-hover:-rotate-[4deg]" />
                 
                 {/* Foreground White Card - Straight */}
-                <div className="relative h-full rounded-[24px] border border-brand-blue/10 bg-white p-8 transition-all duration-300 dark:bg-zinc-900">
+                <div className="relative h-full rounded-[24px] border border-brand-blue/10 bg-white p-8 transition-all duration-300 dark:border-white/30 dark:bg-black">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-heading text-xl font-bold leading-tight text-brand-blue sm:text-2xl">
+                    <h3 className="no-stroke font-heading text-xl font-bold leading-tight text-brand-blue dark:text-white sm:text-2xl">
                       {card.title}
                     </h3>
-                    <div className="text-brand-blue">
+                    <div className="text-brand-blue dark:text-white">
                       {card.icon}
                     </div>
                   </div>
-                  <p className="mt-6 font-sans text-sm font-normal leading-[1.6] text-black/70 dark:text-white/70 sm:text-base">
+                  <p className="mt-6 font-sans text-sm font-medium leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white sm:text-base">
                     {card.desc}
                   </p>
                 </div>
@@ -512,20 +501,20 @@ const About = () => {
       </section>
 
       {/* Roadmap Section */}
-      <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16 md:py-20">
+      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-20">
           <h2 className="text-center font-heading font-bold uppercase leading-[1.1] tracking-[0.02em] text-[34px] text-brand-blue sm:text-[46px] md:text-[50px] lg:text-[55px]">
             ROADMAP
           </h2>
           <div className="flex justify-center">
-            <p className="mt-4 max-w-[600px] text-center font-sans text-sm font-normal text-black/80 dark:text-white/80 sm:text-base md:text-lg">
+            <p className="mt-4 max-w-[600px] text-center font-sans text-sm font-medium text-black/80 transition-colors duration-300 dark:text-white sm:text-base md:text-lg">
               A strategic path shaping the future of Blockchain App Advisor:
             </p>
           </div>
 
-          <div className="relative mt-16 overflow-hidden pb-12">
+          <div className="relative mt-16">
             {/* Central vertical line */}
-            <div className="absolute left-[20px] top-0 h-full w-[3px] bg-brand-blue md:left-1/2 md:-translate-x-1/2" />
+            <div className="absolute left-[20px] top-0 h-full w-1 bg-brand-blue md:left-1/2 md:-translate-x-1/2" />
 
             <div className="space-y-16 md:space-y-24">
               {[
@@ -533,82 +522,47 @@ const About = () => {
                   phase: "01",
                   title: "Phase 1 — Foundation",
                   desc: "Built core blockchain development team and launched first enterprise solutions.",
-                  icon: (
-                    <svg width="100%" height="100%" viewBox="0 0 200 200" fill="none" className="text-brand-blue/20">
-                      <rect x="60" y="40" width="80" height="120" rx="4" stroke="currentColor" strokeWidth="2" />
-                      <path d="M60 70h80M60 100h80M60 130h80" stroke="currentColor" strokeWidth="2" />
-                      <circle cx="100" cy="90" r="30" fill="currentColor" fillOpacity="0.2" />
-                    </svg>
-                  )
                 },
                 {
                   phase: "02",
                   title: "Phase 2 — Web3 Expansion",
                   desc: "Expanded to NFTs, DeFi, smart contract audits, and multi-chain deployments.",
-                  icon: (
-                    <svg width="100%" height="100%" viewBox="0 0 200 200" fill="none" className="text-brand-blue/20">
-                      <circle cx="100" cy="100" r="60" stroke="currentColor" strokeWidth="2" strokeDasharray="8 8" />
-                      <path d="M70 100l30-30 30 30-30 30z" fill="currentColor" fillOpacity="0.3" />
-                      <circle cx="100" cy="100" r="20" stroke="currentColor" strokeWidth="2" />
-                    </svg>
-                  )
                 },
                 {
                   phase: "03",
                   title: "Phase 3 — AI Automation Integration",
                   desc: "Integrated AI-driven automation and intelligence into Web3 products.",
-                  icon: (
-                    <svg width="100%" height="100%" viewBox="0 0 200 200" fill="none" className="text-brand-blue/20">
-                      <path d="M40 100h120M100 40v120" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
-                      <rect x="75" y="75" width="50" height="50" rx="10" fill="currentColor" fillOpacity="0.3" />
-                      <circle cx="100" cy="100" r="15" fill="currentColor" />
-                    </svg>
-                  )
                 },
                 {
                   phase: "04",
                   title: "Phase 4 — Global Collaborations",
                   desc: "Strengthened global partnerships with enterprises, startups, and investors.",
-                  icon: (
-                    <svg width="100%" height="100%" viewBox="0 0 200 200" fill="none" className="text-brand-blue/20">
-                      <circle cx="100" cy="100" r="70" stroke="currentColor" strokeWidth="2" />
-                      <path d="M30 100h140M100 30v140" stroke="currentColor" strokeWidth="1" />
-                      <path d="M100 30c25 20 40 45 40 70s-15 50-40 70M100 30C75 50 60 75 60 100s15 50 40 70" stroke="currentColor" strokeWidth="1" />
-                    </svg>
-                  )
                 },
                 {
                   phase: "05",
                   title: "Phase 5 — Future Innovation",
                   desc: "Developing next-gen decentralized AI agents, autonomous Web3 ecosystems, and high-integrity digital infrastructure.",
-                  icon: (
-                    <svg width="100%" height="100%" viewBox="0 0 200 200" fill="none" className="text-brand-blue/20">
-                      <path d="M100 20l25 50 55 10-40 40 10 55-50-30-50 30 10-55-40-40 55-10z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2" />
-                    </svg>
-                  )
                 }
               ].map((item, idx) => (
                 <div key={idx} className={`relative flex flex-col items-center md:flex-row ${idx % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
-                  {/* Phase Card */}
-                  <div className={`relative w-full pl-16 md:w-[45%] md:pl-0 ${idx % 2 === 0 ? 'md:pr-12' : 'md:pl-12 md:order-2'}`}>
-                    {/* Phase Number Badge - Positioned fully outside the card */}
-                    <div className={`absolute top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-lg bg-brand-blue font-bold text-white shadow-lg ${idx % 2 === 0 ? '-left-14 md:-left-14' : '-left-14 md:left-auto md:-right-14'}`}>
+                  {/* Phase Card Container */}
+                  <div className={`relative w-full pl-16 md:w-[48%] md:pl-0 ${idx % 2 === 0 ? 'md:pr-16' : 'md:pl-16 md:order-2'}`}>
+                    {/* Phase Number Badge - Positioned fully outside the card edge */}
+                    <div className={`absolute top-10 z-10 flex h-10 w-14 items-center justify-center rounded-xl bg-brand-blue font-bold text-white shadow-lg ${idx % 2 === 0 ? '-left-10 md:-left-14' : '-right-10 md:-right-14'}`}>
                       {item.phase}
                     </div>
 
-                    <div className="rounded-2xl border-2 border-brand-blue/30 bg-white p-6 shadow-sm transition-all duration-300 hover:border-brand-blue hover:shadow-md dark:bg-zinc-900/50 sm:p-8">
-                      <h3 className="font-heading text-xl font-bold text-brand-blue sm:text-2xl">{item.title}</h3>
-                      <p className="mt-3 font-sans text-sm font-normal leading-[1.6] text-black/70 dark:text-white/70 sm:text-base">
+                    <div className="flex min-h-[180px] flex-col justify-center rounded-2xl border-2 border-brand-blue/30 bg-white p-6 shadow-sm transition-all duration-300 hover:border-brand-blue hover:shadow-lg dark:border-white dark:bg-black sm:p-8">
+                      <h3 className="no-stroke font-heading text-xl font-bold text-brand-blue dark:text-white sm:text-2xl">{item.title}</h3>
+                      <p className="mt-4 max-w-[350px] font-sans text-base font-medium leading-[1.6] text-black/80 dark:text-white">
                         {item.desc}
                       </p>
                     </div>
                   </div>
 
-                  {/* Graphic Side */}
-                  <div className={`hidden w-full items-center justify-center md:flex md:w-[45%] ${idx % 2 === 0 ? 'md:order-2 md:pl-12' : 'md:order-1 md:pr-12'}`}>
-                    <div className="h-48 w-48 overflow-hidden rounded-3xl bg-brand-blue/[0.03] transition-transform duration-500 hover:scale-110 lg:h-64 lg:w-64">
-                      {item.icon}
-                    </div>
+                  {/* Empty Spacer Side */}
+                  <div className={`hidden w-full items-center justify-center md:flex md:w-[48%] ${idx % 2 === 0 ? 'md:order-2 md:pl-16' : 'md:order-1 md:pr-16'}`}>
+                    <div className="h-64 w-full" />
                   </div>
                 </div>
               ))}
@@ -622,6 +576,7 @@ const About = () => {
         title="Ready To Build The Future With Us?"
         description="Let's turn your blockchain or AI idea into a powerful, scalable, and secure solution."
         buttonText="Contact Us Today"
+        className="!py-12 md:!py-16"
       />
     </div>
   );
