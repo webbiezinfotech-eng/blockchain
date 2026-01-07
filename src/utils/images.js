@@ -32,6 +32,14 @@ import web3Img from '../assets/imgs/web3.png';
 import walletImg from '../assets/imgs/wallet.png';
 import backendImg from '../assets/imgs/backend.png';
 
+// Industry Section Icons
+import bitcoinIcon from '../assets/imgs/bitcoin 1.png';
+import protectionIcon from '../assets/imgs/protection 1.png';
+import eyeSettingIcon from '../assets/imgs/eye-setting 1.svg';
+import productivityIcon from '../assets/imgs/productivity 1.png';
+import gameIcon from '../assets/imgs/game 1 (1).svg';
+import uploadIcon from '../assets/imgs/upload 1.png';
+
 export const heroImages = {
   light: lightHeroImage,
   dark: darkHeroImage,
@@ -87,5 +95,11 @@ export {
   web3Img,
   walletImg,
   backendImg,
+  bitcoinIcon,
+  protectionIcon,
+  eyeSettingIcon,
+  productivityIcon,
+  gameIcon,
+  uploadIcon,
 };
 

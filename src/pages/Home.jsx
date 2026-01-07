@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { heroImages, serviceImages, homeSec2_1, homeSec2_2, homeSec2_3, homeSec2_4, homeSec2_5, homeSec2_6, homeSec2_7, homeSec2_8, homeSec2_9, homeSec2_10, homeSec3_1, homeSec3_2, homeSec3_3, homeSec3_4, homeSec3_5, homeSec3_6, frontendCap, smartContractImg, airdropImg, layer2Img, blockchainApiImg, web3Img, walletImg, backendImg } from '../utils/images'; 
+import { heroImages, serviceImages, homeSec2_1, homeSec2_2, homeSec2_3, homeSec2_4, homeSec2_5, homeSec2_6, homeSec2_7, homeSec2_8, homeSec2_9, homeSec2_10, homeSec3_1, homeSec3_2, homeSec3_3, homeSec3_4, homeSec3_5, homeSec3_6, frontendCap, smartContractImg, airdropImg, layer2Img, blockchainApiImg, web3Img, walletImg, backendImg, bitcoinIcon, protectionIcon, eyeSettingIcon, productivityIcon, gameIcon, uploadIcon } from '../utils/images'; 
 import { useTheme } from '../context/ThemeContext';
 import ServiceCard from '../components/common/ServiceCard';
 
@@ -141,12 +141,12 @@ const Home = () => {
   ];
  
   const industriesCards = [
-    { id: 1, number: 1, title: "Fusion of Blockchain Intelligence + AI Automation", description: "We integrate decentralized architecture with advanced AI models to build systems that auto-optimize, self-analyze, and deliver smarter performance than traditional solutions." },
-    { id: 2, number: 2, title: "Military-Grade Security & Multi-Layer Audits", description: "Every product undergoes deep security screening – including automated scans, manual audits, penetration testing, and strict protocol review – ensuring zero exploitable gaps." },
-    { id: 3, number: 3, title: "Transparent Processes With Full Development Visibility", description: "From sprint planning to weekly progress demos and milestone reporting, clients stay fully informed at every stage of development – no surprises, no hidden elements." },
-    { id: 4, number: 4, title: "High-Performance, Future-Ready Architecture", description: "Our solutions are engineered for massive scalability, ensuring your platform handles increasing transactions, growing user loads, and rapid feature expansion without performance drops." },
-    { id: 5, number: 5, title: "Multi-Chain Mastery & Cross-Platform Expertise", description: "We build seamlessly across top networks like Ethereum, BSC, Solana, Polygon, Avalanche, Cosmos, Hyperledger, Bitcoin L2, and more – selecting the ideal chain for your specific use case." },
-    { id: 6, number: 6, title: "End-to-End Support From Launch to Growth", description: "Our commitment continues beyond deployment. We provide continuous monitoring, upgrades, optimizations, feature enhancements, and long-term technical support to ensure your product thrives." }
+    { id: 1, number: 1, title: "Fusion of Blockchain Intelligence + AI Automation", description: "We integrate decentralized architecture with advanced AI models to build systems that auto-optimize, self-analyze, and deliver smarter performance than traditional solutions.", icon: bitcoinIcon },
+    { id: 2, number: 2, title: "Military-Grade Security & Multi-Layer Audits", description: "Every product undergoes deep security screening – including automated scans, manual audits, penetration testing, and strict protocol review – ensuring zero exploitable gaps.", icon: protectionIcon },
+    { id: 3, number: 3, title: "Transparent Processes With Full Development Visibility", description: "From sprint planning to weekly progress demos and milestone reporting, clients stay fully informed at every stage of development – no surprises, no hidden elements.", icon: eyeSettingIcon },
+    { id: 4, number: 4, title: "High-Performance, Future-Ready Architecture", description: "Our solutions are engineered for massive scalability, ensuring your platform handles increasing transactions, growing user loads, and rapid feature expansion without performance drops.", icon: productivityIcon },
+    { id: 5, number: 5, title: "Multi-Chain Mastery & Cross-Platform Expertise", description: "We build seamlessly across top networks like Ethereum, BSC, Solana, Polygon, Avalanche, Cosmos, Hyperledger, Bitcoin L2, and more – selecting the ideal chain for your specific use case.", icon: gameIcon },
+    { id: 6, number: 6, title: "End-to-End Support From Launch to Growth", description: "Our commitment continues beyond deployment. We provide continuous monitoring, upgrades, optimizations, feature enhancements, and long-term technical support to ensure your product thrives.", icon: uploadIcon }
   ];
 
   const wideRangeCards = [
@@ -518,11 +518,15 @@ const Home = () => {
                   <div className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:border-white/30 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)] md:col-start-1 md:col-end-3 lg:col-start-2 lg:col-end-3">
                     <div className="flex flex-col gap-4">
                       <div className="flex items-center justify-between gap-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-white text-base font-bold text-brand-blue transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand-blue text-base font-bold text-white transition-colors duration-300 dark:bg-white dark:text-brand-blue sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
                           {industriesCards[0].number}
                         </div>
-                        <div className="h-16 w-16 flex-shrink-0 rounded bg-black/[0.05] transition-colors duration-300 dark:bg-white/[0.05] sm:h-20 sm:w-20 md:h-16 md:w-16">
-                          {/* Icon placeholder - will be replaced with actual icons later */}
+                        <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded transition-colors duration-300 sm:h-20 sm:w-20 md:h-16 md:w-16">
+                          <img 
+                            src={industriesCards[0].icon} 
+                            alt={industriesCards[0].title}
+                            className="h-10 w-10 object-contain sm:h-12 sm:w-12 md:h-10 md:w-10"
+                          />
                         </div>
                       </div>
                       <div className="mt-2">
@@ -543,11 +547,15 @@ const Home = () => {
                     <div key={card.id} className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:border-white/30 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 lg:w-[calc(33.333%-1.07rem)] md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
                       <div className="flex flex-col gap-4">
                         <div className="flex items-center justify-between gap-4">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-white text-base font-bold text-brand-blue transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand-blue text-base font-bold text-white transition-colors duration-300 dark:bg-white dark:text-brand-blue sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
                             {card.number}
                           </div>
-                          <div className="h-16 w-16 flex-shrink-0 rounded bg-black/[0.05] transition-colors duration-300 dark:bg-white/[0.05] sm:h-20 sm:w-20 md:h-16 md:w-16">
-                            {/* Icon placeholder - will be replaced with actual icons later */}
+                          <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded transition-colors duration-300 sm:h-20 sm:w-20 md:h-16 md:w-16">
+                            <img 
+                              src={card.icon} 
+                              alt={card.title}
+                              className="h-10 w-10 object-contain sm:h-12 sm:w-12 md:h-10 md:w-10"
+                            />
                           </div>
                         </div>
                         <div className="mt-2">
@@ -569,11 +577,15 @@ const Home = () => {
                     <div key={card.id} className="w-full rounded-lg border border-brand-blue/30 bg-black/[0.03] p-4 shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:scale-[1.02] dark:border-white/30 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)] sm:rounded-xl sm:p-5 md:rounded-2xl md:p-6 md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)] dark:md:hover:shadow-[0_24px_64px_rgba(0,0,0,0.65)]">
                       <div className="flex flex-col gap-4">
                         <div className="flex items-center justify-between gap-4">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-white text-base font-bold text-brand-blue transition-colors duration-300 sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand-blue text-base font-bold text-white transition-colors duration-300 dark:bg-white dark:text-brand-blue sm:h-12 sm:w-12 sm:text-lg md:h-10 md:w-10">
                             {card.number}
                           </div>
-                          <div className="h-16 w-16 flex-shrink-0 rounded bg-black/[0.05] transition-colors duration-300 dark:bg-white/[0.05] sm:h-20 sm:w-20 md:h-16 md:w-16">
-                            {/* Icon placeholder - will be replaced with actual icons later */}
+                          <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded transition-colors duration-300 sm:h-20 sm:w-20 md:h-16 md:w-16">
+                            <img 
+                              src={card.icon} 
+                              alt={card.title}
+                              className="h-10 w-10 object-contain sm:h-12 sm:w-12 md:h-10 md:w-10"
+                            />
                           </div>
                         </div>
                         <div className="mt-2">

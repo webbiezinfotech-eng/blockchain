@@ -249,13 +249,13 @@ const AIDevelopmentServices = () => {
 
       {/* Why Choose Section */}
       <section className="w-full bg-white py-12 transition-colors duration-300 dark:bg-black sm:py-16 md:py-20">
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-20">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:pl-[3rem] lg:pr-[5rem]">
+          <div className="grid grid-cols-1 items-center lg:grid-cols-2">
             {/* Left Side Content */}
             <div className="flex flex-col gap-6">
               <h3 
                 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white"
-                style={{ fontSize: '50px', lineHeight: '70px' }}
+                style={{ fontSize: '55px', lineHeight: '70px' }}
               >
                 WHY CHOOSE <span className="text-brand-blue">BLOCKCHAIN</span><br />
                 <span className="text-brand-blue">APP ADVISOR</span> FOR YOUR<br />
