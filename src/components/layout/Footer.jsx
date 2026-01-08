@@ -1,6 +1,6 @@
 import { useTheme } from '../../context/ThemeContext';
-import lightLogo from '../../assets/imgs/light_logo.png';
-import darkLogo from '../../assets/imgs/dark_logo.png';
+import lightLogo from '../../assets/common/light_logo.png';
+import darkLogo from '../../assets/common/dark_logo.png';
 
 const Footer = () => {
   const { theme } = useTheme();

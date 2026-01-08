@@ -1,6 +1,8 @@
+// All code commented out - images are now imported directly in Home.jsx
+/*
 // Hero Images
-import lightHeroImage from '../assets/imgs/hero_lightteme.png';
-import darkHeroImage from '../assets/imgs/darkhome.png';
+import lightHeroImage from '../assets/home_images/hero_light.png';
+import darkHeroImage from '../assets/home_images/hero-dark.png';
 
 // Service Section Images
 import homeSec2_1 from '../assets/imgs/home_sec2_1.png';
@@ -31,6 +33,14 @@ import blockchainApiImg from '../assets/imgs/blockchainapi.png';
 import web3Img from '../assets/imgs/web3.png';
 import walletImg from '../assets/imgs/wallet.png';
 import backendImg from '../assets/imgs/backend.png';
+
+// Industry Section Icons
+import bitcoinIcon from '../assets/imgs/bitcoin 1.png';
+import protectionIcon from '../assets/imgs/protection 1.png';
+import eyeSettingIcon from '../assets/imgs/eye-setting 1.svg';
+import productivityIcon from '../assets/imgs/productivity 1.png';
+import gameIcon from '../assets/imgs/game 1 (1).svg';
+import uploadIcon from '../assets/imgs/upload 1.png';
 
 export const heroImages = {
   light: lightHeroImage,
@@ -87,5 +97,12 @@ export {
   web3Img,
   walletImg,
   backendImg,
+  bitcoinIcon,
+  protectionIcon,
+  eyeSettingIcon,
+  productivityIcon,
+  gameIcon,
+  uploadIcon,
 };
+*/
 

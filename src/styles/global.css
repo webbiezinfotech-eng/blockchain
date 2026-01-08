@@ -20,6 +20,31 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Dark Theme White Border for Blue Text */
+[data-theme="dark"] .text-brand-blue,
+[data-theme="dark"] .color-blue,
+[data-theme="dark"] .hover\:text-brand-blue:hover,
+[data-theme="dark"] .dark\:hover\:text-brand-blue:hover,
+[data-theme="dark"] .group:hover .group-hover\:text-brand-blue,
+[data-theme="dark"] .group:hover .dark\:group-hover\:text-brand-blue,
+[data-theme="dark"] h1 .text-brand-blue,
+[data-theme="dark"] h2 .text-brand-blue,
+[data-theme="dark"] h3 .text-brand-blue,
+[data-theme="dark"] h4 .text-brand-blue,
+[data-theme="dark"] h5 .text-brand-blue,
+[data-theme="dark"] h6 .text-brand-blue,
+[data-theme="dark"] .font-heading .text-brand-blue,
+[data-theme="dark"] .font-heading.text-brand-blue {
+  -webkit-text-stroke: 1px #ffffff !important;
+}
+
+/* Class to remove white border from headings where not needed */
+[data-theme="dark"] .no-stroke,
+[data-theme="dark"] .no-stroke.text-brand-blue,
+[data-theme="dark"] .no-stroke.color-blue {
+  -webkit-text-stroke: 0px !important;
+}
+
 /* Oswald font for headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Oswald', sans-serif;
