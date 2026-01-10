@@ -1,6 +1,8 @@
+// All code commented out - images are now imported directly in Home.jsx
+/*
 // Hero Images
-import lightHeroImage from '../assets/imgs/hero_lightteme.png';
-import darkHeroImage from '../assets/imgs/darkhome.png';
+import lightHeroImage from '../assets/home_images/hero_light.png';
+import darkHeroImage from '../assets/home_images/hero-dark.png';
 
 // Service Section Images
 import homeSec2_1 from '../assets/imgs/home_sec2_1.png';
@@ -102,4 +104,5 @@ export {
   gameIcon,
   uploadIcon,
 };
+*/
 

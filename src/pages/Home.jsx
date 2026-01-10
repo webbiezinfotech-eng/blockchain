@@ -1,7 +1,54 @@
 import { useEffect, useRef, useState } from 'react';
-import { heroImages, serviceImages, homeSec2_1, homeSec2_2, homeSec2_3, homeSec2_4, homeSec2_5, homeSec2_6, homeSec2_7, homeSec2_8, homeSec2_9, homeSec2_10, homeSec3_1, homeSec3_2, homeSec3_3, homeSec3_4, homeSec3_5, homeSec3_6, frontendCap, smartContractImg, airdropImg, layer2Img, blockchainApiImg, web3Img, walletImg, backendImg, bitcoinIcon, protectionIcon, eyeSettingIcon, productivityIcon, gameIcon, uploadIcon } from '../utils/images'; 
 import { useTheme } from '../context/ThemeContext';
 import ServiceCard from '../components/common/ServiceCard';
+
+// Hero Images
+import lightHeroImage from '../assets/home_images/hero_light.png';
+import darkHeroImage from '../assets/home_images/hero-dark.png';
+
+// Service Section Images (from home_images)
+import homeSec2_1 from '../assets/home_images/blockchain.png';
+import homeSec2_2 from '../assets/home_images/ai.png';
+import homeSec2_3 from '../assets/home_images/smartcontract.png';
+import homeSec2_4 from '../assets/home_images/smartcontractaudit.png';
+import homeSec2_5 from '../assets/home_images/tokendev.png';
+import homeSec2_6 from '../assets/home_images/cryptoexchangedev.png';
+import homeSec2_7 from '../assets/home_images/defidev.png';
+import homeSec2_8 from '../assets/home_images/nftmarketplacedev.png';
+import homeSec2_9 from '../assets/home_images/dappdev.png';
+import homeSec2_10 from '../assets/home_images/walletdev.png';
+
+// Why Trust Section Images (from home_images)
+import homeSec3_1 from '../assets/home_images/blockchain+ai.png';
+import homeSec3_2 from '../assets/home_images/enterprise-grade.png';
+import homeSec3_3 from '../assets/home_images/transparent-collab.png';
+import homeSec3_4 from '../assets/home_images/scalable-infras.png';
+import homeSec3_5 from '../assets/home_images/launch-ready.png';
+import homeSec3_6 from '../assets/home_images/multi-blockchain.png';
+
+// Tech Stack Section Images (from home_images)
+import frontendCap from '../assets/home_images/frontend-capability.png';
+import smartContractImg from '../assets/home_images/smart-contract.png';
+import airdropImg from '../assets/home_images/airdrop.png';
+import layer2Img from '../assets/home_images/layer2.png';
+import blockchainApiImg from '../assets/home_images/blockchain-api.png';
+import web3Img from '../assets/home_images/web3-growth.png';
+import walletImg from '../assets/home_images/wallets.png';
+import backendImg from '../assets/home_images/backends.png';
+
+// Industry Section Icons (from home_images/icons)
+import bitcoinIcon from '../assets/home_images/icons/intelligence+ai.gif';
+import protectionIcon from '../assets/home_images/icons/multi-layer.gif';
+import eyeSettingIcon from '../assets/home_images/icons/transparent.gif';
+import productivityIcon from '../assets/home_images/icons/high-performance.gif';
+import gameIcon from '../assets/home_images/icons/multi-chain.gif';
+import uploadIcon from '../assets/home_images/icons/end-support.gif';
+
+// Hero Images Object
+const heroImages = {
+  light: lightHeroImage,
+  dark: darkHeroImage,
+};
 
 const Home = () => {
   const { theme } = useTheme();

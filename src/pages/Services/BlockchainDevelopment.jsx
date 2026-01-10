@@ -363,7 +363,7 @@ const BlockchainDevelopment = () => {
             ].map((group, idx) => (
               <div
                 key={idx}
-                className="rounded-[14px] border border-brand-blue/30 bg-white p-8 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-gradient-to-r dark:from-brand-blue/35 dark:to-black dark:shadow-[0_10px_30px_rgba(0,0,0,0.65)]"
+                className="rounded-[14px] border border-brand-blue/30 bg-white p-8 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:shadow-[0_10px_30px_rgba(0,0,0,0.65)]"
               >
                 <h3 className="text-center font-heading text-[22px] font-bold uppercase tracking-wide text-brand-blue transition-colors duration-300 dark:text-white">
                   {group.title}
@@ -395,10 +395,10 @@ const BlockchainDevelopment = () => {
             </h2>
           </div>
 
-          {/* Desktop/Tablet: radial layout | Mobile: stacked */}
-          <div className="relative mx-auto max-w-[1100px]">
-            {/* Center Graphic */}
-            <div className="pointer-events-none relative mx-auto hidden h-[280px] w-[280px] items-center justify-center rounded-full border border-brand-blue/20 bg-brand-blue/5 shadow-[0_12px_34px_rgba(0,0,0,0.12)] dark:border-white/20 dark:bg-white/5 dark:shadow-[0_12px_34px_rgba(0,0,0,0.6)] md:flex">
+          {/* Desktop/Tablet: diagram layout | Mobile: stacked */}
+          <div className="relative mx-auto max-w-[1180px] md:min-h-[560px]">
+            {/* Center Graphic (circle) */}
+            <div className="pointer-events-none absolute left-1/2 z-0 hidden h-[280px] w-[280px] -translate-x-1/2 items-center justify-center rounded-full border border-brand-blue/25 bg-white/80 shadow-[0_18px_55px_rgba(0,0,0,0.12)] backdrop-blur-[2px] transition-colors duration-300 dark:border-white/25 dark:bg-black/40 dark:shadow-[0_18px_60px_rgba(0,0,0,0.65)] md:top-[100px] md:flex">
               <div className="absolute inset-6 rounded-full border border-brand-blue/20 dark:border-white/20" />
               <div className="absolute inset-12 rounded-full border border-brand-blue/15 dark:border-white/15" />
               <div className="flex flex-col items-center justify-center gap-2 text-brand-blue/80 dark:text-white/70">
@@ -408,12 +408,12 @@ const BlockchainDevelopment = () => {
             </div>
 
             {[
-              { n: '1', t: 'Requirement Analysis & Architecture Design', pos: 'md:left-1/2 md:top-0 md:-translate-x-1/2' },
+              { n: '1', t: 'Requirement Analysis & Architecture Design', pos: 'md:left-1/2 md:-top-4 md:-translate-x-1/2' },
               { n: '2', t: 'UI/UX Engineering', pos: 'md:right-0 md:top-[95px]' },
               { n: '3', t: 'Smart Contract Development', pos: 'md:right-0 md:top-[220px]' },
-              { n: '4', t: 'Backend & Node Setup', pos: 'md:right-0 md:bottom-[30px]' },
-              { n: '5', t: 'Integration (APIs, Oracles, Wallets)', pos: 'md:left-1/2 md:bottom-0 md:-translate-x-1/2' },
-              { n: '6', t: 'Security Testing & Audits', pos: 'md:left-0 md:bottom-[95px]' },
+              { n: '4', t: 'Backend & Node Setup', pos: 'md:right-0 md:top-[350px]' },
+              { n: '5', t: 'Integration (APIs, Oracles, Wallets)', pos: 'md:left-1/2 md:bottom-[20px] md:-translate-x-1/2' },
+              { n: '6', t: 'Security Testing & Audits', pos: 'md:left-0 md:top-[350px]' },
               { n: '7', t: 'Deployment on Testnet/Mainnet', pos: 'md:left-0 md:top-[220px]' },
               { n: '8', t: 'Post-Launch Scaling & Support', pos: 'md:left-0 md:top-[95px]' },
             ].map((step, idx) => (
@@ -421,7 +421,15 @@ const BlockchainDevelopment = () => {
                 key={idx}
                 className={`relative mb-4 flex items-center justify-start md:absolute md:mb-0 ${step.pos}`}
               >
-                <div className="flex w-full max-w-[460px] items-center gap-4 rounded-[10px] border border-brand-blue/20 bg-white px-5 py-4 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-black dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+                <div
+                  className={`relative z-10 flex w-full max-w-[460px] items-center gap-4 rounded-[10px] border border-brand-blue/20 bg-white px-5 py-4 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-black dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)] ${
+                    step.n === '2' || step.n === '3' || step.n === '4'
+                      ? 'md:w-[420px]'
+                      : step.n === '7' || step.n === '8'
+                        ? 'md:w-[400px]'
+                        : 'md:w-[460px]'
+                  } ${step.n === '4' || step.n === '6' ? 'pt-3 pb-3' : ''}`}
+                >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-lg font-bold text-white">
                     {step.n}
                   </div>

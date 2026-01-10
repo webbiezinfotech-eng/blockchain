@@ -1,5 +1,3 @@
-import whoWeAreImg from '../assets/imgs/WhatsApp Image 2025-11-29 at 00.06.54_e2c49acd 1.png';
-import leadershipImg from '../assets/imgs/3d-flat-vector-as-financial-analyst-using-blockchain-secure-transactions-concept-as-vector-ill 1.png';
 import BeforeFooter from '../components/common/BeforeFooter';
 
 const About = () => {
@@ -48,7 +46,7 @@ const About = () => {
             {/* Left image */}
             <div className="flex items-center justify-center">
               <img
-                src={whoWeAreImg}
+                src=" "
                 alt="Who we are"
                 className="w-full max-w-[400px] object-contain shadow-sm rounded-lg"
               />

@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { SERVICES } from '../../constants/services';
 import { useTheme } from '../../context/ThemeContext';
-import cutCardLbg from '../../assets/imgs/cut_card_lbg.png';
-import cutCardDbg from '../../assets/imgs/cut_card_dbg.png';
+import cutCardLbg from '../../assets/common/cut_card_lbg.png';
+import cutCardDbg from '../../assets/common/cut_card_dbg.png';
 import BeforeFooter from '../../components/common/BeforeFooter';
 import s1 from '../../assets/services images/s1.png';
 import s2 from '../../assets/services images/s2.png';
@@ -82,12 +82,6 @@ const Services = () => {
       title: 'Wallet Development',
       description: 'Ideal for: creating secure multi-chain cryptocurrency wallets.',
       image: s11,
-    },
-    {
-      id: 'ai-development-services',
-      title: 'AI Development Services',
-      description: 'Ideal for: comprehensive AI solutions and intelligent automation.',
-      image: s1,
     },
   ];
 
