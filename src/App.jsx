@@ -24,7 +24,7 @@ function App() {
   useTheme(); // This sets data-theme attribute on document root
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-black transition-colors duration-300 dark:bg-black dark:text-white">
+    <div className="min-h-screen flex flex-col overflow-x-hidden bg-white text-black transition-colors duration-300 dark:bg-black dark:text-white">
       <Header />
       <ScrollToHash />
       <main className="flex-1 w-full">

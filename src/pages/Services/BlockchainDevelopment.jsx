@@ -166,7 +166,7 @@ const BlockchainDevelopment = () => {
           <div className="flex w-full flex-col justify-start gap-4 leading-[1.05] sm:gap-6">
             <h3 
               className="font-heading font-bold uppercase tracking-tight text-left"
-              style={{ fontSize: '61px', lineHeight: '86px' }}
+              style={{ fontSize: 'clamp(40px, 5vw, 61px)', lineHeight: 'clamp(56px, 7vw, 86px)' }}
             >
               <div className="block w-full transition-colors duration-300">
                 <span className="text-black dark:text-white">ENTERPRISE-GRADE </span>
@@ -242,7 +242,7 @@ const BlockchainDevelopment = () => {
             ].map((solution, idx) => (
               <div 
                 key={idx} 
-                className="group relative overflow-hidden rounded-[10px] border border-brand-blue/10 bg-gradient-to-br from-white to-[#629fc5] p-6 shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.22)] dark:border-white/10 dark:from-black dark:to-brand-blue/40 dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)] dark:hover:shadow-[0_18px_60px_rgba(0,0,0,0.70)]"
+                className="group relative overflow-hidden rounded-[10px] border border-brand-blue/10 bg-gradient-to-br from-white to-[#629fc5] p-6 shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.22)] dark:border-white/10 dark:from-[#004b8a] dark:to-[#000000] dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)] dark:hover:shadow-[0_18px_60px_rgba(0,0,0,0.70)]"
               >
                 <div className="flex h-full items-center justify-between gap-6">
                   {/* Text Content */}
@@ -292,9 +292,9 @@ const BlockchainDevelopment = () => {
                   <div key={idx} className="flex w-full shrink-0 justify-center px-8 md:w-1/2 lg:w-1/3">
                     {/* Same UI as About -> Our Approach cards (but slightly narrower so shape is visible) */}
                     <div className="group relative w-full max-w-[360px] transition-all duration-300">
-                      <div className="absolute -inset-3 rounded-[24px] bg-brand-blue transition-transform duration-300 translate-x-1 translate-y-2 -rotate-[3deg] group-hover:translate-x-2 group-hover:translate-y-3 group-hover:-rotate-[4deg]" />
+                      <div className="absolute -inset-4 md:-inset-5 rounded-[24px] bg-brand-blue transition-transform duration-300 translate-x-1 translate-y-2 -rotate-[3deg] group-hover:translate-x-2 group-hover:translate-y-3 group-hover:-rotate-[4deg]" />
 
-                      <div className="relative h-full rounded-[24px] border border-brand-blue/10 bg-white p-8 transition-all duration-300 dark:border-white/30 dark:bg-gradient-to-r dark:from-black dark:to-brand-blue/40">
+                      <div className="relative h-full rounded-[24px] border border-brand-blue/10 bg-white p-8 transition-all duration-300 dark:border-white/30 dark:bg-black">
                         <div className="flex items-start justify-between gap-4">
                           <h3 className="no-stroke font-heading text-xl font-bold leading-tight text-brand-blue transition-colors duration-300 dark:text-white sm:text-2xl">
                             {card.title}
@@ -396,7 +396,7 @@ const BlockchainDevelopment = () => {
           </div>
 
           {/* Desktop/Tablet: diagram layout | Mobile: stacked */}
-          <div className="relative mx-auto max-w-[1180px] md:min-h-[560px]">
+          <div className="relative mx-auto max-w-[1180px] overflow-x-clip md:min-h-[560px]">
             {/* Center Graphic (circle) */}
             <div className="pointer-events-none absolute left-1/2 z-0 hidden h-[280px] w-[280px] -translate-x-1/2 items-center justify-center rounded-full border border-brand-blue/25 bg-white/80 shadow-[0_18px_55px_rgba(0,0,0,0.12)] backdrop-blur-[2px] transition-colors duration-300 dark:border-white/25 dark:bg-black/40 dark:shadow-[0_18px_60px_rgba(0,0,0,0.65)] md:top-[100px] md:flex">
               <div className="absolute inset-6 rounded-full border border-brand-blue/20 dark:border-white/20" />
@@ -411,7 +411,7 @@ const BlockchainDevelopment = () => {
               { n: '1', t: 'Requirement Analysis & Architecture Design', pos: 'md:left-1/2 md:-top-4 md:-translate-x-1/2' },
               { n: '2', t: 'UI/UX Engineering', pos: 'md:right-0 md:top-[95px]' },
               { n: '3', t: 'Smart Contract Development', pos: 'md:right-0 md:top-[220px]' },
-              { n: '4', t: 'Backend & Node Setup', pos: 'md:right-0 md:top-[350px]' },
+              { n: '4', t: 'Backend & Node Setup', pos: 'md:right-0 md:top-[350px]' },  
               { n: '5', t: 'Integration (APIs, Oracles, Wallets)', pos: 'md:left-1/2 md:bottom-[20px] md:-translate-x-1/2' },
               { n: '6', t: 'Security Testing & Audits', pos: 'md:left-0 md:top-[350px]' },
               { n: '7', t: 'Deployment on Testnet/Mainnet', pos: 'md:left-0 md:top-[220px]' },
@@ -422,7 +422,7 @@ const BlockchainDevelopment = () => {
                 className={`relative mb-4 flex items-center justify-start md:absolute md:mb-0 ${step.pos}`}
               >
                 <div
-                  className={`relative z-10 flex w-full max-w-[460px] items-center gap-4 rounded-[10px] border border-brand-blue/20 bg-white px-5 py-4 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-black dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)] ${
+                  className={`relative z-10 flex w-full max-w-[460px] items-center gap-4 rounded-[10px] border border-brand-blue/20 bg-white px-5 py-4 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)] ${
                     step.n === '2' || step.n === '3' || step.n === '4'
                       ? 'md:w-[420px]'
                       : step.n === '7' || step.n === '8'
@@ -430,7 +430,7 @@ const BlockchainDevelopment = () => {
                         : 'md:w-[460px]'
                   } ${step.n === '4' || step.n === '6' ? 'pt-3 pb-3' : ''}`}
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-lg font-bold text-white">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-brand-blue bg-white text-lg font-bold text-black">
                     {step.n}
                   </div>
                   <div className="font-sans text-sm font-semibold text-brand-blue transition-colors duration-300 dark:text-white sm:text-base">

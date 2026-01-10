@@ -181,20 +181,20 @@ const AIDevelopment = () => {
       {/* Hero Section (Figma) */}
       <section className="w-full bg-white pt-12 pb-16 transition-colors duration-300 dark:bg-black sm:pt-12 sm:pb-20 lg:pt-12 lg:pb-24">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             {/* Left */}
             <div>
-              <h3 className="font-heading text-[44px] font-bold uppercase leading-[1.06] tracking-tight sm:text-[56px] lg:text-[55px]" style={{ lineHeight: '81px' }}>
-                <span className="block whitespace-nowrap text-black transition-colors duration-300 dark:text-white">
+              <h2 className="font-heading text-[44px] font-bold uppercase leading-[1.06] tracking-tight sm:text-[56px] lg:text-[67px]" style={{ lineHeight: '81px' }}>
+                <span className="block text-black transition-colors duration-300 dark:text-white sm:whitespace-nowrap">
                   AI &amp; MACHINE LEARNING
                 </span>
-                <span className="block whitespace-nowrap">
+                <span className="block sm:whitespace-nowrap">
                   <span className="text-black transition-colors duration-300 dark:text-white">DEVELOPMENT </span>
                   <span className="text-brand-blue">FOR</span>
                 </span>
-                <span className="block whitespace-nowrap text-brand-blue">INTELLIGENT ENTERPRISE</span>
-                <span className="block whitespace-nowrap text-brand-blue">AUTOMATION</span>
-              </h3>
+                <span className="block text-brand-blue sm:whitespace-nowrap">INTELLIGENT ENTERPRISE</span>
+                <span className="block text-brand-blue sm:whitespace-nowrap">AUTOMATION</span>
+              </h2>
 
               <p className="mt-8 max-w-[720px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-lg">
                 Transform your business with custom AI systems that think, learn, and optimize processes at scale. We build
@@ -272,18 +272,18 @@ const AIDevelopment = () => {
               {capabilitiesTop.map((c) => (
                 <div
                   key={c.title}
-                  className="relative w-full max-w-[220px] rounded-[10px] border border-brand-blue/45 bg-white px-6 py-7 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue dark:border-white/15 dark:bg-black dark:hover:border-brand-blue"
+                  className="relative w-full max-w-[220px] rounded-[10px] border border-brand-blue/45 bg-white px-5 py-6 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue dark:border-white/45 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:hover:border-white"
                 >
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md border border-brand-blue/45 bg-white transition-colors duration-300 dark:border-white/15 dark:bg-black">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md border border-brand-blue/45 bg-white transition-colors duration-300 dark:border-white/15 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]">
                     {c.icon}
                   </div>
-                  <p className="font-sans text-[16px] font-semibold leading-snug text-black transition-colors duration-300 dark:text-white">
+                  <p className="font-sans text-[17px] font-semibold leading-snug text-black transition-colors duration-300 dark:text-white">
                     {c.title}
                   </p>
 
                   {/* connector down to line (desktop) */}
                   <span className="pointer-events-none hidden lg:block">
-                    <span className="absolute left-1/2 top-full h-16 -translate-x-1/2 border-l-2 border-dashed border-brand-blue/55" />
+                    <span className="absolute left-1/2 top-full h-16 -translate-x-1/2 border-l-2 border-dashed border-brand-blue/55 dark:border-white/55" />
                   </span>
                 </div>
               ))}
@@ -291,7 +291,7 @@ const AIDevelopment = () => {
 
             {/* Middle line (desktop) */}
             <div className="relative hidden lg:block">
-              <div className="mt-16 h-[6px] w-full rounded-full bg-brand-blue" />
+              <div className="mt-16 h-[6px] w-full rounded-full bg-brand-blue dark:bg-white" />
             </div>
 
             {/* Bottom row */}
@@ -299,17 +299,17 @@ const AIDevelopment = () => {
               {capabilitiesBottom.map((c) => (
                 <div
                   key={c.title}
-                  className="relative w-full max-w-[260px] rounded-[10px] border border-brand-blue/45 bg-white px-6 py-7 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue dark:border-white/15 dark:bg-black dark:hover:border-brand-blue"
+                  className="relative w-full max-w-[260px] rounded-[10px] border border-brand-blue/45 bg-white px-5 py-6 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue dark:border-white/45 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:hover:border-white"
                 >
                   {/* connector up to line (desktop) */}
                   <span className="pointer-events-none hidden lg:block">
-                    <span className="absolute left-1/2 bottom-full h-16 -translate-x-1/2 border-l-2 border-dashed border-brand-blue/55" />
+                    <span className="absolute left-1/2 bottom-full h-16 -translate-x-1/2 border-l-2 border-dashed border-brand-blue/55 dark:border-white/55" />
                   </span>
 
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md border border-brand-blue/45 bg-white transition-colors duration-300 dark:border-white/15 dark:bg-black">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md border border-brand-blue/45 bg-white transition-colors duration-300 dark:border-white/15 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]">
                     {c.icon}
                   </div>
-                  <p className="font-sans text-[16px] font-semibold leading-snug text-black transition-colors duration-300 dark:text-white">
+                  <p className="font-sans text-[17px] font-semibold leading-snug text-black transition-colors duration-300 dark:text-white">
                     {c.title}
                   </p>
                 </div>
@@ -334,7 +334,7 @@ const AIDevelopment = () => {
             {toolsAndFrameworks.map((t) => (
               <div
                 key={t}
-                className="inline-flex items-center justify-center rounded-lg border border-[#c8d7e4] bg-white px-10 py-[10px] font-sans text-[18px] font-medium text-black shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue dark:border-white/15 dark:bg-black dark:text-white dark:hover:border-brand-blue"
+                className="inline-flex items-center justify-center rounded-lg border border-[#c8d7e4] bg-white px-10 py-[10px] font-sans text-[18px] font-medium text-black shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue dark:border-white/45 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:text-white dark:hover:border-white"
               >
                 {t}
               </div>
@@ -358,18 +358,18 @@ const AIDevelopment = () => {
             {deploymentSteps.map((s) => (
               <div
                 key={s.no}
-                className="flex items-center gap-4 rounded-xl border border-[#c8d7e4] bg-white px-4 py-3 shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 dark:border-white/15 dark:bg-black"
+                className="flex items-center gap-4 rounded-xl border border-[#c8d7e4] bg-white px-4 py-3 shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 dark:border-white/15 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-lg font-bold text-white">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-brand-blue bg-white text-lg font-bold text-black">
                   {s.no}
                 </div>
-                <p className="font-sans text-[16px] font-medium text-brand-blue">{s.title}</p>
+                <p className="font-sans text-[16px] font-medium text-brand-blue dark:text-white">{s.title}</p>
               </div>
             ))}
           </div>
 
           {/* Desktop diagram layout */}
-          <div className="relative mt-14 hidden min-h-[560px] lg:block">
+          <div className="relative mt-14 hidden min-h-[560px] overflow-x-clip lg:block">
             {/* Center media */}
             <div className="absolute left-1/2 top-1/2 w-[340px] -translate-x-1/2 -translate-y-1/2">
               <div className="flex aspect-square w-full items-center justify-center rounded-3xl bg-black/[0.03] text-2xl font-bold text-brand-blue/30 shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:bg-white/[0.04] dark:text-white/20">
@@ -391,15 +391,27 @@ const AIDevelopment = () => {
             ].map((s) => (
               <div
                 key={s.no}
-                className={`absolute ${s.cls} flex items-center gap-3 rounded-xl border border-[#c8d7e4] bg-white pl-4 pr-3 py-3 shadow-[0_4px_18px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/15 dark:bg-black`}
+                className={`absolute ${s.cls} flex items-center gap-3 rounded-xl border border-[#c8d7e4] bg-white pl-4 pr-3 py-3 shadow-[0_4px_18px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/15 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]`}
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-lg font-bold text-white">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-brand-blue bg-white text-lg font-bold text-black">
                   {s.no}
                 </div>
-                <p className="font-sans text-[16px] font-medium text-brand-blue">{s.title}</p>
+                <p className="font-sans text-[16px] font-medium text-brand-blue dark:text-white">{s.title}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="w-full bg-gradient-to-r from-[#004b8a] to-[#000000] py-10 transition-colors duration-300 sm:py-12">
+        <div className="mx-auto max-w-layout px-4 text-center sm:px-6 md:px-10">
+          <h3 className="font-heading text-[36px] font-bold uppercase leading-tight text-white sm:text-[44px] md:text-[52px]">
+            Get a Custom AI Solution Today
+          </h3>
+          <button className="mt-7 rounded-lg border-2 border-white bg-transparent px-10 py-3 text-lg font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black">
+            Contact Now
+          </button>
         </div>
       </section>
     </div>
