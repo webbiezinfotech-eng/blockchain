@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import lightLogo from '../../assets/common/light_logo.png';
@@ -9,6 +9,28 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesMobileOpen, setIsServicesMobileOpen] = useState(false);
+  const [isServicesDesktopOpen, setIsServicesDesktopOpen] = useState(false);
+  const servicesDesktopRef = useRef(null);
+
+  useEffect(() => {
+    const onMouseDown = (e) => {
+      if (!isServicesDesktopOpen) return;
+      if (!servicesDesktopRef.current) return;
+      if (servicesDesktopRef.current.contains(e.target)) return;
+      setIsServicesDesktopOpen(false);
+    };
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setIsServicesDesktopOpen(false);
+    };
+
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [isServicesDesktopOpen]);
 
   return (
     <header className="sticky top-0 z-[1000] bg-white border-b border-gray-100 transition-colors duration-300 dark:bg-black dark:border-white/10">
@@ -47,47 +69,60 @@ const Header = () => {
           >
             About
           </NavLink>
-          <div className="relative group">
+          <div ref={servicesDesktopRef} className="relative flex items-center">
             <NavLink
               to="/services"
               className={({ isActive }) =>
-                `relative inline-flex items-center gap-1 text-sm font-medium transition-colors duration-300 lg:text-base ${
+                `relative inline-flex items-center text-sm font-medium transition-colors duration-300 lg:text-base ${
                   isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
                 }`
               }
-              aria-haspopup="menu"
+              onClick={() => setIsServicesDesktopOpen(false)}
             >
               Services
+            </NavLink>
+
+            <button
+              type="button"
+              className="ml-1 inline-flex h-8 w-8 items-center justify-center rounded-lg text-black/70 transition-colors duration-200 hover:bg-black/[0.04] hover:text-black dark:text-white/80 dark:hover:bg-white/[0.06] dark:hover:text-white"
+              aria-label="Toggle Services menu"
+              aria-haspopup="menu"
+              aria-expanded={isServicesDesktopOpen}
+              onClick={() => setIsServicesDesktopOpen((v) => !v)}
+            >
               <svg
                 width="16"
                 height="16"
                 viewBox="0 0 20 20"
                 fill="none"
-                className="opacity-70 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                className={`opacity-70 transition-transform duration-200 ${isServicesDesktopOpen ? 'rotate-180' : ''}`}
                 aria-hidden="true"
               >
                 <path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </NavLink>
+            </button>
 
-            <div
-              className="invisible absolute left-0 top-full z-[1001] mt-3 w-[520px] rounded-2xl border border-black/10 bg-white p-3 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 dark:border-white/10 dark:bg-black"
-              role="menu"
-              aria-label="Services submenu"
-            >
-              <div className="grid grid-cols-1 gap-1 lg:grid-cols-2">
-                {SERVICES.map((s) => (
-                  <NavLink
-                    key={s.id}
-                    to={s.route}
-                    className="rounded-xl px-3 py-2 text-sm font-medium text-black/80 transition-colors hover:bg-black/[0.04] hover:text-black dark:text-white/80 dark:hover:bg-white/[0.06] dark:hover:text-white"
-                    role="menuitem"
-                  >
-                    {s.title}
-                  </NavLink>
-                ))}
+            {isServicesDesktopOpen && (
+              <div
+                className="absolute left-1/2 top-full z-[1001] mt-3 w-[760px] max-w-[92vw] -translate-x-1/2 rounded-2xl border border-black/10 bg-white p-4 shadow-xl transition-all duration-200 dark:border-white/10 dark:bg-black"
+                role="menu"
+                aria-label="Services submenu"
+              >
+                <div className="grid grid-cols-1 gap-1 lg:grid-cols-2">
+                  {SERVICES.map((s) => (
+                    <NavLink
+                      key={s.id}
+                      to={s.route}
+                      className="rounded-xl px-3 py-2 text-sm font-medium text-black/80 transition-colors hover:bg-black/[0.04] hover:text-black dark:text-white/80 dark:hover:bg-white/[0.06] dark:hover:text-white"
+                      role="menuitem"
+                      onClick={() => setIsServicesDesktopOpen(false)}
+                    >
+                      {s.title}
+                    </NavLink>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
           <NavLink
             to="/industries"

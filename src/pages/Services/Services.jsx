@@ -83,12 +83,6 @@ const Services = () => {
       description: 'Ideal for: creating secure multi-chain cryptocurrency wallets.',
       image: s11,
     },
-    {
-      id: 'ai-development-services',
-      title: 'AI Development Services',
-      description: 'Ideal for: comprehensive AI solutions and intelligent automation.',
-      image: s1,
-    },
   ];
 
   const getCardsPerView = () => {

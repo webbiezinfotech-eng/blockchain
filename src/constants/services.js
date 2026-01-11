@@ -1,5 +1,4 @@
 export const SERVICES = [
-  { id: 'ai-development-services', title: 'AI Development Services', route: '/services/ai-development-services' },
   { id: 'blockchain-development', title: 'Blockchain Development', route: '/services/blockchain-development' },
   { id: 'ai-development', title: 'AI Development', route: '/services/ai-development' },
   { id: 'smart-contract-development', title: 'Smart Contract Development', route: '/services/smart-contract-development' },
