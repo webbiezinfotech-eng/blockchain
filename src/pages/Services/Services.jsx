@@ -15,6 +15,8 @@ import s8 from '../../assets/services images/s8.png';
 import s9 from '../../assets/services images/s9.png';
 import s10 from '../../assets/services images/s10.png';
 import s11 from '../../assets/services images/s11.png';
+import consultingImg from '../../assets/home_images/blockchain.png';
+import customDevImg from '../../assets/home_images/enterprise-grade.png';
 
 const Services = () => {
   const { theme } = useTheme();
@@ -23,6 +25,12 @@ const Services = () => {
 
   // Service cards with descriptions and images
   const serviceCards = [
+    {
+      id: 'custom-development',
+      title: 'Custom Development',
+      description: 'Ideal for: web, mobile, and digital product teams needing end-to-end engineering.',
+      image: customDevImg,
+    },
     {
       id: 'blockchain-development',
       title: 'Blockchain Development',
@@ -58,6 +66,12 @@ const Services = () => {
       title: 'Crypto Exchange Development',
       description: 'Ideal for: building secure trading platforms with advanced features.',
       image: s7,
+    },
+    {
+      id: 'blockchain-consulting',
+      title: 'Blockchain Consulting',
+      description: 'Ideal for: product strategy, architecture planning, tokenomics, and go-to-market clarity.',
+      image: consultingImg,
     },
     {
       id: 'defi-development',

@@ -76,15 +76,15 @@ const Footer = () => {
           <div className="flex flex-col">
             <h4 className="mb-4 text-base font-bold text-black transition-colors duration-300 dark:text-white sm:mb-5 sm:text-lg">Services</h4>
             <ul className="list-none p-0 space-y-2 sm:space-y-3">
-              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services">Blockchain Development</a></li>
-              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services">AI Development</a></li>
-              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services">Smart Contract Development</a></li>
-              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services">Token Development</a></li>
-              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services">Exchange Development</a></li>
-              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services">DeFi Solutions</a></li>
-              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services">NFT Marketplace Development</a></li>
-              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services">DApp Development</a></li>
-              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services">Wallet Development</a></li>
+              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services/blockchain-development">Blockchain Development</a></li>
+              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services/ai-development">AI Development</a></li>
+              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services/smart-contract-development">Smart Contract Development</a></li>
+              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services/token-development">Token Development</a></li>
+              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services/crypto-exchange-development">Exchange Development</a></li>
+              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services/defi-development">DeFi Solutions</a></li>
+              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services/nft-marketplace-development">NFT Marketplace Development</a></li>
+              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services/dapp-development">DApp Development</a></li>
+              <li><a className="text-sm text-gray-600 transition-colors duration-300 hover:text-brand-blue dark:text-gray-300 sm:text-base" href="/services/wallet-development">Wallet Development</a></li>
             </ul>
           </div>
           

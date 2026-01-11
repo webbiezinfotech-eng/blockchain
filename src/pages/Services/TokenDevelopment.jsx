@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import BeforeFooter from '../../components/common/BeforeFooter';
 
-import tokenDevHero from '../../assets/home_images/tokendev.png';
 import tokenomicsImg from '../../assets/home_images/web3-growth.png';
 import feature1Img from '../../assets/home_images/airdrop.png';
 import feature2Img from '../../assets/home_images/wallets.png';
@@ -84,40 +83,46 @@ const TokenDevelopment = () => {
 
   const tokenFeatures = [
     {
-      title: 'Automated Tools & Rewards',
-      desc: 'Airdrops, referrals, rewards and automation logic to drive adoption and engagement.',
+      title: 'Automated Taxes & Rewards',
+      desc: 'Integrate built-in tax mechanics that automate fee distribution, reflections, rewards, and ecosystem funding.',
       image: feature1Img,
-      alt: 'Token rewards and airdrop illustration',
+      alt: 'Taxes and rewards illustration',
     },
     {
       title: 'Liquidity Management',
-      desc: 'Launch-ready liquidity controls, tax logic, and pool configuration for DEX listings.',
+      desc: 'Support healthy long-term trading with controlled pool balancing, liquidity additions, and stability mechanisms.',
       image: feature2Img,
-      alt: 'Liquidity and wallet illustration',
+      alt: 'Liquidity management illustration',
     },
     {
       title: 'Anti-Whale Mechanics',
-      desc: 'Limits, cooldowns, and configurable rules that discourage unhealthy market manipulation.',
+      desc: 'Prevent manipulation by restricting max wallet sizes, transactions, cooldowns, and configurable limits.',
       image: feature3Img,
-      alt: 'Multi-chain illustration',
+      alt: 'Anti-whale illustration',
     },
     {
       title: 'Minting & Burning',
-      desc: 'Supply control through mint/burn methods, caps, and role-based access permissions.',
+      desc: 'Flexible supply control with mint/burn permissions, caps, and secure role-based access.',
       image: feature2Img,
-      alt: 'Token mint and burn illustration',
+      alt: 'Minting and burning illustration',
     },
     {
       title: 'Vesting & Lockups',
-      desc: 'Time-based release schedules for teams, advisors, investors, and ecosystem allocations.',
+      desc: 'Protect investor trust through structured token release schedules, lockups, and automated vesting for teams and early contributors.',
       image: feature1Img,
-      alt: 'Token vesting illustration',
+      alt: 'Vesting and lockups illustration',
     },
     {
       title: 'Staking & Rewards',
-      desc: 'Staking contracts with flexible APRs, lock periods, and reward distribution logic.',
+      desc: 'Boost participation with staking pools that reward holders for locking tokens, supporting network security, and contributing liquidity.',
+      image: feature2Img,
+      alt: 'Staking and rewards illustration',
+    },
+    {
+      title: 'Bridging & Cross-Chain Compatibility',
+      desc: 'Expand your token’s reach with seamless cross-chain transfers, interoperability, and multi-network deployment for greater accessibility.',
       image: feature3Img,
-      alt: 'Staking illustration',
+      alt: 'Cross-chain compatibility illustration',
     },
   ];
 
@@ -170,8 +175,8 @@ const TokenDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-12 pb-16 transition-colors duration-300 dark:bg-black sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24">
-        <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[60%_40%] lg:pl-[3rem] lg:pr-[5rem]">
+      <section className="w-full bg-white pt-6 pb-12 transition-colors duration-300 dark:bg-black sm:pt-8 sm:pb-14 lg:pt-10 lg:pb-16">
+        <div className="mx-auto w-full max-w-layout px-6 sm:px-10 md:px-16 lg:pl-[3rem] lg:pr-[5rem]">
           <div className="flex w-full flex-col gap-6">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white">
               <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.4] lg:whitespace-nowrap">
@@ -192,14 +197,6 @@ const TokenDevelopment = () => {
               frameworks tailored to your project goals.
             </p>
           </div>
-
-          <div className="flex w-full items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[560px]">
-              <div className="overflow-hidden rounded-3xl bg-black/[0.03] transition-colors duration-300 dark:bg-white/[0.04]">
-                <img src={tokenDevHero} alt="Token development illustration" className="h-full w-full object-contain" />
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -219,19 +216,25 @@ const TokenDevelopment = () => {
                 style={{ transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)` }}
               >
                 {visibleItems.map((card, idx) => (
-                  <div key={`${card.title}-${idx}`} className="flex w-full shrink-0 justify-center px-4 md:w-1/2 lg:w-1/3">
-                    <div className="w-full max-w-[360px] rounded-[14px] border border-brand-blue/25 bg-white p-6 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
-                      <div className="flex items-start justify-between gap-4">
-                        <h3 className="font-sans text-[18px] font-bold text-black transition-colors duration-300 dark:text-white sm:text-[20px]">
-                          {card.title}
-                        </h3>
-                        <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-brand-blue/30 bg-white transition-colors duration-300 dark:border-white/20 dark:bg-black/20">
-                          {card.icon}
+                  <div key={`${card.title}-${idx}`} className="flex w-full shrink-0 justify-center px-8 md:w-1/2 md:px-10 lg:w-1/3 lg:px-12">
+                    <div className="group relative w-full max-w-[380px]">
+                      {/* tilted blue backing */}
+                      <div className="absolute -inset-3 rounded-[24px] bg-brand-blue transition-transform duration-300 translate-x-2 translate-y-2 -rotate-[2deg] group-hover:translate-x-3 group-hover:translate-y-3 group-hover:-rotate-[3deg]" />
+
+                      {/* foreground card */}
+                      <div className="relative rounded-[24px] border border-[#c8d7e4] bg-white p-7 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]">
+                        <div className="flex items-start justify-between gap-4">
+                          <h3 className="font-sans text-[20px] font-bold text-brand-blue transition-colors duration-300 dark:text-white">
+                            {card.title}
+                          </h3>
+                          <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-brand-blue/30 bg-white transition-colors duration-300 dark:border-white/20 dark:bg-black/20">
+                            {card.icon}
+                          </div>
                         </div>
+                        <p className="mt-4 font-sans text-[16px] font-medium leading-[1.65] text-black/70 transition-colors duration-300 dark:text-white/80">
+                          {card.desc}
+                        </p>
                       </div>
-                      <p className="mt-4 font-sans text-[15px] font-medium leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white/80 sm:text-[16px]">
-                        {card.desc}
-                      </p>
                     </div>
                   </div>
                 ))}
@@ -257,28 +260,34 @@ const TokenDevelopment = () => {
 
       {/* Token Features */}
       <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
+        <div
+          className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]"
+          style={{ fontFamily: 'Poppins, sans-serif' }}
+        >
           <div className="mb-12 text-center">
             <h2 className="font-heading text-[44px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[56px] lg:text-[72px]">
               TOKEN <span className="text-brand-blue">FEATURES</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            {tokenFeatures.map((f) => (
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+            {tokenFeatures.map((f, idx) => (
               <div
                 key={f.title}
-                className="flex items-stretch justify-between gap-6 rounded-[14px] border border-black/10 bg-gradient-to-b from-white to-[#cfe6fb] p-6 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/20 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:shadow-[0_10px_30px_rgba(0,0,0,0.60)]"
+                className={`flex items-stretch justify-between gap-6 rounded-[14px] border border-black/10 bg-gradient-to-b from-white to-[#cfe6fb] p-7 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-brand-blue/40 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:shadow-[0_10px_30px_rgba(0,0,0,0.65)] ${
+                  idx === tokenFeatures.length - 1 ? 'md:col-span-2 md:mx-auto md:max-w-[780px]' : ''
+                }`}
               >
                 <div className="flex-1">
-                  <h3 className="font-sans text-[20px] font-bold leading-snug text-black transition-colors duration-300 dark:text-white sm:text-[22px]">
+                  <h3 className="text-[22px] font-semibold leading-snug text-black transition-colors duration-300 dark:text-white sm:text-[24px]">
                     {f.title}
                   </h3>
-                  <p className="mt-3 font-sans text-[15px] font-medium leading-[1.65] text-black/70 transition-colors duration-300 dark:text-white/80 sm:text-[16px]">
+                  <p className="mt-4 text-[16px] font-medium leading-[1.75] text-black/70 transition-colors duration-300 dark:text-white/80 sm:text-[17px]">
                     {f.desc}
                   </p>
                 </div>
-                <div className="flex w-[150px] shrink-0 items-center justify-center">
+
+                <div className="flex w-[180px] shrink-0 items-center justify-center">
                   <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl bg-white/70 transition-colors duration-300 dark:bg-black/20">
                     <img src={f.image} alt={f.alt} className="h-full w-full object-contain p-2" />
                   </div>
@@ -302,8 +311,7 @@ const TokenDevelopment = () => {
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[55%_45%] lg:gap-14">
             <div className="w-full">
               <p className="mb-5 font-sans text-[16px] font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-[18px]">
-                We help you design a token economy that works in the real world — aligned incentives, sustainable emissions,
-                and launch strategy.
+                We help with:
               </p>
 
               <div className="flex flex-col gap-4">
