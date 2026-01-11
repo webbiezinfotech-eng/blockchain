@@ -1,4 +1,6 @@
 import BeforeFooter from '../components/common/BeforeFooter';
+import TwoLayerCard from '../components/common/TwoLayerCard';
+import OneSideBorderCard from '../components/common/OneSideBorderCard';
 
 const About = () => {
   return (
@@ -221,15 +223,12 @@ const About = () => {
                 )
               }
             ].map((value, idx) => (
-              <div key={idx} className="group relative rounded-[24px] border border-brand-blue/10 bg-black/[0.03] p-8 transition-all duration-300 hover:border-brand-blue/30 hover:shadow-lg dark:border-white/30 dark:bg-transparent sm:p-10">
-                <div className="absolute right-8 top-8 text-brand-blue transition-transform duration-500 group-hover:scale-110">
-                  {value.icon}
-                </div>
-                <h3 className="font-heading text-xl font-bold text-black transition-colors duration-300 dark:text-white sm:text-2xl">{value.title}</h3>
-                <p className="mt-4 text-sm leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white dark:font-medium sm:text-base">
-                  {value.desc}
-                </p>
-              </div>
+              <OneSideBorderCard
+                key={idx}
+                title={value.title}
+                description={value.desc}
+                icon={value.icon}
+              />
             ))}
           </div>
         </div>
@@ -474,25 +473,12 @@ const About = () => {
                 )
               }
             ].map((card, idx) => (
-              <div key={idx} className="group relative transition-all duration-300">
-                {/* Background Tint Card - Tilted and slightly larger */}
-                <div className="absolute -inset-2 rounded-[24px] bg-brand-blue transition-transform duration-300 translate-x-1 translate-y-2 -rotate-[3deg] group-hover:translate-x-2 group-hover:translate-y-3 group-hover:-rotate-[4deg]" />
-                
-                {/* Foreground White Card - Straight */}
-                <div className="relative h-full rounded-[24px] border border-brand-blue/10 bg-white p-8 transition-all duration-300 dark:border-white/30 dark:bg-black">
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="no-stroke font-heading text-xl font-bold leading-tight text-brand-blue dark:text-white sm:text-2xl">
-                      {card.title}
-                    </h3>
-                    <div className="text-brand-blue dark:text-white">
-                      {card.icon}
-                    </div>
-                  </div>
-                  <p className="mt-6 font-sans text-sm font-medium leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white sm:text-base">
-                    {card.desc}
-                  </p>
-                </div>
-              </div>
+              <TwoLayerCard
+                key={idx}
+                title={card.title}
+                description={card.desc}
+                icon={card.icon}
+              />
             ))}
           </div>
         </div>

@@ -122,7 +122,8 @@ const BlockchainDevelopment = () => {
 
   // seamless loop reset
   useEffect(() => {
-    if (currentIndex === industryUseCases.length) {
+    // Use >= to avoid edge-cases where timers/visibility changes can skip exact equality
+    if (currentIndex >= industryUseCases.length) {
       const t = setTimeout(() => {
         setIsTransitioning(false);
         setCurrentIndex(0);
@@ -165,7 +166,7 @@ const BlockchainDevelopment = () => {
           <div className="flex w-full flex-col justify-start gap-4 leading-[1.05] sm:gap-6">
             <h3 
               className="font-heading font-bold uppercase tracking-tight text-left"
-              style={{ fontSize: '61px', lineHeight: '100px' }}
+              style={{ fontSize: '61px', lineHeight: '86px' }}
             >
               <div className="block w-full transition-colors duration-300">
                 <span className="text-black dark:text-white">ENTERPRISE-GRADE </span>
@@ -202,7 +203,7 @@ const BlockchainDevelopment = () => {
       </section>
 
       {/* Solutions We Provide Section */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+      <section className="w-full bg-white pt-12 pb-16 transition-colors duration-300 dark:bg-black sm:pt-16 sm:pb-20">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:pl-[3rem] lg:pr-[3rem]">
           {/* Section Heading */}
           <div className="mb-16 text-center">
@@ -241,15 +242,15 @@ const BlockchainDevelopment = () => {
             ].map((solution, idx) => (
               <div 
                 key={idx} 
-                className="group relative overflow-hidden rounded-[10px] border border-brand-blue/10 bg-gradient-to-br from-white to-[#629fc5] p-8 shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.22)] dark:border-white/10 dark:from-white/5 dark:to-[#629fc5]/20 dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)] dark:hover:shadow-[0_18px_60px_rgba(0,0,0,0.70)]"
+                className="group relative overflow-hidden rounded-[10px] border border-brand-blue/10 bg-gradient-to-br from-white to-[#629fc5] p-6 shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.22)] dark:border-white/10 dark:from-black dark:to-brand-blue/40 dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)] dark:hover:shadow-[0_18px_60px_rgba(0,0,0,0.70)]"
               >
                 <div className="flex h-full items-center justify-between gap-6">
                   {/* Text Content */}
                   <div className="flex-1">
-                    <h3 className="font-sans text-xl font-bold leading-tight text-black transition-colors duration-300 dark:text-white sm:text-2xl">
+                    <h3 className="font-sans text-2xl font-bold leading-tight text-black transition-colors duration-300 dark:text-white sm:text-[26px]">
                       {solution.title}
                     </h3>
-                    <p className="mt-4 font-sans text-sm font-medium leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white/70 sm:text-base">
+                    <p className="mt-4 font-sans text-base font-medium leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white/80 sm:text-lg">
                       {solution.desc}
                     </p>
                   </div>
@@ -288,12 +289,12 @@ const BlockchainDevelopment = () => {
                 style={{ transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)` }}
               >
                 {visibleItems.map((card, idx) => (
-                  <div key={idx} className="flex w-full shrink-0 justify-center px-6 md:w-1/2 lg:w-1/3">
+                  <div key={idx} className="flex w-full shrink-0 justify-center px-8 md:w-1/2 lg:w-1/3">
                     {/* Same UI as About -> Our Approach cards (but slightly narrower so shape is visible) */}
                     <div className="group relative w-full max-w-[360px] transition-all duration-300">
-                      <div className="absolute -inset-2 rounded-[24px] bg-brand-blue transition-transform duration-300 translate-x-1 translate-y-2 -rotate-[3deg] group-hover:translate-x-2 group-hover:translate-y-3 group-hover:-rotate-[4deg]" />
+                      <div className="absolute -inset-3 rounded-[24px] bg-brand-blue transition-transform duration-300 translate-x-1 translate-y-2 -rotate-[3deg] group-hover:translate-x-2 group-hover:translate-y-3 group-hover:-rotate-[4deg]" />
 
-                      <div className="relative h-full rounded-[24px] border border-brand-blue/10 bg-white p-8 transition-all duration-300 dark:border-white/30 dark:bg-black">
+                      <div className="relative h-full rounded-[24px] border border-brand-blue/10 bg-white p-8 transition-all duration-300 dark:border-white/30 dark:bg-gradient-to-r dark:from-black dark:to-brand-blue/40">
                         <div className="flex items-start justify-between gap-4">
                           <h3 className="no-stroke font-heading text-xl font-bold leading-tight text-brand-blue transition-colors duration-300 dark:text-white sm:text-2xl">
                             {card.title}
@@ -333,10 +334,10 @@ const BlockchainDevelopment = () => {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+      <section className="w-full bg-white pt-8 pb-12 transition-colors duration-300 dark:bg-black sm:pt-8 sm:pb-12">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:pl-[3rem] lg:pr-[3rem]">
           <div className="mb-12 text-center">
-            <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-brand-blue sm:text-[52px] md:text-[60px]">
+            <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff] sm:text-[52px] md:text-[60px]">
               TECH STACK
             </h2>
           </div>
@@ -362,9 +363,9 @@ const BlockchainDevelopment = () => {
             ].map((group, idx) => (
               <div
                 key={idx}
-                className="rounded-[14px] border border-black/15 bg-white p-8 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-black dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)]"
+                className="rounded-[14px] border border-brand-blue/30 bg-white p-8 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-gradient-to-r dark:from-brand-blue/35 dark:to-black dark:shadow-[0_10px_30px_rgba(0,0,0,0.65)]"
               >
-                <h3 className="text-center font-heading text-[22px] font-bold uppercase tracking-wide text-brand-blue">
+                <h3 className="text-center font-heading text-[22px] font-bold uppercase tracking-wide text-brand-blue transition-colors duration-300 dark:text-white">
                   {group.title}
                 </h3>
 
@@ -372,7 +373,7 @@ const BlockchainDevelopment = () => {
                   {group.items.map((item, i) => (
                     <div
                       key={i}
-                      className="flex items-center justify-center rounded-full border border-black/15 bg-white px-4 py-2 text-center font-sans text-sm font-medium text-black/80 shadow-[0_6px_16px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-black dark:text-white/90 dark:shadow-[0_6px_16px_rgba(0,0,0,0.55)]"
+                      className="flex items-center justify-center rounded-full border border-black/15 bg-white px-4 py-2 text-center font-sans text-sm font-medium text-black/80 shadow-[0_6px_16px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/10 dark:bg-black/90 dark:text-white dark:shadow-[0_6px_16px_rgba(0,0,0,0.65)]"
                     >
                       {item}
                     </div>
@@ -384,10 +385,63 @@ const BlockchainDevelopment = () => {
         </div>
       </section>
 
+      {/* Development Process Section */}
+      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:pl-[3rem] lg:pr-[3rem]">
+          <div className="mb-12 text-center">
+            <h2 className="font-heading text-[38px] font-bold uppercase leading-[1.1] tracking-tight sm:text-[52px] md:text-[60px]">
+              <span className="text-black dark:text-white">DEVELOPMENT </span>
+              <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">PROCESS</span>
+            </h2>
+          </div>
+
+          {/* Desktop/Tablet: radial layout | Mobile: stacked */}
+          <div className="relative mx-auto max-w-[1100px]">
+            {/* Center Graphic */}
+            <div className="pointer-events-none relative mx-auto hidden h-[280px] w-[280px] items-center justify-center rounded-full border border-brand-blue/20 bg-brand-blue/5 shadow-[0_12px_34px_rgba(0,0,0,0.12)] dark:border-white/20 dark:bg-white/5 dark:shadow-[0_12px_34px_rgba(0,0,0,0.6)] md:flex">
+              <div className="absolute inset-6 rounded-full border border-brand-blue/20 dark:border-white/20" />
+              <div className="absolute inset-12 rounded-full border border-brand-blue/15 dark:border-white/15" />
+              <div className="flex flex-col items-center justify-center gap-2 text-brand-blue/80 dark:text-white/70">
+                <div className="text-sm font-semibold uppercase tracking-wider">Media</div>
+                <div className="text-xs font-medium opacity-80">(Replace with graphic)</div>
+              </div>
+            </div>
+
+            {[
+              { n: '1', t: 'Requirement Analysis & Architecture Design', pos: 'md:left-1/2 md:top-0 md:-translate-x-1/2' },
+              { n: '2', t: 'UI/UX Engineering', pos: 'md:right-0 md:top-[95px]' },
+              { n: '3', t: 'Smart Contract Development', pos: 'md:right-0 md:top-[220px]' },
+              { n: '4', t: 'Backend & Node Setup', pos: 'md:right-0 md:bottom-[30px]' },
+              { n: '5', t: 'Integration (APIs, Oracles, Wallets)', pos: 'md:left-1/2 md:bottom-0 md:-translate-x-1/2' },
+              { n: '6', t: 'Security Testing & Audits', pos: 'md:left-0 md:bottom-[95px]' },
+              { n: '7', t: 'Deployment on Testnet/Mainnet', pos: 'md:left-0 md:top-[220px]' },
+              { n: '8', t: 'Post-Launch Scaling & Support', pos: 'md:left-0 md:top-[95px]' },
+            ].map((step, idx) => (
+              <div
+                key={idx}
+                className={`relative mb-4 flex items-center justify-start md:absolute md:mb-0 ${step.pos}`}
+              >
+                <div className="flex w-full max-w-[460px] items-center gap-4 rounded-[10px] border border-brand-blue/20 bg-white px-5 py-4 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-black dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-lg font-bold text-white">
+                    {step.n}
+                  </div>
+                  <div className="font-sans text-sm font-semibold text-brand-blue transition-colors duration-300 dark:text-white sm:text-base">
+                    {step.t}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <BeforeFooter
-        title="Ready To Build Your Blockchain Solution?"
-        description="Connect with our experts to start your project today."
-        buttonText="Get Started"
+        title="Book Your Free Blockchain Consultation Today"
+        buttonText="Contact Now"
+        paddingClassName="py-8"
+        containerClassName="mx-auto max-w-layout px-4 text-center"
+        headingAs="h3"
+        headingClassName="font-heading text-[3rem] font-bold uppercase leading-tight text-white"
       />
     </div>
   );
