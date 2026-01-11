@@ -12,13 +12,17 @@ import SmartContractDevelopment from './pages/Services/SmartContractDevelopment'
 import SmartContractAudit from './pages/Services/SmartContractAudit';
 import TokenDevelopment from './pages/Services/TokenDevelopment';
 import CryptoExchangeDevelopment from './pages/Services/CryptoExchangeDevelopment';
+import CustomDevelopment from './pages/Services/CustomDevelopment';
 import DeFiDevelopment from './pages/Services/DeFiDevelopment';
 import NFTMarketplaceDevelopment from './pages/Services/NFTMarketplaceDevelopment';
 import DAppDevelopment from './pages/Services/DAppDevelopment';
 import WalletDevelopment from './pages/Services/WalletDevelopment';
+import BlockchainConsulting from './pages/Services/BlockchainConsulting';
 import Industries from './pages/Industries';
 import CaseStudies from './pages/CaseStudies';
 import Blog from './pages/Blog';
+import FAQ from './pages/FAQ';
+import Contact from './pages/Contact';
 
 function App() {
   useTheme(); // This sets data-theme attribute on document root
@@ -38,6 +42,8 @@ function App() {
           <Route path="/services/smart-contract-audit" element={<SmartContractAudit />} />
           <Route path="/services/token-development" element={<TokenDevelopment />} />
           <Route path="/services/crypto-exchange-development" element={<CryptoExchangeDevelopment />} />
+          <Route path="/services/custom-development" element={<CustomDevelopment />} />
+          <Route path="/services/blockchain-consulting" element={<BlockchainConsulting />} />
           <Route path="/services/defi-development" element={<DeFiDevelopment />} />
           <Route path="/services/nft-marketplace-development" element={<NFTMarketplaceDevelopment />} />
           <Route path="/services/dapp-development" element={<DAppDevelopment />} />
@@ -45,6 +51,8 @@ function App() {
           <Route path="/industries" element={<Industries />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />

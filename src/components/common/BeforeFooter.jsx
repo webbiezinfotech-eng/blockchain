@@ -15,7 +15,7 @@ const BeforeFooter = ({
     'font-heading text-4xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl';
 
   return (
-    <section className={`bg-brand-blue ${paddingClassName} ${className}`}>
+    <section className={`bg-brand-blue dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] ${paddingClassName} ${className}`}>
       <div className={containerClasses}>
         <Heading className={headingClasses}>
           {title}

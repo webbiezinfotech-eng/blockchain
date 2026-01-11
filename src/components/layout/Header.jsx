@@ -37,13 +37,13 @@ const Header = () => {
       <div className="mx-auto flex h-16 max-w-layout items-center justify-between px-4 sm:h-20 sm:px-5 md:px-10">
         {/* Logo Section */}
         <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center">
+          <NavLink to="/" className="flex items-center justify-center">
             <img
               src={theme === 'dark' ? darkLogo : lightLogo}
               alt="Blockchain App Advisor Logo"
               className="block h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-[180px] xl:w-[180px]"
             />
-          </div>
+          </NavLink>
         </div>
 
         {/* Navigation Links */}
@@ -154,6 +154,16 @@ const Header = () => {
           >
             Blog
           </NavLink>
+          <NavLink
+            to="/faq"
+            className={({ isActive }) =>
+              `relative text-sm font-medium transition-colors duration-300 lg:text-base ${
+                isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+              }`
+            }
+          >
+            FAQ
+          </NavLink>
         </nav>
 
         {/* Right Side Actions */}
@@ -165,7 +175,7 @@ const Header = () => {
           >
             {theme === 'light' ? (
               // Moon icon for dark mode
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className="sm:w-5 sm:h-5">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className="sm:w-5 sm:h-5" aria-hidden="true">
                 <path
                   d="M17.293 13.293C16.378 13.817 15.305 14.142 14.142 14.142C10.228 14.142 7 10.914 7 7C7 5.895 7.325 4.822 7.849 3.907C4.236 4.822 1.5 8.007 1.5 11.929C1.5 16.135 4.865 19.5 9.071 19.5C12.993 19.5 16.178 16.764 17.093 13.151L17.293 13.293Z"
                   stroke="currentColor"
@@ -176,14 +186,8 @@ const Header = () => {
               </svg>
             ) : (
               // Sun icon for light mode
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className="sm:w-5 sm:h-5">
-                <circle
-                  cx="10"
-                  cy="10"
-                  r="4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                />
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className="sm:w-5 sm:h-5" aria-hidden="true">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" strokeWidth="1.5" />
                 <path
                   d="M10 2V4M10 16V18M18 10H16M4 10H2M16.364 3.636L14.95 5.05M5.05 14.95L3.636 16.364M16.364 16.364L14.95 14.95M5.05 5.05L3.636 3.636"
                   stroke="currentColor"
@@ -193,18 +197,12 @@ const Header = () => {
               </svg>
             )}
           </button>
-          <button className="hidden items-center gap-2 rounded bg-brand-blue px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-[1px] hover:opacity-90 sm:flex sm:px-6 sm:py-[10px] sm:text-base">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M17.5 9.58333C17.5027 10.6831 17.2459 11.7682 16.75 12.75C16.162 13.8945 15.2581 14.8507 14.1395 15.5068C13.0209 16.1628 11.7319 16.4901 10.4167 16.4583C9.31687 16.4611 8.23181 16.2042 7.25 15.7083L2.5 17.5L4.29167 12.75C3.79583 11.7682 3.53898 10.6831 3.54167 9.58333C3.50984 8.26812 3.83715 6.97911 4.49319 5.86052C5.14924 4.74193 6.10547 3.83803 7.25 3.25C8.23181 2.75417 9.31687 2.49731 10.4167 2.5H10.8333C12.5703 2.59783 14.2109 3.32621 15.3875 4.5525C16.5641 5.77879 17.1922 7.40044 17.15 9.13833L17.5 9.58333Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+          <NavLink
+            to="/contact"
+            className="hidden items-center gap-2 rounded bg-brand-blue px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-[1px] hover:opacity-90 sm:flex sm:px-6 sm:py-[10px] sm:text-base"
+          >
             Contact
-          </button>
+          </NavLink>
           
           {/* Mobile Menu Button */}
           <button
@@ -213,7 +211,7 @@ const Header = () => {
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path
                   d="M18 6L6 18M6 6L18 18"
                   stroke="currentColor"
@@ -223,7 +221,7 @@ const Header = () => {
                 />
               </svg>
             ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path
                   d="M3 12H21M3 6H21M3 18H21"
                   stroke="currentColor"
@@ -337,18 +335,24 @@ const Header = () => {
               >
                 Blog
               </NavLink>
-              <button className="mt-2 flex w-full items-center justify-center gap-2 rounded bg-brand-blue px-4 py-2 text-base font-medium text-white transition-all duration-300 hover:opacity-90">
-                <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M17.5 9.58333C17.5027 10.6831 17.2459 11.7682 16.75 12.75C16.162 13.8945 15.2581 14.8507 14.1395 15.5068C13.0209 16.1628 11.7319 16.4901 10.4167 16.4583C9.31687 16.4611 8.23181 16.2042 7.25 15.7083L2.5 17.5L4.29167 12.75C3.79583 11.7682 3.53898 10.6831 3.54167 9.58333C3.50984 8.26812 3.83715 6.97911 4.49319 5.86052C5.14924 4.74193 6.10547 3.83803 7.25 3.25C8.23181 2.75417 9.31687 2.49731 10.4167 2.5H10.8333C12.5703 2.59783 14.2109 3.32621 15.3875 4.5525C16.5641 5.77879 17.1922 7.40044 17.15 9.13833L17.5 9.58333Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <NavLink
+                to="/faq"
+                className={({ isActive }) =>
+                  `text-base font-medium transition-colors duration-300 ${
+                    isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+                  }`
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
+                FAQ
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className="mt-2 flex w-full items-center justify-center gap-2 rounded bg-brand-blue px-4 py-2 text-base font-medium text-white transition-all duration-300 hover:opacity-90"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Contact
-              </button>
+              </NavLink>
             </div>
           </nav>
         </div>

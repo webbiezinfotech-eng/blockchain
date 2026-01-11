@@ -1,15 +1,32 @@
 import { useState } from 'react';
+import { SHOW_GRAPHICS } from '../../constants/uiFlags';
+import { DARK_CARD_GRADIENT } from '../../constants/uiClasses';
 
-const ServiceCard = ({ title, description, image, isExpanded = false }) => {
+const ServiceCard = ({ title, description, image, isExpanded = false, size = 'large' }) => {
   const [isHovered, setIsHovered] = useState(false);
   const isExpandedState = isHovered || isExpanded;
+
+  const sizeStyles =
+    size === 'compact'
+      ? {
+          expanded:
+            'w-[280px] h-[320px] sm:w-[320px] sm:h-[380px] md:w-[360px] md:h-[400px] rounded-[32px] sm:rounded-[56px] border-2 border-brand-blue/35 shadow-[0_14px_40px_rgba(0,0,0,0.22)] -translate-y-1 z-10 dark:shadow-[0_14px_40px_rgba(0,0,0,0.55)]',
+          collapsed: 'w-[220px] h-[300px] sm:w-28 sm:h-[420px] rounded-[32px] sm:rounded-[56px]',
+        }
+      : {
+          // existing (large) sizing used across other pages
+          expanded:
+            'w-full h-[360px] sm:w-[360px] sm:h-[420px] md:w-[460px] md:h-[460px] rounded-[40px] sm:rounded-[70px] border-2 border-brand-blue/40 shadow-[0_16px_48px_rgba(0,0,0,0.25)] -translate-y-2 z-10 dark:shadow-[0_16px_48px_rgba(0,0,0,0.55)] md:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_24px_64px_rgba(0,0,0,0.65)]',
+          collapsed: 'w-full sm:w-32 h-[340px] sm:h-[450px] rounded-[40px] sm:rounded-[70px]',
+        };
 
   return (
     <div
       className={`group relative flex-shrink-0 overflow-hidden border border-brand-blue/30 bg-black/[0.03] shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-500 ease-in-out dark:border-white/40 dark:bg-white/[0.03] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)] md:shadow-[0_12px_32px_rgba(0,0,0,0.18)] dark:md:shadow-[0_12px_32px_rgba(0,0,0,0.45)]
+        ${DARK_CARD_GRADIENT}
         ${isExpandedState 
-          ? 'w-[300px] h-[360px] sm:w-[360px] sm:h-[420px] md:w-[460px] md:h-[460px] rounded-[70px] border-2 border-brand-blue/40 shadow-[0_16px_48px_rgba(0,0,0,0.25)] -translate-y-2 z-10 dark:border-white dark:shadow-[0_16px_48px_rgba(0,0,0,0.55)] md:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_24px_64px_rgba(0,0,0,0.65)]' 
-          : 'w-32 h-[450px] rounded-[70px]'
+          ? sizeStyles.expanded
+          : sizeStyles.collapsed
         }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -17,13 +34,20 @@ const ServiceCard = ({ title, description, image, isExpanded = false }) => {
       <div className={`relative w-full h-full overflow-hidden transition-all duration-500 ${
         isExpandedState ? 'rounded-[70px]' : 'rounded-[70px]'
       }`}>
-        {/* Image */}
+        {/* Graphics / Background */}
         <div className="absolute inset-0 w-full h-full">
-          <img 
-            src={image} 
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
+          {SHOW_GRAPHICS && image ? (
+            <img 
+              src={image} 
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          ) : (
+            <div
+              className="w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(0,99,182,0.35),transparent_55%),linear-gradient(90deg,rgba(6,26,51,0.9),rgba(0,0,0,0.95))]"
+              aria-hidden="true"
+            />
+          )}
           <div className={`absolute inset-0 transition-opacity duration-500 ${
             isExpandedState
               ? 'bg-[linear-gradient(180deg,rgba(0,0,0,0)_20%,rgba(0,0,0,0.5)_60%,rgba(0,0,0,0.9)_100%)]'
