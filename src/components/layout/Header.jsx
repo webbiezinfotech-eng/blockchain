@@ -33,7 +33,7 @@ const Header = () => {
   }, [isServicesDesktopOpen]);
 
   return (
-    <header className="sticky top-0 z-[1000] bg-white border-b border-gray-100 transition-colors duration-300 dark:bg-black dark:border-white/10">
+    <header className="fixed left-0 right-0 top-0 z-[1000] border-b border-gray-100 bg-white/95 backdrop-blur transition-colors duration-300 dark:border-white/10 dark:bg-black/70">
       <div className="mx-auto flex h-16 max-w-layout items-center justify-between px-4 sm:h-20 sm:px-5 md:px-10">
         {/* Logo Section */}
         <div className="flex items-center gap-3">
@@ -143,16 +143,6 @@ const Header = () => {
             }
           >
             Case studies
-          </NavLink>
-          <NavLink
-            to="/blog"
-            className={({ isActive }) =>
-              `relative text-sm font-medium transition-colors duration-300 lg:text-base ${
-                isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
-              }`
-            }
-          >
-            Blog
           </NavLink>
           <NavLink
             to="/faq"
@@ -323,17 +313,6 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Case studies
-              </NavLink>
-              <NavLink
-                to="/blog"
-                className={({ isActive }) =>
-                  `text-base font-medium transition-colors duration-300 ${
-                    isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
-                  }`
-                }
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blog
               </NavLink>
               <NavLink
                 to="/faq"

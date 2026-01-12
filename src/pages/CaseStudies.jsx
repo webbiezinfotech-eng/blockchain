@@ -1,15 +1,15 @@
 import BeforeFooter from '../components/common/BeforeFooter';
 
-import heroImg from '../assets/home_images/enterprise-grade.png';
-import fintechImg from '../assets/home_images/cryptocurrency.png';
-import supplyImg from '../assets/home_images/backends.png';
-import healthcareImg from '../assets/home_images/ai.png';
-import realEstateImg from '../assets/home_images/scalable-infras.png';
-import web3Img from '../assets/home_images/blockchain.png';
-import gamingImg from '../assets/home_images/blockchain+ai.png';
-import ecommerceImg from '../assets/home_images/marketing.png';
-import energyImg from '../assets/home_images/layer2.png';
-import automationImg from '../assets/home_images/blockchain-api.png';
+import heroImg from '../assets/Casestudies_images/Web3NFTMetaverse.png';
+import fintechImg from '../assets/Casestudies_images/FintechBanking.png';
+import supplyImg from '../assets/Casestudies_images/SupplychainLogistics.png';
+import healthcareImg from '../assets/Casestudies_images/HealthCare.png';
+import realEstateImg from '../assets/Casestudies_images/RealEstateProptech.png';
+import web3Img from '../assets/Casestudies_images/Web3NFTMetaverse.png';
+import gamingImg from '../assets/home_images/blockchain+ai.png'; // No exact match in Casestudies_images; keeping existing to avoid wrong mapping
+import ecommerceImg from '../assets/Casestudies_images/Ecommerce.png';
+import energyImg from '../assets/Casestudies_images/EnergySustanability.png';
+import automationImg from '../assets/Casestudies_images/AIautomationAnalytics.png';
 
 const CaseStudies = () => {
   const filters = [

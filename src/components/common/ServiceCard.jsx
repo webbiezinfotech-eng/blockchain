@@ -7,18 +7,26 @@ const ServiceCard = ({ title, description, image, isExpanded = false, size = 'la
   const isExpandedState = isHovered || isExpanded;
 
   const sizeStyles =
-    size === 'compact'
+    size === 'pill'
       ? {
+          // pipe/pill cards (like "Types of Exchanges" mock) — slim by default, expands on hover
           expanded:
-            'w-[280px] h-[320px] sm:w-[320px] sm:h-[380px] md:w-[360px] md:h-[400px] rounded-[32px] sm:rounded-[56px] border-2 border-brand-blue/35 shadow-[0_14px_40px_rgba(0,0,0,0.22)] -translate-y-1 z-10 dark:shadow-[0_14px_40px_rgba(0,0,0,0.55)]',
-          collapsed: 'w-[220px] h-[300px] sm:w-28 sm:h-[420px] rounded-[32px] sm:rounded-[56px]',
+            'w-[320px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[480px] md:h-[440px] rounded-[40px] sm:rounded-[70px] border-2 border-brand-blue/40 shadow-[0_16px_48px_rgba(0,0,0,0.25)] -translate-y-2 z-10 dark:shadow-[0_16px_48px_rgba(0,0,0,0.55)] md:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_24px_64px_rgba(0,0,0,0.65)]',
+          collapsed:
+            'w-[92px] h-[340px] sm:w-[112px] sm:h-[420px] md:w-[124px] md:h-[440px] rounded-[40px] sm:rounded-[70px]',
         }
-      : {
-          // existing (large) sizing used across other pages
-          expanded:
-            'w-full h-[360px] sm:w-[360px] sm:h-[420px] md:w-[460px] md:h-[460px] rounded-[40px] sm:rounded-[70px] border-2 border-brand-blue/40 shadow-[0_16px_48px_rgba(0,0,0,0.25)] -translate-y-2 z-10 dark:shadow-[0_16px_48px_rgba(0,0,0,0.55)] md:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_24px_64px_rgba(0,0,0,0.65)]',
-          collapsed: 'w-full sm:w-32 h-[340px] sm:h-[450px] rounded-[40px] sm:rounded-[70px]',
-        };
+      : size === 'compact'
+        ? {
+            expanded:
+              'w-[260px] h-[340px] sm:w-[300px] sm:h-[400px] md:w-[340px] md:h-[420px] rounded-[32px] sm:rounded-[56px] border-2 border-brand-blue/35 shadow-[0_14px_40px_rgba(0,0,0,0.22)] -translate-y-1 z-10 dark:shadow-[0_14px_40px_rgba(0,0,0,0.55)]',
+            collapsed: 'w-[220px] h-[320px] sm:w-[260px] sm:h-[380px] md:w-[300px] md:h-[400px] rounded-[32px] sm:rounded-[56px]',
+          }
+        : {
+            // existing (large) sizing used across other pages
+            expanded:
+              'w-full h-[360px] sm:w-[360px] sm:h-[420px] md:w-[460px] md:h-[460px] rounded-[40px] sm:rounded-[70px] border-2 border-brand-blue/40 shadow-[0_16px_48px_rgba(0,0,0,0.25)] -translate-y-2 z-10 dark:shadow-[0_16px_48px_rgba(0,0,0,0.55)] md:shadow-[0_24px_64px_rgba(0,0,0,0.3)] dark:md:shadow-[0_24px_64px_rgba(0,0,0,0.65)]',
+            collapsed: 'w-full sm:w-32 h-[340px] sm:h-[450px] rounded-[40px] sm:rounded-[70px]',
+          };
 
   return (
     <div

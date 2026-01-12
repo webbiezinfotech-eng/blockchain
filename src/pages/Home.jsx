@@ -44,6 +44,8 @@ import productivityIcon from '../assets/home_images/icons/high-performance.gif';
 import gameIcon from '../assets/home_images/icons/multi-chain.gif';
 import uploadIcon from '../assets/home_images/icons/end-support.gif';
 
+import readyToBuildImg from '../assets/home_images/ready to build.png';
+
 // Hero Images Object
 const heroImages = {
   light: lightHeroImage,
@@ -414,7 +416,7 @@ const Home = () => {
 
       <div className="relative">
         {/* Core Services Section */}
-        <div ref={servicesRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+        <div ref={servicesRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
           <section className={`sticky top-0 z-[10] bg-white pb-8 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-6 md:top-0 md:pb-16 md:pt-8 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%]">
@@ -496,7 +498,7 @@ const Home = () => {
         </div>
 
         {/* Why Trust Section */}
-        <div ref={trustRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+        <div ref={trustRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
           <section className={`sticky top-0 z-[20] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16`}>
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full px-2 text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] sm:px-4 md:px-6">
@@ -549,7 +551,7 @@ const Home = () => {
      
 
         {/* Industries Section */}
-        <div ref={industriesRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+        <div ref={industriesRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
           <section className={`sticky top-0 z-[30] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16`}>
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px]">
@@ -653,8 +655,8 @@ const Home = () => {
         </div>
 
            {/* Our Work Section */}
-           <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
-          <section className="sticky top-0 z-[25] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+           <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
+          <section className="sticky top-0 z-[25] bg-white pb-5  pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-10 lg:pt-16">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px]">
                 <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
@@ -713,7 +715,7 @@ const Home = () => {
        
 
         {/* Tech Stack Section */}
-        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
           <section className="sticky top-0 z-[35] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="ml-auto max-w-full text-right font-heading font-bold uppercase leading-[1.25] tracking-[0%] sm:max-w-[900px]">
@@ -799,7 +801,7 @@ const Home = () => {
         </div>
 
          {/* Wide Range Services Section */}
-         <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+         <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
           <section className="sticky top-0 z-[40] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
@@ -831,7 +833,7 @@ const Home = () => {
         </div>
 
         {/* Testimonials Section */}
-        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
           <section className="sticky top-0 z-[45] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
@@ -871,7 +873,7 @@ const Home = () => {
         </div>
 
         {/* Ready to Build Section */}
-        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
           <section className="sticky top-0 z-[50] bg-white pb-10 pt-2 transition-all duration-700 dark:bg-black sm:top-0  sm:pt-4 md:top-0 ">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <div className="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center">
@@ -897,9 +899,8 @@ const Home = () => {
 
                 {/* Right Side - Illustration/Image */}
                 <div className="flex items-center justify-center">
-                  <div className="w-full max-w-[500px] h-[400px] sm:h-[500px] rounded-lg bg-brand-blue/10 flex items-center justify-center">
-                    {/* Placeholder for illustration - can be replaced with actual image */}
-                    <div className="text-6xl sm:text-8xl">🤖</div>
+                  <div className="w-full max-w-[520px] overflow-hidden rounded-2xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                    <img src={readyToBuildImg} alt="Ready to build" className="h-auto w-full object-contain" loading="lazy" />
                   </div>
                 </div>
               </div>
@@ -908,7 +909,7 @@ const Home = () => {
         </div>
 
         {/* FAQ Section */}
-        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
           <section className="sticky top-0 z-[55] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
@@ -1009,7 +1010,7 @@ const Home = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[140vh]">
+        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
           <section className="sticky top-0 z-[60] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">

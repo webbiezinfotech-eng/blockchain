@@ -1,6 +1,23 @@
 import { useState, useEffect } from 'react';
 import BeforeFooter from '../../components/common/BeforeFooter';
 
+import heroImg from '../../assets/services images/BlockchainDevimages/blockchainDev-Hero.png';
+import solution1Img from '../../assets/services images/BlockchainDevimages/CustomBlockchainApplications.png';
+import solution2Img from '../../assets/services images/BlockchainDevimages/PrivateConsortiumBlockchainNetworks.png';
+import solution3Img from '../../assets/services images/BlockchainDevimages/TokenizationDigitalAsset.png';
+import solution4Img from '../../assets/services images/BlockchainDevimages/SmartContractDevelopment.png';
+import solution5Img from '../../assets/services images/BlockchainDevimages/DecentralizedIdentitySystem.png';
+import solution6Img from '../../assets/services images/BlockchainDevimages/BlockchainIntegrationAPIDev.png';
+import developmentProcessImg from '../../assets/services images/BlockchainDevimages/DevelopmentProcess.png';
+
+import financeBankingIcon from '../../assets/services images/BlockchainDevimages/icons/FinanceBanking.gif';
+import supplyChainIcon from '../../assets/services images/BlockchainDevimages/icons/Supplychain.gif';
+import healthcareIcon from '../../assets/services images/BlockchainDevimages/icons/Healthcare.gif';
+import realEstateIcon from '../../assets/services images/BlockchainDevimages/icons/realestate.gif';
+import gamingMetaverseIcon from '../../assets/services images/BlockchainDevimages/icons/gamingMetaverse.gif';
+import energyIcon from '../../assets/services images/BlockchainDevimages/icons/energy.gif';
+import publicSectorIcon from '../../assets/services images/BlockchainDevimages/icons/publicsector.gif';
+
 const BlockchainDevelopment = () => {
   const [cardsToShow, setCardsToShow] = useState(3);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,91 +29,37 @@ const BlockchainDevelopment = () => {
     {
       title: 'Finance & Banking',
       desc: 'Payments, settlements, tokenized assets, compliance automation',
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M3 10h18" />
-          <path d="M5 10V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3" />
-          <path d="M7 10v10" />
-          <path d="M17 10v10" />
-          <path d="M5 20h14" />
-          <path d="M10 14h4" />
-        </svg>
-      ),
+      icon: financeBankingIcon,
     },
     {
       title: 'Supply Chain',
       desc: 'Real-time tracking, provenance, anti-counterfeiting',
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.73z" />
-          <path d="M3.3 7l8.7 5 8.7-5" />
-          <path d="M12 22V12" />
-        </svg>
-      ),
+      icon: supplyChainIcon,
     },
     {
       title: 'Healthcare',
       desc: 'Secure medical records, identity, and data sharing',
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M20 21V8a2 2 0 0 0-2-2h-3l-1-2H10L9 6H6a2 2 0 0 0-2 2v13" />
-          <path d="M8 21h8" />
-          <path d="M12 10v6" />
-          <path d="M9 13h6" />
-        </svg>
-      ),
+      icon: healthcareIcon,
     },
     {
       title: 'Real Estate',
       desc: 'Tokenized assets, digital deeds, automated agreements',
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M3 10.5 12 3l9 7.5" />
-          <path d="M5 10v10h14V10" />
-          <path d="M9 20v-6h6v6" />
-        </svg>
-      ),
+      icon: realEstateIcon,
     },
     {
       title: 'Gaming & Metaverse',
       desc: 'Play-to-earn systems, NFTs, virtual economies',
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M6 12h3" />
-          <path d="M7.5 10.5v3" />
-          <path d="M15 11h.01" />
-          <path d="M18 13h.01" />
-          <path d="M6.5 7h11a3.5 3.5 0 0 1 3.4 4.4l-1.2 5A3 3 0 0 1 16.8 19H15l-2-2H11l-2 2H7.2a3 3 0 0 1-2.9-2.6l-1.2-5A3.5 3.5 0 0 1 6.5 7Z" />
-        </svg>
-      ),
+      icon: gamingMetaverseIcon,
     },
     {
       title: 'Energy',
       desc: 'Smart metering, carbon credits, renewable trading',
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 2v8" />
-          <path d="M7 22a5 5 0 0 1 10 0" />
-          <path d="M6 14h12" />
-          <path d="M10 14 8 22" />
-          <path d="M14 14 16 22" />
-        </svg>
-      ),
+      icon: energyIcon,
     },
     {
       title: 'Public Sector',
       desc: 'Governance systems, land registries, e-voting',
-      icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M3 10h18" />
-          <path d="M5 10v10" />
-          <path d="M9 10v10" />
-          <path d="M15 10v10" />
-          <path d="M19 10v10" />
-          <path d="M4 20h16" />
-          <path d="M12 3 3 8h18l-9-5Z" />
-        </svg>
-      ),
+      icon: publicSectorIcon,
     },
   ];
 
@@ -145,7 +108,7 @@ const BlockchainDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero Section */}
-      <section className="relative z-[1] w-full overflow-hidden bg-white pt-10 pb-12 transition-colors duration-300 dark:bg-black sm:pt-12 sm:pb-16 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24 xl:pt-24 xl:pb-28">
+      <section className="relative z-[1] w-full overflow-hidden bg-white pt-4 pb-12 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-16 md:pt-8 md:pb-20 lg:pt-10 lg:pb-24 xl:pt-12 xl:pb-28">
         {/* Background Decorative Lines */}
         <div className="absolute inset-0 z-0 opacity-10 dark:opacity-20">
           <div className="absolute left-[10%] top-0 h-full w-[1px] bg-brand-blue" />
@@ -193,10 +156,12 @@ const BlockchainDevelopment = () => {
             </div>
           </div>
 
-          {/* Right Side - Media Placeholder */}
+          {/* Right Side - Hero Graphic */}
           <div className="flex w-full items-center justify-center">
-            <div className="flex aspect-square w-full max-w-[500px] items-center justify-center rounded-2xl border-2 border-dashed border-brand-blue/20 bg-brand-blue/5 text-2xl font-bold text-brand-blue/40 dark:border-white/10 dark:bg-white/5 dark:text-white/20">
-              Media
+            <div className="w-full max-w-[560px]">
+              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                <img src={heroImg} alt="Blockchain development" className="h-full w-full object-cover" />
+              </div>
             </div>
           </div>
         </div>
@@ -218,26 +183,32 @@ const BlockchainDevelopment = () => {
               {
                 title: "Custom Blockchain Applications",
                 desc: "Build Feature-Rich Decentralized Apps Tailored To Finance, Supply Chain, Gaming, And More."
+                ,image: solution1Img
               },
               {
                 title: "Private & Consortium Blockchain Networks",
                 desc: "Build Permissioned Networks For Enterprises Using Hyperledger, Quorum, Or Polygon Supernets."
+                ,image: solution2Img
               },
               {
                 title: "Tokenization & Digital Assets",
                 desc: "Launch Utility Tokens, NFTs, Stablecoins, Asset-Backed Tokens, And Digital Certificates."
+                ,image: solution3Img
               },
               {
                 title: "Smart Contract Development",
                 desc: "Secure, Auditable Smart Contracts Using Industry-Grade Standards And Best Practices."
+                ,image: solution4Img
               },
               {
                 title: "Decentralized Identity (DID) Systems",
                 desc: "Implement Next-Gen Identity Frameworks For Authentication And Access Control."
+                ,image: solution5Img
               },
               {
                 title: "Blockchain Integrations & API Development",
                 desc: "Connect Existing Software, Databases, And ERP Systems To Blockchain Networks."
+                ,image: solution6Img
               }
             ].map((solution, idx) => (
               <div 
@@ -255,10 +226,15 @@ const BlockchainDevelopment = () => {
                     </p>
                   </div>
 
-                  {/* Media Placeholder */}
+                  {/* Graphic */}
                   <div className="relative h-24 w-24 shrink-0 overflow-hidden sm:h-32 sm:w-32">
-                    <div className="flex h-full w-full items-center justify-center rounded-2xl bg-brand-blue/5 text-xs font-bold text-brand-blue/30 dark:bg-white/5 dark:text-white/20">
-                      Media
+                    <div className="h-full w-full overflow-hidden rounded-2xl bg-brand-blue/5 dark:bg-white/5">
+                      <img
+                        src={solution.image}
+                        alt={solution.title}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
                   </div>
                 </div>
@@ -299,8 +275,13 @@ const BlockchainDevelopment = () => {
                           <h3 className="no-stroke font-heading text-xl font-bold leading-tight text-brand-blue transition-colors duration-300 dark:text-white sm:text-2xl">
                             {card.title}
                           </h3>
-                          <div className="shrink-0 text-brand-blue transition-colors duration-300 dark:text-white">
-                            {card.icon}
+                          <div className="shrink-0">
+                            <img
+                              src={card.icon}
+                              alt={`${card.title} icon`}
+                              className="h-10 w-10 object-contain"
+                              loading="lazy"
+                            />
                           </div>
                         </div>
                         <p className="mt-6 font-sans text-sm font-medium leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white sm:text-base">
@@ -401,9 +382,13 @@ const BlockchainDevelopment = () => {
             <div className="pointer-events-none absolute left-1/2 z-0 hidden h-[280px] w-[280px] -translate-x-1/2 items-center justify-center rounded-full border border-brand-blue/25 bg-white/80 shadow-[0_18px_55px_rgba(0,0,0,0.12)] backdrop-blur-[2px] transition-colors duration-300 dark:border-white/25 dark:bg-black/40 dark:shadow-[0_18px_60px_rgba(0,0,0,0.65)] md:top-[100px] md:flex">
               <div className="absolute inset-6 rounded-full border border-brand-blue/20 dark:border-white/20" />
               <div className="absolute inset-12 rounded-full border border-brand-blue/15 dark:border-white/15" />
-              <div className="flex flex-col items-center justify-center gap-2 text-brand-blue/80 dark:text-white/70">
-                <div className="text-sm font-semibold uppercase tracking-wider">Media</div>
-                <div className="text-xs font-medium opacity-80">(Replace with graphic)</div>
+              <div className="relative z-10 h-[220px] w-[220px] overflow-hidden rounded-full">
+                <img
+                  src={developmentProcessImg}
+                  alt="Development process"
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
               </div>
             </div>
 

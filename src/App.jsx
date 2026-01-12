@@ -20,7 +20,6 @@ import WalletDevelopment from './pages/Services/WalletDevelopment';
 import BlockchainConsulting from './pages/Services/BlockchainConsulting';
 import Industries from './pages/Industries';
 import CaseStudies from './pages/CaseStudies';
-import Blog from './pages/Blog';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 
@@ -31,6 +30,8 @@ function App() {
     <div className="min-h-screen flex flex-col overflow-x-hidden bg-white text-black transition-colors duration-300 dark:bg-black dark:text-white">
       <Header />
       <ScrollToHash />
+      {/* Spacer for fixed header (h-16 sm:h-20) */}
+      <div className="h-16 sm:h-20" />
       <main className="flex-1 w-full">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -50,7 +51,6 @@ function App() {
           <Route path="/services/wallet-development" element={<WalletDevelopment />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/case-studies" element={<CaseStudies />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

@@ -1,10 +1,10 @@
 import BeforeFooter from '../components/common/BeforeFooter';
 import ServiceCard from '../components/common/ServiceCard';
 
-import heroImg from '../assets/home_images/blockchain+ai.png';
-import cat1 from '../assets/home_images/cryptocurrency.png';
-import cat2 from '../assets/home_images/enterprise-grade.png';
-import cat3 from '../assets/home_images/scalable-infras.png';
+import heroImg from '../assets/Industry_images/Industry-hero.png';
+import cat1 from '../assets/Industry_images/FintechBanking-main.png';
+import cat2 from '../assets/Industry_images/HealthcarePharma-main.png';
+import cat3 from '../assets/Industry_images/SupplychainLogistics-main.png';
 import cat4 from '../assets/home_images/wallets.png';
 import cat5 from '../assets/home_images/decentralized-finance.png';
 import cat6 from '../assets/home_images/nftmarketplacedev.png';
@@ -13,23 +13,23 @@ import cat8 from '../assets/home_images/blockchain-api.png';
 import cat9 from '../assets/home_images/fundraising.png';
 import cat10 from '../assets/home_images/marketing.png';
 
-import iFinance from '../assets/home_images/fundraising.png';
-import iHealth from '../assets/home_images/ai.png';
-import iSupply from '../assets/home_images/scalable-infras.png';
-import iRealEstate from '../assets/home_images/enterprise-grade.png';
-import iGaming from '../assets/home_images/blockchain.png';
-import iRetail from '../assets/home_images/marketing.png';
-import iEnergy from '../assets/home_images/layer2.png';
-import iEducation from '../assets/home_images/blockchain-api.png';
-import iGov from '../assets/home_images/enterprise-grade.png';
-import iInsurance from '../assets/home_images/smartcontractaudit.png';
-import iTravel from '../assets/home_images/walletdev.png';
-import iManufacturing from '../assets/home_images/backends.png';
+import iFinance from '../assets/Industry_images/FintechBanking.png';
+import iHealth from '../assets/Industry_images/HealthcarePharma.png';
+import iSupply from '../assets/Industry_images/SupplychainLogistics.png';
+import iRealEstate from '../assets/Industry_images/RealEstate.png';
+import iGaming from '../assets/Industry_images/GamingMetaverse.png';
+import iRetail from '../assets/Industry_images/EcommerceRetail.png';
+import iEnergy from '../assets/Industry_images/EnergySustainability.png';
+import iEducation from '../assets/Industry_images/EducationEdtech.png';
+import iGov from '../assets/Industry_images/GovernmentPublicService.png';
+import iInsurance from '../assets/Industry_images/Insurance.png';
+import iTravel from '../assets/Industry_images/TravelHospitality.png';
+import iManufacturing from '../assets/Industry_images/ManufacturingIndustry.png';
 
-import b1 from '../assets/home_images/smartcontractaudit.png';
-import b2 from '../assets/home_images/icons/multi-chain.gif';
-import b3 from '../assets/home_images/icons/high-performance.gif';
-import b4 from '../assets/home_images/icons/transparent.gif';
+import b1 from '../assets/Industry_images/EnterpriseGradeSecurity.png';
+import b2 from '../assets/Industry_images/IndustrySpecificExpertise.png';
+import b3 from '../assets/Industry_images/FasterDigitalTransformation.png';
+import b4 from '../assets/Industry_images/End2EndDelivery.png';
 
 const Industries = () => {
   const categories = [

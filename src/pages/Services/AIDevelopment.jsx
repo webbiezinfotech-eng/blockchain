@@ -1,156 +1,87 @@
+import heroImg from '../../assets/services images/AIDevimages/AIDev-hero.png';
+import useCaseImg from '../../assets/services images/AIDevimages/AIusecase.png';
+import processImg from '../../assets/services images/AIDevimages/AIDevProcess.png';
+
+import iconAutomatedCustomer from '../../assets/services images/AIDevimages/icons/AutomatedCustomer.gif';
+import iconFinancialForecasting from '../../assets/services images/AIDevimages/icons/FinancialForecasting.gif';
+import iconHealthcare from '../../assets/services images/AIDevimages/icons/Healthcare.gif';
+import iconPredictiveMaintenance from '../../assets/services images/AIDevimages/icons/PredictiveMaintenance.gif';
+import iconRecommendationSystem from '../../assets/services images/AIDevimages/icons/RecommendationSystem.gif';
+import iconImageVideo from '../../assets/services images/AIDevimages/icons/imageVideo.gif';
+import iconSmartDocumentProcess from '../../assets/services images/AIDevimages/icons/SmartDocumentProcess.gif';
+
+import iconCustomMachine from '../../assets/services images/AIDevimages/icons/CustomMachine.gif';
+import iconNeuralNetwork from '../../assets/services images/AIDevimages/icons/neuralnetwork.gif';
+import iconGenAISystem from '../../assets/services images/AIDevimages/icons/GenAISystem.gif';
+import iconPredictiveBehavioral from '../../assets/services images/AIDevimages/icons/PredictiveBehavioral.gif';
+
+import iconAIAutomationWorkflows from '../../assets/services images/AIDevimages/icons/AIAutomationWorkflows.gif';
+import iconComputerVision from '../../assets/services images/AIDevimages/icons/ComputerVision.gif';
+import iconNLPSolution from '../../assets/services images/AIDevimages/icons/NLPSolution.gif';
+
 const AIDevelopment = () => {
   const useCases = [
     {
       title: 'Automated customer service (AI agents, chatbots)',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path
-            d="M7.5 14.5H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v5.5a3 3 0 0 1-3 3h-4.5L10 18.5v-4z"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinejoin="round"
-          />
-          <path d="M7.5 8h6.5M7.5 11h4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      ),
+      icon: <img src={iconAutomatedCustomer} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
     {
       title: 'Financial forecasting & fraud detection',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M4.5 20V5.5A2.5 2.5 0 0 1 7 3h10a2.5 2.5 0 0 1 2.5 2.5V20" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <path d="M17.5 14.5l1.8 1.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <path d="M15.5 16.3a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4z" stroke="currentColor" strokeWidth="1.8" />
-        </svg>
-      ),
+      icon: <img src={iconFinancialForecasting} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
     {
       title: 'Healthcare diagnostics & analytics',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M7 4h10a3 3 0 0 1 3 3v13H4V7a3 3 0 0 1 3-3z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M12 8v8M8 12h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      ),
+      icon: <img src={iconHealthcare} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
     {
       title: 'Predictive maintenance for manufacturing',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M14 3l-2 2 3 3 2-2a5 5 0 0 1 2 6l-2 2-3-3-7.5 7.5a2 2 0 0 1-2.8-2.8L11.2 8 8.2 5 10 3a5 5 0 0 1 4 0z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-        </svg>
-      ),
+      icon: <img src={iconPredictiveMaintenance} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
     {
       title: 'Recommendation systems for eCommerce',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M7 6h14v12H7z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M3 8h4v8H3z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M10 10h8M10 13h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <path d="M17.5 17.2l.9-1.8 2 .3-1.4-1.4.8-1.9-1.9.8-1.4-1.4.3 2-1.8.9 2 .3z" fill="currentColor" />
-        </svg>
-      ),
+      icon: <img src={iconRecommendationSystem} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
     {
       title: 'Image/video processing for surveillance',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M4 7h16v10H4z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M9 17l-2.5 3M15 17l2.5 3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <path d="M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" stroke="currentColor" strokeWidth="1.8" />
-        </svg>
-      ),
+      icon: <img src={iconImageVideo} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
     {
       title: 'Smart document processing (OCR, extraction)',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M7 3h7l3 3v15H7z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-          <path d="M14 3v4h4" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-          <path d="M9 12h6M9 15h6M9 18h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      ),
+      icon: <img src={iconSmartDocumentProcess} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
   ];
 
   const capabilitiesTop = [
     {
       title: 'Custom Machine Learning Models',
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M7 7h10v10H7z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M9 9h6v6H9z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M4 9h2M4 15h2M18 9h2M18 15h2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <path d="M9 4v2M15 4v2M9 18v2M15 18v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      ),
+      icon: <img src={iconCustomMachine} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
     {
       title: 'Neural Networks & Deep Learning',
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <circle cx="6" cy="12" r="2" stroke="currentColor" strokeWidth="1.8" />
-          <circle cx="18" cy="6" r="2" stroke="currentColor" strokeWidth="1.8" />
-          <circle cx="18" cy="18" r="2" stroke="currentColor" strokeWidth="1.8" />
-          <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M7.7 11.2 10.3 12M13.7 11.2 16.3 7.7M13.7 12.8 16.3 16.3M10.3 12 7.7 12.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      ),
+      icon: <img src={iconNeuralNetwork} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
     {
       title: 'GenAI Systems (LLMs, RAG, Chatbots)',
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M7 8a5 5 0 0 1 10 0v4a5 5 0 0 1-10 0V8z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M9 7V5a1 1 0 0 1 1-1h.5M15 7V5a1 1 0 0 0-1-1H13.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <path d="M9.5 11h.01M14.5 11h.01" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
-          <path d="M8 19h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      ),
+      icon: <img src={iconGenAISystem} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
     {
       title: 'Predictive & Behavioral Analytics',
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M12 3a7 7 0 0 0-7 7c0 2.6 1.4 4.8 3.5 6v2.5h7V16c2.1-1.2 3.5-3.4 3.5-6a7 7 0 0 0-7-7z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-          <path d="M10 12l1.2-1.2 1.2 1.2 2.2-2.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ),
+      icon: <img src={iconPredictiveBehavioral} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
   ];
 
   const capabilitiesBottom = [
     {
       title: 'AI Automation Workflows',
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M7 7h10v10H7z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M9 10h6M9 13h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <path d="M5 12H3M21 12h-2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      ),
+      icon: <img src={iconAIAutomationWorkflows} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
     {
       title: 'Computer Vision & Image Recognition',
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M4 7h16v10H4z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M9 10a3 3 0 1 0 6 0 3 3 0 0 0-6 0z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M7 17l-2 4M17 17l2 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      ),
+      icon: <img src={iconComputerVision} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
     {
       title: 'NLP Solutions (Text, Speech, Translation)',
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" className="text-brand-blue">
-          <path d="M4 6h16v12H4z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M7 10h5M7 13h7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <path d="M16.5 10.5h.01M16.5 13.5h.01" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
-        </svg>
-      ),
+      icon: <img src={iconNLPSolution} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
   ];
 
@@ -179,7 +110,7 @@ const AIDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero Section (Figma) */}
-      <section className="w-full bg-white pt-12 pb-16 transition-colors duration-300 dark:bg-black sm:pt-12 sm:pb-20 lg:pt-12 lg:pb-24">
+      <section className="w-full bg-white pt-4 pb-16 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-20 lg:pt-8 lg:pb-24">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             {/* Left */}
@@ -206,9 +137,8 @@ const AIDevelopment = () => {
             {/* Right */}
             <div className="flex w-full items-center justify-center lg:justify-end">
               <div className="w-full max-w-[560px]">
-                {/* Replace this with your figma image later */}
-                <div className="flex aspect-[4/3] w-full items-center justify-center rounded-3xl bg-black/[0.03] text-2xl font-bold text-brand-blue/30 transition-colors duration-300 dark:bg-white/[0.04] dark:text-white/20">
-                  Media
+                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                  <img src={heroImg} alt="AI development" className="h-auto w-full object-contain" loading="eager" />
                 </div>
               </div>
             </div>
@@ -230,8 +160,8 @@ const AIDevelopment = () => {
             {/* Left Illustration */}
             <div className="flex items-center justify-center lg:justify-start">
               <div className="w-full max-w-[560px]">
-                <div className="flex aspect-[4/3] w-full items-center justify-center rounded-3xl bg-black/[0.03] text-2xl font-bold text-brand-blue/30 transition-colors duration-300 dark:bg-white/[0.04] dark:text-white/20">
-                  Media
+                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                  <img src={useCaseImg} alt="AI use cases" className="h-auto w-full object-contain" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -358,9 +288,9 @@ const AIDevelopment = () => {
             {deploymentSteps.map((s) => (
               <div
                 key={s.no}
-                className="flex items-center gap-4 rounded-xl border border-[#c8d7e4] bg-white px-4 py-3 shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 dark:border-white/15 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]"
+                className="flex items-center gap-4 rounded-xl border border-brand-blue/30 bg-[#EAF3FF] px-4 py-3 shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 dark:border-white/15 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-brand-blue bg-white text-lg font-bold text-black">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-brand-blue bg-white text-lg font-bold text-brand-blue">
                   {s.no}
                 </div>
                 <p className="font-sans text-[16px] font-medium text-brand-blue dark:text-white">{s.title}</p>
@@ -372,8 +302,8 @@ const AIDevelopment = () => {
           <div className="relative mt-14 hidden min-h-[560px] overflow-x-clip lg:block">
             {/* Center media */}
             <div className="absolute left-1/2 top-1/2 w-[340px] -translate-x-1/2 -translate-y-1/2">
-              <div className="flex aspect-square w-full items-center justify-center rounded-3xl bg-black/[0.03] text-2xl font-bold text-brand-blue/30 shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:bg-white/[0.04] dark:text-white/20">
-                Media
+              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                <img src={processImg} alt="AI deployment process" className="h-auto w-full object-contain" loading="lazy" />
               </div>
             </div>
 
@@ -391,9 +321,9 @@ const AIDevelopment = () => {
             ].map((s) => (
               <div
                 key={s.no}
-                className={`absolute ${s.cls} flex items-center gap-3 rounded-xl border border-[#c8d7e4] bg-white pl-4 pr-3 py-3 shadow-[0_4px_18px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/15 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]`}
+                className={`absolute ${s.cls} flex items-center gap-3 rounded-xl border border-brand-blue/30 bg-[#EAF3FF] pl-4 pr-3 py-3 shadow-[0_4px_18px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/15 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]`}
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-brand-blue bg-white text-lg font-bold text-black">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-brand-blue bg-white text-lg font-bold text-brand-blue">
                   {s.no}
                 </div>
                 <p className="font-sans text-[16px] font-medium text-brand-blue dark:text-white">{s.title}</p>

@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import BeforeFooter from '../components/common/BeforeFooter';
 
-import heroImg from '../assets/home_images/backends.png';
+import heroImg from '../assets/FAQs-hero.png';
 
 const FAQ = () => {
   const data = useMemo(

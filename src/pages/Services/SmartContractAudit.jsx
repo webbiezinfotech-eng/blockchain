@@ -1,24 +1,43 @@
+import heroImg from '../../assets/services images/SmartContractAuditimages/SmartContractAudit-hero.png';
+import auditProcessImg from '../../assets/services images/SmartContractAuditimages/AuditProcess.png';
+import sampleReportImg from '../../assets/services images/SmartContractAuditimages/SampleAuditReport.png';
+
+import iconCodeReview from '../../assets/services images/SmartContractAuditimages/icons/codeReviewArchitecture.gif';
+import iconAutomatedVuln from '../../assets/services images/SmartContractAuditimages/icons/AutomatedVulnerability.gif';
+import iconManualTesting from '../../assets/services images/SmartContractAuditimages/icons/ManualPenetration.gif';
+import iconGasPerf from '../../assets/services images/SmartContractAuditimages/icons/GasUsagePerformance.gif';
+import iconFinalReport from '../../assets/services images/SmartContractAuditimages/icons/FinalAuditReport.gif';
+
+import iconReentrancy from '../../assets/services images/SmartContractAuditimages/icons/Reentrancy.gif';
+import iconOverflow from '../../assets/services images/SmartContractAuditimages/icons/IntegerOverflowUnderflow.gif';
+import iconAccessControl from '../../assets/services images/SmartContractAuditimages/icons/AccessControlIssues.gif';
+import iconFrontRunning from '../../assets/services images/SmartContractAuditimages/icons/FrontRunning.gif';
+import iconLogicalFlaws from '../../assets/services images/SmartContractAuditimages/icons/LogicalFlaws.gif';
+import iconDos from '../../assets/services images/SmartContractAuditimages/icons/DenialOfService.gif';
+import iconOracle from '../../assets/services images/SmartContractAuditimages/icons/OracleManipulation.gif';
+import iconUpgradeability from '../../assets/services images/SmartContractAuditimages/icons/ContractUpgradeability.gif';
+
 const SmartContractAudit = () => {
   const auditProcess = [
-    'Code review & architecture analysis',
-    'Automated vulnerability testing',
-    'Manual vulnerability testing',
-    'Gas usage & performance optimization',
-    'Final audit report with fixes',
+    { label: 'Code review & architecture analysis', icon: iconCodeReview },
+    { label: 'Automated vulnerability testing', icon: iconAutomatedVuln },
+    { label: 'Manual vulnerability testing', icon: iconManualTesting },
+    { label: 'Gas usage & performance optimization', icon: iconGasPerf },
+    { label: 'Final audit report with fixes', icon: iconFinalReport },
   ];
 
   const checklistTop = [
-    { t: 'Reentrancy' },
-    { t: 'Integer Overflow / Underflow' },
-    { t: 'Access Control Issues' },
-    { t: 'Front Running' },
+    { t: 'Reentrancy', icon: iconReentrancy },
+    { t: 'Integer Overflow / Underflow', icon: iconOverflow },
+    { t: 'Access Control Issues', icon: iconAccessControl },
+    { t: 'Front Running', icon: iconFrontRunning },
   ];
 
   const checklistBottom = [
-    { t: 'Logic Flaws' },
-    { t: 'Denial of Service' },
-    { t: 'Oracle Manipulation' },
-    { t: 'Contract Upgradeability Issues' },
+    { t: 'Logic Flaws', icon: iconLogicalFlaws },
+    { t: 'Denial of Service', icon: iconDos },
+    { t: 'Oracle Manipulation', icon: iconOracle },
+    { t: 'Contract Upgradeability Issues', icon: iconUpgradeability },
   ];
 
   const automatedTools = ['Cortex', 'Echidna', 'Mythril', 'Slither'];
@@ -46,7 +65,7 @@ const SmartContractAudit = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-12 pb-14 transition-colors duration-300 dark:bg-black sm:pt-14 sm:pb-16 lg:pt-16 lg:pb-20">
+      <section className="w-full bg-white pt-4 pb-14 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-16 lg:pt-8 lg:pb-20">
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[60%_40%] lg:pl-[3rem] lg:pr-[5rem]">
           {/* Left */}
           <div className="flex w-full flex-col gap-6">
@@ -71,8 +90,8 @@ const SmartContractAudit = () => {
           {/* Right (media) */}
           <div className="flex w-full items-center justify-center lg:justify-end">
             <div className="w-full max-w-[560px]">
-              <div className="flex aspect-[4/3] w-full items-center justify-center rounded-3xl bg-black/[0.03] text-2xl font-bold text-brand-blue/30 transition-colors duration-300 dark:bg-white/[0.04] dark:text-white/20">
-                Media
+              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                <img src={heroImg} alt="Smart contract audit" className="h-auto w-full object-contain" loading="eager" />
               </div>
             </div>
           </div>
@@ -93,27 +112,24 @@ const SmartContractAudit = () => {
             {/* Left media */}
             <div className="flex items-center justify-center lg:justify-start">
               <div className="w-full max-w-[520px]">
-                <div className="flex aspect-[4/3] w-full items-center justify-center rounded-3xl bg-black/[0.03] text-2xl font-bold text-brand-blue/30 transition-colors duration-300 dark:bg-white/[0.04] dark:text-white/20">
-                  Media
+                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                  <img src={auditProcessImg} alt="Audit process overview" className="h-auto w-full object-contain" loading="lazy" />
                 </div>
               </div>
             </div>
 
             {/* Right list */}
             <div className="flex w-full flex-col gap-4 lg:max-w-[480px]">
-              {auditProcess.map((label) => (
+              {auditProcess.map((it) => (
                 <div
-                  key={label}
+                  key={it.label}
                   className="flex items-center gap-4 rounded-xl border border-brand-blue/25 bg-white px-4 py-3 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_14px_36px_rgba(0,0,0,0.14)] dark:border-white/25 dark:bg-black dark:hover:border-brand-blue/70"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-brand-blue/40 bg-white/80 text-brand-blue transition-colors duration-300 dark:border-white/35 dark:bg-black/30 dark:text-white">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="opacity-90">
-                      <path d="M12 2 20 6v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z" stroke="currentColor" strokeWidth="1.8" />
-                      <path d="m9 12 2 2 4-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                    <img src={it.icon} alt="" className="h-8 w-8 object-contain" loading="lazy" />
                   </div>
                   <p className="font-sans text-[16px] font-semibold text-black transition-colors duration-300 dark:text-white sm:text-[17px]">
-                    {label}
+                    {it.label}
                   </p>
                 </div>
               ))}
@@ -141,9 +157,7 @@ const SmartContractAudit = () => {
                   <div key={i.t} className="flex flex-col items-center">
                     <div className="flex w-full max-w-[220px] flex-col items-center rounded-[10px] border border-[#c8d7e4] bg-white px-5 py-6 text-center shadow-[0_10px_28px_rgba(0,0,0,0.06)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]">
                       <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-brand-blue/45 bg-white text-brand-blue transition-colors duration-300 dark:border-white/30 dark:bg-black dark:text-white">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                          <path d="M12 2 20 6v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z" stroke="currentColor" strokeWidth="1.7" />
-                        </svg>
+                        <img src={i.icon} alt="" className="h-10 w-10 object-contain" loading="lazy" />
                       </div>
                       <div className="mt-4 max-w-[180px] font-sans text-[18px] font-semibold leading-snug text-black transition-colors duration-300 dark:text-white">
                         {i.t}
@@ -166,9 +180,7 @@ const SmartContractAudit = () => {
 
                     <div className="mt-8 flex w-full max-w-[220px] flex-col items-center rounded-[10px] border border-[#c8d7e4] bg-white px-5 py-6 text-center shadow-[0_10px_28px_rgba(0,0,0,0.06)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]">
                       <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-brand-blue/45 bg-white text-brand-blue transition-colors duration-300 dark:border-white/30 dark:bg-black dark:text-white">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                          <path d="M12 2 20 6v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z" stroke="currentColor" strokeWidth="1.7" />
-                        </svg>
+                        <img src={i.icon} alt="" className="h-10 w-10 object-contain" loading="lazy" />
                       </div>
                       <div className="mt-4 max-w-[190px] font-sans text-[18px] font-semibold leading-snug text-black transition-colors duration-300 dark:text-white">
                         {i.t}
@@ -187,9 +199,7 @@ const SmartContractAudit = () => {
                   className="flex flex-col items-center rounded-[10px] border border-[#c8d7e4] bg-white px-4 py-5 text-center shadow-[0_10px_28px_rgba(0,0,0,0.06)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-brand-blue/45 bg-white text-brand-blue transition-colors duration-300 dark:border-white/30 dark:bg-black dark:text-white">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M12 2 20 6v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z" stroke="currentColor" strokeWidth="1.7" />
-                    </svg>
+                    <img src={i.icon} alt="" className="h-9 w-9 object-contain" loading="lazy" />
                   </div>
                   <div className="mt-3 font-sans text-[14px] font-semibold leading-snug text-black transition-colors duration-300 dark:text-white">
                     {i.t}
@@ -291,8 +301,8 @@ const SmartContractAudit = () => {
             {/* Right media */}
             <div className="flex items-center justify-center lg:justify-end">
               <div className="w-full max-w-[520px]">
-                <div className="flex aspect-[4/3] w-full items-center justify-center rounded-3xl bg-black/[0.03] text-2xl font-bold text-brand-blue/30 transition-colors duration-300 dark:bg-white/[0.04] dark:text-white/20">
-                  Media
+                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                  <img src={sampleReportImg} alt="Sample audit report" className="h-auto w-full object-contain" loading="lazy" />
                 </div>
               </div>
             </div>

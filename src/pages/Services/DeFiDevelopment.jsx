@@ -1,25 +1,18 @@
 import BeforeFooter from '../../components/common/BeforeFooter';
 
-import heroImg from '../../assets/home_images/defidev.png';
-import solution1Img from '../../assets/home_images/wallets.png';
-import solution2Img from '../../assets/home_images/web3-growth.png';
-import solution3Img from '../../assets/home_images/decentralized-finance.png';
+import heroImg from '../../assets/services images/DefiDevimages/DefiDev-hero.png';
+import solution1Img from '../../assets/services images/DefiDevimages/StakingPlatforms.png';
+import solution2Img from '../../assets/services images/DefiDevimages/YieldFarming.png';
+import solution3Img from '../../assets/services images/DefiDevimages/LendingBorrowingProtocols.png';
 
-import f1Icon from '../../assets/home_images/icons/intelligence+ai.gif';
-import f2Icon from '../../assets/home_images/icons/transparent.gif';
-import f3Icon from '../../assets/home_images/icons/multi-layer.gif';
-import f4Icon from '../../assets/home_images/icons/multi-chain.gif';
-import f5Icon from '../../assets/home_images/icons/end-support.gif';
-import f6Icon from '../../assets/home_images/icons/high-performance.gif';
+import f1Img from '../../assets/services images/DefiDevimages/SmartContractAutomation.png';
+import f2Img from '../../assets/services images/DefiDevimages/OnchainGovernance.png';
+import f3Img from '../../assets/services images/DefiDevimages/liquidityManagement.png';
+import f4Img from '../../assets/services images/DefiDevimages/FeeSharingMechanisms.png';
+import f5Img from '../../assets/services images/DefiDevimages/AdvancedTokenEconomics.png';
+import f6Img from '../../assets/services images/DefiDevimages/HighPerformanceDashboard.png';
 
-import f1Img from '../../assets/home_images/smart-contract.png';
-import f2Img from '../../assets/home_images/enterprise-grade.png';
-import f3Img from '../../assets/home_images/marketing.png';
-import f4Img from '../../assets/home_images/fundraising.png';
-import f5Img from '../../assets/home_images/launch-ready.png';
-import f6Img from '../../assets/home_images/backends.png';
-
-import archImg from '../../assets/home_images/scalable-infras.png';
+import archImg from '../../assets/services images/DefiDevimages/ArchitectureOverview.png';
 
 const DeFiDevelopment = () => {
   const solutions = [
@@ -50,37 +43,37 @@ const DeFiDevelopment = () => {
     {
       title: 'Smart Contract Automation',
       desc: 'Execute financial actions autonomously: rebalancing, risk limiting, liquidations, and earnings distribution.',
-      icon: f1Icon,
+      icon: f1Img,
       image: f1Img,
     },
     {
       title: 'On-Chain Governance',
       desc: 'Token holders vote on upgrades, manage protocol parameters, and shape decentralized decision-making.',
-      icon: f2Icon,
+      icon: f2Img,
       image: f2Img,
     },
     {
       title: 'Liquidity Management',
       desc: 'Optimize pool depth, adjust incentives, and maintain healthy markets with dynamic liquidity strategies.',
-      icon: f3Icon,
+      icon: f3Img,
       image: f3Img,
     },
     {
       title: 'Fee-Sharing Mechanisms',
       desc: 'Distribute protocol-earned revenue to token holders, stakers, or liquidity providers via automated flows.',
-      icon: f4Icon,
+      icon: f4Img,
       image: f4Img,
     },
     {
       title: 'Advanced Token Economics',
       desc: 'Design sustainable incentive models, deflationary mechanics, and utility-driven token ecosystems.',
-      icon: f5Icon,
+      icon: f5Img,
       image: f5Img,
     },
     {
       title: 'High-Performance Dashboards',
       desc: 'Deliver real-time analytics, trading insights, and protocol metrics through intuitive, data-rich interfaces.',
-      icon: f6Icon,
+      icon: f6Img,
       image: f6Img,
     },
   ];
@@ -97,7 +90,7 @@ const DeFiDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-12 pb-12 transition-colors duration-300 dark:bg-black sm:pt-14 sm:pb-14 lg:pt-16 lg:pb-16">
+      <section className="w-full bg-white pt-4 pb-12 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-14 lg:pt-8 lg:pb-16">
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[58%_42%] lg:pl-[3rem] lg:pr-[5rem]">
           {/* Left */}
           <div className="flex w-full flex-col gap-6">
@@ -126,7 +119,7 @@ const DeFiDevelopment = () => {
           <div className="flex w-full items-center justify-center lg:justify-end">
             <div className="w-full max-w-[560px]">
               <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
-                <img src={heroImg} alt="DeFi development" className="h-full w-full object-cover" />
+                <img src={heroImg} alt="DeFi development" className="h-auto w-full object-contain" loading="eager" />
               </div>
             </div>
           </div>

@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
 import BeforeFooter from '../../components/common/BeforeFooter';
 
-import tokenomicsImg from '../../assets/home_images/web3-growth.png';
-import feature1Img from '../../assets/home_images/airdrop.png';
-import feature2Img from '../../assets/home_images/wallets.png';
-import feature3Img from '../../assets/home_images/icons/multi-chain.gif';
+import heroImg from '../../assets/services images/TokenDevimages/TokenDev-hero.png';
+import tokenomicsImg from '../../assets/services images/TokenDevimages/TokenomicsSupport.png';
+
+import featureAutomatedTaxesReward from '../../assets/services images/TokenDevimages/AutomatedTaxesReward.png';
+import featureLiquidityManagement from '../../assets/services images/TokenDevimages/LiquidityManagement.png';
+import featureAntiWhaleMechanics from '../../assets/services images/TokenDevimages/AntiWhaleMechanics.png';
+import featureMintingBurning from '../../assets/services images/TokenDevimages/MintingBurning.png';
+import featureVestingLockups from '../../assets/services images/TokenDevimages/VestingLockups.png';
+import featureStakingRewards from '../../assets/services images/TokenDevimages/StakingRewards.png';
+import featureBridgingCrosschain from '../../assets/services images/TokenDevimages/BridgingCrosschainCompatibility.png';
 
 const TokenDevelopment = () => {
   const [cardsToShow, setCardsToShow] = useState(3);
@@ -85,43 +91,43 @@ const TokenDevelopment = () => {
     {
       title: 'Automated Taxes & Rewards',
       desc: 'Integrate built-in tax mechanics that automate fee distribution, reflections, rewards, and ecosystem funding.',
-      image: feature1Img,
+      image: featureAutomatedTaxesReward,
       alt: 'Taxes and rewards illustration',
     },
     {
       title: 'Liquidity Management',
       desc: 'Support healthy long-term trading with controlled pool balancing, liquidity additions, and stability mechanisms.',
-      image: feature2Img,
+      image: featureLiquidityManagement,
       alt: 'Liquidity management illustration',
     },
     {
       title: 'Anti-Whale Mechanics',
       desc: 'Prevent manipulation by restricting max wallet sizes, transactions, cooldowns, and configurable limits.',
-      image: feature3Img,
+      image: featureAntiWhaleMechanics,
       alt: 'Anti-whale illustration',
     },
     {
       title: 'Minting & Burning',
       desc: 'Flexible supply control with mint/burn permissions, caps, and secure role-based access.',
-      image: feature2Img,
+      image: featureMintingBurning,
       alt: 'Minting and burning illustration',
     },
     {
       title: 'Vesting & Lockups',
       desc: 'Protect investor trust through structured token release schedules, lockups, and automated vesting for teams and early contributors.',
-      image: feature1Img,
+      image: featureVestingLockups,
       alt: 'Vesting and lockups illustration',
     },
     {
       title: 'Staking & Rewards',
       desc: 'Boost participation with staking pools that reward holders for locking tokens, supporting network security, and contributing liquidity.',
-      image: feature2Img,
+      image: featureStakingRewards,
       alt: 'Staking and rewards illustration',
     },
     {
       title: 'Bridging & Cross-Chain Compatibility',
       desc: 'Expand your token’s reach with seamless cross-chain transfers, interoperability, and multi-network deployment for greater accessibility.',
-      image: feature3Img,
+      image: featureBridgingCrosschain,
       alt: 'Cross-chain compatibility illustration',
     },
   ];
@@ -175,8 +181,8 @@ const TokenDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-6 pb-12 transition-colors duration-300 dark:bg-black sm:pt-8 sm:pb-14 lg:pt-10 lg:pb-16">
-        <div className="mx-auto w-full max-w-layout px-6 sm:px-10 md:px-16 lg:pl-[3rem] lg:pr-[5rem]">
+      <section className="w-full bg-white pt-4 pb-12 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-14 lg:pt-8 lg:pb-16">
+        <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[60%_40%] lg:pl-[3rem] lg:pr-[5rem]">
           <div className="flex w-full flex-col gap-6">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white">
               <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.4] lg:whitespace-nowrap">
@@ -196,6 +202,14 @@ const TokenDevelopment = () => {
               standards-based tokens (ERC-20, BEP-20, SPL, ERC-721/1155) with audit-friendly code and scalable distribution
               frameworks tailored to your project goals.
             </p>
+          </div>
+
+          <div className="flex w-full items-center justify-center lg:justify-end">
+            <div className="w-full max-w-[560px]">
+              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                <img src={heroImg} alt="Token development" className="h-auto w-full object-contain" loading="eager" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

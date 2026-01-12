@@ -1,13 +1,12 @@
 import BeforeFooter from '../../components/common/BeforeFooter';
 
-import heroImg from '../../assets/home_images/dappdev.png';
-import useCase1Img from '../../assets/home_images/decentralized-finance.png';
-import useCase2Img from '../../assets/home_images/blockchain+ai.png';
-import useCase3Img from '../../assets/home_images/blockchain-api.png';
+import heroImg from '../../assets/services images/DappDevimages/DappDev-hero.png';
+import useCase1Img from '../../assets/services images/DappDevimages/DefiPlatforms.png';
+import useCase2Img from '../../assets/services images/DappDevimages/Web3Games.png';
+import useCase3Img from '../../assets/services images/DappDevimages/SupplychainTracking.png';
 
-import processImg from '../../assets/home_images/launch-ready.png';
-
-import monetizationImg from '../../assets/home_images/marketing.png';
+import processImg from '../../assets/services images/DappDevimages/DevelopmentProcess.png';
+import monetizationImg from '../../assets/services images/DappDevimages/MonetizationOptions.png';
 
 const DAppDevelopment = () => {
   const useCases = [
@@ -54,7 +53,7 @@ const DAppDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-12 pb-12 transition-colors duration-300 dark:bg-black sm:pt-14 sm:pb-14 lg:pt-16 lg:pb-16">
+      <section className="w-full bg-white pt-4 pb-12 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-14 lg:pt-8 lg:pb-16">
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[58%_42%] lg:pl-[3rem] lg:pr-[5rem]">
           <div className="flex w-full flex-col gap-6">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white">
@@ -78,7 +77,7 @@ const DAppDevelopment = () => {
           <div className="flex w-full items-center justify-center lg:justify-end">
             <div className="w-full max-w-[560px]">
               <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
-                <img src={heroImg} alt="DApp development" className="h-full w-full object-cover" />
+                <img src={heroImg} alt="DApp development" className="h-auto w-full object-contain" loading="eager" />
               </div>
             </div>
           </div>

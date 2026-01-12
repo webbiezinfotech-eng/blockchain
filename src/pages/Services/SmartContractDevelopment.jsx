@@ -1,47 +1,65 @@
+import heroImg from '../../assets/services images/SmartContractDevimages/SmartContractDev-hero.png';
+import securityStandardsImg from '../../assets/services images/SmartContractDevimages/securityStandards.png';
+import devTestingProcessImg from '../../assets/services images/SmartContractDevimages/DevTestingProcess.png';
+
+import erc20Img from '../../assets/services images/SmartContractDevimages/ERC20_BEP20_SPL_Tokens.png';
+import erc721Img from '../../assets/services images/SmartContractDevimages/ERC721_ERC1155NFTs.png';
+import defiContractsImg from '../../assets/services images/SmartContractDevimages/DeFiContracts.png';
+import daoGovernanceImg from '../../assets/services images/SmartContractDevimages/DAOGovernanceContracts.png';
+import vestingTokenSaleImg from '../../assets/services images/SmartContractDevimages/VestingTokenSaleContracts.png';
+import rwaTokenizationImg from '../../assets/services images/SmartContractDevimages/RealworldAssetTokenizationLogic.png';
+import customBusinessLogicImg from '../../assets/services images/SmartContractDevimages/CustomBusinessLogicContracts.png';
+
+import iconOwasp from '../../assets/services images/SmartContractDevimages/icons/OWASPBlockchainStandard.gif';
+import iconAutomatedScan from '../../assets/services images/SmartContractDevimages/icons/AutomatedVulnerabilityScan.gif';
+import iconFormalVerification from '../../assets/services images/SmartContractDevimages/icons/FormalVerificationProcess.gif';
+import iconMultiLayerAudit from '../../assets/services images/SmartContractDevimages/icons/MultilayerAuditWorkflow.gif';
+import iconSafeMath from '../../assets/services images/SmartContractDevimages/icons/SafemathSecurePattern.gif';
+
 const SmartContractDevelopment = () => {
   const securityStandards = [
-    'OWASP Blockchain Standards',
-    'Automated vulnerability scanning',
-    'Formal verification practices',
-    'Multi-layer audit workflow',
-    'SafeMath & secure patterns',
+    { label: 'OWASP Blockchain Standards', icon: iconOwasp },
+    { label: 'Automated vulnerability scanning', icon: iconAutomatedScan },
+    { label: 'Formal verification practices', icon: iconFormalVerification },
+    { label: 'Multi-layer audit workflow', icon: iconMultiLayerAudit },
+    { label: 'SafeMath & secure patterns', icon: iconSafeMath },
   ];
 
   const contractTypes = [
     {
       title: 'ERC20, BEP20, SPL Tokens',
       desc: 'Token Standards Enabling Secure, Efficient Fungible Asset Creation, Transfers, And Management Across Major EVM And Non-EVM Blockchains.',
-      media: 'Media',
+      media: erc20Img,
     },
     {
       title: 'ERC721 & ERC1155 NFTs',
       desc: 'Smart Contracts Powering Unique Or Multi-Asset NFTs With Flexible Metadata, Ownership Tracking, And Secure On-Chain Interactions.',
-      media: 'Media',
+      media: erc721Img,
     },
     {
       title: 'DeFi Contracts – Staking, Farming, Liquidity Pools',
       desc: 'Protocols Enabling Decentralized Rewards, Yield Generation, And Liquidity Provisioning With Automated, Transparent, Trust-Minimized Smart Logic.',
-      media: 'Media',
+      media: defiContractsImg,
     },
     {
       title: 'DAO Governance Contracts',
       desc: 'On-Chain Voting And Governance Frameworks Enabling Decentralized Decision-Making And Community-Driven Protocol Management With Full Transparency.',
-      media: 'Media',
+      media: daoGovernanceImg,
     },
     {
       title: 'Vesting & Token Sale Contracts',
       desc: 'Time-Locked Token Release And Automated Sale Mechanisms Ensuring Secure Allocations, Controlled Distributions, And Investor Protection.',
-      media: 'Media',
+      media: vestingTokenSaleImg,
     },
     {
       title: 'Real-World Asset Tokenization Logic',
       desc: 'Smart Contracts Converting Physical Assets Into Digital Tokens With Compliant Ownership, Transferability, And Programmable Utility Features.',
-      media: 'Media',
+      media: rwaTokenizationImg,
     },
     {
       title: 'Custom Business Logic Contracts',
       desc: 'Tailored Smart Contract Systems Implementing Unique Workflows, Automation Rules, And Decentralized Execution Aligned With Project Requirements.',
-      media: 'Media',
+      media: customBusinessLogicImg,
     },
   ];
 
@@ -60,7 +78,7 @@ const SmartContractDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero Section */}
-      <section className="w-full bg-white pt-12 pb-16 transition-colors duration-300 dark:bg-black sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24">
+      <section className="w-full bg-white pt-4 pb-16 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-20 lg:pt-8 lg:pb-24">
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[60%_40%] lg:pl-[3rem] lg:pr-[5rem]">
           {/* Left */}
           <div className="flex w-full flex-col gap-6">
@@ -87,8 +105,8 @@ const SmartContractDevelopment = () => {
           {/* Right */}
           <div className="flex w-full items-center justify-center lg:justify-end">
             <div className="w-full max-w-[560px]">
-              <div className="flex aspect-[4/3] w-full items-center justify-center rounded-3xl bg-black/[0.03] text-2xl font-bold text-brand-blue/30 transition-colors duration-300 dark:bg-white/[0.04] dark:text-white/20">
-                Media
+              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                <img src={heroImg} alt="Smart contract development" className="h-auto w-full object-contain" loading="eager" />
               </div>
             </div>
           </div>
@@ -109,28 +127,24 @@ const SmartContractDevelopment = () => {
             {/* Left media */}
             <div className="flex items-center justify-center lg:justify-start">
               <div className="w-full max-w-[520px]">
-                <div className="flex aspect-[4/3] w-full items-center justify-center rounded-3xl bg-black/[0.03] text-2xl font-bold text-brand-blue/30 transition-colors duration-300 dark:bg-white/[0.04] dark:text-white/20">
-                  Media
+                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                  <img src={securityStandardsImg} alt="Security standards" className="h-auto w-full object-contain" loading="lazy" />
                 </div>
               </div>
             </div>
 
             {/* Right list */}
             <div className="flex w-full flex-col gap-5">
-              {securityStandards.map((label) => (
+              {securityStandards.map((it) => (
                 <div
-                  key={label}
+                  key={it.label}
                   className="flex items-center gap-4 rounded-xl border border-brand-blue/35 bg-white px-4 py-3 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-brand-blue/45 dark:bg-black"
                 >
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-brand-blue/40 bg-white/80 text-brand-blue transition-colors duration-300 dark:border-white/35 dark:bg-black/30 dark:text-white">
-                    {/* icon placeholder */}
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="opacity-90">
-                      <path d="M12 2 20 6v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z" stroke="currentColor" strokeWidth="1.8" />
-                      <path d="m9 12 2 2 4-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                    <img src={it.icon} alt="" className="h-9 w-9 object-contain" loading="lazy" />
                   </div>
                   <p className="font-sans text-[16px] font-semibold text-black transition-colors duration-300 dark:text-white sm:text-[17px]">
-                    {label}
+                    {it.label}
                   </p>
                 </div>
               ))}
@@ -164,8 +178,8 @@ const SmartContractDevelopment = () => {
                   </p>
                 </div>
                 <div className="flex w-[150px] shrink-0 items-center justify-center">
-                  <div className="flex aspect-square w-full items-center justify-center rounded-2xl bg-white/70 text-xs font-bold text-brand-blue/60 transition-colors duration-300 dark:bg-black/20 dark:text-white/30">
-                    {c.media}
+                  <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl border border-black/10 bg-white/70 transition-colors duration-300 dark:border-white/15 dark:bg-black/20">
+                    <img src={c.media} alt="" className="h-full w-full object-cover" loading="lazy" />
                   </div>
                 </div>
               </div>
@@ -185,8 +199,8 @@ const SmartContractDevelopment = () => {
                   </p>
                 </div>
                 <div className="flex w-[150px] shrink-0 items-center justify-center">
-                  <div className="flex aspect-square w-full items-center justify-center rounded-2xl bg-white/70 text-xs font-bold text-brand-blue/60 transition-colors duration-300 dark:bg-black/20 dark:text-white/30">
-                    {contractTypes[6].media}
+                  <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl border border-black/10 bg-white/70 transition-colors duration-300 dark:border-white/15 dark:bg-black/20">
+                    <img src={contractTypes[6].media} alt="" className="h-full w-full object-cover" loading="lazy" />
                   </div>
                 </div>
               </div>
@@ -226,8 +240,8 @@ const SmartContractDevelopment = () => {
           <div className="relative mt-14 hidden min-h-[620px] overflow-x-clip lg:block">
             {/* Center media */}
             <div className="absolute left-1/2 top-1/2 w-[360px] -translate-x-1/2 -translate-y-1/2">
-              <div className="flex aspect-square w-full items-center justify-center rounded-3xl bg-black/[0.03] text-2xl font-bold text-brand-blue/30 shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:bg-white/[0.04] dark:text-white/20">
-                Media
+              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                <img src={devTestingProcessImg} alt="Development and testing process" className="h-auto w-full object-contain" loading="lazy" />
               </div>
             </div>
 
