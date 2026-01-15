@@ -4,6 +4,11 @@ import heroImg from '../../assets/services images/DefiDevimages/DefiDev-hero.png
 import solution1Img from '../../assets/services images/DefiDevimages/StakingPlatforms.png';
 import solution2Img from '../../assets/services images/DefiDevimages/YieldFarming.png';
 import solution3Img from '../../assets/services images/DefiDevimages/LendingBorrowingProtocols.png';
+import solution4Img from '../../assets/services images/DefiDevimages/LiquidStaking.png';
+import solution5Img from '../../assets/services images/DefiDevimages/PredictionMarket.png';
+import solution6Img from '../../assets/services images/DefiDevimages/CrosschainDefiapp.png';
+import solution7Img from '../../assets/services images/DefiDevimages/LaunchpadIDOPlatform.png';
+import solution8Img from '../../assets/services images/DefiDevimages/StablecoinSystem.png';
 
 import f1Img from '../../assets/services images/DefiDevimages/SmartContractAutomation.png';
 import f2Img from '../../assets/services images/DefiDevimages/OnchainGovernance.png';
@@ -36,6 +41,36 @@ const DeFiDevelopment = () => {
         'Allow trustless collateralized loans, automated interest rate models, and on-chain lending markets for global users.',
       image: solution3Img,
       alt: 'Lending and borrowing protocols',
+    },
+    {
+      title: 'Liquid staking (LSD/LSDfi)',
+      desc: 'Stake assets while retaining liquidity, enabling yield stacking, derivatives minting, and advanced capital efficiency improvements.',
+      image: solution4Img,
+      alt: 'Liquid staking',
+    },
+    {
+      title: 'Prediction markets',
+      desc: 'Let users forecast outcomes, trade positions, and access decentralized, incentive-driven markets for real-time insights.',
+      image: solution5Img,
+      alt: 'Prediction markets',
+    },
+    {
+      title: 'Cross-chain DeFi apps',
+      desc: 'Connect assets across chains, enhance interoperability, and deliver seamless multi-network transactions with unified liquidity.',
+      image: solution6Img,
+      alt: 'Cross-chain DeFi apps',
+    },
+    {
+      title: 'Launchpads & IDO platforms',
+      desc: 'Facilitate decentralized project fundraising with secure token sales, fair distribution models, and investor protection mechanisms.',
+      image: solution7Img,
+      alt: 'Launchpads and IDO platforms',
+    },
+    {
+      title: 'Stablecoin systems',
+      desc: 'Create price-stable digital assets backed by collateral, ensuring reliable payments, liquidity access, and cross-chain utility.',
+      image: solution8Img,
+      alt: 'Stablecoin systems',
     },
   ];
 
@@ -90,22 +125,22 @@ const DeFiDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-4 pb-12 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-14 lg:pt-8 lg:pb-16">
-        <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[58%_42%] lg:pl-[3rem] lg:pr-[5rem]">
+      <section className="w-full bg-white pt-12 pb-20 transition-colors duration-300 dark:bg-black sm:pt-12 sm:pb-20 lg:pt-12 lg:pb-20">
+        <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[65%_35%] lg:pl-[3rem] lg:pr-[5rem]">
           {/* Left */}
           <div className="flex w-full flex-col gap-6">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white">
-              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.35]">
+              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[59px] lg:leading-[1.50]">
                 END-TO-END DEFI DEVELOPMENT
               </span>
-              <span className="block text-[34px] leading-[1.2] sm:text-[48px] sm:leading-[1.25] lg:text-[58px] lg:leading-[1.35]">
+              <span className="block text-[34px] leading-[1.2] sm:text-[48px] sm:leading-[1.25] lg:text-[59px] lg:leading-[1.50]">
                 FOR{' '}
                 <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">
                   NEXT-GENERATION
                 </span>
               </span>
-              <span className="block text-[34px] leading-[1.2] sm:text-[48px] sm:leading-[1.25] lg:text-[58px] lg:leading-[1.35]">
-                <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">FINANCIAL</span> PLATFORMS
+              <span className="block text-[34px] leading-[1.2] sm:text-[48px] sm:leading-[1.25] lg:text-[59px] lg:leading-[1.50]">
+                <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">FINANCIAL PROTOCOLS</span> 
               </span>
             </h1>
 
@@ -117,10 +152,8 @@ const DeFiDevelopment = () => {
 
           {/* Right */}
           <div className="flex w-full items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[560px]">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
-                <img src={heroImg} alt="DeFi development" className="h-auto w-full object-contain" loading="eager" />
-              </div>
+            <div className="w-full max-w-[400px]">
+              <img src={heroImg} alt="DeFi development" className="h-auto w-full object-contain" loading="eager" />
             </div>
           </div>
         </div>
@@ -137,21 +170,25 @@ const DeFiDevelopment = () => {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {solutions.map((s) => (
-              <div
-                key={s.title}
-                className="rounded-[14px] border-2 border-brand-blue bg-white p-6 shadow-[0_12px_34px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_16px_44px_rgba(0,0,0,0.14)] dark:border-white/30 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]"
-              >
-                <div className="flex items-center justify-center">
-                  <div className="h-[120px] w-full overflow-hidden rounded-xl bg-black/[0.03] transition-colors duration-300 dark:bg-white/[0.06]">
-                    <img src={s.image} alt={s.alt} className="h-full w-full object-cover" />
+              <div key={s.title} className="group">
+                {/* Outer blue frame (cut corners) */}
+                <div className="bg-brand-blue p-[10px] shadow-[0_18px_55px_rgba(0,0,0,0.14)] [clip-path:polygon(4%_0,96%_0,100%_8%,100%_92%,96%_100%,4%_100%,0_92%,0_8%)] transition-transform duration-300 group-hover:-translate-y-[2px]">
+                  {/* Inner card */}
+                  <div className="h-full bg-white [clip-path:polygon(4%_0,96%_0,100%_8%,100%_92%,96%_100%,4%_100%,0_92%,0_8%)] transition-colors duration-300 dark:bg-black">
+                    <div className="p-6 sm:p-7">
+                      <div className="overflow-hidden rounded-lg border border-black/10 bg-black/[0.02] transition-colors duration-300 dark:border-white/15 dark:bg-white/[0.04]">
+                        <img src={s.image} alt={s.alt} className="h-[170px] w-full object-cover sm:h-[185px]" loading="lazy" />
+                      </div>
+
+                      <h3 className="mt-5 font-heading text-[22px] font-bold text-brand-blue">
+                        {s.title}
+                      </h3>
+                      <p className="mt-3 font-sans text-[15px] font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/80">
+                        {s.desc}
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <h3 className="mt-5 text-center font-heading text-[18px] font-bold uppercase tracking-wide text-black transition-colors duration-300 dark:text-white">
-                  {s.title}
-                </h3>
-                <p className="mt-3 text-center font-sans text-[14px] leading-relaxed text-black/75 transition-colors duration-300 dark:text-white/85">
-                  {s.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -171,7 +208,7 @@ const DeFiDevelopment = () => {
             {protocolFeatures.map((f) => (
               <div
                 key={f.title}
-                className="grid grid-cols-1 gap-6 rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_12px_34px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_16px_44px_rgba(0,0,0,0.14)] dark:border-white/25 dark:bg-black/20 sm:grid-cols-[1fr_170px]"
+                className="grid min-h-[240px] grid-cols-1 gap-6 rounded-[14px] border border-black/10 bg-gradient-to-b from-white to-[#cfe6fb] p-6 shadow-[0_12px_34px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_16px_44px_rgba(0,0,0,0.14)] dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] sm:grid-cols-[1fr_170px]"
               >
                 <div>
                   <div className="flex items-start gap-3">
@@ -190,7 +227,7 @@ const DeFiDevelopment = () => {
                 </div>
 
                 <div className="flex items-center justify-center sm:justify-end">
-                  <div className="h-[120px] w-[170px] overflow-hidden rounded-xl bg-black/[0.03] transition-colors duration-300 dark:bg-white/[0.06]">
+                  <div className="h-[140px] w-[170px] overflow-hidden rounded-xl bg-black/[0.03] transition-colors duration-300 dark:bg-white/[0.06]">
                     <img src={f.image} alt="" className="h-full w-full object-cover" />
                   </div>
                 </div>
@@ -209,15 +246,30 @@ const DeFiDevelopment = () => {
             </h2>
           </div>
 
-          <div className="mx-auto flex max-w-[980px] flex-wrap justify-center gap-3">
-            {tokenIntegration.map((n) => (
-              <span
-                key={n}
-                className="rounded-full border border-black/15 bg-white px-5 py-2 font-sans text-[14px] font-semibold text-black/80 shadow-[0_8px_20px_rgba(0,0,0,0.06)] transition-colors duration-300 dark:border-white/25 dark:bg-black dark:text-white/85"
-              >
-                {n}
-              </span>
-            ))}
+          <div className="mx-auto max-w-[1100px]">
+            {/* Row 1: 4 cards */}
+            <div className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
+              {tokenIntegration.slice(0, 4).map((n) => (
+                <div
+                  key={n}
+                  className="w-full max-w-[280px] rounded-[10px] border border-[#c8d7e4] bg-white px-10 py-4 text-center font-sans text-[18px] font-medium text-black shadow-[0_6px_18px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)] dark:border-white/25 dark:bg-gradient-to-r dark:from-[#19385b] dark:to-black dark:text-white sm:text-[20px]"
+                >
+                  {n}
+                </div>
+              ))}
+            </div>
+
+            {/* Row 2: 3 cards (centered) */}
+            <div className="mt-6 flex flex-wrap justify-center gap-6 sm:mt-8 sm:gap-8">
+              {tokenIntegration.slice(4).map((n) => (
+                <div
+                  key={n}
+                  className="w-full max-w-[280px] rounded-[10px] border border-[#c8d7e4] bg-white px-10 py-4 text-center font-sans text-[18px] font-medium text-black shadow-[0_6px_18px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)] dark:border-white/25 dark:bg-gradient-to-r dark:from-[#19385b] dark:to-black dark:text-white sm:text-[20px]"
+                >
+                  {n}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -251,11 +303,9 @@ const DeFiDevelopment = () => {
               ))}
             </div>
 
-            <div className="flex w-full items-center justify-center lg:justify-end">
-              <div className="w-full max-w-[520px]">
-                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
-                  <img src={archImg} alt="DeFi architecture overview" className="h-full w-full object-cover" />
-                </div>
+            <div className="flex w-full items-center justify-center">
+              <div className="w-full max-w-[350px]">
+                <img src={archImg} alt="DeFi architecture overview" className="h-auto w-full object-contain" loading="lazy" />
               </div>
             </div>
           </div>

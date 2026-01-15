@@ -46,7 +46,7 @@ const About = () => {
            Main hero area with title and tagline
       ======================================== */}
       <section className="relative z-[1] w-full bg-white pt-2 pb-12 transition-colors duration-300 dark:bg-black sm:pt-4 sm:pb-16 md:pt-6 md:pb-20 lg:pt-8 lg:pb-24 xl:pt-10 xl:pb-24">
-        <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
+        <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-start gap-0 lg:grid-cols-[50%_50%]">
           {/* Left Side - Text Content */}
           <div className="ml-[30px] flex w-[98%] flex-col justify-start gap-4 leading-[1.4] sm:gap-6 md:gap-8 lg:gap-10">
             <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
@@ -73,7 +73,7 @@ const About = () => {
             <img
                 src={aboutHero}
                 alt="Who we are"
-                className="w-full max-w-[400px] object-contain shadow-sm rounded-lg"
+                className="w-full max-w-[600px] object-contain shadow-sm rounded-lg"
               />
 
             {/* <div className="w-full max-w-[500px] h-[300px] rounded-2xl bg-[radial-gradient(circle_at_30%_30%,rgba(0,99,182,0.15)_0%,rgba(0,0,0,0)_70%)] border border-black/5 dark:border-white/5 dark:bg-[radial-gradient(circle_at_30%_30%,rgba(0,99,182,0.1)_0%,rgba(0,0,0,0)_72%)]" /> */}
@@ -165,7 +165,7 @@ const About = () => {
                 <img
                   src={missionIcon}
                   alt="Mission icon"
-                  className="h-12 w-12 object-contain"
+                  className="h-16 w-16 object-contain"
                   loading="lazy"
                 />
               </div>
@@ -209,32 +209,32 @@ const About = () => {
               {
                 title: "Innovation First",
                 desc: "We constantly push boundaries to engineer new possibilities in Blockchain, AI, and automation.",
-                icon: <img src={innovationFirst} alt="Innovation First" className="h-10 w-10 object-contain" loading="lazy" />
+                icon: <img src={innovationFirst} alt="Innovation First" className="h-14 w-14 object-contain" loading="lazy" />
               },
               {
                 title: "Transparency & Trust",
                 desc: "We follow clear communication, open development practices, and dependable partnerships.",
-                icon: <img src={transparencyTrust} alt="Transparency & Trust" className="h-10 w-10 object-contain" loading="lazy" />
+                icon: <img src={transparencyTrust} alt="Transparency & Trust" className="h-14 w-14 object-contain" loading="lazy" />
               },
               {
                 title: "Security at the Core",
                 desc: "Every product we build follows rigorous security frameworks, audits, and defense-grade protection.",
-                icon: <img src={securityCore} alt="Security at the Core" className="h-10 w-10 object-contain" loading="lazy" />
+                icon: <img src={securityCore} alt="Security at the Core" className="h-14 w-14 object-contain" loading="lazy" />
               },
               {
                 title: "Quality without Compromise",
                 desc: "From architecture to deployment—every line of code is engineered with precision.",
-                icon: <img src={qualityWithoutCompromise} alt="Quality without Compromise" className="h-10 w-10 object-contain" loading="lazy" />
+                icon: <img src={qualityWithoutCompromise} alt="Quality without Compromise" className="h-14 w-14 object-contain" loading="lazy" />
               },
               {
                 title: "Long Term Collaboration",
                 desc: "We don't just build solutions—we support and scale them with you.",
-                icon: <img src={longTermCollaboration} alt="Long Term Collaboration" className="h-10 w-10 object-contain" loading="lazy" />
+                icon: <img src={longTermCollaboration} alt="Long Term Collaboration" className="h-14 w-14 object-contain" loading="lazy" />
               },
               {
                 title: "Ethical Technology",
                 desc: "We develop responsibly, ensuring privacy, sustainability, and long-term value creation.",
-                icon: <img src={ethicalTechnology} alt="Ethical Technology" className="h-10 w-10 object-contain" loading="lazy" />
+                icon: <img src={ethicalTechnology} alt="Ethical Technology" className="h-14 w-14 object-contain" loading="lazy" />
               }
             ].map((value, idx) => (
               <OneSideBorderCard
@@ -292,16 +292,15 @@ const About = () => {
               </div>
             </div>
 
-            {/* Right Graphics/Illustration Placeholder */}
-            <div className="flex items-center justify-center">
-              <div className="relative w-full max-w-[600px]">
-                 <img
-                src={leadershipTeamImg}
-                alt="Leadership and Team"
-                className="w-full max-w-[400px] object-contain shadow-sm rounded-lg"
-              />
-               
-                </div>
+            {/* Right Graphics */}
+            <div className="flex items-center justify-center lg:justify-end">
+              <div className="relative flex w-full max-w-[600px] justify-center lg:justify-end">
+                <img
+                  src={leadershipTeamImg}
+                  alt="Leadership and Team"
+                  className="w-full max-w-[500px] object-contain shadow-sm rounded-lg"
+                />
+              </div>
             </div>
           </div>
         </div>

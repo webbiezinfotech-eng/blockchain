@@ -338,9 +338,9 @@ const CryptoExchangeDevelopment = () => {
       {/* Security Stack */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="mb-10 text-center">
+          <div className="">
             <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
-              SECURITY <span className="text-brand-blue">STACK</span>
+               <span className="text-brand-blue">SECURITY STACK</span>
             </h2>
           </div>
 
@@ -376,9 +376,7 @@ const CryptoExchangeDevelopment = () => {
 
             <div className="flex w-full items-center justify-center lg:justify-end">
               <div className="w-full max-w-[520px]">
-                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
-                  <img src={securityImg} alt="Security shield" className="h-full w-full object-cover" />
-                </div>
+                <img src={securityImg} alt="Security shield" className="h-auto w-full object-contain" loading="lazy" />
               </div>
             </div>
           </div>
@@ -390,19 +388,34 @@ const CryptoExchangeDevelopment = () => {
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="mb-10 text-center">
             <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
-              BLOCKCHAIN NETWORKS <span className="text-brand-blue">SUPPORTED</span>
+              BLOCKCHAIN <span className="text-brand-blue">NETWORKS SUPPORTED</span>
             </h2>
           </div>
 
-          <div className="mx-auto flex max-w-[980px] flex-wrap justify-center gap-3">
-            {networks.map((n) => (
-              <span
-                key={n}
-                className="rounded-full border border-black/15 bg-white px-5 py-2 font-sans text-[14px] font-semibold text-black/80 shadow-[0_8px_20px_rgba(0,0,0,0.06)] transition-colors duration-300 dark:border-white/25 dark:bg-black dark:text-white/85"
-              >
-                {n}
-              </span>
-            ))}
+          <div className="mx-auto max-w-[1100px]">
+            {/* Row 1: 4 cards */}
+            <div className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
+              {networks.slice(0, 4).map((n) => (
+                <div
+                  key={n}
+                  className="w-full max-w-[280px] rounded-[10px] border border-[#c8d7e4] bg-white px-10 py-4 text-center font-sans text-[18px] font-medium text-black shadow-[0_6px_18px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)] dark:border-white/25 dark:bg-black dark:text-white sm:text-[20px]"
+                >
+                  {n}
+                </div>
+              ))}
+            </div>
+
+            {/* Row 2: 3 cards (centered) */}
+            <div className="mt-6 flex flex-wrap justify-center gap-6 sm:mt-8 sm:gap-8">
+              {networks.slice(4).map((n) => (
+                <div
+                  key={n}
+                  className="w-full max-w-[280px] rounded-[10px] border border-[#c8d7e4] bg-white px-10 py-4 text-center font-sans text-[18px] font-medium text-black shadow-[0_6px_18px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)] dark:border-white/25 dark:bg-black dark:text-white sm:text-[20px]"
+                >
+                  {n}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

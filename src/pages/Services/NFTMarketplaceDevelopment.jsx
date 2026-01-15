@@ -81,14 +81,14 @@ const NFTMarketplaceDevelopment = () => {
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[58%_42%] lg:pl-[3rem] lg:pr-[5rem]">
           <div className="flex w-full flex-col gap-6">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white">
-              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.35]">
+              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[60px] lg:leading-[1.50]">
                 CUSTOM NFT MARKETPLACE
               </span>
-              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.35]">
+              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.50]">
                 DEVELOPMENT FOR{' '}
                 <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">WEB3</span>
               </span>
-              <span className="block text-[28px] leading-[1.25] sm:text-[36px] sm:leading-[1.25] lg:text-[40px] lg:leading-[1.25]">
+              <span className="block text-[28px] leading-[1.25] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.50]">
                 <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">CREATORS</span>{' '}
                 <span className="text-black transition-colors duration-300 dark:text-white">&amp; </span>
                 <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">INNOVATORS</span>
@@ -102,10 +102,8 @@ const NFTMarketplaceDevelopment = () => {
           </div>
 
           <div className="flex w-full items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[560px]">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
-                <img src={heroImg} alt="NFT marketplace development" className="h-auto w-full object-contain" loading="eager" />
-              </div>
+            <div className="w-full max-w-[440px] lg:max-w-[480px]">
+              <img src={heroImg} alt="NFT marketplace development" className="h-auto w-full object-contain" loading="eager" />
             </div>
           </div>
         </div>
@@ -171,9 +169,9 @@ const NFTMarketplaceDevelopment = () => {
       {/* Monetization Options */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="mb-10 text-center">
+          <div className="mb-10 text-left">
             <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
-              MONETIZATION <span className="text-brand-blue">OPTIONS</span>
+              <span className="text-brand-blue">MONETIZATION </span>OPTIONS
             </h2>
           </div>
 
@@ -207,11 +205,9 @@ const NFTMarketplaceDevelopment = () => {
               ))}
             </div>
 
-            <div className="flex w-full items-center justify-center lg:justify-end">
+            <div className="flex w-full items-center justify-center lg:justify-end lg:pl-12">
               <div className="w-full max-w-[520px]">
-                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
-                  <img src={monetizationImg} alt="Monetization illustration" className="h-full w-full object-cover" />
-                </div>
+                <img src={monetizationImg} alt="Monetization illustration" className="h-auto w-full object-contain" loading="lazy" />
               </div>
             </div>
           </div>
@@ -229,12 +225,14 @@ const NFTMarketplaceDevelopment = () => {
 
           <div className="mx-auto flex max-w-[980px] flex-wrap justify-center gap-6">
             {supportedChains.map((name) => (
-              <div
-                key={name}
-                className="min-w-[170px] rounded-[10px] border border-brand-blue/25 bg-transparent px-8 py-4 text-center font-sans text-[18px] font-semibold text-black shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:text-white dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)]"
-              >
-                {name}
-              </div>
+             <div
+  key={name}
+  className="min-w-[170px] rounded-[10px] border border-brand-blue bg-white px-8 py-4 text-center font-sans text-[18px] font-semibold text-black shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 
+dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:text-white dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)]"
+>
+  {name}
+</div>
+
             ))}
           </div>
         </div>
@@ -253,9 +251,7 @@ const NFTMarketplaceDevelopment = () => {
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[42%_58%] lg:gap-14">
             <div className="flex items-center justify-center lg:justify-start">
               <div className="w-full max-w-[520px]">
-                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
-                  <img src={auditImg} alt="Audit process illustration" className="h-full w-full object-cover" />
-                </div>
+                <img src={auditImg} alt="Audit process illustration" className="h-auto w-full object-contain" loading="lazy" />
               </div>
             </div>
 

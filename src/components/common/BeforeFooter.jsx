@@ -3,7 +3,7 @@ const BeforeFooter = ({
   description,
   buttonText = 'Contact Us Today',
   className = '',
-  paddingClassName = 'py-16 md:py-20 lg:py-24',
+  paddingClassName = 'py-10 md:py-16 lg:py-10',
   containerClassName,
   headingAs = 'h2',
   headingClassName,

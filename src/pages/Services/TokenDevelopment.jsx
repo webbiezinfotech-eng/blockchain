@@ -206,9 +206,7 @@ const TokenDevelopment = () => {
 
           <div className="flex w-full items-center justify-center lg:justify-end">
             <div className="w-full max-w-[560px]">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
-                <img src={heroImg} alt="Token development" className="h-auto w-full object-contain" loading="eager" />
-              </div>
+              <img src={heroImg} alt="Token development" className="h-auto w-full object-contain" loading="eager" />
             </div>
           </div>
         </div>

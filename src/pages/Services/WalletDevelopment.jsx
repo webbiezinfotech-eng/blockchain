@@ -52,6 +52,12 @@ const WalletDevelopment = () => {
       description: 'Ledger/Trezor-style integrations for secure signing, approvals, and high-value asset protection.',
       image: wHardwareImg,
     },
+    {
+      title: 'Multi-Sig Wallets',
+      description: 'Multi-signature approval wallets for enterprise and DAO-based asset control.',
+      image: wNonCustodialImg,
+    },
+
   ];
 
   const coreFeatures = [
@@ -121,19 +127,19 @@ const WalletDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-4 pb-12 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-14 lg:pt-8 lg:pb-16">
+      <section className="w-full bg-white pt-[4rem] pb-[5rem] transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-14 lg:pt-12 lg:pb-20">
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[58%_42%] lg:pl-[3rem] lg:pr-[5rem]">
           <div className="flex w-full flex-col gap-6">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white">
-              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.35]">
+              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.50]">
                 NEXT-GEN CRYPTO WALLET
               </span>
-              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.35]">
+              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[60px] lg:leading-[1.50]">
                 DEVELOPMENT FOR{' '}
                 <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">SECURE</span>
               </span>
-              <span className="block text-[28px] leading-[1.25] sm:text-[36px] sm:leading-[1.25] lg:text-[40px] lg:leading-[1.25]">
-                <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">DIGITAL ASSET</span> MANAGEMENT
+              <span className="block text-[38px] leading-[1.25] sm:text-[52px] sm:leading-[1.25] lg:text-[58px] lg:leading-[1.50]">
+                <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">DIGITAL ASSET MANAGEMENT</span>
               </span>
             </h1>
 
@@ -144,10 +150,8 @@ const WalletDevelopment = () => {
           </div>
 
           <div className="flex w-full items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[560px]">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
-                <img src={heroImg} alt="Wallet development" className="h-auto w-full object-contain" loading="eager" />
-              </div>
+            <div className="w-full max-w-[440px] lg:max-w-[400px]">
+              <img src={heroImg} alt="Wallet development" className="h-auto w-full object-contain" loading="eager" />
             </div>
           </div>
         </div>
@@ -162,16 +166,18 @@ const WalletDevelopment = () => {
             </h2>
           </div>
 
-          <div className="flex w-full gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {walletTypes.map((card, idx) => (
+          <div className="flex w-full justify-center gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {walletTypes.map((card) => (
               <ServiceCard
                 key={card.title}
                 title={card.title}
                 description={card.description}
                 image={card.image}
-                isExpanded={idx === 0}
+                isExpanded={false}
+                hoverExpand
               />
             ))}
+
           </div>
         </div>
       </section>
@@ -224,7 +230,7 @@ const WalletDevelopment = () => {
             {/* Desktop/tablet layout */}
             <div className="hidden sm:block">
               {/* Top row */}
-              <div className="grid grid-cols-3 gap-10">
+              <div className="grid grid-cols-3 gap-10 justify-items-start">
                 {securityTop.map((i) => (
                   <div key={i.t} className="flex flex-col items-center">
                     <div className="flex w-full max-w-[260px] flex-col items-center rounded-[10px] border border-[#c8d7e4] bg-white px-5 py-6 text-center shadow-[0_10px_28px_rgba(0,0,0,0.06)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]">
@@ -242,10 +248,10 @@ const WalletDevelopment = () => {
               </div>
 
               {/* Middle thick line */}
-              <div className="h-[6px] w-full rounded-full bg-brand-blue dark:bg-white" />
+            <div className="relative left-1/2 -translate-x-1/2 h-[6px] w-[100vw] bg-brand-blue dark:bg-white" />
 
               {/* Bottom row */}
-              <div className="grid grid-cols-3 gap-10">
+              <div className="grid grid-cols-3 gap-10 justify-items-end">
                 {securityBottom.map((i) => (
                   <div key={i.t} className="flex flex-col items-center">
                     <div className="h-20 w-0 border-l-2 border-dashed border-brand-blue/60 dark:border-white/50" />
@@ -292,7 +298,7 @@ const WalletDevelopment = () => {
             </h2>
           </div>
 
-          <div className="mx-auto flex max-w-[980px] flex-wrap justify-center gap-6">
+          <div className="mx-auto grid max-w-[980px] grid-cols-2 gap-6 sm:grid-cols-4">
             {supportedChains.map((name) => (
               <div
                 key={name}
