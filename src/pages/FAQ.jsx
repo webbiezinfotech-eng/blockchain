@@ -100,7 +100,7 @@ const FAQ = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-12 pb-10 sm:pt-14 sm:pb-12 lg:pt-[9rem] lg:pb-[10.5rem] transition-colors duration-300 dark:bg-black">
+      <section className="w-full bg-white pb-10 sm:pt-14 sm:pb-12 lg:pb-[8.5rem] transition-colors duration-300 dark:bg-black">
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[58%_42%] lg:pl-[3rem] lg:pr-[5rem]">
           <div className="flex w-full flex-col gap-6">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white">
@@ -119,7 +119,7 @@ const FAQ = () => {
           </div>
 
           <div className="flex w-full items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[560px]">
+            <div className="w-full max-w-[440px] lg:max-w-[450px]">
               <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
                 <img src={heroImg} alt="FAQ illustration" className="h-full w-full object-cover" />
               </div>
@@ -131,7 +131,7 @@ const FAQ = () => {
       {/* Tabs + Accordion */}
       <section className="w-full bg-white pb-14 transition-colors duration-300 dark:bg-black sm:pb-16">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 border-b border-black/10 pb-4 text-center transition-colors duration-300 dark:border-white/15">
+          <div className="flex flex-wrap justify-center gap-x-[5.25rem] gap-y-3 border-b border-black/10 pb-4 text-center transition-colors duration-300 dark:border-white/15">
             {categories.map((c) => {
               const isActive = c === activeCategory;
               return (

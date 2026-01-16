@@ -33,104 +33,227 @@ import b4 from '../assets/Industry_images/End2EndDelivery.png';
 
 const Industries = () => {
   const categories = [
-    { title: 'Finance', image: cat1 },
-    { title: 'Healthcare', image: cat2 },
-    { title: 'Supply Chain', image: cat3 },
-    { title: 'Wallets', image: cat4 },
-    { title: 'DeFi', image: cat5 },
-    { title: 'NFTs', image: cat6 },
-    { title: 'Enterprise', image: cat7 },
-    { title: 'APIs', image: cat8 },
-    { title: 'Fundraising', image: cat9 },
-    { title: 'Marketing', image: cat10 },
+    { title: 'Fintech & Banking', image: cat1 },
+    { title: 'Healthcare & Pharma', image: cat2 },
+    { title: 'Supply Chain & Logistics', image: cat3 },
+    { title: 'Real Estate & PropTech', image: iRealEstate },
+    { title: 'Gaming, Metaverse & Entertainment', image: iGaming },
+    { title: 'E-Commerce & Retail', image: iRetail },
+    { title: 'Energy & Sustainability', image: iEnergy },
+    { title: 'Education & EdTech', image: iEducation },
+    { title: 'Government & Public Services', image: iGov },
+    { title: 'Insurance', image: iInsurance },
+    { title: 'Travel & Hospitality', image: iTravel },
+    { title: 'Manufacturing & Industry 4.0', image: iManufacturing },
+
   ];
 
   const industries = [
     {
       title: 'Fintech & Banking',
       image: iFinance,
-      useCases: ['Payments & settlements', 'Tokenized assets', 'Fraud prevention', 'Cross-border transfers'],
-      solutions: ['Custody & key management', 'Compliance-ready flows', 'Smart contracts & automation'],
-      tags: ['Payments', 'Tokenization', 'Compliance'],
+      description:
+        'Blockchain and AI are reshaping global financial systems with transparency, security, and automation.',
+      useCases: [
+        'Cross-border payments & remittances',
+        'Digital identity & KYC automation',
+        'Fraud detection with AI',
+        'Tokenized securities',
+        'Smart contract-based settlements',
+      ],
+      benefits: ['Faster transactions', 'Lower costs', 'Full auditability'],
     },
     {
-      title: 'Healthcare & MedTech',
+      title: 'Healthcare & Pharma',
       image: iHealth,
-      useCases: ['Secure health records', 'Consent-based data sharing', 'Medical supply traceability'],
-      solutions: ['Decentralized identity (DID)', 'Audit trails', 'Interoperability integrations'],
-      tags: ['DID', 'Data security', 'Interoperability'],
+      description:
+        'Enhancing patient safety, traceability, and medical intelligence with secure data systems.',
+      useCases: [
+        'Pharmaceutical supply chain tracking',
+        'Patient data management',
+        'AI diagnostics & predictive analytics',
+        'Remote monitoring with IoT + blockchain',
+        'Clinical trial data verification',
+      ],
+      benefits: [
+        'Reduced fraud & counterfeits',
+        'Privacy-compliant health data',
+        'Improved treatment outcomes',
+      ],
     },
     {
       title: 'Supply Chain & Logistics',
       image: iSupply,
-      useCases: ['Provenance tracking', 'Anti-counterfeiting', 'Real-time shipment visibility'],
-      solutions: ['Private/consortium chains', 'IoT + blockchain', 'Analytics dashboards'],
-      tags: ['Traceability', 'IoT', 'ERP integrations'],
+      description:
+        'End-to-end transparency and automation for global supply networks.',
+      useCases: [
+        'Track & trace systems',
+        'IoT-enabled logistics',
+        'Warehouse automation with AI',
+        'Digital twins for supply networks',
+        'Vendor smart contracts',
+      ],
+      benefits: [
+        'Real-time tracking',
+        'Lower operational risks',
+        'Faster dispute resolution',
+      ],
     },
     {
-      title: 'Real Estate & Property',
+      title: 'Real Estate & PropTech',
       image: iRealEstate,
-      useCases: ['Digital deeds', 'Fractional ownership', 'Automated escrow'],
-      solutions: ['Tokenization models', 'Smart contracts', 'KYC/AML-ready onboarding'],
-      tags: ['RWA', 'Tokenization', 'Escrow'],
+      description:
+        'Tokenization and AI unlock new financial models and seamless property transactions.',
+      useCases: [
+        'Property tokenization',
+        'Automated rental agreements',
+        'Real estate marketplaces',
+        'Ownership verification',
+        'AI-driven property valuation',
+      ],
+      benefits: [
+        'Liquid asset markets',
+        'Efficient transactions',
+        'Borderless investor access',
+      ],
     },
     {
-      title: 'Gaming & Metaverse',
+      title: 'Gaming, Metaverse & Entertainment',
       image: iGaming,
-      useCases: ['Player-owned assets', 'In-game economies', 'Marketplace trading'],
-      solutions: ['NFT minting & marketplaces', 'Wallet integrations', 'Scalable backend systems'],
-      tags: ['NFTs', 'Wallets', 'Marketplaces'],
+      description:
+        'Immersive digital worlds and sustainable play-to-earn ecosystems.',
+      useCases: [
+        'NFT gaming platforms',
+        'Metaverse development',
+        'Virtual asset marketplaces',
+        'AI avatars & 3D content',
+        'Play-to-earn economies',
+      ],
+      benefits: [
+        'Boosted player engagement',
+        'New revenue models',
+        'Secure asset ownership',
+      ],
     },
     {
       title: 'E-commerce & Retail',
       image: iRetail,
-      useCases: ['Loyalty programs', 'Authenticity verification', 'Creator commerce'],
-      solutions: ['Token-based rewards', 'NFT memberships', 'Checkout & payments'],
-      tags: ['Loyalty', 'Verification', 'Web3 commerce'],
+      description:
+        'Personalized shopping and secure, data-driven commerce platforms.',
+      useCases: [
+        'AI-enabled personalization',
+        'Supply chain traceability',
+        'Omnichannel analytics',
+        'Secure payments',
+      ],
+      benefits: [
+        'Higher customer retention',
+        'Improved product authenticity',
+        'Data-driven decisions',
+      ],
     },
     {
       title: 'Energy & Sustainability',
       image: iEnergy,
-      useCases: ['Carbon credits', 'Renewable certificate trading', 'Smart metering'],
-      solutions: ['Tokenization', 'Marketplace platforms', 'Secure reporting'],
-      tags: ['Carbon', 'Green finance', 'Marketplaces'],
+      description:
+        'Transparency and trust in carbon credits, energy trading, and optimization.',
+      useCases: [
+        'Carbon credit marketplaces',
+        'Blockchain-based energy trading',
+        'IoT-driven optimization',
+        'Sustainability reporting',
+      ],
+      benefits: [
+        'Verified environmental impact',
+        'Lower energy costs',
+        'Transparent green initiatives',
+      ],
     },
     {
       title: 'Education & EdTech',
       image: iEducation,
-      useCases: ['Credential verification', 'Digital certificates', 'IP ownership'],
-      solutions: ['On-chain certificates', 'DID-based identity', 'Verification APIs'],
-      tags: ['Credentials', 'DID', 'APIs'],
+      description:
+        'Digital credentials and intelligent learning platforms.',
+      useCases: [
+        'Blockchain certificates',
+        'AI tutoring & adaptive learning',
+        'Student identity verification',
+        'Skill assessment automation',
+      ],
+      benefits: [
+        'Tamper-proof certifications',
+        'Personalized learning journeys',
+      ],
     },
     {
       title: 'Government & Public Sector',
       image: iGov,
-      useCases: ['Land registries', 'Digital identity', 'Transparent procurement'],
-      solutions: ['Permissioned networks', 'Governance workflows', 'Audit-ready data models'],
-      tags: ['GovTech', 'Identity', 'Transparency'],
+      description:
+        'Secure and scalable digital infrastructure for governance.',
+      useCases: [
+        'Digital identity systems',
+        'Smart governance platforms',
+        'Public record verification',
+        'Transparent procurement',
+      ],
+      benefits: [
+        'Reduced corruption',
+        'Faster citizen services',
+        'High-trust infrastructure',
+      ],
     },
     {
       title: 'Insurance',
       image: iInsurance,
-      useCases: ['Claims automation', 'Fraud reduction', 'Parametric insurance'],
-      solutions: ['Smart contracts', 'Oracle integrations', 'Risk & analytics tooling'],
-      tags: ['Claims', 'Oracles', 'Automation'],
+      description:
+        'AI and blockchain streamline claims, underwriting, and fraud prevention.',
+      useCases: [
+        'Automated claims processing',
+        'Risk scoring with AI',
+        'Smart contract insurance',
+        'KYC/AML automation',
+      ],
+      benefits: [
+        'Faster settlements',
+        'Lower fraud rates',
+        'Better customer satisfaction',
+      ],
     },
     {
       title: 'Travel & Hospitality',
       image: iTravel,
-      useCases: ['Loyalty tokens', 'Secure payments', 'Identity verification'],
-      solutions: ['Wallet apps', 'Token rewards', 'Partner integrations'],
-      tags: ['Loyalty', 'Payments', 'Identity'],
+      description:
+        'Smarter, faster, and more secure travel experiences.',
+      useCases: [
+        'Blockchain ticketing',
+        'AI itinerary planning',
+        'Loyalty automation',
+        'Identity verification',
+      ],
+      benefits: [
+        'Trusted travel identity',
+        'Seamless customer experience',
+      ],
     },
     {
       title: 'Manufacturing & Industry 4.0',
       image: iManufacturing,
-      useCases: ['Asset lifecycle tracking', 'Supplier verification', 'Quality audits'],
-      solutions: ['Traceability systems', 'Dashboards', 'API + ERP integrations'],
-      tags: ['Industry 4.0', 'Dashboards', 'Integrations'],
+      description:
+        'AI and blockchain power smarter factories and automation.',
+      useCases: [
+        'Predictive maintenance',
+        'Supply chain automation',
+        'Digital twins',
+        'Sensor-based quality checks',
+      ],
+      benefits: [
+        'Reduced downtime',
+        'Optimized resources',
+        'Transparent production cycles',
+      ],
     },
   ];
+
 
   const benefitCards = [
     {
@@ -153,36 +276,43 @@ const Industries = () => {
       description: 'Clear milestones, documentation, and communication from kickoff to launch.',
       image: b4,
     },
+    {
+      title: 'Industry-focused solutions',
+      description: 'Solutions tailored to regulatory, operational, and user-specific industry needs.',
+      image: b2,
+    },
+
   ];
 
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-12 pb-12 transition-colors duration-300 dark:bg-black sm:pt-14 sm:pb-14 lg:pt-16 lg:pb-16">
+      <section className="w-full bg-white pt-12 pb-12 transition-colors duration-300 dark:bg-black sm:pt-14 sm:pb-14 lg:pt-12 lg:pb-16">
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[58%_42%] lg:pl-[3rem] lg:pr-[5rem]">
           <div className="flex w-full flex-col gap-6">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white">
-              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.35]">
+              <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[58px] lg:leading-[1.50]">
                 TRANSFORMING INDUSTRIES
               </span>
-              <span className="block text-[34px] leading-[1.2] sm:text-[48px] sm:leading-[1.25] lg:text-[58px] lg:leading-[1.35]">
+              <span className="block text-[34px] leading-[1.2] sm:text-[48px] sm:leading-[1.25] lg:text-[58px] lg:leading-[1.50]">
                 WITH{' '}
-                <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">BLOCKCHAIN</span> &amp;{' '}
-                <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">AI</span>
+                <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">BLOCKCHAIN &amp;</span> {' '}
+                <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">AI INNOVATION</span>
               </span>
-              <span className="block text-[34px] leading-[1.2] sm:text-[48px] sm:leading-[1.25] lg:text-[58px] lg:leading-[1.35]">
-                INNOVATION
-              </span>
+
             </h1>
 
             <p className="max-w-[760px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-lg">
-              We build industry-specific blockchain and AI solutions that improve transparency, efficiency, and trust. From
-              regulated finance to supply chains and healthcare, we help teams launch secure products with real-world impact.
+              Blockchain App Advisor delivers future-ready blockchain, AI, and Web3 solutions tailored to the needs of modern enterprises, startups, and global brands.
             </p>
+            <p className="max-w-[760px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-lg">
+              Our industry-specific expertise enables organizations to accelerate digital transformation, improve operational efficiency, and unlock new revenue models through decentralized technologies and intelligent automation. </p>
+            <p className="max-w-[760px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-lg">
+              We combine strategic consulting, product engineering, and emerging technology R&D to solve real-world challenges across multiple industries.  </p>
           </div>
 
           <div className="flex w-full items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[560px]">
+            <div className="w-full max-w-[440px] lg:max-w-[400px]">
               <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
                 <img src={heroImg} alt="Industries hero" className="h-full w-full object-cover" />
               </div>
@@ -224,76 +354,72 @@ const Industries = () => {
             </h2>
           </div>
 
-          <div className="mx-auto flex max-w-[1120px] flex-col gap-8">
-            {industries.map((it) => (
-              <div
-                key={it.title}
-                className="grid grid-cols-1 items-stretch gap-8 rounded-[16px] border border-black/10 bg-white p-7 shadow-[0_12px_34px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/20 dark:bg-black/20 md:grid-cols-[1fr_320px]"
+       <div className="mx-auto flex max-w-[1120px] flex-col gap-10">
+  {industries.map((it) => (
+    <div
+      key={it.title}
+      className="grid grid-cols-1 gap-10 rounded-[20px] border border-[#c8d7e4] bg-white p-10
+      shadow-[0_16px_44px_rgba(0,0,0,0.12)]
+      dark:border-white/20 dark:bg-black/20
+      md:grid-cols-[1fr_420px]"
+    >
+      {/* LEFT CONTENT */}
+      <div>
+        <h3 className="font-heading text-[20px] font-bold text-black dark:text-white">
+          {it.title}
+        </h3>
+
+        <p className="mt-3 max-w-[520px] font-sans text-[15px] leading-relaxed text-black/75 dark:text-white/80">
+          {it.description}
+        </p>
+
+        {/* Use Cases */}
+        <div className="mt-6">
+          <div className="font-sans text-[14px] font-bold uppercase text-black dark:text-white">
+            Use Cases
+          </div>
+          <ul className="mt-3 space-y-2">
+            {it.useCases.map((u) => (
+              <li key={u} className="flex gap-3">
+                <span className="mt-[7px] h-2 w-2 rounded-full bg-brand-blue" />
+                <span className="font-sans text-[14px] text-black/75 dark:text-white/80">
+                  {u}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Benefits */}
+        <div className="mt-6">
+          <div className="font-sans text-[14px] font-bold text-black dark:text-white">
+            Benefits
+          </div>
+          <div className="mt-3 flex flex-wrap gap-3">
+            {it.benefits.map((b) => (
+              <span
+                key={b}
+                className="rounded-full border border-brand-blue px-4 py-2
+                font-sans text-[13px] font-semibold text-brand-blue
+                dark:border-white/30 dark:text-white"
               >
-                <div className="flex flex-col">
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-heading text-[18px] font-bold uppercase tracking-wide text-black transition-colors duration-300 dark:text-white sm:text-[20px]">
-                      {it.title}
-                    </h3>
-                    <button className="rounded-full border border-brand-blue/30 bg-white px-4 py-2 font-sans text-[12px] font-semibold text-brand-blue transition-all duration-300 hover:bg-brand-blue hover:text-white dark:border-white/25 dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black">
-                      Explore
-                    </button>
-                  </div>
-
-                  <div className="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2">
-                    <div>
-                      <div className="font-sans text-[13px] font-bold uppercase tracking-wide text-black/70 transition-colors duration-300 dark:text-white/70">
-                        Use cases
-                      </div>
-                      <ul className="mt-3 space-y-2">
-                        {it.useCases.map((b) => (
-                          <li key={b} className="flex items-start gap-3">
-                            <span className="mt-[7px] h-2 w-2 rounded-full bg-brand-blue" />
-                            <span className="font-sans text-[14px] font-medium leading-relaxed text-black/75 transition-colors duration-300 dark:text-white/80">
-                              {b}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <div className="font-sans text-[13px] font-bold uppercase tracking-wide text-black/70 transition-colors duration-300 dark:text-white/70">
-                        Solutions
-                      </div>
-                      <ul className="mt-3 space-y-2">
-                        {it.solutions.map((b) => (
-                          <li key={b} className="flex items-start gap-3">
-                            <span className="mt-[7px] h-2 w-2 rounded-full bg-brand-blue" />
-                            <span className="font-sans text-[14px] font-medium leading-relaxed text-black/75 transition-colors duration-300 dark:text-white/80">
-                              {b}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {it.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-black/15 bg-white px-4 py-2 font-sans text-[12px] font-semibold text-black/75 shadow-[0_8px_20px_rgba(0,0,0,0.06)] transition-colors duration-300 dark:border-white/20 dark:bg-black dark:text-white/80"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-center md:justify-end">
-                  <div className="w-full max-w-[320px] overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
-                    <img src={it.image} alt={it.title} className="h-full w-full object-cover" />
-                  </div>
-                </div>
-              </div>
+                {b}
+              </span>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* RIGHT IMAGE */}
+      <div className="flex items-center justify-center md:justify-end">
+        <div className="w-full max-w-[260px] overflow-hidden rounded-3xl">
+          <img src={it.image} alt={it.title} className="w-full object-contain" />
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
         </div>
       </section>
 
@@ -306,16 +432,18 @@ const Industries = () => {
             </h2>
           </div>
 
-          <div className="flex w-full gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {benefitCards.map((b, idx) => (
+          <div className="flex justify-center w-full gap-[3.5rem] overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {benefitCards.map((b) => (
               <ServiceCard
                 key={b.title}
                 title={b.title}
                 description={b.description}
                 image={b.image}
-                isExpanded={idx === 0}
+                isExpanded={false}
+                hoverExpand
               />
             ))}
+
           </div>
         </div>
       </section>
