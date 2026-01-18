@@ -116,7 +116,7 @@ const BlockchainDevelopment = () => {
           <div className="absolute left-[50%] top-0 h-full w-[1px] bg-brand-blue" />
           <div className="absolute left-[70%] top-0 h-full w-[1px] bg-brand-blue" />
           <div className="absolute left-[90%] top-0 h-full w-[1px] bg-brand-blue" />
-          
+
           <div className="absolute top-[20%] left-0 w-full h-[1px] bg-brand-blue" />
           <div className="absolute top-[40%] left-0 w-full h-[1px] bg-brand-blue" />
           <div className="absolute top-[60%] left-0 w-full h-[1px] bg-brand-blue" />
@@ -124,10 +124,10 @@ const BlockchainDevelopment = () => {
         </div>
 
         <div className="relative z-10 mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[60%_40%] lg:pl-[3rem] lg:pr-[5rem]">
-          
+
           {/* Left Side - Text Content */}
           <div className="flex w-full flex-col justify-start gap-4 leading-[1.05] sm:gap-6">
-            <h3 
+            <h3
               className="font-heading font-bold uppercase tracking-tight text-left"
               style={{ fontSize: 'clamp(40px, 5vw, 61px)', lineHeight: 'clamp(56px, 7vw, 86px)' }}
             >
@@ -138,7 +138,7 @@ const BlockchainDevelopment = () => {
                 <span className="text-black dark:text-white">BLOCKCHAIN DEVELOPMENT </span>
               </div>
               <div className="block w-full text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff]">
-                FOR SCALABLE WEB3 
+                FOR SCALABLE WEB3
               </div>
               <div className="block w-full text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff]">
                 INNOVATION
@@ -147,10 +147,10 @@ const BlockchainDevelopment = () => {
 
             <div className="flex flex-col gap-4 max-w-[650px]">
               <p className="font-normal text-sm leading-[1.6] text-black transition-colors duration-300 dark:text-white sm:text-base md:text-lg">
-                Build next-generation decentralized ecosystems with secure, 
-                high-performance blockchain solutions engineered for real-world use. 
-                From custom dApps to private enterprise networks and tokenization 
-                systems, we deliver blockchain products that are scalable, 
+                Build next-generation decentralized ecosystems with secure,
+                high-performance blockchain solutions engineered for real-world use.
+                From custom dApps to private enterprise networks and tokenization
+                systems, we deliver blockchain products that are scalable,
                 trustworthy, and built for long-term growth.
               </p>
             </div>
@@ -183,51 +183,63 @@ const BlockchainDevelopment = () => {
               {
                 title: "Custom Blockchain Applications",
                 desc: "Build Feature-Rich Decentralized Apps Tailored To Finance, Supply Chain, Gaming, And More."
-                ,image: solution1Img
+                , image: solution1Img
               },
               {
                 title: "Private & Consortium Blockchain Networks",
                 desc: "Build Permissioned Networks For Enterprises Using Hyperledger, Quorum, Or Polygon Supernets."
-                ,image: solution2Img
+                , image: solution2Img
               },
               {
                 title: "Tokenization & Digital Assets",
                 desc: "Launch Utility Tokens, NFTs, Stablecoins, Asset-Backed Tokens, And Digital Certificates."
-                ,image: solution3Img
+                , image: solution3Img
               },
               {
                 title: "Smart Contract Development",
                 desc: "Secure, Auditable Smart Contracts Using Industry-Grade Standards And Best Practices."
-                ,image: solution4Img
+                , image: solution4Img
               },
               {
                 title: "Decentralized Identity (DID) Systems",
                 desc: "Implement Next-Gen Identity Frameworks For Authentication And Access Control."
-                ,image: solution5Img
+                , image: solution5Img
               },
               {
                 title: "Blockchain Integrations & API Development",
                 desc: "Connect Existing Software, Databases, And ERP Systems To Blockchain Networks."
-                ,image: solution6Img
+                , image: solution6Img
               }
             ].map((solution, idx) => (
-              <div 
-                key={idx} 
-                className="group relative overflow-hidden rounded-[10px] border border-brand-blue/10 bg-gradient-to-br from-white to-[#629fc5] p-6 shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.22)] dark:border-white/10 dark:from-[#004b8a] dark:to-[#000000] dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)] dark:hover:shadow-[0_18px_60px_rgba(0,0,0,0.70)]"
+              <div
+                key={idx}
+                className="
+    group relative overflow-hidden rounded-[10px]
+    border border-transparent hover:border-brand-blue/40
+    bg-gradient-to-br from-white to-[#629fc5]
+    p-6
+    shadow-[0_10px_30px_rgba(0,0,0,0.18)]
+    transition-all duration-300
+    hover:shadow-[0_16px_48px_rgba(0,0,0,0.22)]
+    dark:from-[#004b8a] dark:to-[#000000]
+    dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)]
+    dark:hover:shadow-[0_18px_60px_rgba(0,0,0,0.70)]
+  "
               >
                 <div className="flex h-full items-center justify-between gap-6">
-                  {/* Text Content */}
+
+                  {/* Text */}
                   <div className="flex-1">
-                    <h3 className="font-sans text-2xl font-bold leading-tight text-black transition-colors duration-300 dark:text-white sm:text-[26px]">
+                    <h3 className="font-sans text-2xl font-bold leading-tight text-black dark:text-white sm:text-[26px]">
                       {solution.title}
                     </h3>
-                    <p className="mt-4 font-sans text-base font-medium leading-[1.6] text-black/70 transition-colors duration-300 dark:text-white/80 sm:text-lg">
+                    <p className="mt-4 font-sans text-base font-medium leading-[1.6] text-black/70 dark:text-white/80 sm:text-lg">
                       {solution.desc}
                     </p>
                   </div>
 
-                  {/* Graphic */}
-                  <div className="relative h-24 w-24 shrink-0 overflow-hidden sm:h-32 sm:w-32">
+                  {/* Image (BIGGER NOW) */}
+                  <div className="relative h-28 w-28 shrink-0 overflow-hidden sm:h-36 sm:w-36 md:h-40 md:w-40">
                     <div className="h-full w-full overflow-hidden rounded-2xl bg-brand-blue/5 dark:bg-white/5">
                       <img
                         src={solution.image}
@@ -237,8 +249,10 @@ const BlockchainDevelopment = () => {
                       />
                     </div>
                   </div>
+
                 </div>
               </div>
+
             ))}
           </div>
         </div>
@@ -302,11 +316,10 @@ const BlockchainDevelopment = () => {
                   type="button"
                   aria-label={`Go to slide ${i + 1}`}
                   onClick={() => setCurrentIndex(i)}
-                  className={`h-3 w-3 rounded-full border transition-all duration-300 ${
-                    activeDot === i
-                      ? 'border-brand-blue bg-brand-blue'
-                      : 'border-black/30 bg-transparent dark:border-white/40'
-                  }`}
+                  className={`h-3 w-3 rounded-full border transition-all duration-300 ${activeDot === i
+                    ? 'border-brand-blue bg-brand-blue'
+                    : 'border-black/30 bg-transparent dark:border-white/40'
+                    }`}
                 />
               ))}
             </div>
@@ -380,9 +393,9 @@ const BlockchainDevelopment = () => {
           <div className="relative mx-auto max-w-[1180px] overflow-x-clip md:min-h-[560px]">
             {/* Center Graphic (circle) */}
             <div className="pointer-events-none absolute left-1/2 z-0 hidden h-[280px] w-[280px] -translate-x-1/2 items-center justify-center rounded-full border border-brand-blue/25 bg-white/80 shadow-[0_18px_55px_rgba(0,0,0,0.12)] backdrop-blur-[2px] transition-colors duration-300 dark:border-white/25 dark:bg-black/40 dark:shadow-[0_18px_60px_rgba(0,0,0,0.65)] md:top-[100px] md:flex">
-              <div className="absolute inset-6 rounded-full border border-brand-blue/20 dark:border-white/20" />
-              <div className="absolute inset-12 rounded-full border border-brand-blue/15 dark:border-white/15" />
-              <div className="relative z-10 h-[220px] w-[220px] overflow-hidden rounded-full">
+              <div className="absolute inset-6 rounded-full " />
+              <div className="absolute inset-12 rounded-full " />
+              <div className="relative z-10 h-[320px] w-[320px] overflow-hidden rounded-full">
                 <img
                   src={developmentProcessImg}
                   alt="Development process"
@@ -396,7 +409,7 @@ const BlockchainDevelopment = () => {
               { n: '1', t: 'Requirement Analysis & Architecture Design', pos: 'md:left-1/2 md:-top-4 md:-translate-x-1/2' },
               { n: '2', t: 'UI/UX Engineering', pos: 'md:right-0 md:top-[95px]' },
               { n: '3', t: 'Smart Contract Development', pos: 'md:right-0 md:top-[220px]' },
-              { n: '4', t: 'Backend & Node Setup', pos: 'md:right-0 md:top-[350px]' },  
+              { n: '4', t: 'Backend & Node Setup', pos: 'md:right-0 md:top-[350px]' },
               { n: '5', t: 'Integration (APIs, Oracles, Wallets)', pos: 'md:left-1/2 md:bottom-[20px] md:-translate-x-1/2' },
               { n: '6', t: 'Security Testing & Audits', pos: 'md:left-0 md:top-[350px]' },
               { n: '7', t: 'Deployment on Testnet/Mainnet', pos: 'md:left-0 md:top-[220px]' },
@@ -407,13 +420,12 @@ const BlockchainDevelopment = () => {
                 className={`relative mb-4 flex items-center justify-start md:absolute md:mb-0 ${step.pos}`}
               >
                 <div
-                  className={`relative z-10 flex w-full max-w-[460px] items-center gap-4 rounded-[10px] border border-brand-blue/20 bg-white px-5 py-4 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)] ${
-                    step.n === '2' || step.n === '3' || step.n === '4'
-                      ? 'md:w-[420px]'
-                      : step.n === '7' || step.n === '8'
-                        ? 'md:w-[400px]'
-                        : 'md:w-[460px]'
-                  } ${step.n === '4' || step.n === '6' ? 'pt-3 pb-3' : ''}`}
+                  className={`relative z-10 flex w-full max-w-[460px] items-center gap-4 rounded-[10px] border border-brand-blue/20 bg-white px-5 py-4 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)] ${step.n === '2' || step.n === '3' || step.n === '4'
+                    ? 'md:w-[420px]'
+                    : step.n === '7' || step.n === '8'
+                      ? 'md:w-[400px]'
+                      : 'md:w-[460px]'
+                    } ${step.n === '4' || step.n === '6' ? 'pt-3 pb-3' : ''}`}
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-brand-blue bg-white text-lg font-bold text-black">
                     {step.n}

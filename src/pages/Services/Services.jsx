@@ -17,6 +17,10 @@ import s10 from '../../assets/services images/s10.png';
 import s11 from '../../assets/services images/s11.png';
 import consultingImg from '../../assets/home_images/blockchain.png';
 import customDevImg from '../../assets/home_images/enterprise-grade.png';
+import serviceHeroVideoLight from '../../assets/services images/service_video/5622723_Coll_wavebreak_Animation_1280x720.mp4';
+import serviceHeroVideoDark from '../../assets/services images/service_video/GettyImages-1366942366.mp4';
+import whyChooseImg from '../../assets/services images/B (20) 1.png';
+
 
 const Services = () => {
   const { theme } = useTheme();
@@ -137,125 +141,74 @@ const Services = () => {
 
   return (
     <div className="bg-white transition-colors duration-300 dark:bg-black">
-      {/* Section 1: OUR BLOCKCHAIN & AI DEVELOPMENT SERVICES */}
-      <section className="mx-auto max-w-layout px-5 py-16 md:px-10 lg:py-24">
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_400px] lg:gap-12">
-          {/* Left Content */}
-          <div>
-            <h1 className="font-heading text-4xl font-bold uppercase leading-tight text-black transition-colors duration-300 dark:text-white md:text-5xl lg:text-6xl">
-              <span className="text-brand-blue">OUR BLOCKCHAIN</span>
-              <br />
-              <span className="text-black dark:text-white">& AI DEVELOPMENT</span>
-              <br />
-              <span className="text-brand-blue">SERVICES</span>
-            </h1>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-black/80 transition-colors duration-300 dark:text-white/80 md:text-lg">
-              <p>
-                We engineer future-ready solutions that combine intelligent Web3 and AI technologies. Our extensive suite of development services brings together decentralized architecture with advanced automation, security, and high-performance engineering.
+
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative h-[100svh] w-full overflow-hidden">
+        {/* Background Video */}
+        <video
+          key={theme}
+          src={theme === 'dark' ? serviceHeroVideoDark : serviceHeroVideoLight}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 dark:bg-black/50" />
+
+        {/* Content */}
+        <div className="relative z-10 flex h-full items-center">
+          <div className="mx-auto w-full max-w-layout px-5 sm:px-8 md:px-14 lg:px-[3rem]">
+            <div className="max-w-[900px]">
+
+              <h1 className="font-heading font-bold uppercase leading-tight">
+                {/* Line 1 */}
+                <span className="block text-[30px] leading-[1.2] sm:text-[44px] md:text-[52px] lg:text-[58px]">
+                  <span className="text-black dark:text-white">OUR </span>
+                  <span className="text-brand-blue dark:text-white">BLOCKCHAIN </span>
+                  <span className="text-black dark:text-white">& </span>
+                  <span className="text-brand-blue dark:text-white">AI</span>
+                </span>
+
+                {/* Line 2 */}
+                <span className="block text-[30px] leading-[1.2] sm:text-[44px] md:text-[52px] lg:text-[58px] text-brand-blue">
+                  DEVELOPMENT SERVICES
+                </span>
+              </h1>
+
+              <p className="mt-6 max-w-[520px] text-[15px] sm:text-base leading-relaxed text-black/90 dark:text-white/85">
+                Future-ready solutions designed to help businesses innovate, automate, and scale with intelligent Web3 and AI technologies.
               </p>
-              <p>
-                From smart contract engineering to AI-driven automation and full-scale Web3 ecosystems, we empower startups, enterprises, and global innovators to transform their digital operations with cutting-edge blockchain and AI solutions.
+
+              <p className="mt-5 max-w-[520px] text-[15px] sm:text-base leading-relaxed text-black/90 dark:text-white/85">
+                Blockchain App Advisor offers an extensive suite of development services that combine decentralized architecture with advanced automation, security, and high-performance engineering. From smart contracts to AI-driven systems — our solutions empower startups, enterprises, and global innovators to thrive in the digital future.
               </p>
-            </div>
-          </div>
 
-          {/* Right Graphic - Circular Blue Glowing Graphic */}
-          <div className="flex items-center justify-center">
-            <div className="relative h-[400px] w-[400px]">
-              {/* Outer Glowing Circle */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-blue/20 via-brand-blue/10 to-transparent blur-3xl" />
-              
-              {/* Main Circle */}
-              <div className="relative flex h-full w-full items-center justify-center rounded-full border-2 border-brand-blue/30 bg-gradient-to-br from-brand-blue/5 to-transparent dark:border-brand-blue/20">
-                {/* Numbers around the circle */}
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((num, idx) => {
-                  const angle = (idx * 45 - 90) * (Math.PI / 180);
-                  const radius = 160;
-                  const x = Math.cos(angle) * radius;
-                  const y = Math.sin(angle) * radius;
-                  return (
-                    <div
-                      key={num}
-                      className="absolute text-sm font-bold text-brand-blue"
-                      style={{
-                        transform: `translate(${x}px, ${y}px)`,
-                      }}
-                    >
-                      {num}
-                    </div>
-                  );
-                })}
-
-                {/* Center Icon - Firewall/Security */}
-                <div className="relative z-10 flex flex-col items-center justify-center">
-                  <svg
-                    width="120"
-                    height="120"
-                    viewBox="0 0 120 120"
-                    fill="none"
-                    className="text-brand-blue"
-                  >
-                    <rect x="20" y="30" width="80" height="60" rx="4" stroke="currentColor" strokeWidth="3" />
-                    <path
-                      d="M30 50L50 50M30 60L50 60M30 70L50 70"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <circle cx="75" cy="60" r="8" fill="currentColor" />
-                    <path
-                      d="M20 45L10 40L20 35M100 45L110 40L100 35"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-
-                {/* Circuit lines */}
-                <svg className="absolute inset-0 h-full w-full" viewBox="0 0 400 400">
-                  <path
-                    d="M200 50 Q250 100 300 150 T350 200"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    className="text-brand-blue/30"
-                  />
-                  <path
-                    d="M200 350 Q150 300 100 250 T50 200"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    fill="none"
-                    className="text-brand-blue/30"
-                  />
-                </svg>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: EXPLORE ALL OUR SERVICES */}
-      <section className="mx-auto max-w-layout px-5 py-16 md:px-10 lg:py-24">
+      {/* ================= SERVICES CAROUSEL ================= */}
+      <section className="mx-auto max-w-layout px-4 sm:px-8 md:px-10 py-14 lg:py-20">
         <div className="text-center">
-          <h2 className="font-heading text-4xl font-bold uppercase leading-tight text-black transition-colors duration-300 dark:text-white md:text-5xl lg:text-6xl">
-            <span className="text-black dark:text-white">EXPLORE ALL</span>
-            <br />
+          <h2 className="font-heading text-[32px] sm:text-[44px] md:text-[52px] lg:text-[60px] font-bold uppercase leading-tight">
+            <span className="text-black dark:text-white">EXPLORE ALL </span>
             <span className="text-brand-blue">OUR SERVICES</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-black/70 transition-colors duration-300 dark:text-white/70 md:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-black/70 dark:text-white/70">
             Below is the complete range of services we offer, each engineered for security, scalability, and real-world impact.
           </p>
         </div>
 
-        {/* Carousel Container */}
-        <div className="relative mt-12 overflow-hidden">
+        <div className="relative mt-10 overflow-hidden">
           <div
             ref={carouselRef}
             className="flex transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${currentSlide * (100 / cardsPerView)}%)`,
-            }}
+            style={{ transform: `translateX(-${currentSlide * (100 / cardsPerView)}%)` }}
           >
             {serviceCards.map((card) => {
               const serviceRoute = getServiceRoute(card.id);
@@ -267,76 +220,54 @@ const Services = () => {
                 >
                   <NavLink
                     to={serviceRoute}
-                    className="group relative block h-full w-full overflow-hidden rounded-2xl border border-black/15 bg-white transition-all duration-300 hover:border-brand-blue/50 hover:shadow-xl dark:border-white/15 dark:bg-black/20 dark:hover:border-brand-blue/50"
+                    className="group block h-full w-full overflow-hidden rounded-2xl border border-black/15 bg-white dark:bg-black/20 dark:border-white/15 transition-all hover:border-brand-blue/50 hover:shadow-xl"
                     style={{
                       backgroundImage: `url(${theme === 'dark' ? cutCardDbg : cutCardLbg})`,
                       backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat',
                     }}
                   >
-                    <div className=" relative flex h-full min-h-[400px] flex-col items-start justify-start p-6">
-                      <div className=" mb-4 aspect-[4/3] w-full overflow-hidden rounded-xl">
+                    <div className="flex h-full min-h-[360px] flex-col p-5 sm:p-6">
+                      <div className="mb-4 aspect-[4/3] w-full overflow-hidden rounded-xl">
                         <img
                           src={card.image}
                           alt={card.title}
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                       </div>
-                      <div className="px-2">
-                      <h3 className="font-heading text-xl font-bold text-black transition-colors duration-300 dark:text-white md:text-2xl">
+                      <h3 className="font-heading text-lg sm:text-xl font-bold text-black dark:text-white">
                         {card.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-black/70 transition-colors duration-300 dark:text-white/70 md:text-base">
+                      <p className="mt-2 text-sm sm:text-base text-black/70 dark:text-white/70">
                         {card.description}
                       </p>
-                      </div>
                     </div>
                   </NavLink>
                 </div>
-
-                
               );
             })}
           </div>
 
-          {/* Carousel Navigation Buttons - Below Cards */}
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <button
-              onClick={prevSlide}
-              disabled={currentSlide === 0}
-              className="flex items-center justify-center rounded-full bg-brand-blue p-3 shadow-lg transition-all duration-300 hover:scale-110 hover:bg-brand-blue/90 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-              aria-label="Previous slide"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+          {/* Controls */}
+          <div className="mt-8 flex justify-center gap-4">
+            <button onClick={prevSlide} disabled={currentSlide === 0} className="rounded-full bg-brand-blue p-3 text-white disabled:opacity-40">
+              ‹
             </button>
-            <button
-              onClick={nextSlide}
-              disabled={currentSlide >= maxSlide}
-              className="flex items-center justify-center rounded-full bg-brand-blue p-3 shadow-lg transition-all duration-300 hover:scale-110 hover:bg-brand-blue/90 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-              aria-label="Next slide"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+            <button onClick={nextSlide} disabled={currentSlide >= maxSlide} className="rounded-full bg-brand-blue p-3 text-white disabled:opacity-40">
+              ›
             </button>
           </div>
         </div>
       </section>
 
-      {/* Section 3: WHY CHOOSE BLOCKCHAIN APP ADVISOR */}
-      <section className="mx-auto max-w-layout px-5 py-16 md:px-10 lg:py-24">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_500px]">
-          {/* Left Content */}
+      {/* ================= WHY CHOOSE ================= */}
+      <section className="mx-auto max-w-layout px-4 sm:px-8 md:px-10 py-14 lg:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 items-center">
           <div>
-            <h2 className="font-heading text-4xl font-bold uppercase leading-tight text-black transition-colors duration-300 dark:text-white md:text-5xl lg:text-6xl">
-              <span className="text-black dark:text-white">WHY CHOOSE</span>
-              <br />
-              <span className="text-brand-blue">BLOCKCHAIN APP ADVISOR</span>
-              <br />
-              <span className="text-black dark:text-white">FOR YOUR PROJECT?</span>
+            <h2 className="font-heading text-[32px] sm:text-[44px] md:text-[60px] font-bold uppercase leading-tight">
+              <span className="text-black dark:text-white">WHY CHOOSE</span>{' '}
+              <span className="text-brand-blue">BLOCKCHAIN APP ADVISOR</span>{' '}
+              <span className="text-black dark:text-white">FOR </span>
+               <span className="text-brand-blue">YOUR PROJECT?</span>{' '}
             </h2>
 
             <ul className="mt-8 space-y-4">
@@ -347,114 +278,34 @@ const Services = () => {
                 'Transparent development approach',
                 'Post-launch support & scaling',
                 'Enterprise-level performance',
-              ].map((item, idx) => (
-                <li key={idx} className="flex items-start gap-4">
-                  <div className="mt-1.5 flex-shrink-0">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="text-brand-blue"
-                    >
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-                      <path
-                        d="M8 12l2 2 4-4"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-lg leading-relaxed text-black/80 transition-colors duration-300 dark:text-white/80">
-                    {item}
-                  </span>
+              ].map((item) => (
+                <li key={item} className="flex gap-3 text-black/80 dark:text-white/80">
+                  <span className="text-brand-blue">✔</span> {item}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Right Graphic - Tablet with Bitcoin Logo */}
-          <div className="flex items-center justify-center">
-            <div className="relative">
-              <div className="relative h-[400px] w-[300px]">
-                {/* Tablet Frame */}
-                <div className="absolute inset-0 rounded-[40px] border-8 border-black/20 bg-gradient-to-br from-gray-100 to-gray-200 shadow-2xl dark:border-white/20 dark:from-gray-800 dark:to-gray-900">
-                  {/* Screen */}
-                  <div className="absolute inset-[8px] rounded-[32px] bg-black overflow-hidden">
-                    {/* Bitcoin Logo and Circuit Pattern */}
-                    <div className="relative flex h-full w-full items-center justify-center bg-gradient-to-br from-brand-blue/10 to-black">
-                      {/* Bitcoin Logo */}
-                      <div className="relative z-10">
-                        <svg
-                          width="120"
-                          height="120"
-                          viewBox="0 0 120 120"
-                          fill="none"
-                          className="text-brand-blue"
-                        >
-                          <circle cx="60" cy="60" r="55" stroke="currentColor" strokeWidth="3" />
-                          <text
-                            x="60"
-                            y="75"
-                            textAnchor="middle"
-                            className="text-6xl font-bold fill-current"
-                            fontFamily="Arial, sans-serif"
-                          >
-                            B
-                          </text>
-                          <path
-                            d="M60 30 L60 50 M60 70 L60 90"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                            strokeLinecap="round"
-                          />
-                        </svg>
-                      </div>
-
-                      {/* Circuit Pattern Background */}
-                      <svg className="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 300 400">
-                        <path
-                          d="M50 100 Q100 50 150 100 T250 100"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          fill="none"
-                          className="text-brand-blue"
-                        />
-                        <path
-                          d="M50 200 Q100 150 150 200 T250 200"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          fill="none"
-                          className="text-brand-blue"
-                        />
-                        <path
-                          d="M50 300 Q100 250 150 300 T250 300"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          fill="none"
-                          className="text-brand-blue"
-                        />
-                        <circle cx="100" cy="150" r="3" fill="currentColor" className="text-brand-blue" />
-                        <circle cx="200" cy="250" r="3" fill="currentColor" className="text-brand-blue" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="flex justify-center">
+            {/* <div className="h-[360px] w-[260px] rounded-[40px] border-8 border-black/20 bg-gradient-to-br from-gray-100 to-gray-200 shadow-2xl dark:border-white/20 dark:from-gray-800 dark:to-gray-900"> */}
+            <img
+              src={whyChooseImg}
+              alt="Why choose Blockchain App Advisor"
+              className="h-full w-full object-contain p-4"
+              loading="lazy"
+            />
+            {/* </div> */}
           </div>
         </div>
       </section>
 
-      {/* Before Footer Section */}
       <BeforeFooter
         title="Build With The Best In Blockchain & AI"
         description="We transform ideas into secure, scalable, and high-performing digital products."
         buttonText="Get A Quote"
       />
     </div>
+
   );
 };
 

@@ -77,20 +77,19 @@ const SmartContractAudit = () => {
                 AUDITS FOR <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">MAXIMUM SECURITY</span>
               </span>
               <span className="block text-[38px] leading-[1.2] sm:text-[52px] sm:leading-[1.25] lg:text-[62px] lg:leading-[1.35]">
-                &amp; <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">ZERO VULNERABILITIES</span>
+                <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]"> &amp; ZERO VULNERABILITIES</span>
               </span>
             </h1>
 
             <p className="max-w-[720px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-lg">
-              We identify vulnerabilities before attackers do. Our audit workflow combines automated tooling, manual review, and
-              best-practice standards to harden your smart contracts for production.
+            Protect your Web3 ecosystem with industry-leading smart contract audits that uncover vulnerabilities before attackers do. Our auditors combine automated testing, manual code review, and real-world exploit simulation to ensure your contract is secure, optimized, and ready for mainnet deployment.
             </p>
           </div>
 
           {/* Right (media) */}
           <div className="flex w-full items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[560px]">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+            <div className="w-full max-w-[360px]">
+              <div className="overflow-hidden rounded-3xl  duration-300 ">
                 <img src={heroImg} alt="Smart contract audit" className="h-auto w-full object-contain" loading="eager" />
               </div>
             </div>
@@ -112,7 +111,7 @@ const SmartContractAudit = () => {
             {/* Left media */}
             <div className="flex items-center justify-center lg:justify-start">
               <div className="w-full max-w-[520px]">
-                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                <div className="overflow-hidden rounded-3xl  duration-300 ">
                   <img src={auditProcessImg} alt="Audit process overview" className="h-auto w-full object-contain" loading="lazy" />
                 </div>
               </div>

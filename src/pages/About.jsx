@@ -92,7 +92,7 @@ const About = () => {
             <span className="text-brand-blue">WE ARE</span>
           </h2>
 
-          <div className="mt-12 grid grid-cols-1 items-center gap-6 md:mt-16 md:grid-cols-[400px_1fr] md:gap-8 lg:mt-20 lg:grid-cols-[440px_1fr] lg:gap-12">
+          <div className=" grid grid-cols-1 items-center gap-6 md:mt-16 md:grid-cols-[400px_1fr] md:gap-8 lg:mt-14 lg:grid-cols-[440px_1fr] lg:gap-12">
             {/* Left image */}
             <div className="flex items-center justify-center">
               <img
@@ -408,7 +408,7 @@ const About = () => {
            SECTION 8: OUR APPROACH
            Development methodology and process
       ======================================== */}
-      <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16 md:py-20">
+      <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16 md:py-8">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-20">
           <h2 className="text-center font-heading font-bold uppercase leading-[1.1] tracking-[0.02em] text-[34px] sm:text-[46px] md:text-[50px] lg:text-[55px]">
             OUR <span className="text-brand-blue">APPROACH</span>

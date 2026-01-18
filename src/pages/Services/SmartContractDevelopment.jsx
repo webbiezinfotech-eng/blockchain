@@ -105,7 +105,7 @@ const SmartContractDevelopment = () => {
           {/* Right */}
           <div className="flex w-full items-center justify-center lg:justify-end">
             <div className="w-full max-w-[560px]">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+              <div className="overflow-hidden rounded-3xl  transition-colors duration-300 ">
                 <img src={heroImg} alt="Smart contract development" className="h-auto w-full object-contain" loading="eager" />
               </div>
             </div>
@@ -118,8 +118,8 @@ const SmartContractDevelopment = () => {
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="mb-12 text-center">
             <h2 className="font-heading text-[44px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[56px] lg:text-[72px]">
-              <span className="text-black dark:text-white">SECURITY </span>
-              <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">STANDARDS</span>
+              {/* <span className="text-black dark:text-white"> </span> */}
+              <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">SECURITY STANDARDS</span>
             </h2>
           </div>
 
@@ -127,7 +127,7 @@ const SmartContractDevelopment = () => {
             {/* Left media */}
             <div className="flex items-center justify-center lg:justify-start">
               <div className="w-full max-w-[520px]">
-                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                <div className="overflow-hidden rounded-3xl transition-colors duration-300 ">
                   <img src={securityStandardsImg} alt="Security standards" className="h-auto w-full object-contain" loading="lazy" />
                 </div>
               </div>
@@ -178,7 +178,7 @@ const SmartContractDevelopment = () => {
                   </p>
                 </div>
                 <div className="flex w-[150px] shrink-0 items-center justify-center">
-                  <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl border border-black/10 bg-white/70 transition-colors duration-300 dark:border-white/15 dark:bg-black/20">
+                  <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl  duration-300">
                     <img src={c.media} alt="" className="h-full w-full object-cover" loading="lazy" />
                   </div>
                 </div>
@@ -199,7 +199,7 @@ const SmartContractDevelopment = () => {
                   </p>
                 </div>
                 <div className="flex w-[150px] shrink-0 items-center justify-center">
-                  <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl border border-black/10 bg-white/70 transition-colors duration-300 dark:border-white/15 dark:bg-black/20">
+                  <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl duration-300">
                     <img src={contractTypes[6].media} alt="" className="h-full w-full object-cover" loading="lazy" />
                   </div>
                 </div>
@@ -240,7 +240,7 @@ const SmartContractDevelopment = () => {
           <div className="relative mt-14 hidden min-h-[620px] overflow-x-clip lg:block">
             {/* Center media */}
             <div className="absolute left-1/2 top-1/2 w-[360px] -translate-x-1/2 -translate-y-1/2">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+              <div className="overflow-hidden rounded-3xl  duration-300 ">
                 <img src={devTestingProcessImg} alt="Development and testing process" className="h-auto w-full object-contain" loading="lazy" />
               </div>
             </div>

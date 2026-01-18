@@ -115,7 +115,7 @@ const AIDevelopment = () => {
           <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             {/* Left */}
             <div>
-              <h2 className="font-heading text-[44px] font-bold uppercase leading-[1.06] tracking-tight sm:text-[56px] lg:text-[67px]" style={{ lineHeight: '81px' }}>
+              <h2 className="font-heading text-[44px] font-bold uppercase leading-[1.06] tracking-tight sm:text-[56px] lg:text-[67px]" style={{ lineHeight: '89px' }}>
                 <span className="block text-black transition-colors duration-300 dark:text-white sm:whitespace-nowrap">
                   AI &amp; MACHINE LEARNING
                 </span>
@@ -137,7 +137,7 @@ const AIDevelopment = () => {
             {/* Right */}
             <div className="flex w-full items-center justify-center lg:justify-end">
               <div className="w-full max-w-[560px]">
-                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                <div className="overflow-hidden rounded-3xl ">
                   <img src={heroImg} alt="AI development" className="h-auto w-full object-contain" loading="eager" />
                 </div>
               </div>
@@ -160,7 +160,7 @@ const AIDevelopment = () => {
             {/* Left Illustration */}
             <div className="flex items-center justify-center lg:justify-start">
               <div className="w-full max-w-[560px]">
-                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                <div className="overflow-hidden rounded-3xl  transition-colors duration-300 ">
                   <img src={useCaseImg} alt="AI use cases" className="h-auto w-full object-contain" loading="lazy" />
                 </div>
               </div>
@@ -187,7 +187,7 @@ const AIDevelopment = () => {
       </section>
 
       {/* AI Capabilities (Section 3) */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+      <section className="w-full bg-white  transition-colors duration-300 dark:bg-black ">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="text-center">
             <h2 className="font-heading text-[42px] font-bold uppercase tracking-tight text-black transition-colors duration-300 sm:text-[56px] lg:text-[72px] dark:text-white">
@@ -250,7 +250,7 @@ const AIDevelopment = () => {
       </section>
 
       {/* Tools & Frameworks (Section 4) */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+      <section className="w-full bg-white transition-colors duration-300 dark:bg-black sm:py-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="text-center">
             <h2 className="font-heading text-[42px] font-bold uppercase tracking-tight transition-colors duration-300 sm:text-[56px] lg:text-[72px]">
@@ -302,7 +302,7 @@ const AIDevelopment = () => {
           <div className="relative mt-14 hidden min-h-[560px] overflow-x-clip lg:block">
             {/* Center media */}
             <div className="absolute left-1/2 top-1/2 w-[340px] -translate-x-1/2 -translate-y-1/2">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+              <div className="overflow-hidden rounded-3xl transition-colors duration-300 ">
                 <img src={processImg} alt="AI deployment process" className="h-auto w-full object-contain" loading="lazy" />
               </div>
             </div>
@@ -334,16 +334,38 @@ const AIDevelopment = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="w-full bg-gradient-to-r from-[#004b8a] to-[#000000] py-10 transition-colors duration-300 sm:py-12">
-        <div className="mx-auto max-w-layout px-4 text-center sm:px-6 md:px-10">
-          <h3 className="font-heading text-[36px] font-bold uppercase leading-tight text-white sm:text-[44px] md:text-[52px]">
-            Get a Custom AI Solution Today
-          </h3>
-          <button className="mt-7 rounded-lg border-2 border-white bg-transparent px-10 py-3 text-lg font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black">
-            Contact Now
-          </button>
-        </div>
-      </section>
+    <section
+  className="
+    w-full
+    bg-gradient-to-r
+    from-brand-blue to-[#4aa3df]
+    dark:from-[#004b8a] dark:to-[#000000]
+    py-10 sm:py-12
+    transition-colors duration-300
+  "
+>
+  <div className="mx-auto max-w-layout px-4 text-center sm:px-6 md:px-10">
+    <h3 className="font-heading text-[36px] font-bold uppercase leading-tight text-white sm:text-[44px] md:text-[52px]">
+      Get a Custom AI Solution Today
+    </h3>
+
+    <button
+      className="
+        mt-7 rounded-lg
+        border-2 border-white
+        bg-transparent
+        px-10 py-3
+        text-lg font-semibold
+        text-white
+        transition-all duration-300
+        hover:bg-white hover:text-black
+      "
+    >
+      Contact Now
+    </button>
+  </div>
+</section>
+
     </div>
   );
 };
