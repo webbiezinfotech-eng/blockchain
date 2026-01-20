@@ -299,8 +299,8 @@ const SmartContractAudit = () => {
 
             {/* Right media */}
             <div className="flex items-center justify-center lg:justify-end">
-              <div className="w-full max-w-[520px]">
-                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+              <div className="w-full max-w-[400px]">
+                <div className="overflow-hidden rounded-3xl  transition-colors duration-300 ">
                   <img src={sampleReportImg} alt="Sample audit report" className="h-auto w-full object-contain" loading="lazy" />
                 </div>
               </div>

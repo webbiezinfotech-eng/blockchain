@@ -1,9 +1,15 @@
+import { useEffect, useRef, useState } from 'react';
+
 import BeforeFooter from '../../components/common/BeforeFooter';
 
 import heroImg from '../../assets/services images/DappDevimages/DappDev-hero.png';
 import useCase1Img from '../../assets/services images/DappDevimages/DefiPlatforms.png';
 import useCase2Img from '../../assets/services images/DappDevimages/Web3Games.png';
 import useCase3Img from '../../assets/services images/DappDevimages/SupplychainTracking.png';
+import useCase4Img from '../../assets/services images/DappDevimages/GovernanceDAOs.png';
+import useCase5Img from '../../assets/services images/DappDevimages/IdentitySystems.png';
+import useCase6Img from '../../assets/services images/DappDevimages/NFTApps.png';
+import useCase7Img from '../../assets/services images/DappDevimages/RealEstateMarketplace.png';
 
 import processImg from '../../assets/services images/DappDevimages/DevelopmentProcess.png';
 import monetizationImg from '../../assets/services images/DappDevimages/MonetizationOptions.png';
@@ -28,6 +34,30 @@ const DAppDevelopment = () => {
       image: useCase3Img,
       alt: 'Supply chain tracking',
     },
+     {
+      title: 'Governance & DAOs',
+      desc: 'Enable community-driven decision-making through decentralized voting, proposal management, and automated governance using secure smart contracts.',
+      image: useCase4Img,
+      alt: 'Governance & DAOs',
+    },
+      {
+      title: 'Identity Systems',
+      desc: 'Provide self-sovereign digital identities enabling secure authentication, credential verification, and privacy-preserving access across decentralized platforms.',
+      image: useCase5Img,
+      alt: 'Identity Systems',
+    },
+      {
+      title: 'NFT Apps',
+      desc: 'Develop NFT-powered applications supporting minting, trading, utility integration, and interactive digital experiences for creators and users.',
+      image: useCase6Img,
+      alt: 'NFT Apps',
+    },
+      {
+      title: 'Real Estate Marketplaces',
+      desc: 'Tokenize property assets, enable fractional ownership, streamlined transactions, and transparent on-chain records for real-estate operations.',
+      image: useCase7Img,
+      alt: 'Real Estate Marketplaces',
+    },
   ];
 
   const process = [
@@ -49,11 +79,41 @@ const DAppDevelopment = () => {
     'Cross-chain bridging',
     'Payment gateways',
   ];
+  const dappCarouselRef = useRef(null);
+const [dappActiveIdx, setDappActiveIdx] = useState(0);
+const [dappPaused, setDappPaused] = useState(false);
+
+useEffect(() => {
+  if (dappPaused || !dappCarouselRef.current) return;
+
+  const interval = setInterval(() => {
+    setDappActiveIdx((prev) => (prev + 1) % useCases.length);
+  }, 3500);
+
+  return () => clearInterval(interval);
+}, [dappPaused, useCases.length]);
+
+useEffect(() => {
+  const el = dappCarouselRef.current;
+  if (!el) return;
+
+  const card = el.querySelector('[data-dapp-card]');
+  if (!card) return;
+
+  const gap = 32; // gap-8
+  const width = card.offsetWidth + gap;
+
+  el.scrollTo({
+    left: dappActiveIdx * width,
+    behavior: 'smooth',
+  });
+}, [dappActiveIdx]);
+
 
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-4 pb-12 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-14 lg:pt-8 lg:pb-16">
+      <section className="w-full bg-white pt-10 pb-16 transition-colors duration-300 dark:bg-black sm:pt-16 sm:pb-16 lg:pt-18 lg:pb-22">
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[58%_42%] lg:pl-[3rem] lg:pr-[5rem]">
           <div className="flex w-full flex-col gap-6">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white">
@@ -83,37 +143,83 @@ const DAppDevelopment = () => {
       </section>
 
       {/* Dapp Use Cases */}
-      <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="mb-10 text-center">
-            <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
-              DAPP <span className="text-brand-blue">USE CASES</span>
-            </h2>
-          </div>
+   {/* Dapp Use Cases */}
+<section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
+  <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
+    <div className="mb-10 text-center">
+      <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
+        DAPP <span className="text-brand-blue">USE CASES</span>
+      </h2>
+    </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {useCases.map((c) => (
-              <div
-                key={c.title}
-                className="rounded-[20px] border-[6px] border-brand-blue bg-white p-5 shadow-[0_12px_40px_rgba(0,90,200,0.25)] transition-all duration-300 hover:-translate-y-[4px] 
-  dark:border-[#2f80ff] dark:bg-gradient-to-br dark:from-[#003b73] dark:to-black dark:shadow-[0_18px_50px_rgba(0,80,200,0.45)]"
-              >
+    {/* Carousel */}
+    <div
+      ref={dappCarouselRef}
+      onMouseEnter={() => setDappPaused(true)}
+      onMouseLeave={() => setDappPaused(false)}
+      className="
+        mx-auto
+        flex
+        gap-8
+        overflow-x-auto
+        snap-x snap-mandatory
+        scroll-smooth
+        overscroll-x-contain
+        [-ms-overflow-style:none]
+        [scrollbar-width:none]
+        [&::-webkit-scrollbar]:hidden
+      "
+    >
+      {useCases.map((c, idx) => (
+        <div
+          key={`${c.title}-${idx}`}
+          data-dapp-card
+          className="snap-start shrink-0 w-[320px] sm:w-[360px] lg:w-[380px]"
+        >
+          <div
+            className="rounded-[20px] border-[6px] border-brand-blue bg-white p-5
+              shadow-[0_12px_40px_rgba(0,90,200,0.25)]
+              transition-all duration-300 hover:-translate-y-[4px]
+              dark:border-[#2f80ff]
+              dark:bg-gradient-to-br dark:from-[#003b73] dark:to-black
+              dark:shadow-[0_18px_50px_rgba(0,80,200,0.45)]"
+          >
+            <div className="h-[180px] w-full overflow-hidden rounded-xl bg-[#eaf3ff] dark:bg-black/40">
+              <img
+                src={c.image}
+                alt={c.alt}
+                className="h-full w-full object-cover p-3"
+              />
+            </div>
 
-                <div className="h-[180px] w-full overflow-hidden rounded-xl bg-[#eaf3ff] dark:bg-black/40">
+            <h3 className="mt-5 text-center font-heading text-[18px] font-bold uppercase tracking-wide text-brand-blue dark:text-white">
+              {c.title}
+            </h3>
 
-                  <img src={c.image} alt={c.alt} className="h-full w-full object-cover p-3" />
-                </div>
-                <h3 className="mt-5 text-center font-heading text-[18px] font-bold uppercase tracking-wide text-black transition-colors duration-300 dark:text-white">
-                  {c.title}
-                </h3>
-                <p className="mt-3 text-center font-sans text-[14px] leading-relaxed text-black/75 transition-colors duration-300 dark:text-white/85">
-                  {c.desc}
-                </p>
-              </div>
-            ))}
+            <p className="mt-3 text-center font-sans text-[14px] leading-relaxed text-black/75 dark:text-white/85">
+              {c.desc}
+            </p>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* Dots */}
+    <div className="mt-8 flex justify-center gap-2">
+      {useCases.map((_, idx) => (
+        <button
+          key={idx}
+          onClick={() => setDappActiveIdx(idx)}
+          className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+            idx === dappActiveIdx
+              ? 'bg-brand-blue'
+              : 'bg-black/20 hover:bg-black/40 dark:bg-white/20 dark:hover:bg-white/40'
+          }`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Development Process */}
       <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-10">
@@ -150,7 +256,7 @@ const DAppDevelopment = () => {
 
             {/* Center Image */}
             <div className="absolute left-1/2 top-1/2 w-[399px] -translate-x-1/2 -translate-y-1/2">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_40px_rgba(0,0,0,0.12)]
+              <div className="overflow-hidden rounded-3xl 
         dark:border-white/20 dark:bg-white/[0.04]">
                 <img
                   src={processImg}
@@ -202,7 +308,6 @@ const DAppDevelopment = () => {
           </div>
         </div>
       </section>
-
 
       {/* Tech Stack */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">

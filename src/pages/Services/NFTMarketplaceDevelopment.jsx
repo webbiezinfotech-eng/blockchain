@@ -205,8 +205,8 @@ const NFTMarketplaceDevelopment = () => {
               ))}
             </div>
 
-            <div className="flex w-full items-center justify-center lg:justify-end lg:pl-12">
-              <div className="w-full max-w-[520px]">
+            <div className="flex w-full items-center justify-center lg:pl-12">
+              <div className="w-full max-w-[400px]">
                 <img src={monetizationImg} alt="Monetization illustration" className="h-auto w-full object-contain" loading="lazy" />
               </div>
             </div>
@@ -216,27 +216,55 @@ const NFTMarketplaceDevelopment = () => {
 
       {/* Supported Blockchains */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="mb-10 text-center">
-            <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
-              SUPPORTED <span className="text-brand-blue">BLOCKCHAINS</span>
-            </h2>
-          </div>
+  <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
+    
+    {/* Heading */}
+    <div className="mb-10 text-center">
+      <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
+         <span className="text-brand-blue">SUPPORTED BLOCKCHAINS</span>
+      </h2>
+    </div>
 
-          <div className="mx-auto flex max-w-[980px] flex-wrap justify-center gap-6">
-            {supportedChains.map((name) => (
-             <div
-  key={name}
-  className="min-w-[170px] rounded-[10px] border border-brand-blue bg-white px-8 py-4 text-center font-sans text-[18px] font-semibold text-black shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 
-dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:text-white dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)]"
->
-  {name}
-</div>
+    <div className="mx-auto max-w-[980px]">
 
-            ))}
+      {/* ROW 1 — 4 cards */}
+      <div className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {supportedChains.slice(0, 4).map((name) => (
+          <div
+            key={name}
+            className="min-w-[170px] rounded-[10px] border border-brand-blue bg-white px-8 py-4
+              text-center font-sans text-[18px] font-semibold text-black
+              shadow-[0_10px_28px_rgba(0,0,0,0.10)]
+              transition-colors duration-300
+              dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]
+              dark:text-white dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)]"
+          >
+            {name}
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+
+      {/* ROW 2 — 3 cards (centered) */}
+      <div className="mt-6 flex justify-center gap-6 sm:mt-8">
+        {supportedChains.slice(4, 7).map((name) => (
+          <div
+            key={name}
+            className="min-w-[170px] rounded-[10px] border border-brand-blue bg-white px-8 py-4
+              text-center font-sans text-[18px] font-semibold text-black
+              shadow-[0_10px_28px_rgba(0,0,0,0.10)]
+              transition-colors duration-300
+              dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]
+              dark:text-white dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)]"
+          >
+            {name}
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Audit Process Overview */}
       <section className="w-full bg-white pt-6 pb-14 transition-colors duration-300 dark:bg-black sm:pt-8 sm:pb-16">

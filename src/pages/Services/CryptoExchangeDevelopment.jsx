@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef,useLayoutEffect, useState } from 'react';
 import BeforeFooter from '../../components/common/BeforeFooter';
 import ServiceCard from '../../components/common/ServiceCard';
 
@@ -99,7 +99,7 @@ const CryptoExchangeDevelopment = () => {
   const [tradingActiveIdx, setTradingActiveIdx] = useState(0);
   const [tradingPaused, setTradingPaused] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = tradingCarouselRef.current;
     if (!el) return;
 
@@ -189,8 +189,8 @@ const CryptoExchangeDevelopment = () => {
             </h1>
 
             <p className="max-w-[760px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-lg">
-            Create a world-class crypto trading platform with institutional-grade performance and security. Whether centralized, decentralized, or hybrid, we develop exchanges with advanced trading engines, liquidity systems, KYC/AML modules, and multi-chain support—ready for high-volume global users.
-             </p>
+              Create a world-class crypto trading platform with institutional-grade performance and security. Whether centralized, decentralized, or hybrid, we develop exchanges with advanced trading engines, liquidity systems, KYC/AML modules, and multi-chain support—ready for high-volume global users.
+            </p>
           </div>
 
           <div className="flex w-full items-center justify-center lg:justify-end">
@@ -236,111 +236,104 @@ const CryptoExchangeDevelopment = () => {
       {/* Trading Features */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="mb-10 text-center">
-            <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
-              TRADING <span className="text-brand-blue">FEATURES</span>
+
+          {/* Heading */}
+          <div className="mb-12 text-center">
+            <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight sm:text-[54px] lg:text-[72px]">
+              <span className="text-black dark:text-white">TRADING </span>
+              <span className="text-brand-blue">FEATURES</span>
             </h2>
           </div>
 
-          {/* Screenshot-style clipped cards in auto-carousel */}
-          <div className="relative">
-            <button
-              type="button"
-              onClick={tradingPrev}
-              className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-black/10 bg-white p-3 shadow-[0_10px_28px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1/2 hover:bg-[#f5fbff] dark:border-white/15 dark:bg-black/60 dark:hover:bg-black sm:block"
-              aria-label="Previous trading feature"
-            >
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M12.5 4.5 7.5 10l5 5.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-
-            <button
-              type="button"
-              onClick={tradingNext}
-              className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-black/10 bg-white p-3 shadow-[0_10px_28px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1/2 hover:bg-[#f5fbff] dark:border-white/15 dark:bg-black/60 dark:hover:bg-black sm:block"
-              aria-label="Next trading feature"
-            >
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M7.5 4.5 12.5 10l-5 5.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-
-            <div
-              ref={tradingCarouselRef}
-              onScroll={onTradingScroll}
-              onMouseEnter={() => setTradingPaused(true)}
-              onMouseLeave={() => setTradingPaused(false)}
-              className="mx-auto flex w-full max-w-[1200px] snap-x snap-mandatory gap-8 overflow-x-auto px-2 pb-4 pt-2 scroll-smooth overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-              aria-label="Trading features carousel"
-            >
-              {tradingFeatures.map((f) => (
+          {/* Carousel */}
+          <div
+            ref={tradingCarouselRef}
+            onScroll={onTradingScroll}
+            onMouseEnter={() => setTradingPaused(true)}
+            onMouseLeave={() => setTradingPaused(false)}
+            className="
+        mx-auto
+        flex
+        max-w-[1200px]
+        snap-x snap-mandatory
+        gap-8
+        overflow-x-auto
+        px-2 pb-4
+        scroll-smooth
+        overscroll-x-contain
+        [-ms-overflow-style:none]
+        [scrollbar-width:none]
+        [&::-webkit-scrollbar]:hidden
+      "
+          >
+            {tradingFeatures.map((f) => (
+              <div
+                key={f.title}
+                data-trading-slide="true"
+                className="snap-start shrink-0 w-[320px] sm:w-[360px] lg:w-[380px]"
+              >
                 <div
-                  key={f.title}
-                  data-trading-slide="true"
-                  className="snap-start shrink-0 w-[320px] sm:w-[360px] lg:w-[380px]"
+                  className="
+              group
+              h-full
+              rounded-[18px]
+              border-[6px] border-brand-blue
+              bg-white
+              shadow-[0_14px_40px_rgba(0,0,0,0.14)]
+              transition-all duration-300
+              hover:-translate-y-1
+              dark:bg-black
+            "
                 >
-                  <div className="group relative h-full w-full">
-                    {/* tilted blue backing (same style as other service cards) */}
-                    <div className="absolute -inset-3 rounded-[24px] bg-brand-blue translate-x-2 translate-y-2 -rotate-[2deg] transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3 group-hover:-rotate-[3deg]" />
+                  {/* Image */}
+                  <div className="overflow-hidden rounded-t-[12px]">
+                    <img
+                      src={f.icon}
+                      alt={f.title}
+                      className="h-[200px] w-full object-cover sm:h-[220px]"
+                      loading="lazy"
+                    />
+                  </div>
 
-                    {/* foreground card */}
-                    <div className="relative flex h-full min-h-[320px] flex-col rounded-[24px] border border-[#c8d7e4] bg-white p-7 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] sm:min-h-[340px]">
-                      <div className="flex items-start justify-between gap-4">
-                        <h3 className="font-sans text-[20px] font-bold text-brand-blue transition-colors duration-300 dark:text-white">
-                          {f.title}
-                        </h3>
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="font-heading text-[22px] font-bold text-brand-blue">
+                      {f.title}
+                    </h3>
 
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-brand-blue/30 bg-white transition-colors duration-300 dark:border-white/20 dark:bg-black/20">
-                          {f.icon ? (
-                            <img
-                              src={f.icon}
-                              alt=""
-                              className="h-8 w-8 object-contain"
-                              loading="lazy"
-                            />
-                          ) : (
-                            <span className="font-heading text-[18px] font-extrabold text-brand-blue transition-colors duration-300 dark:text-white">
-                              {f.title?.[0]}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-
-                      <p className="mt-4 font-sans text-[16px] font-medium leading-[1.65] text-black/70 transition-colors duration-300 dark:text-white/80 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:5] overflow-hidden">
-                        {f.desc}
-                      </p>
-                    </div>
+                    <p className="mt-3 text-[15px] leading-[1.65] text-black/80 dark:text-white/80">
+                      {f.desc}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-4 flex justify-center gap-2">
-              {tradingFeatures.map((f, idx) => (
-                <button
-                  key={f.title}
-                  type="button"
-                  onClick={() => setTradingActiveIdx(idx)}
-                  className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
-                    idx === tradingActiveIdx
-                      ? 'bg-brand-blue'
-                      : 'bg-black/15 hover:bg-black/30 dark:bg-white/20 dark:hover:bg-white/35'
-                  }`}
-                  aria-label={`Go to trading feature ${idx + 1}`}
-                />
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
+
+          {/* Dots */}
+          <div className="mt-6 flex justify-center gap-2">
+            {tradingFeatures.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setTradingActiveIdx(idx)}
+                className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${idx === tradingActiveIdx
+                    ? 'bg-brand-blue'
+                    : 'bg-black/20 hover:bg-black/40 dark:bg-white/20 dark:hover:bg-white/40'
+                  }`}
+              />
+            ))}
+          </div>
+
         </div>
       </section>
+
 
       {/* Security Stack */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="">
-            <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
-               <span className="text-brand-blue">SECURITY STACK</span>
+            <h2 className="font-heading text-[40px] pb-8 font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
+              <span className="text-brand-blue">SECURITY STACK</span>
             </h2>
           </div>
 
@@ -374,8 +367,8 @@ const CryptoExchangeDevelopment = () => {
               ))}
             </div>
 
-            <div className="flex w-full items-center justify-center lg:justify-end">
-              <div className="w-full max-w-[520px]">
+            <div className="flex w-full items-center justify-center">
+              <div className="w-full max-w-[400px]">
                 <img src={securityImg} alt="Security shield" className="h-auto w-full object-contain" loading="lazy" />
               </div>
             </div>
@@ -386,6 +379,8 @@ const CryptoExchangeDevelopment = () => {
       {/* Blockchain Networks Supported */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
+
+          {/* Heading */}
           <div className="mb-10 text-center">
             <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
               BLOCKCHAIN <span className="text-brand-blue">NETWORKS SUPPORTED</span>
@@ -393,32 +388,45 @@ const CryptoExchangeDevelopment = () => {
           </div>
 
           <div className="mx-auto max-w-[1100px]">
-            {/* Row 1: 4 cards */}
-            <div className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
+
+            {/* ROW 1 — 4 cards */}
+            <div className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {networks.slice(0, 4).map((n) => (
                 <div
                   key={n}
-                  className="w-full max-w-[280px] rounded-[10px] border border-[#c8d7e4] bg-white px-10 py-4 text-center font-sans text-[18px] font-medium text-black shadow-[0_6px_18px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)] dark:border-white/25 dark:bg-black dark:text-white sm:text-[20px]"
+                  className="w-full max-w-[280px] rounded-[10px] border border-[#c8d7e4] bg-white px-10 py-4
+            text-center font-sans text-[18px] font-medium text-black
+            shadow-[0_6px_18px_rgba(0,0,0,0.06)]
+            transition-all duration-300
+            hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)]
+            dark:border-white/25 dark:bg-black dark:text-white sm:text-[20px]"
                 >
                   {n}
                 </div>
               ))}
             </div>
 
-            {/* Row 2: 3 cards (centered) */}
-            <div className="mt-6 flex flex-wrap justify-center gap-6 sm:mt-8 sm:gap-8">
-              {networks.slice(4).map((n) => (
+            {/* ROW 2 — 3 cards (centered) */}
+            <div className="mt-6 flex justify-center gap-6 sm:mt-8 sm:gap-8">
+              {networks.slice(4, 7).map((n) => (
                 <div
                   key={n}
-                  className="w-full max-w-[280px] rounded-[10px] border border-[#c8d7e4] bg-white px-10 py-4 text-center font-sans text-[18px] font-medium text-black shadow-[0_6px_18px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)] dark:border-white/25 dark:bg-black dark:text-white sm:text-[20px]"
+                  className="w-full max-w-[280px] rounded-[10px] border border-[#c8d7e4] bg-white px-10 py-4
+            text-center font-sans text-[18px] font-medium text-black
+            shadow-[0_6px_18px_rgba(0,0,0,0.06)]
+            transition-all duration-300
+            hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)]
+            dark:border-white/25 dark:bg-black dark:text-white sm:text-[20px]"
                 >
                   {n}
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </section>
+
 
       <BeforeFooter title="Build Your Crypto Exchange" buttonText="GET STARTED NOW" />
     </div>

@@ -118,9 +118,9 @@ const FAQ = () => {
             </p>
           </div>
 
-          <div className="flex w-full items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[440px] lg:max-w-[450px]">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+          <div className="flex w-full items-center justify-center ">
+            <div className="w-full max-w-[400px] lg:max-w-[400px]">
+              <div className="overflow-hidden rounded-3xl transition-colors duration-300  dark:bg-white/[0.04]">
                 <img src={heroImg} alt="FAQ illustration" className="h-full w-full object-cover" />
               </div>
             </div>

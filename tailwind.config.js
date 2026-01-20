@@ -10,7 +10,7 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['Oswald', 'sans-serif'],
+        heading: ['Oswald', 'sans-serif','"Montserrat Alternates"'],
       },
       maxWidth: {
         layout: '1400px',

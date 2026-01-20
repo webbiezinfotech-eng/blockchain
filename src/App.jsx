@@ -44,7 +44,7 @@ function App() {
           <Route path="/services/token-development" element={<TokenDevelopment />} />
           <Route path="/services/crypto-exchange-development" element={<CryptoExchangeDevelopment />} />
           <Route path="/services/custom-development" element={<CustomDevelopment />} />
-          <Route path="/services/blockchain-consulting" element={<BlockchainConsulting />} />
+          <Route path="/services/consulting" element={<BlockchainConsulting />} />
           <Route path="/services/defi-development" element={<DeFiDevelopment />} />
           <Route path="/services/nft-marketplace-development" element={<NFTMarketplaceDevelopment />} />
           <Route path="/services/dapp-development" element={<DAppDevelopment />} />

@@ -181,7 +181,7 @@ const TokenDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-4 pb-12 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-14 lg:pt-8 lg:pb-16">
+      <section className="w-full bg-white pt-4 pb-12 transition-colors duration-300 dark:bg-black sm:pt-12 sm:pb-14 lg:pt-16 lg:pb-20">
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[60%_40%] lg:pl-[3rem] lg:pr-[5rem]">
           <div className="flex w-full flex-col gap-6">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white">
@@ -198,9 +198,7 @@ const TokenDevelopment = () => {
             </h1>
 
             <p className="max-w-[720px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-lg">
-              Launch your cryptocurrency with secure smart contracts, launch-ready tokenomics, and flexible features. We build
-              standards-based tokens (ERC-20, BEP-20, SPL, ERC-721/1155) with audit-friendly code and scalable distribution
-              frameworks tailored to your project goals.
+              Launch your cryptocurrency with confidence. We build secure, scalable tokens for Ethereum, BNB Chain, Solana, and more—whether you’re creating a utility token, memecoin, governance asset, or stablecoin. From tokenomics to deployment, we handle the full lifecycle of token creation.
             </p>
           </div>
 
@@ -213,7 +211,7 @@ const TokenDevelopment = () => {
       </section>
 
       {/* Token Types */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+      <section className="w-full bg-white py-12 transition-colors duration-300 dark:bg-black sm:py-8">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="mb-10 text-center">
             <h2 className="font-heading text-[44px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[56px] lg:text-[72px]">
@@ -346,8 +344,8 @@ const TokenDevelopment = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center lg:justify-end">
-              <div className="w-full max-w-[520px] overflow-hidden rounded-3xl bg-black/[0.03] transition-colors duration-300 dark:bg-white/[0.04]">
+            <div className="flex items-center justify-center">
+              <div className="w-full max-w-[420px] overflow-hidden rounded-3xl bg-black/[0.03] transition-colors duration-300 dark:bg-white/[0.04]">
                 <img src={tokenomicsImg} alt="Tokenomics support illustration" className="h-full w-full object-contain" />
               </div>
             </div>

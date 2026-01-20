@@ -13,18 +13,18 @@ import cat8 from '../assets/home_images/blockchain-api.png';
 import cat9 from '../assets/home_images/fundraising.png';
 import cat10 from '../assets/home_images/marketing.png';
 
-import iFinance from '../assets/Industry_images/FintechBanking.png';
-import iHealth from '../assets/Industry_images/HealthcarePharma.png';
-import iSupply from '../assets/Industry_images/SupplychainLogistics.png';
-import iRealEstate from '../assets/Industry_images/RealEstate.png';
-import iGaming from '../assets/Industry_images/GamingMetaverse.png';
-import iRetail from '../assets/Industry_images/EcommerceRetail.png';
-import iEnergy from '../assets/Industry_images/EnergySustainability.png';
-import iEducation from '../assets/Industry_images/EducationEdtech.png';
-import iGov from '../assets/Industry_images/GovernmentPublicService.png';
-import iInsurance from '../assets/Industry_images/Insurance.png';
-import iTravel from '../assets/Industry_images/TravelHospitality.png';
-import iManufacturing from '../assets/Industry_images/ManufacturingIndustry.png';
+import iFinance from '../assets/Industry_images/FintechBanking-main.png';
+import iHealth from '../assets/Industry_images/HealthcarePharma-main.png';
+import iSupply from '../assets/Industry_images/SupplychainLogistics-main.png';
+import iRealEstate from '../assets/Industry_images/RealestateProptech-main.png';
+import iGaming from '../assets/Industry_images/GamingMetaverse-main.png';
+import iRetail from '../assets/Industry_images/EcommerceRetail-main.png';
+import iEnergy from '../assets/Industry_images/EnergySustainability-main.png';
+import iEducation from '../assets/Industry_images/EducationEdtech-main.png';
+import iGov from '../assets/Industry_images/GovtPublicSector-main.png';
+import iInsurance from '../assets/Industry_images/Insurance-main.png';
+import iTravel from '../assets/Industry_images/TravelHospitality-main.png';
+import iManufacturing from '../assets/Industry_images/ManufacturingIndustry-main.png';
 
 import b1 from '../assets/Industry_images/EnterpriseGradeSecurity.png';
 import b2 from '../assets/Industry_images/IndustrySpecificExpertise.png';
@@ -87,11 +87,11 @@ const Industries = () => {
       description:
         'End-to-end transparency and automation for global supply networks.',
       useCases: [
-        'Track & trace systems',
-        'IoT-enabled logistics',
-        'Warehouse automation with AI',
-        'Digital twins for supply networks',
-        'Vendor smart contracts',
+       'Track & trace systems',
+'IoT-enabled logistics',
+'Warehouse automation with AI',
+'Digital twins for supply networks',
+'Smart contracts for vendor management',
       ],
       benefits: [
         'Real-time tracking',
@@ -311,9 +311,9 @@ const Industries = () => {
               We combine strategic consulting, product engineering, and emerging technology R&D to solve real-world challenges across multiple industries.  </p>
           </div>
 
-          <div className="flex w-full items-center justify-center lg:justify-end">
+          <div className="flex w-full items-center justify-center">
             <div className="w-full max-w-[440px] lg:max-w-[400px]">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+              <div className="overflow-hidden rounded-3xl transition-colors duration-300 dark:bg-white/[0.04]">
                 <img src={heroImg} alt="Industries hero" className="h-full w-full object-cover" />
               </div>
             </div>
@@ -322,28 +322,60 @@ const Industries = () => {
       </section>
 
       {/* Industry Categories */}
-      <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="mb-10 text-center">
-            <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
-              INDUSTRY <span className="text-brand-blue">CATEGORIES</span>
-            </h2>
+   <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
+  <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
+
+    {/* Heading */}
+    <div className="mb-12 text-center">
+      <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
+        INDUSTRY <span className="text-brand-blue">CATEGORIES</span>
+      </h2>
+    </div>
+
+    {/* Cards */}
+    <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-x-10 gap-y-14 sm:grid-cols-3 lg:grid-cols-6">
+
+      {categories.map((c) => (
+        <div
+          key={c.title}
+          className="flex flex-col items-center"
+        >
+          {/* IMAGE CARD */}
+          <div
+            className="
+              h-[190px]
+              w-[130px]
+              overflow-hidden
+              rounded-[999px]
+              border border-black/10
+              bg-black/[0.03]
+              shadow-[0_14px_34px_rgba(0,0,0,0.14)]
+              transition-all duration-300
+              hover:-translate-y-[3px]
+              dark:border-white/20
+              dark:bg-white/[0.05]
+            "
+          >
+            <img
+              src={c.image}
+              alt={c.title}
+              className="h-full w-full object-cover"
+            />
           </div>
 
-          <div className="mx-auto flex max-w-[980px] flex-wrap justify-center gap-6">
-            {categories.map((c) => (
-              <div key={c.title} className="flex w-[150px] flex-col items-center gap-3">
-                <div className="h-[92px] w-[92px] overflow-hidden rounded-full border border-brand-blue/25 bg-black/[0.03] shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-white/[0.04]">
-                  <img src={c.image} alt={c.title} className="h-full w-full object-cover" />
-                </div>
-                <div className="text-center font-sans text-[13px] font-semibold uppercase tracking-wide text-black/80 transition-colors duration-300 dark:text-white/80">
-                  {c.title}
-                </div>
-              </div>
+          {/* TITLE */}
+          <div className="mt-5 text-center font-heading text-[14px] font-bold uppercase leading-snug tracking-wide text-black transition-colors duration-300 dark:text-white">
+            {c.title.split('\n').map((line) => (
+              <div key={line}>{line}</div>
             ))}
           </div>
         </div>
-      </section>
+      ))}
+
+    </div>
+  </div>
+</section>
+
 
       {/* Industry & Use Cases */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">

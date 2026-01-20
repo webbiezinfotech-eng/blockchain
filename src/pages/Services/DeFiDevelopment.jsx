@@ -1,3 +1,5 @@
+
+import { useEffect, useRef, useState } from 'react';
 import BeforeFooter from '../../components/common/BeforeFooter';
 
 import heroImg from '../../assets/services images/DefiDevimages/DefiDev-hero.png';
@@ -113,6 +115,39 @@ const DeFiDevelopment = () => {
     },
   ];
 
+
+const defiCarouselRef = useRef(null);
+const [defiActiveIdx, setDefiActiveIdx] = useState(0);
+const [defiPaused, setDefiPaused] = useState(false);
+
+
+  useEffect(() => {
+  if (defiPaused || !defiCarouselRef.current) return;
+
+  const interval = setInterval(() => {
+    setDefiActiveIdx((prev) => (prev + 1) % solutions.length);
+  }, 3500);
+
+  return () => clearInterval(interval);
+}, [defiPaused, solutions.length]);
+
+useEffect(() => {
+  const el = defiCarouselRef.current;
+  if (!el) return;
+
+  const card = el.querySelector('[data-defi-card]');
+  if (!card) return;
+
+  const gap = 32; // gap-8
+  const width = card.offsetWidth + gap;
+
+  el.scrollTo({
+    left: defiActiveIdx * width,
+    behavior: 'smooth',
+  });
+}, [defiActiveIdx]);
+
+
   const tokenIntegration = ['Ethereum', 'BNB Chain', 'Solana', 'Polygon', 'Avalanche', 'Tron', 'Polkadot'];
 
   const architecture = [
@@ -161,39 +196,92 @@ const DeFiDevelopment = () => {
 
       {/* DeFi Solutions */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="mb-10 text-center">
-            <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
-              DEFI <span className="text-brand-blue">SOLUTIONS</span>
-            </h2>
-          </div>
+  <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
+    
+    {/* Heading */}
+    <div className="mb-10 text-center">
+      <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
+        DEFI <span className="text-brand-blue">SOLUTIONS</span>
+      </h2>
+    </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {solutions.map((s) => (
-              <div key={s.title} className="group">
-                {/* Outer blue frame (cut corners) */}
-                <div className="bg-brand-blue p-[10px] shadow-[0_18px_55px_rgba(0,0,0,0.14)] [clip-path:polygon(4%_0,96%_0,100%_8%,100%_92%,96%_100%,4%_100%,0_92%,0_8%)] transition-transform duration-300 group-hover:-translate-y-[2px]">
-                  {/* Inner card */}
-                  <div className="h-full bg-white [clip-path:polygon(4%_0,96%_0,100%_8%,100%_92%,96%_100%,4%_100%,0_92%,0_8%)] transition-colors duration-300 dark:bg-black">
-                    <div className="p-6 sm:p-7">
-                      <div className="overflow-hidden rounded-lg border border-black/10 bg-black/[0.02] transition-colors duration-300 dark:border-white/15 dark:bg-white/[0.04]">
-                        <img src={s.image} alt={s.alt} className="h-[170px] w-full object-cover sm:h-[185px]" loading="lazy" />
-                      </div>
-
-                      <h3 className="mt-5 font-heading text-[22px] font-bold text-brand-blue">
-                        {s.title}
-                      </h3>
-                      <p className="mt-3 font-sans text-[15px] font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/80">
-                        {s.desc}
-                      </p>
-                    </div>
+    {/* Carousel */}
+    <div
+      ref={defiCarouselRef}
+      onMouseEnter={() => setDefiPaused(true)}
+      onMouseLeave={() => setDefiPaused(false)}
+      className="
+        mx-auto
+        flex
+        gap-8
+        overflow-x-auto
+        snap-x snap-mandatory
+        scroll-smooth
+        overscroll-x-contain
+        [-ms-overflow-style:none]
+        [scrollbar-width:none]
+        [&::-webkit-scrollbar]:hidden
+      "
+    >
+      {solutions.map((s) => (
+        <div
+          key={s.title}
+          data-defi-card
+          className="snap-start shrink-0 w-[320px] sm:w-[360px] lg:w-[380px]"
+        >
+          <div className="group">
+            {/* Outer blue frame */}
+            <div className="bg-brand-blue p-[10px] shadow-[0_18px_55px_rgba(0,0,0,0.14)]
+              [clip-path:polygon(4%_0,96%_0,100%_8%,100%_92%,96%_100%,4%_100%,0_92%,0_8%)]
+              transition-transform duration-300 group-hover:-translate-y-[2px]"
+            >
+              {/* Inner card */}
+              <div className="h-full bg-white
+                [clip-path:polygon(4%_0,96%_0,100%_8%,100%_92%,96%_100%,4%_100%,0_92%,0_8%)]
+                transition-colors duration-300 dark:bg-black"
+              >
+                <div className="p-6 sm:p-7">
+                  <div className="overflow-hidden rounded-lg border border-black/10 bg-black/[0.02] transition-colors duration-300 dark:border-white/15 dark:bg-white/[0.04]">
+                    <img
+                      src={s.image}
+                      alt={s.alt}
+                      className="h-[170px] w-full object-cover sm:h-[185px]"
+                      loading="lazy"
+                    />
                   </div>
+
+                  <h3 className="mt-5 font-heading text-[22px] font-bold text-brand-blue">
+                    {s.title}
+                  </h3>
+                  <p className="mt-3 font-sans text-[15px] font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/80">
+                    {s.desc}
+                  </p>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* Dots */}
+    <div className="mt-8 flex justify-center gap-2">
+      {solutions.map((_, idx) => (
+        <button
+          key={idx}
+          onClick={() => setDefiActiveIdx(idx)}
+          className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+            idx === defiActiveIdx
+              ? 'bg-brand-blue'
+              : 'bg-black/20 hover:bg-black/40 dark:bg-white/20 dark:hover:bg-white/40'
+          }`}
+        />
+      ))}
+    </div>
+
+  </div>
+</section>
+
 
       {/* Protocol Features */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
