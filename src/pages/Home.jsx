@@ -46,6 +46,11 @@ import uploadIcon from '../assets/home_images/icons/end-support.gif';
 
 import readyToBuildImg from '../assets/home_images/ready to build.png';
 
+// what our client say images (from home_images/testimonials)
+import profile1 from '../assets/home_images/profile1.jpg';
+import profile2 from '../assets/home_images/profile2.jpg';
+import profile3 from '../assets/home_images/profile3.jpg';
+
 // Hero Images Object
 const heroImages = {
   light: lightHeroImage,
@@ -65,6 +70,131 @@ const Home = () => {
   const industriesRef = useRef(null);
   const carouselRef = useRef(null);
   const workCarouselRef = useRef(null);
+
+  // Form state
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    whatsappNumber: '',
+    telegramId: '',
+    country: 'us',
+    budget: 'Still Evaluating',
+    projectDescription: '',
+    privacyPolicy: false,
+    recaptcha: false
+  });
+
+  const [errors, setErrors] = useState({});
+  const [whatsappCountryCode, setWhatsappCountryCode] = useState('+91');
+  const [showWhatsappCountryDropdown, setShowWhatsappCountryDropdown] = useState(false);
+  const [showCountryDropdown, setShowCountryDropdown] = useState(false);
+  const [showBudgetDropdown, setShowBudgetDropdown] = useState(false);
+
+  // Validation functions
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateWhatsApp = (number) => {
+    const cleaned = number.replace(/\D/g, '');
+    return cleaned.length === 10;
+  };
+
+  const handleInputChange = (field, value) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    
+    // Clear error when user starts typing
+    if (errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: '' }));
+    }
+
+    // Real-time validation for email
+    if (field === 'email' && value && !validateEmail(value)) {
+      setErrors(prev => ({ ...prev, email: 'Please enter a valid email address' }));
+    } else if (field === 'email' && validateEmail(value)) {
+      setErrors(prev => ({ ...prev, email: '' }));
+    }
+
+    // Real-time validation for WhatsApp
+    if (field === 'whatsappNumber') {
+      const cleaned = value.replace(/\D/g, '');
+      if (cleaned && cleaned.length !== 10) {
+        setErrors(prev => ({ ...prev, whatsappNumber: 'WhatsApp number must be 10 digits' }));
+      } else if (cleaned.length === 10) {
+        setErrors(prev => ({ ...prev, whatsappNumber: '' }));
+      }
+    }
+  };
+
+  // Format WhatsApp number with spaces
+  const formatWhatsAppNumber = (value) => {
+    const cleaned = value.replace(/\D/g, '').slice(0, 10);
+    if (cleaned.length <= 2) return cleaned;
+    if (cleaned.length <= 4) return `${cleaned.slice(0, 2)} ${cleaned.slice(2)}`;
+    if (cleaned.length <= 6) return `${cleaned.slice(0, 2)} ${cleaned.slice(2, 4)} ${cleaned.slice(4)}`;
+    if (cleaned.length <= 8) return `${cleaned.slice(0, 2)} ${cleaned.slice(2, 4)} ${cleaned.slice(4, 6)} ${cleaned.slice(6)}`;
+    return `${cleaned.slice(0, 2)} ${cleaned.slice(2, 4)} ${cleaned.slice(4, 6)} ${cleaned.slice(6, 8)} ${cleaned.slice(8)}`;
+  };
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.dropdown-container')) {
+        setShowWhatsappCountryDropdown(false);
+        setShowCountryDropdown(false);
+        setShowBudgetDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = {};
+
+    if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
+    if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    if (!formData.whatsappNumber.trim()) {
+      newErrors.whatsappNumber = 'WhatsApp number is required';
+    } else if (!validateWhatsApp(formData.whatsappNumber)) {
+      newErrors.whatsappNumber = 'WhatsApp number must be 10 digits';
+    }
+    if (!formData.privacyPolicy) newErrors.privacyPolicy = 'Please acknowledge the privacy policy';
+    if (!formData.recaptcha) newErrors.recaptcha = 'Please complete the reCAPTCHA';
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      // Form is valid, submit it
+      console.log('Form submitted:', formData);
+      // Add your form submission logic here
+    }
+  };
+
+  const countries = [
+    { code: 'us', name: 'United States', flag: '🇺🇸' },
+    { code: 'in', name: 'India', flag: '🇮🇳' },
+    { code: 'uk', name: 'United Kingdom', flag: '🇬🇧' },
+    { code: 'ca', name: 'Canada', flag: '🇨🇦' },
+    { code: 'au', name: 'Australia', flag: '🇦🇺' },
+  ];
+
+  const budgets = [
+    'Still Evaluating',
+    'Under $10,000',
+    '$10,000 - $50,000',
+    '$50,000 - $100,000',
+    'Over $100,000'
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -180,13 +310,13 @@ const Home = () => {
 
   const techStackItems = [
     { id: 0, name: "Frontend Capabilities", title: "Frontend Capabilities", description: "Delivering sleek, responsive, and high-performance user interfaces for every blockchain application.", techStack: ["React.js", "Next.js", "Web3.js", "Ethers.js", "Tailwind CSS"], image: frontendCap },
-    { id: 1, name: "Smart Contract", title: "Smart Contract", description: "User-friendly interfaces designed to interact seamlessly with on-chain smart contract logic.", techStack: [], image: smartContractImg },
-    { id: 2, name: "Airdrop", title: "Airdrop", description: "Frontend systems built to manage automated token/asset distributions across multiple wallets.", techStack: [], image: airdropImg },
-    { id: 3, name: "Layer 2", title: "Layer 2", description: "Optimized UI flows for fast, low-cost transactions on Layer-2 chains.", techStack: [], image: layer2Img },
-    { id: 4, name: "Blockchain APIs", title: "Blockchain APIs", description: "Integration-ready frontends powered by secure, scalable API connectivity.", techStack: [], image: blockchainApiImg },
-    { id: 5, name: "Web3 Growth Tools", title: "Web3 Growth Tools", description: "Interface modules designed to support user onboarding, analytics, and ecosystem expansion.", techStack: [], image: web3Img },
-    { id: 6, name: "Wallets", title: "Wallets", description: "Wallet-connect UI components supporting multi-chain access and authentication.", techStack: [], image: walletImg },
-    { id: 7, name: "Backend", title: "Backend", description: "Secure, reliable backend systems powering decentralized and hybrid blockchain applications.Secure, reliable backend systems powering decentralized and hybrid blockchain applications.", techStack: [], image: backendImg }
+    { id: 1, name: "Smart Contract", title: "Smart Contract", description: "User-friendly interfaces designed to interact seamlessly with on-chain smart contract logic. Our frontend solutions enable intuitive contract deployment, interaction, and management with real-time transaction tracking and comprehensive error handling.\n\nWe build interfaces that simplify complex blockchain operations, allowing users to deploy contracts, execute functions, and monitor transactions effortlessly. Our smart contract interfaces support multiple networks, provide detailed gas estimation, and offer seamless integration with popular wallet providers for enhanced user experience and security.", techStack: [], image: smartContractImg },
+    { id: 2, name: "Airdrop", title: "Airdrop", description: "Frontend systems built to manage automated token/asset distributions across multiple wallets. We create streamlined interfaces for scheduling, tracking, and executing large-scale airdrop campaigns with detailed analytics and recipient management capabilities.\n\nOur airdrop platforms support batch processing, whitelist management, and real-time distribution tracking. Users can easily configure airdrop parameters, monitor campaign progress, and analyze distribution results through intuitive dashboards that provide comprehensive insights into token allocation and recipient engagement metrics.", techStack: [], image: airdropImg },
+    { id: 3, name: "Layer 2", title: "Layer 2", description: "Optimized UI flows for fast, low-cost transactions on Layer-2 chains. Our interfaces seamlessly integrate with scaling solutions like Polygon, Arbitrum, and Optimism, providing users with instant transaction confirmations and reduced gas fees while maintaining full blockchain security.\n\nWe design user experiences that abstract away the complexity of Layer-2 bridging, enabling smooth asset transfers between mainnet and Layer-2 networks. Our solutions include real-time bridge status monitoring, transaction history tracking, and intuitive fee comparison tools that help users make informed decisions about their blockchain transactions.", techStack: [], image: layer2Img },
+    { id: 4, name: "Blockchain APIs", title: "Blockchain APIs", description: "Integration-ready frontends powered by secure, scalable API connectivity. We build robust interfaces that connect with multiple blockchain networks through RESTful and GraphQL APIs, enabling real-time data fetching, transaction monitoring, and seamless cross-chain interactions.\n\nOur API-integrated solutions provide comprehensive blockchain data visualization, including transaction histories, token balances, NFT collections, and DeFi protocol interactions. We implement efficient caching strategies, rate limiting, and error handling to ensure reliable data access and optimal performance across various blockchain networks and protocols.", techStack: [], image: blockchainApiImg },
+    { id: 5, name: "Web3 Growth Tools", title: "Web3 Growth Tools", description: "Interface modules designed to support user onboarding, analytics, and ecosystem expansion. Our comprehensive toolkits include referral systems, staking dashboards, governance interfaces, and engagement tracking to drive user acquisition and retention in decentralized applications.\n\nWe develop custom analytics platforms that track user behavior, token distribution, and platform engagement metrics. Our growth tools feature gamification elements, reward systems, and social sharing capabilities that encourage community participation and platform growth while providing administrators with detailed insights into user activity and platform performance.", techStack: [], image: web3Img },
+    { id: 6, name: "Wallets", title: "Wallets", description: "Wallet-connect UI components supporting multi-chain access and authentication. We develop seamless wallet integration interfaces that support MetaMask, WalletConnect, and hardware wallets, enabling secure multi-chain transactions, portfolio management, and cross-platform synchronization.\n\nOur wallet interfaces provide comprehensive asset management features, including token swapping, transaction history, and portfolio analytics. We implement advanced security measures, transaction signing workflows, and network switching capabilities that allow users to manage their digital assets efficiently across multiple blockchain networks with a single, intuitive interface.", techStack: [], image: walletImg },
+    { id: 7, name: "Backend", title: "Backend", description: "Secure, reliable backend systems powering decentralized and hybrid blockchain applications. Our backend infrastructure includes node management, database optimization, API gateways, and microservices architecture to ensure high availability, scalability, and seamless integration with blockchain networks.\n\nWe implement comprehensive monitoring systems, automated scaling solutions, and robust security protocols that protect user data and ensure platform reliability. Our backend services handle complex blockchain interactions, transaction processing, and data synchronization while maintaining optimal performance and providing seamless integration with frontend applications and external services.", techStack: [], image: backendImg }
   ];
  
   const industriesCards = [
@@ -234,18 +364,21 @@ const Home = () => {
   const testimonials = [
     {
       id: 1,
-      quote: "Blockchain App Advisor helped us design a scalable DeFi protocol from scratch. The smart contracts were flawless and the audit was incredibly detailed.",
-      name: "Founder, FinTech Startup"
+      quote: "Blockcha  in App Advisor helped us design a scalable DeFi protocol from scratch. The smart contracts were flawless and the audit was incredibly detailed.",
+      name: "Founder, FinTech Startup",
+      profileImage: profile1
     },
     {
       id: 2,
       quote: "Our NFT marketplace went live within weeks. Their architecture planning and integration support were exceptional.",
-      name: "CEO, NFT Marketplace"
+      name: "CEO, NFT Marketplace",
+      profileImage: profile2
     },
     {
       id: 3,
       quote: "They built an AI-powered fraud detection system for our exchange. Transaction monitoring accuracy improved drastically.",
-      name: "CTO, Crypto Exchange"
+      name: "CTO, Crypto Exchange",
+      profileImage: profile3
     }
   ];
 
@@ -382,17 +515,17 @@ const Home = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero Section */}
-      <section className="relative z-[1] w-full bg-white pt-2 pb-8 transition-colors duration-300 dark:bg-black sm:pt-4 sm:pb-16 md:pt-6 md:pb-18 lg:pt-8 lg:pb-18 xl:pt-10 xl:pb-18">
-        <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
+      <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 dark:bg-black sm:pb-16 md:pt-6 md:pb-18 lg:pt-8 lg:pb-18 xl:pt-10 xl:pb-18">
+        <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
           {/* Left Side - Text Content */}
-          <div className="ml-[30px] flex w-full flex-col justify-start gap-4 leading-[1.4] sm:gap-6 md:gap-8 lg:gap-10">
+          <div className="mx-2 md:mx-20 flex w-full flex-col justify-start gap-5 leading-[1.4]">
             <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
-              <div className="block w-full text-[32px] text-black transition-colors duration-300 dark:text-white sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">BUILD THE FUTURE WITH</div>
-              <div className="block w-full text-[36px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:text-[44px] md:text-[52px] lg:text-[60px] xl:text-[70px]">WORLD-CLASS BLOCKCHAIN</div>
-              <div className="block w-full text-[36px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:text-[44px] md:text-[52px] lg:text-[60px] xl:text-[70px]">& AI DEVELOPMENT</div>
+              <div className="block w-full text-[32px] text-black transition-colors duration-300 dark:text-white sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]">BUILD THE FUTURE WITH</div>
+              <div className="block w-full text-[36px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]">WORLD-CLASS BLOCKCHAIN</div>
+              <div className="block w-full text-[36px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]">& AI DEVELOPMENT</div>
             </h1>
 
-            <p className="w-full max-w-[600px] text-xs leading-[1.6] text-black transition-colors duration-300 dark:text-white/80 sm:text-sm sm:leading-[1.65] md:text-base lg:text-lg">
+            <p className="w-full max-w-[600px] leading-[1.6] text-black transition-colors duration-300 dark:text-white/80 sm:leading-[1.65] text-xl md:text-2xl">
               We engineer secure, scalable and intelligent blockchain ecosystems
               –powered by advanced smart contracts, AI automation, token development,
               and next-gen decentralized applications.
@@ -416,17 +549,16 @@ const Home = () => {
 
       <div className="relative">
         {/* Core Services Section */}
-        <div ref={servicesRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
+        <div ref={servicesRef} className="relative ">
           <section className={`sticky top-0 z-[10] bg-white pb-4  transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%]">
-                <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
-                  <span className="text-black dark:text-white">OUR </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">CORE BLOCKCHAIN </span>
+                <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]">
+                  <span className="text-black dark:text-white">OUR CORE </span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]"> BLOCKCHAIN </span>
                   <span className="text-black dark:text-white">& </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">AI DEVELOPMENT</span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">AI DEVELOPMENT SERVICES</span>
                 </div>
-                <div className="block mt-1 text-[32px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:mt-2 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">SERVICES</div>
               </h2>
 
               <p className="mx-auto mt-3 max-w-full text-center text-xs leading-[1.6] text-black/75 transition-colors duration-300 dark:text-white/75 sm:mt-4 sm:text-sm sm:leading-[1.65] md:mt-6 md:max-w-[920px] md:text-base lg:text-lg">
@@ -498,19 +630,15 @@ const Home = () => {
         </div>
 
         {/* Why Trust Section */}
-        <div ref={trustRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
+        <div ref={trustRef} className="relative ">
           <section className={`sticky top-0 z-[20] bg-white pb-4 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-14 lg:pt-8`}>
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
-              <h2 className="mx-auto max-w-full px-2 text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] sm:px-4 md:px-6">
-                <div className="block text-[36px] transition-colors duration-300 sm:text-[48px] md:text-[60px] lg:text-[70px]">
+              <h2 className="mx-auto max-w-full px-2 text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] sm:px-4 md:px-6 ">
+                <div className="block text-[36px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px] mb-2">
                   <span className="text-black dark:text-white">WHY </span>
                   <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">BUSINESS </span>
                   <span className="text-black dark:text-white">TRUST </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">BLOCKCHAIN </span>
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">APP</span>
-                </div>
-                <div className="block mt-1 text-[36px] transition-colors duration-300 sm:mt-2 sm:text-[48px] md:text-[60px] lg:text-[70px]">
-                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">ADVISOR</span>
+                  <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">BLOCKCHAIN APP ADVISOR </span>
                 </div>
               </h2>
 
@@ -549,11 +677,11 @@ const Home = () => {
         </div>
 
         {/* Industries Section */}
-        <div ref={industriesRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
+        <div ref={industriesRef} className="relative ">
           <section className={`sticky top-0 z-[30] bg-white pb-4 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-14 lg:pt-8`}>
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px]">
-                <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
+                <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]">
                   <span className="text-black dark:text-white">SERVING </span>
                   <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">MULTIPLE GLOBAL INDUSTRIES</span>
                 </div>
@@ -653,11 +781,11 @@ const Home = () => {
         </div>
 
            {/* Our Work Section */}
-           <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
+           <div className="relative ">
           <section className="sticky top-0 z-[25] bg-white pb-4  pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px]">
-                <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
+                <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]">
                   <span className="text-black dark:text-white">OUR </span>
                   <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">WORK </span>
                   <span className="text-black dark:text-white">THAT </span>
@@ -713,11 +841,11 @@ const Home = () => {
        
 
         {/* Tech Stack Section */}
-        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
+        <div className="relative">
           <section className="sticky top-0 z-[35] bg-white pb-4 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
-              <h2 className="ml-auto max-w-full text-right font-heading font-bold uppercase leading-[1.25] tracking-[0%] sm:max-w-[900px]">
-                <div className="block text-[22px] transition-colors duration-300 sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px]">
+              <h2 className="ml-auto max-w-full text-right font-heading font-bold uppercase leading-[1.25] tracking-[0%] ">
+                <div className="block text-[22px] transition-colors duration-300 sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[76px]">
                   {/* Force exactly 2 lines */}
                   <div className="block whitespace-nowrap">
                     <span className="text-black dark:text-white">THE </span>
@@ -759,9 +887,13 @@ const Home = () => {
                         <h3 className="font-heading text-xl font-bold text-brand-blue dark:text-white transition-all duration-500 ease-in-out sm:text-2xl md:text-3xl">
                           {techStackItems[selectedTechStack].title}
                         </h3>
-                        <p className="text-sm leading-relaxed text-black/80 transition-all duration-500 ease-in-out dark:text-white/80 sm:text-base md:text-lg">
-                          {techStackItems[selectedTechStack].description}
-                        </p>
+                        <div className="flex flex-col gap-3">
+                          {techStackItems[selectedTechStack].description.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx} className="text-sm leading-relaxed text-black/80 transition-all duration-500 ease-in-out dark:text-white/80 sm:text-base md:text-lg">
+                              {paragraph}
+                            </p>
+                          ))}
+                        </div>
                         {techStackItems[selectedTechStack].techStack.length > 0 && (
                           <div className="mt-4">
                             <h4 className="mb-3 font-heading text-base font-semibold text-brand-blue transition-all duration-500 ease-in-out sm:text-lg">
@@ -831,7 +963,7 @@ const Home = () => {
         </div>
 
         {/* Testimonials Section */}
-        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
+        <div className="relative">
           <section className="sticky top-0 z-[45] bg-white pb-4 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-4 sm:mb-8 lg:mb-12">
@@ -854,9 +986,7 @@ const Home = () => {
                     {/* Blue Underline */}
                     <div className="w-full h-0.5 bg-brand-blue mb-4 mt-4"></div>
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-brand-blue/20 flex items-center justify-center flex-shrink-0 dark:bg-white/20 dark:ring-1 dark:ring-white/40">
-                        <div className="w-10 h-10 rounded-full bg-brand-blue/30 dark:bg-white/30"></div>
-                      </div>
+                    <img src={testimonial.profileImage} alt="profile" className="w-12 h-12 rounded-full object-cover" />
                       <p className="no-stroke font-heading font-semibold text-brand-blue text-sm sm:text-base md:text-lg dark:text-white">
                         {testimonial.name}
                       </p>
@@ -869,9 +999,9 @@ const Home = () => {
         </div>
 
         {/* Ready to Build Section */}
-        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className="sticky top-0 z-[50] bg-white pb-10 pt-2 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
-            <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
+        <div className="relative ">
+          <section className="sticky top-0 z-[50] bg-white pb-10 pt-2 transition-all duration-700 dark:bg-black ">
+            <div className="mx-auto max-w-layout px-4 ">
               <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center">
                 {/* Left Side - Text Content */}
                 <div className="m-[30px] flex flex-col ">
@@ -1006,54 +1136,224 @@ const Home = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className="sticky top-0 z-[60] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
+        <div className="relative ">
+          <h2 className="text-center font-heading font-bold uppercase mb-5 text-[34px] leading-[1] tracking-[0.02em] transition-colors duration-300 sm:text-[46px] md:text-[56px] lg:text-[68px] xl:text-[78px]">
+            <span className="text-brand-blue dark:text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">CONTACT US</span>
+          </h2>
+          <section className="sticky top-0 z-[60] bg-white pb-6 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-4 md:top-0 md:pb-6 md:pt-6 lg:pb-8 lg:pt-6">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4">
                 {/* Left Side - Contact Form */}
-                <div className="lg:col-span-6 flex flex-col gap-4 sm:gap-6">
-                  <form className="flex flex-col gap-4 sm:gap-6">
-                    {/* Name and Phone - Side by Side */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                      <div className="rounded-[40px] border border-gray-300 bg-white p-3 shadow-md dark:border-white/20 dark:bg-gray-800">
+                <div className="lg:col-span-6 flex flex-col gap-3 sm:gap-4">
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4">
+                    {/* First Name and Last Name - Side by Side */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-sm font-medium text-black dark:text-white">Full Name</label>
+                        <div className={`rounded-[40px] border ${errors.firstName ? 'border-red-500' : 'border-gray-300'} bg-white p-2.5 shadow-md dark:border-white/20 dark:bg-gray-800`}>
+                          <input
+                            type="text"
+                            placeholder="Enter full name"
+                            value={formData.firstName}
+                            onChange={(e) => handleInputChange('firstName', e.target.value)}
+                            className="w-full bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none dark:text-white dark:placeholder-white/50"
+                          />
+                        </div>
+                        {errors.firstName && <span className="text-xs text-red-500">{errors.firstName}</span>}
+                      </div>
+                       {/* Email */}
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-sm font-medium text-black dark:text-white">Email</label>
+                      <div className={`rounded-[40px] border ${errors.email ? 'border-red-500' : 'border-gray-300'} bg-white p-2.5 shadow-md dark:border-white/20 dark:bg-gray-800`}>
+                        <input
+                          type="email"
+                          placeholder="name@mycompany.com"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          className="w-full bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none dark:text-white dark:placeholder-white/50"
+                        />
+                      </div>
+                      {errors.email && <span className="text-xs text-red-500">{errors.email}</span>}
+                    </div>
+                    </div>
+                    
+                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                      {/* WhatsApp Number */}
+                    <div className="col-span-1 flex flex-col gap-1.5">
+                      <label className="text-sm font-medium text-black dark:text-white">WhatsApp Number</label>
+                      <div className={`rounded-[40px] border ${errors.whatsappNumber ? 'border-red-500' : 'border-gray-300'} bg-white p-2.5 shadow-md dark:border-white/20 dark:bg-gray-800`}>
+                        <div className="flex items-center gap-2">
+                          <div className="relative dropdown-container">
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setShowWhatsappCountryDropdown(!showWhatsappCountryDropdown);
+                                setShowCountryDropdown(false);
+                                setShowBudgetDropdown(false);
+                              }}
+                              className="flex items-center gap-1 px-2 py-1 text-sm text-black dark:text-white"
+                            >
+                              <span className="text-lg">🇮🇳</span>
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </button>
+                            {showWhatsappCountryDropdown && (
+                              <div className="absolute top-full left-0 mt-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-white/20 rounded-lg shadow-lg z-20 min-w-[200px]">
+                                {countries.map((country) => (
+                                  <button
+                                    key={country.code}
+                                    type="button"
+                                    onClick={() => {
+                                      setWhatsappCountryCode(country.code === 'in' ? '+91' : country.code === 'us' ? '+1' : '+44');
+                                      setShowWhatsappCountryDropdown(false);
+                                    }}
+                                    className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2 text-sm text-black dark:text-white"
+                                  >
+                                    <span>{country.flag}</span>
+                                    <span>{country.name}</span>
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                          <input
+                            type="tel"
+                            placeholder="01 23 45 67 89"
+                            value={formatWhatsAppNumber(formData.whatsappNumber)}
+                            onChange={(e) => {
+                              const value = e.target.value.replace(/\D/g, '').slice(0, 10);
+                              handleInputChange('whatsappNumber', value);
+                            }}
+                            className="flex-1 bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none dark:text-white dark:placeholder-white/50"
+                          />
+                        </div>
+                      </div>
+                      {errors.whatsappNumber && <span className="text-xs text-red-500">{errors.whatsappNumber}</span>}
+                    </div>
+                    
+                    {/* Telegram ID */}
+                    <div className="col-span-1 flex flex-col gap-1.5">
+                      <label className="text-sm font-medium text-black dark:text-white">Telegram ID</label>
+                      <div className="rounded-[40px] border border-gray-300 bg-white p-2.5 shadow-md dark:border-white/20 dark:bg-gray-800">
                         <input
                           type="text"
-                          placeholder="Name"
-                          className="w-full bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none dark:text-white dark:placeholder-white/50"
-                        />
-                      </div>
-                      <div className="rounded-[40px] border border-gray-300 bg-white p-3 shadow-md dark:border-white/20 dark:bg-gray-800">
-                        <input
-                          type="tel"
-                          placeholder="Phone"
+                          placeholder="Enter Telegram ID"
+                          value={formData.telegramId}
+                          onChange={(e) => handleInputChange('telegramId', e.target.value)}
                           className="w-full bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none dark:text-white dark:placeholder-white/50"
                         />
                       </div>
                     </div>
+                   </div>
                     
-                    {/* Email */}
-                    <div className="rounded-[40px] border border-gray-300 bg-white p-3 shadow-md dark:border-white/20 dark:bg-gray-800">
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        className="w-full bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none dark:text-white dark:placeholder-white/50"
-                      />
+                  
+                    
+                    {/* Select Country and Budget - Side by Side */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-sm font-medium text-black dark:text-white">Select Country</label>
+                        <div className="relative dropdown-container">
+                          <div className="rounded-[40px] border border-gray-300 bg-white p-2.5 shadow-md dark:border-white/20 dark:bg-gray-800">
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setShowCountryDropdown(!showCountryDropdown);
+                                setShowBudgetDropdown(false);
+                                setShowWhatsappCountryDropdown(false);
+                              }}
+                              className="w-full flex items-center justify-between text-sm sm:text-base text-black dark:text-white"
+                            >
+                              <span>{countries.find(c => c.code === formData.country)?.flag} {countries.find(c => c.code === formData.country)?.name || 'United States'}</span>
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </button>
+                          </div>
+                          {showCountryDropdown && (
+                            <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-white/20 rounded-lg shadow-lg z-20 max-h-60 overflow-y-auto">
+                              {countries.map((country) => (
+                                <button
+                                  key={country.code}
+                                  type="button"
+                                  onClick={() => {
+                                    setFormData(prev => ({ ...prev, country: country.code }));
+                                    setShowCountryDropdown(false);
+                                  }}
+                                  className="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2 text-sm text-black dark:text-white"
+                                >
+                                  <span>{country.flag}</span>
+                                  <span>{country.name}</span>
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-sm font-medium text-black dark:text-white">Budget</label>
+                        <div className="relative dropdown-container">
+                          <div className="rounded-[40px] border border-gray-300 bg-white p-2.5 shadow-md dark:border-white/20 dark:bg-gray-800">
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setShowBudgetDropdown(!showBudgetDropdown);
+                                setShowCountryDropdown(false);
+                                setShowWhatsappCountryDropdown(false);
+                              }}
+                              className="w-full flex items-center justify-between text-sm sm:text-base text-black dark:text-white"
+                            >
+                              <span>{formData.budget}</span>
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </button>
+                          </div>
+                          {showBudgetDropdown && (
+                            <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-white/20 rounded-lg shadow-lg z-20 max-h-60 overflow-y-auto">
+                              {budgets.map((budget) => (
+                                <button
+                                  key={budget}
+                                  type="button"
+                                  onClick={() => {
+                                    setFormData(prev => ({ ...prev, budget }));
+                                    setShowBudgetDropdown(false);
+                                  }}
+                                  className="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm text-black dark:text-white"
+                                >
+                                  {budget}
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      </div>
                     </div>
                     
-                    {/* Message */}
-                    <div className="rounded-[40px] border border-gray-300 bg-white p-3 shadow-md dark:border-white/20 dark:bg-gray-800">
-                      <textarea
-                        placeholder="Message"
-                        rows={6}
-                        className="w-full bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none resize-none dark:text-white dark:placeholder-white/50"
-                      ></textarea>
+                    {/* Describe Your Project */}
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-sm font-medium text-black dark:text-white">Describe Your Project</label>
+                      <div className="rounded-[20px] border border-gray-300 bg-white p-2 shadow-md dark:border-white/20 dark:bg-gray-800">
+                        <textarea
+                          placeholder="Write down all the details here"
+                          rows={5}
+                          value={formData.projectDescription}
+                          onChange={(e) => handleInputChange('projectDescription', e.target.value)}
+                          className="w-full bg-transparent text-sm sm:text-base text-black placeholder-black/50 outline-none resize-none dark:text-white dark:placeholder-white/50"
+                        ></textarea>
+                      </div>
                     </div>
                     
+                    
+                    {/* Submit Button */}
                     <button
                       type="submit"
-                      className="mt-2 w-fit rounded-lg bg-brand-blue px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-blue/90 shadow-sm sm:px-10 sm:py-4 sm:text-base"
+                      className="mt-1 w-fit flex items-center gap-2 rounded-lg bg-brand-blue px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-blue/90 shadow-sm sm:px-8 sm:py-3 sm:text-base"
                     >
                       Submit
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                     </button>
                   </form>
                 </div>
@@ -1062,11 +1362,11 @@ const Home = () => {
                 <div className="hidden lg:block lg:col-span-1"></div>
 
                 {/* Right Side - Contact Information */}
-                <div className="lg:col-span-5 flex flex-col gap-4 sm:gap-6">
+                <div className="lg:col-span-5 flex flex-col gap-3 sm:gap-4">
                   {/* Phone */}
-                  <div className="flex items-center gap-4 rounded-lg border border-gray-300 bg-white p-3 shadow-sm dark:border-white/20 dark:bg-gray-800">
-                    <div className="flex h-10 w-10 items-center justify-center flex-shrink-0">
-                      <svg className="h-5 w-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center gap-3 rounded-lg border border-gray-300 bg-white p-2.5 shadow-sm dark:border-white/20 dark:bg-gray-800">
+                    <div className="flex h-8 w-8 items-center justify-center flex-shrink-0">
+                      <svg className="h-4 w-4 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
@@ -1076,9 +1376,9 @@ const Home = () => {
                   </div>
 
                   {/* Email */}
-                  <div className="flex items-center gap-4 rounded-lg border border-gray-300 bg-white p-3 shadow-sm dark:border-white/20 dark:bg-gray-800">
-                    <div className="flex h-10 w-10 items-center justify-center flex-shrink-0">
-                      <svg className="h-5 w-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center gap-3 rounded-lg border border-gray-300 bg-white p-2.5 shadow-sm dark:border-white/20 dark:bg-gray-800">
+                    <div className="flex h-8 w-8 items-center justify-center flex-shrink-0">
+                      <svg className="h-4 w-4 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
@@ -1088,7 +1388,7 @@ const Home = () => {
                   </div>
 
                   {/* Address */}
-                  <div className="flex items-start gap-4 rounded-lg border border-gray-300 bg-white p-3 shadow-sm dark:border-white/20 dark:bg-gray-800">
+                  <div className="flex items-start gap-3 rounded-lg border border-gray-300 bg-white p-2.5 shadow-sm dark:border-white/20 dark:bg-gray-800">
                     <div className="flex h-10 w-10 items-center justify-center flex-shrink-0 mt-1">
                       <svg className="h-5 w-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
