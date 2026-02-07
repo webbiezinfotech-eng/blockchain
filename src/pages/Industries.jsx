@@ -13,18 +13,18 @@ import cat8 from '../assets/home_images/blockchain-api.png';
 import cat9 from '../assets/home_images/fundraising.png';
 import cat10 from '../assets/home_images/marketing.png';
 
-import iFinance from '../assets/Industry_images/FintechBanking-main.png';
-import iHealth from '../assets/Industry_images/HealthcarePharma-main.png';
-import iSupply from '../assets/Industry_images/SupplychainLogistics-main.png';
-import iRealEstate from '../assets/Industry_images/RealestateProptech-main.png';
-import iGaming from '../assets/Industry_images/GamingMetaverse-main.png';
-import iRetail from '../assets/Industry_images/EcommerceRetail-main.png';
-import iEnergy from '../assets/Industry_images/EnergySustainability-main.png';
-import iEducation from '../assets/Industry_images/EducationEdtech-main.png';
-import iGov from '../assets/Industry_images/GovtPublicSector-main.png';
-import iInsurance from '../assets/Industry_images/Insurance-main.png';
-import iTravel from '../assets/Industry_images/TravelHospitality-main.png';
-import iManufacturing from '../assets/Industry_images/ManufacturingIndustry-main.png';
+import iFinance from '../assets/Industry_images/FintechBanking.png';
+import iHealth from '../assets/Industry_images/HealthcarePharma.png';
+import iSupply from '../assets/Industry_images/SupplychainLogistics.png';
+import iRealEstate from '../assets/Industry_images/RealEstate.png';
+import iGaming from '../assets/Industry_images/GamingMetaverse.png';
+import iRetail from '../assets/Industry_images/EcommerceRetail.png';
+import iEnergy from '../assets/Industry_images/EnergySustainability.png';
+import iEducation from '../assets/Industry_images/EducationEdtech.png';
+import iGov from '../assets/Industry_images/GovernmentPublicService.png';
+import iInsurance from '../assets/Industry_images/Insurance.png';
+import iTravel from '../assets/Industry_images/TravelHospitality.png';
+import iManufacturing from '../assets/Industry_images/ManufacturingIndustry.png';
 
 import b1 from '../assets/Industry_images/EnterpriseGradeSecurity.png';
 import b2 from '../assets/Industry_images/IndustrySpecificExpertise.png';
@@ -33,9 +33,9 @@ import b4 from '../assets/Industry_images/End2EndDelivery.png';
 
 const Industries = () => {
   const categories = [
-    { title: 'Fintech & Banking', image: cat1 },
-    { title: 'Healthcare & Pharma', image: cat2 },
-    { title: 'Supply Chain & Logistics', image: cat3 },
+    { title: 'Fintech & Banking', image: iFinance },
+    { title: 'Healthcare & Pharma', image: iHealth },
+    { title: 'Supply Chain & Logistics', image: iSupply },
     { title: 'Real Estate & PropTech', image: iRealEstate },
     { title: 'Gaming, Metaverse & Entertainment', image: iGaming },
     { title: 'E-Commerce & Retail', image: iRetail },
@@ -51,7 +51,7 @@ const Industries = () => {
   const industries = [
     {
       title: 'Fintech & Banking',
-      image: iFinance,
+      image: cat1,
       description:
         'Blockchain and AI are reshaping global financial systems with transparency, security, and automation.',
       useCases: [
@@ -65,7 +65,7 @@ const Industries = () => {
     },
     {
       title: 'Healthcare & Pharma',
-      image: iHealth,
+      image: cat2,
       description:
         'Enhancing patient safety, traceability, and medical intelligence with secure data systems.',
       useCases: [
@@ -83,7 +83,7 @@ const Industries = () => {
     },
     {
       title: 'Supply Chain & Logistics',
-      image: iSupply,
+      image: cat3,
       description:
         'End-to-end transparency and automation for global supply networks.',
       useCases: [
@@ -101,7 +101,7 @@ const Industries = () => {
     },
     {
       title: 'Real Estate & PropTech',
-      image: iRealEstate,
+      image: cat4,
       description:
         'Tokenization and AI unlock new financial models and seamless property transactions.',
       useCases: [
@@ -119,7 +119,7 @@ const Industries = () => {
     },
     {
       title: 'Gaming, Metaverse & Entertainment',
-      image: iGaming,
+      image: cat5,
       description:
         'Immersive digital worlds and sustainable play-to-earn ecosystems.',
       useCases: [
@@ -137,7 +137,7 @@ const Industries = () => {
     },
     {
       title: 'E-commerce & Retail',
-      image: iRetail,
+      image: cat6,
       description:
         'Personalized shopping and secure, data-driven commerce platforms.',
       useCases: [
@@ -154,7 +154,7 @@ const Industries = () => {
     },
     {
       title: 'Energy & Sustainability',
-      image: iEnergy,
+      image: cat7,
       description:
         'Transparency and trust in carbon credits, energy trading, and optimization.',
       useCases: [
@@ -171,7 +171,7 @@ const Industries = () => {
     },
     {
       title: 'Education & EdTech',
-      image: iEducation,
+      image: cat8,
       description:
         'Digital credentials and intelligent learning platforms.',
       useCases: [
@@ -187,7 +187,7 @@ const Industries = () => {
     },
     {
       title: 'Government & Public Sector',
-      image: iGov,
+      image: cat9,
       description:
         'Secure and scalable digital infrastructure for governance.',
       useCases: [
@@ -204,7 +204,7 @@ const Industries = () => {
     },
     {
       title: 'Insurance',
-      image: iInsurance,
+      image: cat10,
       description:
         'AI and blockchain streamline claims, underwriting, and fraud prevention.',
       useCases: [

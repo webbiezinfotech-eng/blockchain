@@ -382,7 +382,7 @@ const Home = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero Section */}
-      <section className="relative z-[1] w-full bg-white pt-2 pb-12 transition-colors duration-300 dark:bg-black sm:pt-4 sm:pb-16 md:pt-6 md:pb-20 lg:pt-8 lg:pb-24 xl:pt-10 xl:pb-24">
+      <section className="relative z-[1] w-full bg-white pt-2 pb-8 transition-colors duration-300 dark:bg-black sm:pt-4 sm:pb-16 md:pt-6 md:pb-18 lg:pt-8 lg:pb-18 xl:pt-10 xl:pb-18">
         <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
           {/* Left Side - Text Content */}
           <div className="ml-[30px] flex w-full flex-col justify-start gap-4 leading-[1.4] sm:gap-6 md:gap-8 lg:gap-10">
@@ -417,7 +417,7 @@ const Home = () => {
       <div className="relative">
         {/* Core Services Section */}
         <div ref={servicesRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className={`sticky top-0 z-[10] bg-white pb-8 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-6 md:top-0 md:pb-16 md:pt-8 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <section className={`sticky top-0 z-[10] bg-white pb-4  transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%]">
                 <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
@@ -499,7 +499,7 @@ const Home = () => {
 
         {/* Why Trust Section */}
         <div ref={trustRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className={`sticky top-0 z-[20] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16`}>
+          <section className={`sticky top-0 z-[20] bg-white pb-4 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-14 lg:pt-8`}>
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full px-2 text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] sm:px-4 md:px-6">
                 <div className="block text-[36px] transition-colors duration-300 sm:text-[48px] md:text-[60px] lg:text-[70px]">
@@ -548,11 +548,9 @@ const Home = () => {
           </section>
         </div>
 
-     
-
         {/* Industries Section */}
         <div ref={industriesRef} className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className={`sticky top-0 z-[30] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16`}>
+          <section className={`sticky top-0 z-[30] bg-white pb-4 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-14 lg:pt-8`}>
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px]">
                 <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
@@ -656,7 +654,7 @@ const Home = () => {
 
            {/* Our Work Section */}
            <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className="sticky top-0 z-[25] bg-white pb-5  pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-10 lg:pt-16">
+          <section className="sticky top-0 z-[25] bg-white pb-4  pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px]">
                 <div className="block text-[32px] transition-colors duration-300 sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
@@ -716,7 +714,7 @@ const Home = () => {
 
         {/* Tech Stack Section */}
         <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className="sticky top-0 z-[35] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+          <section className="sticky top-0 z-[35] bg-white pb-4 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="ml-auto max-w-full text-right font-heading font-bold uppercase leading-[1.25] tracking-[0%] sm:max-w-[900px]">
                 <div className="block text-[22px] transition-colors duration-300 sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px]">
@@ -802,7 +800,7 @@ const Home = () => {
 
          {/* Wide Range Services Section */}
          <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className="sticky top-0 z-[40] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+          <section className="sticky top-0 z-[40] bg-white pb-4 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
                 <div className="block text-[28px] transition-colors duration-300 sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
@@ -834,19 +832,17 @@ const Home = () => {
 
         {/* Testimonials Section */}
         <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className="sticky top-0 z-[45] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+          <section className="sticky top-0 z-[45] bg-white pb-4 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
-              <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
+              <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-4 sm:mb-8 lg:mb-12">
                 <div className="block text-[28px] transition-colors duration-300 sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
                   <span className="text-black dark:text-white">WHAT OUR </span>
                   <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">CLIENTS SAY</span>
                 </div>
               </h2>
               
-              {/* Blue Line */}
-              {/* <div className="mx-auto w-24 h-1 bg-brand-blue mb-8 sm:mb-12 lg:mb-16"></div> */}
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-6 lg:gap-6 max-w-5xl mx-auto">
                 {testimonials.map((testimonial) => (
                   <div 
                     key={testimonial.id}
@@ -874,11 +870,11 @@ const Home = () => {
 
         {/* Ready to Build Section */}
         <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className="sticky top-0 z-[50] bg-white pb-10 pt-2 transition-all duration-700 dark:bg-black sm:top-0  sm:pt-4 md:top-0 ">
+          <section className="sticky top-0 z-[50] bg-white pb-10 pt-2 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
-              <div className="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center">
                 {/* Left Side - Text Content */}
-                <div className="m-[30px] flex flex-col gap-6 sm:gap-8">
+                <div className="m-[30px] flex flex-col ">
                   <h2 className="font-heading font-bold uppercase leading-[1.05] tracking-[0%] text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]">
                     <div className="block text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">
                       READY TO BUILD THE
@@ -899,7 +895,7 @@ const Home = () => {
 
                 {/* Right Side - Illustration/Image */}
                 <div className="flex items-center justify-center">
-                  <div className="w-full max-w-[520px] overflow-hidden rounded-2xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+                  <div className="w-full max-w-[400px] overflow-hidden rounded-2xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
                     <img src={readyToBuildImg} alt="Ready to build" className="h-auto w-full object-contain" loading="lazy" />
                   </div>
                 </div>
@@ -910,7 +906,7 @@ const Home = () => {
 
         {/* FAQ Section */}
         <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className="sticky top-0 z-[55] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+          <section className="sticky top-0 z-[55] bg-white pb-4 pt-4 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <h2 className="mx-auto max-w-full text-center font-heading font-bold uppercase leading-[1.1] tracking-[0%] sm:max-w-[1200px] mb-8 sm:mb-12 lg:mb-16">
                 <div className="block text-[34px] leading-[1] tracking-[0.02em] transition-colors duration-300 sm:text-[46px] md:text-[56px] lg:text-[68px] xl:text-[78px]">
@@ -1011,7 +1007,7 @@ const Home = () => {
 
         {/* Contact Form Section */}
         <div className="relative min-h-[100vh] sm:min-h-[120vh] md:min-h-[80vh]">
-          <section className="sticky top-0 z-[60] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-12 sm:pt-10 md:top-0 md:pb-16 md:pt-12 lg:pb-20 lg:pt-16">
+          <section className="sticky top-0 z-[60] bg-white pb-10 pt-8 transition-all duration-700 dark:bg-black sm:top-0 sm:pb-4 sm:pt-6 md:top-0 md:pb-8 md:pt-8 lg:pb-10 lg:pt-8">
             <div className="mx-auto max-w-layout px-4 sm:px-5 md:px-10">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
                 {/* Left Side - Contact Form */}

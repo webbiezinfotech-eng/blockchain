@@ -16,7 +16,7 @@ const Footer = () => {
                 <img
                   src={theme === 'dark' ? darkLogo : lightLogo}
                   alt="Blockchain App Advisor Logo"
-                  className="h-20 w-20 object-contain sm:h-24 sm:w-24 md:h-28 md:w-28"
+                  className="h-30 w-30 object-contain sm:h-34 sm:w-34 md:h-38 md:w-38"
                 />
               </div>
             </div>

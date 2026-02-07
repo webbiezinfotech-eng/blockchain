@@ -45,7 +45,7 @@ const About = () => {
            SECTION 1: HERO SECTION
            Main hero area with title and tagline
       ======================================== */}
-      <section className="relative z-[1] w-full bg-white pt-2 pb-12 transition-colors duration-300 dark:bg-black sm:pt-4 sm:pb-16 md:pt-6 md:pb-20 lg:pt-8 lg:pb-24 xl:pt-10 xl:pb-24">
+      <section className="relative z-[1] w-full bg-white pt-2 pb-8 transition-colors duration-300 dark:bg-black sm:pt-4 sm:pb-16 md:pt-6 md:pb-14 lg:pt-8 lg:pb-16 xl:pt-10 xl:pb-16">
         <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-start gap-0 lg:grid-cols-[50%_50%]">
           {/* Left Side - Text Content */}
           <div className="ml-[30px] flex w-[98%] flex-col justify-start gap-4 leading-[1.4] sm:gap-6 md:gap-8 lg:gap-10">
@@ -85,7 +85,7 @@ const About = () => {
            SECTION 2: WHO WE ARE
            Introduction about the company
       ======================================== */}
-      <section className="w-full bg-white pt-4 pb-14 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-16 md:pt-8 md:pb-20">
+      <section className="w-full bg-white pt-4 pb-8 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-16 md:pt-4 md:pb-20">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-20">
           <h2 className="text-center font-heading font-bold uppercase leading-[1] tracking-[0.02em] text-[34px] sm:text-[46px] md:text-[56px] lg:text-[68px] xl:text-[78px]">
             <span className="text-black transition-colors duration-300 dark:text-white">WHO </span>
@@ -197,7 +197,7 @@ const About = () => {
            SECTION 5: CORE VALUES
            Company values and principles
       ======================================== */}
-      <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16 md:py-20">
+      <section className="w-full bg-white pb-16  transition-colors duration-300 dark:bg-black">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-20">
           <h2 className="text-center font-heading font-bold uppercase leading-[1] tracking-[0.02em] text-[34px] sm:text-[46px] md:text-[56px] lg:text-[68px]">
             <span className="text-black transition-colors duration-300 dark:text-white">OUR </span>
@@ -311,7 +311,7 @@ const About = () => {
            SECTION 7: TECHNOLOGY EXPERTISE
            Blockchain and AI skills and capabilities
       ======================================== */}
-      <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16 md:py-20">
+      <section className="w-full bg-white py-8 transition-colors duration-300 dark:bg-black sm:py-12 md:py-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-20">
           <h2 className="text-center font-heading font-bold uppercase leading-[1.1] tracking-[0.02em] text-[34px] sm:text-[46px] md:text-[50px] lg:text-[55px]">
             TECHNOLOGY <span className="text-brand-blue">EXPERTISE</span>
@@ -513,11 +513,11 @@ const About = () => {
                   image: futureInnovationImg
                 }
               ].map((item, idx) => (
-                <div key={idx} className={`relative flex flex-col items-center md:flex-row ${idx % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
+                <div key={idx} className={`relative flex flex-col items-center md:flex-row ${idx % 2 === 0 ? 'md:justify-center' : 'md:justify-center'}`}>
                   {/* Phase Card Container */}
-                  <div className={`relative w-full pl-16 md:w-[48%] md:pl-0 ${idx % 2 === 0 ? 'md:pr-16' : 'md:pl-16 md:order-2'}`}>
+                  <div className={`relative w-full pl-16 md:w-[42%]  ${idx % 2 === 0 ? 'md:pr-12' : 'md:pl-14 md:order-2'}`}>
                     {/* Phase Number Badge - Positioned fully outside the card edge */}
-                    <div className={`absolute top-10 z-10 flex h-10 w-14 items-center justify-center rounded-xl bg-brand-blue font-bold text-white shadow-lg ${idx % 2 === 0 ? '-left-10 md:-left-14' : '-right-10 md:-right-14'}`}>
+                    <div className={`absolute top-10 z-10 flex h-10 w-14 items-center justify-center rounded-xl bg-brand-blue font-bold text-white shadow-lg ${idx % 2 === 0 ? '-left-2' : '-right-10 md:-right-14'}`}>
                       {item.phase}
                     </div>
 

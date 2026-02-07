@@ -164,7 +164,6 @@ const Header = () => {
             aria-label="Toggle theme"
           >
             {theme === 'light' ? (
-              // Moon icon for dark mode
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className="sm:w-5 sm:h-5" aria-hidden="true">
                 <path
                   d="M17.293 13.293C16.378 13.817 15.305 14.142 14.142 14.142C10.228 14.142 7 10.914 7 7C7 5.895 7.325 4.822 7.849 3.907C4.236 4.822 1.5 8.007 1.5 11.929C1.5 16.135 4.865 19.5 9.071 19.5C12.993 19.5 16.178 16.764 17.093 13.151L17.293 13.293Z"
@@ -175,7 +174,6 @@ const Header = () => {
                 />
               </svg>
             ) : (
-              // Sun icon for light mode
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className="sm:w-5 sm:h-5" aria-hidden="true">
                 <circle cx="10" cy="10" r="4" stroke="currentColor" strokeWidth="1.5" />
                 <path

@@ -284,7 +284,7 @@ useEffect(() => {
 
 
       {/* Protocol Features */}
-      <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">
+      <section className="w-full bg-white py-8 transition-colors duration-300 dark:bg-black sm:py-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="mb-10 text-center">
             <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">

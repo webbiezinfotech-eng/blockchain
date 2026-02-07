@@ -5,91 +5,120 @@ import heroImg from '../assets/FAQs-hero.png';
 
 const FAQ = () => {
   const data = useMemo(
-    () => ({
-      'General FAQs': [
-        {
-          q: 'What services does Blockchain App Advisor offer?',
-          a:
-            'We provide end-to-end solutions including blockchain development, AI & automation, Web3/NFT platforms, tokenization, DeFi solutions, smart contract development, enterprise consulting, app design, and post-launch support.',
-        },
-        {
-          q: 'Who do you work with?',
-          a: 'We work with startups, enterprises, and Web3 innovators—anyone building secure and scalable blockchain, AI, or digital products.',
-        },
-        {
-          q: 'Can you help refine or develop my idea?',
-          a: 'Yes. We can validate your concept, define scope, create wireframes, and build an MVP roadmap before full-scale development.',
-        },
-        {
-          q: 'Do you work with global clients?',
-          a: 'Yes. We collaborate remotely across time zones with transparent communication and regular delivery updates.',
-        },
-        {
-          q: 'Do you offer post-launch support?',
-          a: 'Yes. We provide monitoring, maintenance, upgrades, and scaling support after deployment.',
-        },
-      ],
-      'Service-Specific FAQs': [
-        {
-          q: 'Do you build both CEX and DEX platforms?',
-          a: 'Yes. We build centralized, decentralized, hybrid, and P2P exchanges with trading features, liquidity tooling, and security layers.',
-        },
-        {
-          q: 'Can you integrate KYC/AML and payment gateways?',
-          a: 'Yes. We can integrate KYC/AML providers, on-ramp/off-ramp solutions, and payment systems based on your needs and region.',
-        },
-        {
-          q: 'Do you provide smart contract audits?',
-          a: 'Yes. We offer audit workflows combining automated tools and manual review to identify vulnerabilities and provide remediation guidance.',
-        },
-      ],
-      'AI & Automation': [
-        {
-          q: 'What AI solutions do you implement?',
-          a: 'We implement chatbots, intelligent automation, analytics pipelines, recommendation systems, and AI-assisted workflows tailored to your product.',
-        },
-        {
-          q: 'Can AI be integrated with blockchain apps?',
-          a: 'Yes. We integrate AI services with Web3 applications for analytics, fraud detection, personalization, and automation.',
-        },
-      ],
-      'Web3, NFT & Metaverse': [
-        {
-          q: 'Do you build NFT marketplaces and minting platforms?',
-          a: 'Yes. We build NFT marketplaces, minting flows, metadata pipelines, and wallet integrations across EVM and non-EVM chains.',
-        },
-        {
-          q: 'Which standards do you support?',
-          a: 'We support common token standards such as ERC-20, BEP-20, ERC-721, ERC-1155, and chain-specific equivalents.',
-        },
-      ],
-      'Pricing FAQs': [
-        {
-          q: 'How do you price projects?',
-          a: 'Pricing depends on scope, complexity, timeline, and integrations. We typically propose fixed-scope milestones or dedicated team models.',
-        },
-        {
-          q: 'Do you offer MVP packages?',
-          a: 'Yes. We can define a focused MVP scope to validate market fit and launch quickly, then iterate based on feedback.',
-        },
-      ],
-      'Technical FAQs': [
-        {
-          q: 'Which blockchains do you support?',
-          a: 'We support Ethereum, BNB Chain, Polygon, Solana, Avalanche, Tron, and more—based on product requirements and ecosystem fit.',
-        },
-        {
-          q: 'How do you ensure security?',
-          a: 'We follow security-first engineering practices: code reviews, access control patterns, threat modeling, testing, and (when applicable) audits.',
-        },
-        {
-          q: 'Do you provide documentation and handover?',
-          a: 'Yes. We provide technical documentation, deployment guides, and knowledge transfer for smooth long-term ownership.',
-        },
-      ],
-    }),
-    [],
-  );
+  () => ({
+    'General FAQs': [
+      {
+        q: 'What services does Blockchain App Advisor offer?',
+        a: 'We provide end-to-end solutions including blockchain development, AI & automation, Web3/NFT platforms, tokenization, DeFi solutions, smart contract development, enterprise consulting, app design, and post-launch support.',
+      },
+      {
+        q: 'Who do you work with?',
+        a: 'We work with startups, enterprises, government agencies, tech founders, gaming studios, and global brands who want to build blockchain or AI-powered solutions.',
+      },
+      {
+        q: 'Can you help refine or develop my idea?',
+        a: 'Absolutely. Our team provides strategy planning, MVP definition, product roadmapping, and technical architecture consulting before development begins.',
+      },
+      {
+        q: 'Do you work with global clients?',
+        a: 'Yes. We partner with clients across the US, Europe, Asia, Middle East, Australia, and Africa.',
+      },
+      {
+        q: 'Do you offer post-launch support?',
+        a: 'Yes. We provide ongoing maintenance, upgrades, performance monitoring, smart contract audits, and scalability enhancements.',
+      },
+    ],
+
+    'Service-Specific FAQs': [
+      {
+        q: 'Which blockchain platforms do you support?',
+        a: 'We build on Ethereum, Polygon, BNB Chain, Solana, Avalanche, Hyperledger, Cosmos, Tron, Cardano, Near, and custom private blockchains.',
+      },
+      {
+        q: 'Do you provide smart contract audits?',
+        a: 'Yes. We offer internal audits and collaborate with third-party security firms for enterprise-grade audits.',
+      },
+      {
+        q: 'Can you integrate blockchain into existing systems?',
+        a: 'Yes. We can integrate blockchain capabilities with your existing mobile apps, web apps, ERP/CRM systems, and backend workflows.',
+      },
+    ],
+
+    'AI & Automation': [
+      {
+        q: 'What AI solutions do you offer?',
+        a: 'We develop AI agents, predictive analytics, NLP automation, chatbots, workflow automation, recommendation engines, and process optimization tools.',
+      },
+      {
+        q: 'Can you integrate AI into my current business operations?',
+        a: 'Yes. We specialize in integrating AI models into CRMs, SaaS products, enterprise software, and internal operations.',
+      },
+      {
+        q: 'Do you build custom AI models?',
+        a: 'Yes. We build and deploy custom AI solutions tailored to business goals, datasets, security, and compliance needs.',
+      },
+    ],
+
+    'Web3, NFT & Metaverse': [
+      {
+        q: 'Do you build NFT marketplaces?',
+        a: 'Yes. We create multi-chain NFT marketplaces with features like minting, royalties, auctions, analytics dashboards, and mobile wallet integration.',
+      },
+      {
+        q: 'Can you develop Web3 games?',
+        a: 'Yes. We develop Play-to-Earn games, token economies, NFT-based gameplay assets, and metaverse integrations.',
+      },
+      {
+        q: 'Do you help with tokenization?',
+        a: 'We support real estate tokenization, asset-backed tokens, utility tokens, governance tokens, and security token frameworks.',
+      },
+    ],
+
+    'Pricing FAQs': [
+      {
+        q: 'How much does a blockchain or AI project cost?',
+        a: 'Pricing depends on scope, features, complexity, design needs, security requirements, and integrations. Small MVPs start from $10k–$25k, while full-scale products can range from $40k–$250k+.',
+      },
+      {
+        q: 'Do you offer fixed pricing or hourly billing?',
+        a: 'We offer both fixed pricing for well-defined projects and hourly/monthly billing for flexible, ongoing work or R&D.',
+      },
+      {
+        q: 'Is there an upfront payment required?',
+        a: 'Yes. Typically, payments are divided into milestones starting with an initial project initiation deposit.',
+      },
+      {
+        q: 'Can you help create an MVP for a lower budget?',
+        a: 'Yes. We build lean MVPs that validate your idea quickly before scaling into a full product.',
+      },
+    ],
+
+    'Technical FAQs': [
+      {
+        q: 'How long does a project take?',
+        a: 'Timelines depend on scope. Simple apps take 4–8 weeks, MVPs take 8–12 weeks, complex platforms take 3–6 months, and enterprise solutions take 6–12 months.',
+      },
+      {
+        q: 'What tech stack do you use?',
+        a: 'Front-end: React, Next.js, Vue, Flutter. Backend: Node.js, Python, Go. Blockchain: Solidity, Rust, Move, Hyperledger. AI: Python, TensorFlow, PyTorch, LLM integrations.',
+      },
+      {
+        q: 'Do you follow a structured development process?',
+        a: 'Yes. We follow an agile approach including Discovery & Planning, Architecture & Design, Development, QA & Smart Contract Testing, Deployment, and Support & Scaling.',
+      },
+      {
+        q: 'How do you ensure security?',
+        a: 'We ensure security through smart contract audits, penetration testing, secure architecture design, robust encryption protocols, and continuous monitoring.',
+      },
+      {
+        q: 'Do you assist with compliance and regulations?',
+        a: 'Yes. We help navigate KYC/AML, GDPR, token regulations, and industry-specific compliance requirements.',
+      },
+    ],
+  }),
+  [],
+);
+
 
   const categories = useMemo(() => Object.keys(data), [data]);
   const [activeCategory, setActiveCategory] = useState(categories[0]);

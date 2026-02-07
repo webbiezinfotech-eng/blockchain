@@ -65,7 +65,7 @@ const SmartContractAudit = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero */}
-      <section className="w-full bg-white pt-4 pb-14 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-16 lg:pt-8 lg:pb-20">
+      <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-20 lg:pt-16 lg:pb-18">
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[60%_40%] lg:pl-[3rem] lg:pr-[5rem]">
           {/* Left */}
           <div className="flex w-full flex-col gap-6">
@@ -98,7 +98,7 @@ const SmartContractAudit = () => {
       </section>
 
       {/* Audit Process Overview */}
-      <section className="w-full bg-white pt-10 pb-14 transition-colors duration-300 dark:bg-black sm:pt-12 sm:pb-16">
+      <section className="w-full bg-white pt-14 pb-8 transition-colors duration-300 dark:bg-black sm:pt-12 sm:pb-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="mb-10 text-center">
             <h2 className="font-heading text-[38px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[52px] lg:text-[64px]">

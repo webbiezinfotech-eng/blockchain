@@ -110,7 +110,7 @@ const AIDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero Section (Figma) */}
-      <section className="w-full bg-white pt-4 pb-16 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-20 lg:pt-8 lg:pb-24">
+      <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             {/* Left */}
@@ -147,7 +147,7 @@ const AIDevelopment = () => {
       </section>
 
       {/* AI Use Cases (Section 2) */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+      <section className="w-full bg-white py-8 transition-colors duration-300 dark:bg-black sm:py-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="text-center">
             <h2 className="font-heading text-[42px] font-bold uppercase tracking-tight text-black transition-colors duration-300 sm:text-[56px] lg:text-[72px] dark:text-white">
@@ -159,7 +159,7 @@ const AIDevelopment = () => {
           <div className="mt-12 grid grid-cols-1 items-center gap-0 lg:grid-cols-[0.95fr_1.05fr] lg:gap-0">
             {/* Left Illustration */}
             <div className="flex items-center justify-center lg:justify-start">
-              <div className="w-full max-w-[560px]">
+              <div className="w-full max-w-[450px]">
                 <div className="overflow-hidden rounded-3xl  transition-colors duration-300 ">
                   <img src={useCaseImg} alt="AI use cases" className="h-auto w-full object-contain" loading="lazy" />
                 </div>
@@ -274,7 +274,7 @@ const AIDevelopment = () => {
       </section>
 
       {/* AI Deployment Process (Section 5 - Last) */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+      <section className="w-full bg-white py-8 transition-colors duration-300 dark:bg-black sm:py-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="text-center">
             <h2 className="font-heading text-[42px] font-bold uppercase tracking-tight transition-colors duration-300 sm:text-[56px] lg:text-[72px]">
@@ -311,13 +311,13 @@ const AIDevelopment = () => {
               // 1: slightly left
               { no: 1, title: 'Requirement Analysis', cls: 'left-1/2 top-0 -translate-x-1/2 ml-10 w-[480px]' },
               // 2: slightly more right (reduce width a bit so it sits more to the right)
-              { no: 2, title: 'Model Selection or Custom Model Training', cls: '-right-6 top-[190px] w-[405px]' },
+              { no: 2, title: 'Model Selection or Custom Model Training', cls: '-right-2 top-[190px] w-[405px]' },
               { no: 3, title: 'Dataset Preparation', cls: '-right-2 top-[340px] w-[405px]' },
               { no: 4, title: 'Model Integration with Apps & APIs', cls: 'left-1/2 -bottom-6 -translate-x-1/2 ml-20 w-[520px]' },
               // 5: move slightly down to increase spacing from 6 (but still less than 6-7)
-              { no: 5, title: 'Fine-tuning & Optimization', cls: '-left-6 bottom-[55px] w-[400px]' },
-              { no: 6, title: 'Deployment (Cloud or On-Premise)', cls: '-left-6 top-[300px] w-[400px]' },
-              { no: 7, title: 'Continuous Monitoring', cls: '-left-6 top-[150px] w-[400px]' },
+              { no: 5, title: 'Fine-tuning & Optimization', cls: ' bottom-[55px] w-[400px]' },
+              { no: 6, title: 'Deployment (Cloud or On-Premise)', cls: ' top-[300px] w-[400px]' },
+              { no: 7, title: 'Continuous Monitoring', cls: 'top-[150px] w-[400px]' },
             ].map((s) => (
               <div
                 key={s.no}

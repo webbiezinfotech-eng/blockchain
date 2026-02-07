@@ -29,34 +29,40 @@ import TokenImg from '../../assets/services images/BlockchainConsultingimages/To
 import technicalImg from '../../assets/services images/BlockchainConsultingimages/TechnicalArchitectureDocument.png';
 import roadmapImg from '../../assets/services images/BlockchainConsultingimages/ProductRoadmap.png';
 
+import  DiscoveryRequirementAnalysis  from '../../assets/services images/BlockchainConsultingimages/DiscoveryRequirementAnalysis.png';
+import SolutionArchitectureTechnicalDesign  from '../../assets/services images/BlockchainConsultingimages/SolutionArchitectureTechnicalDesign.png';
+import TokenomicsBusinessStrategy  from '../../assets/services images/BlockchainConsultingimages/TokenomicsBusinessStrategy.png';
+import PrototypeValidation  from '../../assets/services images/BlockchainConsultingimages/PrototypeValidation.png';
+import ImplementationPlanning  from '../../assets/services images/BlockchainConsultingimages/ImplementationPlanning.png';
+
 const BlockchainConsulting = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const consultingApproach = [
     {
       title: 'Discovery & Requirement Analysis',
-      desc: '',
-      icon: approach1Icon,
+      desc: 'We begin by understanding your business goals, target users, technical needs, and regulatory considerations. This helps us validate the feasibility of your idea and identify the right blockchain approach.',
+      icon: DiscoveryRequirementAnalysis,
     },
     {
       title: 'Solution Architecture & Technical Design',
       desc: 'Our architects design secure, scalable blockchain systems tailored to your use case — from smart contracts and consensus mechanisms to token models, wallet interactions, and backend infrastructure.',
-      icon: approach2Icon,
+      icon: SolutionArchitectureTechnicalDesign,
     },
     {
       title: 'Tokenomics & Business Strategy',
-      desc: '',
-      icon: approach3Icon,
+      desc: 'For Web3 and token-based products, we create token models focused on sustainability, utility, user incentives, and long-term ecosystem growth.',
+      icon: TokenomicsBusinessStrategy,
     },
     {
       title: 'Prototype & Validation',
-      desc: '',
-      icon: approach4Icon,
+      desc: 'We develop functional prototypes or PoCs to validate technical assumptions, reduce risks, and ensure smooth progression into full development.',
+      icon: PrototypeValidation,
     },
     {
       title: 'Implementation Planning',
-      desc: '',
-      icon: approach5Icon,
+      desc: 'We provide a complete execution plan covering development phases, timelines, security considerations, testing flows, and launch strategy.',
+      icon: ImplementationPlanning,
     },
   ];
 
@@ -224,20 +230,31 @@ const BlockchainConsulting = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-            {consultingApproach.slice(0, 4).map((c) => (
-              <div key={c.title} className="group relative">
+          <div className="grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-3">
+            {consultingApproach.map((c, index) => (
+              <div
+                key={c.title}
+                className={`group relative
+                      ${index === 4
+                    ? "md:col-span-2 md:flex md:justify-center lg:col-span-1 lg:col-start-2"
+                    : ""
+                  }
+                    `}
+              >
                 <div className="absolute -inset-4 rounded-[22px] bg-brand-blue transition-transform duration-300 translate-x-2 translate-y-2 -rotate-[3deg] group-hover:translate-x-3 group-hover:translate-y-3 group-hover:-rotate-[4deg]" />
-                <div className="relative rounded-[22px] border border-[#c8d7e4] bg-white p-7 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]">
+
+                <div className="relative w-full max-w-[520px] rounded-[22px] border border-[#c8d7e4] bg-white p-7 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]">
                   <div className="flex items-start justify-between gap-4">
-                    <div className="font-heading text-[20px] font-bold uppercase leading-tight text-brand-blue transition-colors duration-300 dark:text-white">
+                    <div className="font-heading text-[20px] font-bold uppercase leading-tight text-brand-blue dark:text-white">
                       {c.title}
                     </div>
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-brand-blue/35 bg-white transition-colors duration-300 dark:border-white/25 dark:bg-black/20">
+
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-brand-blue/35 bg-white dark:border-white/25 dark:bg-black/20">
                       <img src={c.icon} alt="" className="h-9 w-9 object-contain" />
                     </div>
                   </div>
-                  <p className="mt-4 font-sans text-[15px] font-medium leading-[1.65] text-black/70 transition-colors duration-300 dark:text-white/80">
+
+                  <p className="mt-4 font-sans text-[15px] font-medium leading-[1.65] text-black/70 dark:text-white/80">
                     {c.desc}
                   </p>
                 </div>
@@ -245,27 +262,6 @@ const BlockchainConsulting = () => {
             ))}
           </div>
 
-          {/* Last centered card */}
-          <div className="mt-12 flex justify-center">
-            <div className="w-full max-w-[520px]">
-              <div className="group relative">
-                <div className="absolute -inset-4 rounded-[22px] bg-brand-blue transition-transform duration-300 translate-x-2 translate-y-2 -rotate-[3deg] group-hover:translate-x-3 group-hover:translate-y-3 group-hover:-rotate-[4deg]" />
-                <div className="relative rounded-[22px] border border-[#c8d7e4] bg-white p-7 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="font-heading text-[20px] font-bold uppercase leading-tight text-brand-blue transition-colors duration-300 dark:text-white">
-                      {consultingApproach[4].title}
-                    </div>
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-brand-blue/35 bg-white transition-colors duration-300 dark:border-white/25 dark:bg-black/20">
-                      <img src={consultingApproach[4].icon} alt="" className="h-9 w-9 object-contain" />
-                    </div>
-                  </div>
-                  <p className="mt-4 font-sans text-[15px] font-medium leading-[1.65] text-black/70 transition-colors duration-300 dark:text-white/80">
-                    {consultingApproach[4].desc}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

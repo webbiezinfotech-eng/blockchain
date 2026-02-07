@@ -108,7 +108,7 @@ const BlockchainDevelopment = () => {
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
       {/* Hero Section */}
-      <section className="relative z-[1] w-full overflow-hidden bg-white pt-4 pb-12 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-16 md:pt-8 md:pb-20 lg:pt-10 lg:pb-24 xl:pt-12 xl:pb-28">
+      <section className="relative z-[1] w-full overflow-hidden bg-white pt-4 pb-8 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-8 md:pt-8 md:pb-10 lg:pt-10 lg:pb-14 xl:pt-12 ">
         {/* Background Decorative Lines */}
         <div className="absolute inset-0 z-0 opacity-10 dark:opacity-20">
           <div className="absolute left-[10%] top-0 h-full w-[1px] bg-brand-blue" />
@@ -259,7 +259,7 @@ const BlockchainDevelopment = () => {
       </section>
 
       {/* Industry Use Cases (Carousel) */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+      <section className="w-full bg-white py-8 transition-colors duration-300 dark:bg-black sm:py-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:pl-[3rem] lg:pr-[3rem]">
           <div className="mb-12 text-center">
             <h2 className="font-heading text-[36px] font-bold uppercase leading-[1.1] tracking-tight sm:text-[48px] md:text-[56px]">
@@ -380,7 +380,7 @@ const BlockchainDevelopment = () => {
       </section>
 
       {/* Development Process Section */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+      <section className="w-full bg-white py-8 transition-colors duration-300 dark:bg-black sm:py-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:pl-[3rem] lg:pr-[3rem]">
           <div className="mb-12 text-center">
             <h2 className="font-heading text-[38px] font-bold uppercase leading-[1.1] tracking-tight sm:text-[52px] md:text-[60px]">

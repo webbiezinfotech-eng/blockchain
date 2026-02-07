@@ -143,7 +143,7 @@ const Services = () => {
     <div className="bg-white transition-colors duration-300 dark:bg-black">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative h-[100svh] w-full overflow-hidden">
+      <section className="relative h-[100svh] w-full pt-10 overflow-hidden">
         {/* Background Video */}
         <video
           key={theme}
@@ -193,7 +193,7 @@ const Services = () => {
       </section>
 
       {/* ================= SERVICES CAROUSEL ================= */}
-      <section className="mx-auto max-w-layout px-4 sm:px-8 md:px-10 py-14 lg:py-20">
+      <section className="mx-auto max-w-layout px-4 sm:px-8 md:px-10 py-8 lg:py-10">
         <div className="text-center">
           <h2 className="font-heading text-[32px] sm:text-[44px] md:text-[52px] lg:text-[60px] font-bold uppercase leading-tight">
             <span className="text-black dark:text-white">EXPLORE ALL </span>

@@ -154,7 +154,7 @@ const SmartContractDevelopment = () => {
       </section>
 
       {/* Section 3: Contract Types */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+      <section className="w-full bg-white py-8 transition-colors duration-300 dark:bg-black sm:py-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="mb-12 text-center">
             <h2 className="font-heading text-[44px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[56px] lg:text-[72px]">
@@ -210,7 +210,7 @@ const SmartContractDevelopment = () => {
       </section>
 
       {/* Section 4: Development & Testing Process */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-20">
+      <section className="w-full bg-white py-8 transition-colors duration-300 dark:bg-black sm:py-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="mb-12 text-center">
             <h2 className="font-heading text-[40px] font-bold uppercase leading-[1.08] tracking-tight transition-colors duration-300 sm:text-[52px] lg:text-[68px]">

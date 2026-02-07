@@ -298,10 +298,10 @@ const CustomDevelopment = () => {
           </div>
 
           {/* Cards Grid – SAME AS TOKEN TYPES UI */}
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-3">
             {process.map((p) => (
               <div key={p.title} className="flex justify-center">
-                <div className="group relative w-full max-w-[380px]">
+                <div className="group relative w-full max-w-[365px] max-h-[380px]">
                   {/* tilted blue backing – EXACT SAME */}
                   <div className="absolute -inset-3 rounded-[24px] bg-brand-blue transition-transform duration-300 translate-x-2 translate-y-2 -rotate-[2deg] group-hover:translate-x-3 group-hover:translate-y-3 group-hover:-rotate-[3deg]" />
 
