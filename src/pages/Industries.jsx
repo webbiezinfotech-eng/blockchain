@@ -5,13 +5,15 @@ import heroImg from '../assets/Industry_images/Industry-hero.png';
 import cat1 from '../assets/Industry_images/FintechBanking-main.png';
 import cat2 from '../assets/Industry_images/HealthcarePharma-main.png';
 import cat3 from '../assets/Industry_images/SupplychainLogistics-main.png';
-import cat4 from '../assets/home_images/wallets.png';
-import cat5 from '../assets/home_images/decentralized-finance.png';
-import cat6 from '../assets/home_images/nftmarketplacedev.png';
-import cat7 from '../assets/home_images/backends.png';
-import cat8 from '../assets/home_images/blockchain-api.png';
-import cat9 from '../assets/home_images/fundraising.png';
-import cat10 from '../assets/home_images/marketing.png';
+import cat4 from '../assets/Industry_images/RealestateProptech-main.png';
+import cat5 from '../assets/Industry_images/GamingMetaverse-main.png';
+import cat6 from '../assets/Industry_images/EcommerceRetail-main.png';
+import cat7 from '../assets/Industry_images/EnergySustainability-main.png';
+import cat8 from '../assets/Industry_images/EducationEdtech-main.png';
+import cat9 from '../assets/Industry_images/GovtPublicSector-main.png';
+import cat10 from '../assets/Industry_images/Insurance-main.png';
+import cat11 from '../assets/Industry_images/TravelHospitality-main.png';
+import cat12 from '../assets/Industry_images/ManufacturingIndustry-main.png';
 
 import iFinance from '../assets/Industry_images/FintechBanking.png';
 import iHealth from '../assets/Industry_images/HealthcarePharma.png';
@@ -221,7 +223,7 @@ const Industries = () => {
     },
     {
       title: 'Travel & Hospitality',
-      image: iTravel,
+      image: cat11,
       description:
         'Smarter, faster, and more secure travel experiences.',
       useCases: [
@@ -237,7 +239,7 @@ const Industries = () => {
     },
     {
       title: 'Manufacturing & Industry 4.0',
-      image: iManufacturing,
+      image: cat12,
       description:
         'AI and blockchain power smarter factories and automation.',
       useCases: [
