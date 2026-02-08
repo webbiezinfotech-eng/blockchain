@@ -101,6 +101,18 @@ const Services = () => {
       description: 'Ideal for: creating secure multi-chain cryptocurrency wallets.',
       image: s11,
     },
+    {
+      id: 'website-development',
+      title: 'Website Development',
+      description: 'Ideal for: businesses needing professional, responsive websites and web applications.',
+      image: customDevImg,
+    },
+    {
+      id: 'mobile-application-development',
+      title: 'Mobile Application Development',
+      description: 'Ideal for: creating native and cross-platform mobile apps for iOS and Android.',
+      image: customDevImg,
+    },
   ];
 
   const getCardsPerView = () => {

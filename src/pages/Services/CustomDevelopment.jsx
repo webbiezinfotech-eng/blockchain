@@ -288,51 +288,11 @@ const CustomDevelopment = () => {
       </section>
 
       {/* OUR DEVELOPMENT PROCESS */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black">
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          {/* Heading */}
-          <div className="mb-12 text-center">
-            <h2 className="font-heading text-[40px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[54px] lg:text-[72px]">
-              OUR <span className="text-brand-blue">DEVELOPMENT PROCESS</span>
-            </h2>
-          </div>
-
-          {/* Cards Grid – SAME AS TOKEN TYPES UI */}
-          <div className="grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-3">
-            {process.map((p) => (
-              <div key={p.title} className="flex justify-center">
-                <div className="group relative w-full max-w-[365px] max-h-[380px]">
-                  {/* tilted blue backing – EXACT SAME */}
-                  <div className="absolute -inset-3 rounded-[24px] bg-brand-blue transition-transform duration-300 translate-x-2 translate-y-2 -rotate-[2deg] group-hover:translate-x-3 group-hover:translate-y-3 group-hover:-rotate-[3deg]" />
-
-                  {/* foreground white card – EXACT SAME */}
-                  <div className="relative rounded-[24px] border border-[#c8d7e4] bg-white p-7 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]">
-                    <div className="flex items-start justify-between gap-4">
-                      <h3 className="font-sans text-[20px] font-bold text-brand-blue transition-colors duration-300 dark:text-white">
-                        {p.title}
-                      </h3>
-
-                      {p.icon && (
-                        <div className="flex h-12 w-12 items-center justify-center rounded-lg  bg-white transition-colors duration-300 dark:border-white/20 dark:bg-black/20">
-                          <img
-                            src={p.icon}
-                            alt={p.title}
-                            className="h-9 w-9 object-contain"
-                          />
-                        </div>
-                      )}
-                    </div>
-
-                    <p className="mt-4 font-montserratAlt  text-[16px] font-medium leading-[1.65] text-black/70 transition-colors duration-300 dark:text-white/80">
-                      {p.desc}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <DevelopmentProcess
+        title="OUR DEVELOPMENT PROCESS"
+        titlePrefix="OUR DEVELOPMENT"
+        steps={process.map((p, index) => ({ no: index + 1, title: p.title }))}
+      />
 
       {/* Technologies */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">

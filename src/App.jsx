@@ -18,10 +18,15 @@ import NFTMarketplaceDevelopment from './pages/Services/NFTMarketplaceDevelopmen
 import DAppDevelopment from './pages/Services/DAppDevelopment';
 import WalletDevelopment from './pages/Services/WalletDevelopment';
 import BlockchainConsulting from './pages/Services/BlockchainConsulting';
+import WebsiteDevelopment from './pages/Services/WebsiteDevelopment';
+import MobileApplicationDevelopment from './pages/Services/MobileApplicationDevelopment';
 import Industries from './pages/Industries';
-import CaseStudies from './pages/CaseStudies';
+import Products from './pages/Products';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+import Sitemap from './pages/Sitemap';
 
 function App() {
   useTheme(); // This sets data-theme attribute on document root
@@ -49,10 +54,15 @@ function App() {
           <Route path="/services/nft-marketplace-development" element={<NFTMarketplaceDevelopment />} />
           <Route path="/services/dapp-development" element={<DAppDevelopment />} />
           <Route path="/services/wallet-development" element={<WalletDevelopment />} />
+          <Route path="/services/website-development" element={<WebsiteDevelopment />} />
+          <Route path="/services/mobile-application-development" element={<MobileApplicationDevelopment />} />
           <Route path="/industries" element={<Industries />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/sitemap" element={<Sitemap />} />
         </Routes>
       </main>
       <Footer />

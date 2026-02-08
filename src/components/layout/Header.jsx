@@ -113,7 +113,13 @@ const Header = () => {
                     <NavLink
                       key={s.id}
                       to={s.route}
-                      className="rounded-xl px-3 py-2 text-sm font-medium text-black/80 transition-colors hover:bg-black/[0.04] hover:text-black dark:text-white/80 dark:hover:bg-white/[0.06] dark:hover:text-white"
+                      className={({ isActive }) =>
+                        `rounded-xl px-3 py-2 text-sm font-medium transition-colors ${
+                          isActive
+                            ? 'bg-brand-blue/10 text-brand-blue font-semibold dark:bg-brand-blue/20 dark:text-brand-blue'
+                            : 'text-black/80 hover:bg-black/[0.04] hover:text-black dark:text-white/80 dark:hover:bg-white/[0.06] dark:hover:text-white'
+                        }`
+                      }
                       role="menuitem"
                       onClick={() => setIsServicesDesktopOpen(false)}
                     >
@@ -135,14 +141,14 @@ const Header = () => {
             Industries
           </NavLink>
           <NavLink
-            to="/case-studies"
+            to="/products"
             className={({ isActive }) =>
               `relative text-sm font-medium transition-colors duration-300 lg:text-base ${
                 isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
               }`
             }
           >
-            Case studies
+            Products
           </NavLink>
           <NavLink
             to="/faq"
@@ -278,7 +284,13 @@ const Header = () => {
                       <NavLink
                         key={s.id}
                         to={s.route}
-                        className="text-sm font-medium text-black/80 transition-colors duration-300 hover:text-brand-blue dark:text-white/80 dark:hover:text-brand-blue"
+                        className={({ isActive }) =>
+                          `text-sm font-medium transition-colors duration-300 ${
+                            isActive
+                              ? 'text-brand-blue font-semibold'
+                              : 'text-black/80 hover:text-brand-blue dark:text-white/80 dark:hover:text-brand-blue'
+                          }`
+                        }
                         onClick={() => {
                           setIsMenuOpen(false);
                           setIsServicesMobileOpen(false);
@@ -302,7 +314,7 @@ const Header = () => {
                 Industries
               </NavLink>
               <NavLink
-                to="/case-studies"
+                to="/products"
                 className={({ isActive }) =>
                   `text-base font-medium transition-colors duration-300 ${
                     isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
@@ -310,7 +322,7 @@ const Header = () => {
                 }
                 onClick={() => setIsMenuOpen(false)}
               >
-                Case studies
+                Products
               </NavLink>
               <NavLink
                 to="/faq"

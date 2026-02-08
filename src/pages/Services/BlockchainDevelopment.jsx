@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import BeforeFooter from '../../components/common/BeforeFooter';
+import DevelopmentProcess from '../../components/common/DevelopmentProcess';
 
-import heroImg from '../../assets/services images/BlockchainDevimages/blockchainDev-Hero.png';
+import heroImg from '../../assets/services images/BlockchainDevimages/hero.png';
 import solution1Img from '../../assets/services images/BlockchainDevimages/CustomBlockchainApplications.png';
 import solution2Img from '../../assets/services images/BlockchainDevimages/PrivateConsortiumBlockchainNetworks.png';
 import solution3Img from '../../assets/services images/BlockchainDevimages/TokenizationDigitalAsset.png';
@@ -159,7 +160,7 @@ const BlockchainDevelopment = () => {
           {/* Right Side - Hero Graphic */}
           <div className="flex w-full items-center justify-center">
             <div className="w-full max-w-[560px]">
-              <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-colors duration-300 dark:border-white/20 dark:bg-white/[0.04]">
+              <div className="overflow-hidden rounded-3xl duration-300 ">
                 <img src={heroImg} alt="Blockchain development" className="h-full w-full object-cover" />
               </div>
             </div>
@@ -380,65 +381,21 @@ const BlockchainDevelopment = () => {
       </section>
 
       {/* Development Process Section */}
-      <section className="w-full bg-white py-8 transition-colors duration-300 dark:bg-black sm:py-10">
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:pl-[3rem] lg:pr-[3rem]">
-          <div className="mb-12 text-center">
-            <h2 className="font-heading text-[38px] font-bold uppercase leading-[1.1] tracking-tight sm:text-[52px] md:text-[60px]">
-              <span className="text-black dark:text-white">DEVELOPMENT </span>
-              <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">PROCESS</span>
-            </h2>
-          </div>
-
-          {/* Desktop/Tablet: diagram layout | Mobile: stacked */}
-          <div className="relative mx-auto max-w-[1180px] overflow-x-clip md:min-h-[560px]">
-            {/* Center Graphic (circle) */}
-            <div className="pointer-events-none absolute left-1/2 z-0 hidden h-[280px] w-[280px] -translate-x-1/2 items-center justify-center rounded-full border border-brand-blue/25 bg-white/80 shadow-[0_18px_55px_rgba(0,0,0,0.12)] backdrop-blur-[2px] transition-colors duration-300 dark:border-white/25 dark:bg-black/40 dark:shadow-[0_18px_60px_rgba(0,0,0,0.65)] md:top-[100px] md:flex">
-              <div className="absolute inset-6 rounded-full " />
-              <div className="absolute inset-12 rounded-full " />
-              <div className="relative z-10 h-[320px] w-[320px] overflow-hidden rounded-full">
-                <img
-                  src={developmentProcessImg}
-                  alt="Development process"
-                  className="h-full w-full object-contain"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            {[
-              { n: '1', t: 'Requirement Analysis & Architecture Design', pos: 'md:left-1/2 md:-top-4 md:-translate-x-1/2' },
-              { n: '2', t: 'UI/UX Engineering', pos: 'md:right-0 md:top-[95px]' },
-              { n: '3', t: 'Smart Contract Development', pos: 'md:right-0 md:top-[220px]' },
-              { n: '4', t: 'Backend & Node Setup', pos: 'md:right-0 md:top-[350px]' },
-              { n: '5', t: 'Integration (APIs, Oracles, Wallets)', pos: 'md:left-1/2 md:bottom-[20px] md:-translate-x-1/2' },
-              { n: '6', t: 'Security Testing & Audits', pos: 'md:left-0 md:top-[350px]' },
-              { n: '7', t: 'Deployment on Testnet/Mainnet', pos: 'md:left-0 md:top-[220px]' },
-              { n: '8', t: 'Post-Launch Scaling & Support', pos: 'md:left-0 md:top-[95px]' },
-            ].map((step, idx) => (
-              <div
-                key={idx}
-                className={`relative mb-4 flex items-center justify-start md:absolute md:mb-0 ${step.pos}`}
-              >
-                <div
-                  className={`relative z-10 flex w-full max-w-[460px] items-center gap-4 rounded-[10px] border border-brand-blue/20 bg-white px-5 py-4 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/30 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:shadow-[0_10px_30px_rgba(0,0,0,0.6)] ${step.n === '2' || step.n === '3' || step.n === '4'
-                    ? 'md:w-[420px]'
-                    : step.n === '7' || step.n === '8'
-                      ? 'md:w-[400px]'
-                      : 'md:w-[460px]'
-                    } ${step.n === '4' || step.n === '6' ? 'pt-3 pb-3' : ''}`}
-                >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-brand-blue bg-white text-lg font-bold text-black">
-                    {step.n}
-                  </div>
-                  <div className="font-sans text-sm font-semibold text-brand-blue transition-colors duration-300 dark:text-white sm:text-base">
-                    {step.t}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <DevelopmentProcess
+        title="DEVELOPMENT PROCESS"
+        titlePrefix="DEVELOPMENT"
+        steps={[
+          { no: 1, title: 'Requirement Analysis & Architecture Design' },
+          { no: 2, title: 'UI/UX Engineering' },
+          { no: 3, title: 'Smart Contract Development' },
+          { no: 4, title: 'Backend & Node Setup' },
+          { no: 5, title: 'Integration (APIs, Oracles, Wallets)' },
+          { no: 6, title: 'Security Testing & Audits' },
+          { no: 7, title: 'Deployment on Testnet/Mainnet' },
+          { no: 8, title: 'Post-Launch Scaling & Support' },
+        ]}
+        centerImage={developmentProcessImg}
+      />
 
       <BeforeFooter
         title="Book Your Free Blockchain Consultation Today"

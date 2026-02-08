@@ -1,6 +1,7 @@
 import heroImg from '../../assets/services images/SmartContractDevimages/SmartContractDev-hero.png';
 import securityStandardsImg from '../../assets/services images/SmartContractDevimages/securityStandards.png';
 import devTestingProcessImg from '../../assets/services images/SmartContractDevimages/DevTestingProcess.png';
+import DevelopmentProcess from '../../components/common/DevelopmentProcess';
 
 import erc20Img from '../../assets/services images/SmartContractDevimages/ERC20_BEP20_SPL_Tokens.png';
 import erc721Img from '../../assets/services images/SmartContractDevimages/ERC721_ERC1155NFTs.png';
@@ -210,60 +211,12 @@ const SmartContractDevelopment = () => {
       </section>
 
       {/* Section 4: Development & Testing Process */}
-      <section className="w-full bg-white py-8 transition-colors duration-300 dark:bg-black sm:py-10">
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="mb-12 text-center">
-            <h2 className="font-heading text-[40px] font-bold uppercase leading-[1.08] tracking-tight transition-colors duration-300 sm:text-[52px] lg:text-[68px]">
-              <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">DEVELOPMENT &amp; </span>
-              <span className="text-black dark:text-white">TESTING PROCESS</span>
-            </h2>
-          </div>
-
-          {/* Mobile layout */}
-          <div className="mt-10 flex flex-col gap-4 lg:hidden">
-            {devTestingSteps.map((s) => (
-              <div
-                key={s.n}
-                className="flex items-center gap-4 rounded-xl border border-[#c8d7e4] bg-white px-5 py-4 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000]"
-              >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-brand-blue bg-white text-lg font-bold text-black">
-                  {s.n}
-                </div>
-                <p className="font-sans text-[16px] font-semibold text-black transition-colors duration-300 dark:text-white">
-                  {s.t}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Desktop diagram */}
-          <div className="relative mt-14 hidden min-h-[620px] overflow-x-clip lg:block">
-            {/* Center media */}
-            <div className="absolute left-1/2 top-1/2 w-[360px] -translate-x-1/2 -translate-y-1/2">
-              <div className="overflow-hidden rounded-3xl  duration-300 ">
-                <img src={devTestingProcessImg} alt="Development and testing process" className="h-auto w-full object-contain" loading="lazy" />
-              </div>
-            </div>
-
-            {devTestingSteps.map((step) => (
-              <div key={step.n} className={`absolute ${step.pos} flex items-center`}>
-                <div
-                  className={`flex ${
-                    step.n === 2 || step.n === 3 ? 'w-[440px]' : step.n === 6 || step.n === 7 ? 'w-[420px]' : 'w-[470px]'
-                  } items-center gap-4 rounded-xl border border-[#c8d7e4] bg-white pl-4 pr-3 py-3 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300 dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-[#000000] dark:shadow-[0_10px_30px_rgba(0,0,0,0.55)]`}
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-brand-blue bg-white text-lg font-bold text-black">
-                    {step.n}
-                  </div>
-                  <p className="font-sans text-[17px] font-semibold text-black transition-colors duration-300 dark:text-white">
-                    {step.t}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <DevelopmentProcess
+        title="DEVELOPMENT & TESTING PROCESS"
+        titlePrefix="DEVELOPMENT & TESTING"
+        steps={devTestingSteps.map(s => ({ no: s.n, title: s.t }))}
+        centerImage={devTestingProcessImg}
+      />
 
       {/* Section 5: Blockchain Compatibility */}
       <section className="w-full bg-white pt-6 pb-16 transition-colors duration-300 dark:bg-black sm:pt-8 sm:pb-20">

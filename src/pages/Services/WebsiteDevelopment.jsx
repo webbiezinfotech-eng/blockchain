@@ -1,145 +1,146 @@
-import heroImg from '../../assets/services images/AIDevimages/AIDev-hero.png';
-import useCaseImg from '../../assets/services images/AIDevimages/AIusecase.png';
-import processImg from '../../assets/services images/AIDevimages/AIDevProcess.png';
+import BeforeFooter from '../../components/common/BeforeFooter';
 import DevelopmentProcess from '../../components/common/DevelopmentProcess';
 
-import iconAutomatedCustomer from '../../assets/services images/AIDevimages/icons/AutomatedCustomer.gif';
-import iconFinancialForecasting from '../../assets/services images/AIDevimages/icons/FinancialForecasting.gif';
-import iconHealthcare from '../../assets/services images/AIDevimages/icons/Healthcare.gif';
-import iconPredictiveMaintenance from '../../assets/services images/AIDevimages/icons/PredictiveMaintenance.gif';
-import iconRecommendationSystem from '../../assets/services images/AIDevimages/icons/RecommendationSystem.gif';
-import iconImageVideo from '../../assets/services images/AIDevimages/icons/imageVideo.gif';
-import iconSmartDocumentProcess from '../../assets/services images/AIDevimages/icons/SmartDocumentProcess.gif';
+// Using placeholder images - replace with actual images when available
+import heroImg from '../../assets/services images/WesbiteDevimages/hero.png';
+import second from '../../assets/services images/WesbiteDevimages/second.png';
+// Icons for use cases
+import iconEcommerce from '../../assets/services images/AIDevimages/icons/RecommendationSystem.gif';
+import iconCMS from '../../assets/services images/CustomDevimages/icons/UIUXDesign.gif';
+import iconWebApps from '../../assets/services images/CustomDevimages/icons/DiscoveryPlanning.gif';
+import iconPortfolio from '../../assets/services images/CustomDevimages/icons/Deployment.gif';
+import iconPWA from '../../assets/services images/CustomDevimages/icons/MaintenanceSupport.gif';
+import iconAPI from '../../assets/services images/DappDevimages/icons/PaymentGateways.gif';
 
-import iconCustomMachine from '../../assets/services images/AIDevimages/icons/CustomMachine.gif';
-import iconNeuralNetwork from '../../assets/services images/AIDevimages/icons/neuralnetwork.gif';
-import iconGenAISystem from '../../assets/services images/AIDevimages/icons/GenAISystem.gif';
-import iconPredictiveBehavioral from '../../assets/services images/AIDevimages/icons/PredictiveBehavioral.gif';
+// Icons for capabilities
+import iconResponsiveDesign from '../../assets/services images/CustomDevimages/icons/UIUXDesign.gif';
+import iconFrontend from '../../assets/services images/CustomDevimages/icons/DiscoveryPlanning.gif';
+import iconBackend from '../../assets/services images/CustomDevimages/icons/TestingQA.gif';
+import iconDatabase from '../../assets/services images/CustomDevimages/icons/Deployment.gif';
+import iconSEO from '../../assets/services images/CustomDevimages/icons/MaintenanceSupport.gif';
+import iconEcommerceSolution from '../../assets/services images/AIDevimages/icons/RecommendationSystem.gif';
+import iconCloudDeployment from '../../assets/services images/CustomDevimages/icons/Deployment.gif';
 
-import iconAIAutomationWorkflows from '../../assets/services images/AIDevimages/icons/AIAutomationWorkflows.gif';
-import iconComputerVision from '../../assets/services images/AIDevimages/icons/ComputerVision.gif';
-import iconNLPSolution from '../../assets/services images/AIDevimages/icons/NLPSolution.gif';
-
-const AIDevelopment = () => {
+const WebsiteDevelopment = () => {
   const useCases = [
     {
-      title: 'Automated customer service (AI agents, chatbots)',
-      icon: <img src={iconAutomatedCustomer} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
+      title: 'E-commerce platforms & online stores',
+      icon: <img src={iconEcommerce} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
     {
-      title: 'Financial forecasting & fraud detection',
-      icon: <img src={iconFinancialForecasting} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
+      title: 'Content management systems (CMS)',
+      icon: <img src={iconCMS} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
     {
-      title: 'Healthcare diagnostics & analytics',
-      icon: <img src={iconHealthcare} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
+      title: 'Web applications & dashboards',
+      icon: <img src={iconWebApps} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
     {
-      title: 'Predictive maintenance for manufacturing',
-      icon: <img src={iconPredictiveMaintenance} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
+      title: 'Portfolio & landing pages',
+      icon: <img src={iconPortfolio} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
     {
-      title: 'Recommendation systems for eCommerce',
-      icon: <img src={iconRecommendationSystem} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
+      title: 'Progressive Web Apps (PWA)',
+      icon: <img src={iconPWA} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
     {
-      title: 'Image/video processing for surveillance',
-      icon: <img src={iconImageVideo} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
-    },
-    {
-      title: 'Smart document processing (OCR, extraction)',
-      icon: <img src={iconSmartDocumentProcess} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
+      title: 'API integration & third-party services',
+      icon: <img src={iconAPI} alt="" className="h-9 w-9 object-contain" loading="lazy" />,
     },
   ];
 
   const capabilitiesTop = [
     {
-      title: 'Custom Machine Learning Models',
-      icon: <img src={iconCustomMachine} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
+      title: 'Responsive Web Design',
+      icon: <img src={iconResponsiveDesign} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
     {
-      title: 'Neural Networks & Deep Learning',
-      icon: <img src={iconNeuralNetwork} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
+      title: 'Frontend Development (React, Next.js, Vue)',
+      icon: <img src={iconFrontend} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
     {
-      title: 'GenAI Systems (LLMs, RAG, Chatbots)',
-      icon: <img src={iconGenAISystem} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
+      title: 'Backend Development (Node.js, Python, PHP)',
+      icon: <img src={iconBackend} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
     {
-      title: 'Predictive & Behavioral Analytics',
-      icon: <img src={iconPredictiveBehavioral} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
+      title: 'Database Design & Management',
+      icon: <img src={iconDatabase} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
   ];
 
   const capabilitiesBottom = [
     {
-      title: 'AI Automation Workflows',
-      icon: <img src={iconAIAutomationWorkflows} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
+      title: 'SEO Optimization & Performance',
+      icon: <img src={iconSEO} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
     {
-      title: 'Computer Vision & Image Recognition',
-      icon: <img src={iconComputerVision} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
+      title: 'E-commerce Solutions',
+      icon: <img src={iconEcommerceSolution} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
     {
-      title: 'NLP Solutions (Text, Speech, Translation)',
-      icon: <img src={iconNLPSolution} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
+      title: 'Cloud Deployment & Hosting',
+      icon: <img src={iconCloudDeployment} alt="" className="h-10 w-10 object-contain" loading="lazy" />,
     },
   ];
 
   const toolsAndFrameworks = [
-    'TensorFlow',
-    'PyTorch',
-    'LangChain',
-    'OpenAI',
-    'HuggingFace',
-    'Scikit-Learn',
-    'FastAPI',
-    'Kubernetes',
-    'AWS/GCP Azure AI Services',
+    'React.js',
+    'Next.js',
+    'Vue.js',
+    'Angular',
+    'Node.js',
+    'Express',
+    'Django',
+    'Laravel',
+    'WordPress',
+    'MongoDB',
+    'PostgreSQL',
+    'AWS',
+    'Vercel',
+    'Netlify',
   ];
 
-  const deploymentSteps = [
-    { no: 1, title: 'Requirement Analysis' },
-    { no: 2, title: 'Model Selection or Custom Model Training' },
-    { no: 3, title: 'Dataset Preparation' },
-    { no: 4, title: 'Model Integration with Apps & APIs' },
-    { no: 5, title: 'Fine-tuning & Optimization' },
-    { no: 6, title: 'Deployment (Cloud or On-Premise)' },
-    { no: 7, title: 'Continuous Monitoring' },
+  const developmentSteps = [
+    { no: 1, title: 'Requirement Analysis & Planning' },
+    { no: 2, title: 'UI/UX Design & Wireframing' },
+    { no: 3, title: 'Frontend Development' },
+    { no: 4, title: 'Backend Development & API Integration' },
+    { no: 5, title: 'Database Setup & Integration' },
+    { no: 6, title: 'Testing & Quality Assurance' },
+    { no: 7, title: 'Deployment & Launch' },
+    { no: 8, title: 'Maintenance & Support' },
   ];
 
   return (
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
-      {/* Hero Section (Figma) */}
+      {/* Hero Section */}
       <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 dark:bg-black sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             {/* Left */}
             <div>
-              <h2 className="font-heading text-[44px] font-bold uppercase leading-[1.06] tracking-tight sm:text-[56px] lg:text-[67px]" style={{ lineHeight: '89px' }}>
+              <h2 className="font-heading font-bold uppercase leading-[1.06] tracking-tight text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]" >
                 <span className="block text-black transition-colors duration-300 dark:text-white sm:whitespace-nowrap">
-                  AI &amp; MACHINE LEARNING
+                  PROFESSIONAL
                 </span>
                 <span className="block sm:whitespace-nowrap">
-                  <span className="text-black transition-colors duration-300 dark:text-white">DEVELOPMENT </span>
-                  <span className="text-brand-blue">FOR</span>
+                  <span className="text-black transition-colors duration-300 dark:text-white">WEBSITE </span>
+                  <span className="text-brand-blue">DEVELOPMENT</span>
                 </span>
-                <span className="block text-brand-blue sm:whitespace-nowrap">INTELLIGENT ENTERPRISE</span>
-                <span className="block text-brand-blue sm:whitespace-nowrap">AUTOMATION</span>
+                <span className="block text-brand-blue sm:whitespace-nowrap">FOR MODERN</span>
+                <span className="block text-brand-blue sm:whitespace-nowrap">BUSINESSES</span>
               </h2>
 
               <p className="mt-8 max-w-[720px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-lg">
-                Transform your business with custom AI systems that think, learn, and optimize processes at scale. We build
-                cutting-edge automation tools, predictive models, generative AI solutions, and neural network architectures that
-                unlock efficiency, accuracy, and new digital capabilities across your operations.
+                Build powerful, scalable, and user-friendly websites that drive business growth. We create responsive web solutions using modern technologies, ensuring optimal performance, SEO optimization, and seamless user experiences across all devices and platforms.
               </p>
             </div>
 
             {/* Right */}
             <div className="flex w-full items-center justify-center lg:justify-end">
               <div className="w-full max-w-[560px]">
-                <div className="overflow-hidden rounded-3xl ">
-                  <img src={heroImg} alt="AI development" className="h-auto w-full object-contain" loading="eager" />
+                <div className="overflow-hidden rounded-3xl">
+                  <img src={heroImg} alt="Website development" className="h-auto w-full object-contain" loading="eager" />
                 </div>
               </div>
             </div>
@@ -147,12 +148,12 @@ const AIDevelopment = () => {
         </div>
       </section>
 
-      {/* AI Use Cases (Section 2) */}
+      {/* Website Use Cases (Section 2) */}
       <section className="w-full bg-white py-8 transition-colors duration-300 dark:bg-black sm:py-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="text-center">
-            <h2 className="font-heading text-[42px] font-bold uppercase tracking-tight text-black transition-colors duration-300 sm:text-[56px] lg:text-[72px] dark:text-white">
-              <span className="text-black dark:text-white">AI </span>
+            <h2 className="font-heading font-bold uppercase tracking-tight text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px] text-black transition-colors duration-300 dark:text-white">
+              <span className="text-black dark:text-white">WEBSITE </span>
               <span className="text-brand-blue">USE CASES</span>
             </h2>
           </div>
@@ -161,8 +162,8 @@ const AIDevelopment = () => {
             {/* Left Illustration */}
             <div className="flex items-center justify-center lg:justify-start">
               <div className="w-full max-w-[450px]">
-                <div className="overflow-hidden rounded-3xl  transition-colors duration-300 ">
-                  <img src={useCaseImg} alt="AI use cases" className="h-auto w-full object-contain" loading="lazy" />
+                <div className="overflow-hidden rounded-3xl transition-colors duration-300">
+                  <img src={second} alt="Website use cases" className="h-auto w-full object-contain" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -187,12 +188,12 @@ const AIDevelopment = () => {
         </div>
       </section>
 
-      {/* AI Capabilities (Section 3) */}
-      <section className="w-full bg-white  transition-colors duration-300 dark:bg-black ">
+      {/* Website Capabilities (Section 3) */}
+      <section className="w-full bg-white transition-colors duration-300 dark:bg-black">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="text-center">
-            <h2 className="font-heading text-[42px] font-bold uppercase tracking-tight text-black transition-colors duration-300 sm:text-[56px] lg:text-[72px] dark:text-white">
-              <span className="text-black dark:text-white">AI </span>
+            <h2 className="font-heading font-bold uppercase tracking-tight text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px] text-black transition-colors duration-300 dark:text-white">
+              <span className="text-black dark:text-white">WEBSITE </span>
               <span className="text-brand-blue">CAPABILITIES</span>
             </h2>
           </div>
@@ -254,14 +255,14 @@ const AIDevelopment = () => {
       <section className="w-full bg-white transition-colors duration-300 dark:bg-black sm:py-10">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="text-center">
-            <h2 className="font-heading text-[42px] font-bold uppercase tracking-tight transition-colors duration-300 sm:text-[56px] lg:text-[72px]">
+            <h2 className="font-heading font-bold uppercase tracking-tight text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px] transition-colors duration-300">
               <span className="text-brand-blue">TOOLS </span>
               <span className="text-black dark:text-white">&amp; </span>
               <span className="text-brand-blue">FRAMEWORKS</span>
             </h2>
           </div>
 
-          <div className=" mt-12 flex max-w-[1130px] flex-wrap justify-center gap-6">
+          <div className="mt-12 flex max-w-[1130px] flex-wrap justify-center gap-6">
             {toolsAndFrameworks.map((t) => (
               <div
                 key={t}
@@ -274,50 +275,27 @@ const AIDevelopment = () => {
         </div>
       </section>
 
-      {/* AI Deployment Process (Section 5 - Last) */}
+      {/* Development Process (Section 5 - Last) */}
       <DevelopmentProcess
-        title="AI DEPLOYMENT PROCESS"
-        titlePrefix="AI DEPLOYMENT"
-        steps={deploymentSteps}
-        centerImage={processImg}
+        title="DEVELOPMENT PROCESS"
+        titlePrefix="DEVELOPMENT"
+        steps={developmentSteps}
       />
 
       {/* Final CTA Section */}
-    <section
-  className="
-    w-full
-    bg-gradient-to-r
-    from-brand-blue to-[#4aa3df]
-    dark:from-[#004b8a] dark:to-[#000000]
-    py-10 sm:py-12
-    transition-colors duration-300
-  "
->
-  <div className="mx-auto max-w-layout px-4 text-center sm:px-6 md:px-10">
-    <h3 className="font-heading text-[36px] font-bold uppercase leading-tight text-white sm:text-[44px] md:text-[52px]">
-      Get a Custom AI Solution Today
-    </h3>
+      
 
-    <button
-      className="
-        mt-7 rounded-lg
-        border-2 border-white
-        bg-transparent
-        px-10 py-3
-        text-lg font-semibold
-        text-white
-        transition-all duration-300
-        hover:bg-white hover:text-black
-      "
-    >
-      Contact Now
-    </button>
-  </div>
-</section>
-
+      <BeforeFooter
+        title="Get Your Professional Website Today"
+        buttonText="Contact Now"
+        paddingClassName="py-8"
+        containerClassName="mx-auto max-w-layout px-4 text-center"
+        headingAs="h3"
+        headingClassName="font-heading text-[3rem] font-bold uppercase leading-tight text-white"
+      />
     </div>
   );
 };
 
-export default AIDevelopment;
+export default WebsiteDevelopment;
 

@@ -98,5 +98,19 @@
     route: '/services/consulting',
     path: '/services/consulting',
   },
+  {
+    id: 'website-development',
+    title: 'Website Development',
+    label: 'Website Development',
+    route: '/services/website-development',
+    path: '/services/website-development',
+  },
+  {
+    id: 'mobile-application-development',
+    title: 'Mobile Application Development',
+    label: 'Mobile Application Development',
+    route: '/services/mobile-application-development',
+    path: '/services/mobile-application-development',
+  },
 ];
 

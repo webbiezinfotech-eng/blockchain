@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import BeforeFooter from '../../components/common/BeforeFooter';
+import DevelopmentProcess from '../../components/common/DevelopmentProcess';
 
 import heroImg from '../../assets/services images/DappDevimages/DappDev-hero.png';
 import useCase1Img from '../../assets/services images/DappDevimages/DefiPlatforms.png';
@@ -222,92 +223,12 @@ useEffect(() => {
 </section>
 
       {/* Development Process */}
-      <section className="w-full bg-white py-16 transition-colors duration-300 dark:bg-black sm:py-10">
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="mb-12 text-center">
-            <h2 className="font-heading text-[40px] font-bold uppercase leading-[1.08] tracking-tight transition-colors duration-300 sm:text-[52px] lg:text-[68px]">
-              <span className="text-black dark:text-white">DEVELOPMENT </span>
-              <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">PROCESS</span>
-            </h2>
-          </div>
-
-          {/* Mobile */}
-          <div className="mt-10 flex flex-col gap-4 lg:hidden">
-            {process.map((s) => (
-              <div
-                key={s.n}
-                className="flex items-center gap-4 rounded-xl border border-[#c8d7e4] bg-white px-5 py-4 shadow-[0_10px_28px_rgba(0,0,0,0.10)]
-          dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-black"
-              >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-lg font-bold text-white shadow-[0_0_12px_rgba(0,90,255,0.6)]">
-                  {s.n}
-                </div>
-
-                <p className="font-sans text-[16px] font-semibold text-brand-blue dark:text-[#5aa9ff]">
-                  {s.t}
-                </p>
-
-              </div>
-            ))}
-          </div>
-
-          {/* Desktop Diagram */}
-          <div className="relative mt-16 hidden min-h-[640px] lg:block">
-
-            {/* Center Image */}
-            <div className="absolute left-1/2 top-1/2 w-[399px] -translate-x-1/2 -translate-y-1/2">
-              <div className="overflow-hidden rounded-3xl 
-        dark:border-white/20 dark:bg-white/[0.04]">
-                <img
-                  src={processImg}
-                  alt="Development process"
-                  className="h-auto w-full object-contain"
-                />
-              </div>
-            </div>
-
-            {/* Step Positions */}
-            {[
-              { ...process[0], pos: 'left-1/2 -translate-x-1/2 -top-2' },
-
-              // 2 – right top
-              { ...process[1], pos: 'right-0 top-[110px]' },
-
-              // 3 – right bottom
-              { ...process[2], pos: 'right-0 bottom-[200px]' },
-
-              // 4 – bottom center but a little UP
-              { ...process[3], pos: 'left-1/2 -translate-x-1/2 bottom-[80px]' },
-
-              // 5 – left bottom
-              { ...process[4], pos: 'left-0 bottom-[240px]' },
-
-              // 6 – left middle
-              { ...process[5], pos: 'left-0 top-[200px]' },
-
-              // 7 – left top (above 6)
-              { ...process[6], pos: 'left-0 top-[50px]' },
-            ].map((step) => (
-              <div key={step.n} className={`absolute ${step.pos}`}>
-                <div
-                  className="flex w-[370px] items-center gap-4 rounded-xl border border-[#c8d7e4] bg-white px-4 py-3
-            shadow-[0_10px_28px_rgba(0,0,0,0.10)]
-            dark:border-white/25 dark:bg-gradient-to-r dark:from-[#004b8a] dark:to-black dark:shadow-[0_14px_40px_rgba(0,80,200,0.45)]"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-lg font-bold text-white shadow-[0_0_14px_rgba(0,90,255,0.7)]">
-                    {step.n}
-                  </div>
-
-                  <p className="font-sans text-[17px] font-semibold text-brand-blue dark:text-[#6bb2ff]">
-                    {step.t}
-                  </p>
-
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <DevelopmentProcess
+        title="DEVELOPMENT PROCESS"
+        titlePrefix="DEVELOPMENT"
+        steps={process.map(p => ({ no: p.n, title: p.t }))}
+        centerImage={processImg}
+      />
 
       {/* Tech Stack */}
       <section className="w-full bg-white py-14 transition-colors duration-300 dark:bg-black sm:py-16">

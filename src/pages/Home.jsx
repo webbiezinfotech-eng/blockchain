@@ -275,7 +275,7 @@ const Home = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => Math.max(prev - 1, 0));
-  };
+  }; 
 
   const whyTrustCards = [
     { id: 1, title: "Specialized in Blockchain + AI Combined Solutions", description: "We uniquely blend decentralized systems with modern AI to create intelligent, next-gen architectures.", image: homeSec3_1 },
@@ -521,8 +521,8 @@ const Home = () => {
           <div className="mx-2 md:mx-20 flex w-full flex-col justify-start gap-5 leading-[1.4]">
             <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
               <div className="block w-full text-[32px] text-black transition-colors duration-300 dark:text-white sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]">BUILD THE FUTURE WITH</div>
-              <div className="block w-full text-[36px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]">WORLD-CLASS BLOCKCHAIN</div>
-              <div className="block w-full text-[36px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]">& AI DEVELOPMENT</div>
+              <div className="block w-full text-[32px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]">WORLD-CLASS BLOCKCHAIN</div>
+              <div className="block w-full text-[32px] text-brand-blue transition-colors duration-300 dark:[-webkit-text-stroke:1px_#ffffff] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[76px]">& AI DEVELOPMENT</div>
             </h1>
 
             <p className="w-full max-w-[600px] leading-[1.6] text-black transition-colors duration-300 dark:text-white/80 sm:leading-[1.65] text-xl md:text-2xl">
