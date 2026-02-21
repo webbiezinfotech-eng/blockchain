@@ -1,0 +1,354 @@
+import { useEffect, useRef, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useTheme } from '../../context/ThemeContext';
+import lightLogo from '../../assets/common/light_logo.png';
+import darkLogo from '../../assets/common/dark_logo.png';
+import { SERVICES } from '../../constants/services';
+
+const Header = () => {
+  const { theme, toggleTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesMobileOpen, setIsServicesMobileOpen] = useState(false);
+  const [isServicesDesktopOpen, setIsServicesDesktopOpen] = useState(false);
+  const servicesDesktopRef = useRef(null);
+
+  useEffect(() => {
+    const onMouseDown = (e) => {
+      if (!isServicesDesktopOpen) return;
+      if (!servicesDesktopRef.current) return;
+      if (servicesDesktopRef.current.contains(e.target)) return;
+      setIsServicesDesktopOpen(false);
+    };
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setIsServicesDesktopOpen(false);
+    };
+
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [isServicesDesktopOpen]);
+
+  return (
+    <header className="fixed left-0 right-0 top-0 z-[1000] border-b border-gray-100 bg-white/95 backdrop-blur transition-colors duration-300 dark:border-white/10 dark:bg-black/70">
+      <div className="mx-auto flex h-16 max-w-layout items-center justify-between px-4 sm:h-20 sm:px-5 md:px-10">
+        {/* Logo Section */}
+        <div className="flex items-center gap-3">
+          <NavLink to="/" className="flex items-center justify-center">
+            <img
+              src={theme === 'dark' ? darkLogo : lightLogo}
+              alt="Blockchain App Advisor Logo"
+              className="block h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-[180px] xl:w-[180px]"
+            />
+          </NavLink>
+        </div>
+
+        {/* Navigation Links */}
+        <nav className="hidden items-center gap-5 md:flex lg:gap-8">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `relative text-sm font-medium transition-colors duration-300 lg:text-base ${
+                isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+              }`
+            }
+            end
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `relative text-sm font-medium transition-colors duration-300 lg:text-base ${
+                isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+              }`
+            }
+          >
+            About
+          </NavLink>
+          <div ref={servicesDesktopRef} className="relative flex items-center">
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                `relative inline-flex items-center text-sm font-medium transition-colors duration-300 lg:text-base ${
+                  isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+                }`
+              }
+              onClick={() => setIsServicesDesktopOpen(false)}
+            >
+              Services
+            </NavLink>
+
+            <button
+              type="button"
+              className="ml-1 inline-flex h-8 w-8 items-center justify-center rounded-lg text-black/70 transition-colors duration-200 hover:bg-black/[0.04] hover:text-black dark:text-white/80 dark:hover:bg-white/[0.06] dark:hover:text-white"
+              aria-label="Toggle Services menu"
+              aria-haspopup="menu"
+              aria-expanded={isServicesDesktopOpen}
+              onClick={() => setIsServicesDesktopOpen((v) => !v)}
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 20 20"
+                fill="none"
+                className={`opacity-70 transition-transform duration-200 ${isServicesDesktopOpen ? 'rotate-180' : ''}`}
+                aria-hidden="true"
+              >
+                <path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+
+            {isServicesDesktopOpen && (
+              <div
+                className="absolute left-1/2 top-full z-[1001] mt-3 w-[760px] max-w-[92vw] -translate-x-1/2 rounded-2xl border border-black/10 bg-white p-4 shadow-xl transition-all duration-200 dark:border-white/10 dark:bg-black"
+                role="menu"
+                aria-label="Services submenu"
+              >
+                <div className="grid grid-cols-1 gap-1 lg:grid-cols-2">
+                  {SERVICES.map((s) => (
+                    <NavLink
+                      key={s.id}
+                      to={s.route}
+                      className={({ isActive }) =>
+                        `rounded-xl px-3 py-2 text-sm font-medium transition-colors ${
+                          isActive
+                            ? 'bg-brand-blue/10 text-brand-blue font-semibold dark:bg-brand-blue/20 dark:text-brand-blue'
+                            : 'text-black/80 hover:bg-black/[0.04] hover:text-black dark:text-white/80 dark:hover:bg-white/[0.06] dark:hover:text-white'
+                        }`
+                      }
+                      role="menuitem"
+                      onClick={() => setIsServicesDesktopOpen(false)}
+                    >
+                      {s.title}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          <NavLink
+            to="/industries"
+            className={({ isActive }) =>
+              `relative text-sm font-medium transition-colors duration-300 lg:text-base ${
+                isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+              }`
+            }
+          >
+            Industries
+          </NavLink>
+          <NavLink
+            to="/products"
+            className={({ isActive }) =>
+              `relative text-sm font-medium transition-colors duration-300 lg:text-base ${
+                isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+              }`
+            }
+          >
+            Products
+          </NavLink>
+          <NavLink
+            to="/faq"
+            className={({ isActive }) =>
+              `relative text-sm font-medium transition-colors duration-300 lg:text-base ${
+                isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+              }`
+            }
+          >
+            FAQ
+          </NavLink>
+        </nav>
+
+        {/* Right Side Actions */}
+        <div className="flex items-center gap-2 sm:gap-4">
+          {/* <button
+            className="group flex h-8 w-8 items-center justify-center rounded border border-brand-blue bg-transparent text-brand-blue transition-all duration-300 hover:bg-brand-blue hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black sm:h-10 sm:w-10"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? (
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className="sm:w-5 sm:h-5" aria-hidden="true">
+                <path
+                  d="M17.293 13.293C16.378 13.817 15.305 14.142 14.142 14.142C10.228 14.142 7 10.914 7 7C7 5.895 7.325 4.822 7.849 3.907C4.236 4.822 1.5 8.007 1.5 11.929C1.5 16.135 4.865 19.5 9.071 19.5C12.993 19.5 16.178 16.764 17.093 13.151L17.293 13.293Z"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className="sm:w-5 sm:h-5" aria-hidden="true">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" strokeWidth="1.5" />
+                <path
+                  d="M10 2V4M10 16V18M18 10H16M4 10H2M16.364 3.636L14.95 5.05M5.05 14.95L3.636 16.364M16.364 16.364L14.95 14.95M5.05 5.05L3.636 3.636"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            )}
+          </button> */}
+          <NavLink
+            to="/contact"
+            className="hidden items-center gap-2 rounded bg-brand-blue px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-[1px] hover:opacity-90 sm:flex sm:px-6 sm:py-[10px] sm:text-base"
+          >
+            Contact
+          </NavLink>
+          
+          {/* Mobile Menu Button */}
+          <button
+            className="flex h-8 w-8 items-center justify-center md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M18 6L6 18M6 6L18 18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M3 12H21M3 6H21M3 18H21"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="border-t border-gray-100 bg-white transition-colors duration-300 dark:border-white/10 dark:bg-black md:hidden">
+          <nav className="mx-auto max-w-layout px-4 py-4">
+            <div className="flex flex-col gap-4">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `text-base font-medium transition-colors duration-300 ${
+                    isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+                  }`
+                }
+                onClick={() => setIsMenuOpen(false)}
+                end
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `text-base font-medium transition-colors duration-300 ${
+                    isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+                  }`
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </NavLink>
+              <div>
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-between text-left text-base font-medium text-black transition-colors duration-300 hover:text-brand-blue dark:text-white dark:hover:text-brand-blue"
+                  onClick={() => setIsServicesMobileOpen((v) => !v)}
+                  aria-expanded={isServicesMobileOpen}
+                  aria-controls="mobile-services-submenu"
+                >
+                  <span>Services</span>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    className={`transition-transform duration-200 ${isServicesMobileOpen ? 'rotate-180' : ''}`}
+                    aria-hidden="true"
+                  >
+                    <path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+
+                {isServicesMobileOpen && (
+                  <div id="mobile-services-submenu" className="mt-3 flex flex-col gap-2 pl-3">
+                    {SERVICES.map((s) => (
+                      <NavLink
+                        key={s.id}
+                        to={s.route}
+                        className={({ isActive }) =>
+                          `text-sm font-medium transition-colors duration-300 ${
+                            isActive
+                              ? 'text-brand-blue font-semibold'
+                              : 'text-black/80 hover:text-brand-blue dark:text-white/80 dark:hover:text-brand-blue'
+                          }`
+                        }
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          setIsServicesMobileOpen(false);
+                        }}
+                      >
+                        {s.title}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <NavLink
+                to="/industries"
+                className={({ isActive }) =>
+                  `text-base font-medium transition-colors duration-300 ${
+                    isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+                  }`
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Industries
+              </NavLink>
+              <NavLink
+                to="/products"
+                className={({ isActive }) =>
+                  `text-base font-medium transition-colors duration-300 ${
+                    isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+                  }`
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Products
+              </NavLink>
+              <NavLink
+                to="/faq"
+                className={({ isActive }) =>
+                  `text-base font-medium transition-colors duration-300 ${
+                    isActive ? 'text-brand-blue' : 'text-black hover:text-brand-blue dark:text-white dark:hover:text-brand-blue'
+                  }`
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
+                FAQ
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className="mt-2 flex w-full items-center justify-center gap-2 rounded bg-brand-blue px-4 py-2 text-base font-medium text-white transition-all duration-300 hover:opacity-90"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </NavLink>
+            </div>
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;
+

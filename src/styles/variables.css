@@ -1,0 +1,17 @@
+:root {
+  /* Fixed Colors - These colors remain constant */
+  --color-blue: #0063B6;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  
+  /* Light Theme Variables */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --accent-color: #007bff;
+  --accent-hover: #0056b3;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+

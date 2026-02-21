@@ -1,0 +1,17 @@
+# Backend Folder Protection
+# Yeh file backend folder ko protect karega
+
+# PHP files ko execute allow karein (auto-start.php ke liye)
+<Files "auto-start.php">
+    Require all granted
+</Files>
+
+# Server.js aur other files ko protect karein
+<FilesMatch "\.(js|json|env|log)$">
+    Require all denied
+</FilesMatch>
+
+# Allow access to auto-start.php only
+<Files "auto-start.php">
+    Require all granted
+</Files>

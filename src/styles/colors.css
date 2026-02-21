@@ -1,0 +1,38 @@
+/* Fixed Color Classes - Use these classes for consistent colors across themes */
+
+.color-blue {
+  color: var(--color-blue);
+}
+
+.bg-blue {
+  background-color: var(--color-blue);
+}
+
+.border-blue {
+  border-color: var(--color-blue);
+}
+
+.color-white {
+  color: var(--color-white);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.border-white {
+  border-color: var(--color-white);
+}
+
+.color-black {
+  color: var(--color-black);
+}
+
+.bg-black {
+  background-color: var(--color-black);
+}
+
+.border-black {
+  border-color: var(--color-black);
+}
+

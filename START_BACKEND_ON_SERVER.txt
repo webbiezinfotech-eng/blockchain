@@ -1,0 +1,62 @@
+===========================================
+SERVER PAR BACKEND START KARNE KE LIYE
+===========================================
+
+Step 1: SSH Se Connect Karein
+------------------------------
+ssh user@your-server.com
+cd public_html/backend
+
+
+Step 2: Dependencies Install Karein
+------------------------------------
+npm install
+
+
+Step 3: PM2 Install Karein (Agar Nahi Hai)
+-------------------------------------------
+npm install -g pm2
+
+
+Step 4: Backend Server Start Karein
+-------------------------------------
+pm2 start server.js --name email-server
+pm2 save
+pm2 startup
+
+
+Step 5: Test Karein
+-------------------
+curl http://localhost:3001/api/health
+
+Agar "Email server is running" dikhe to backend sahi hai!
+
+
+Step 6: Apache Modules Enable Karein
+--------------------------------------
+sudo a2enmod rewrite proxy proxy_http
+sudo systemctl restart apache2
+
+
+Step 7: Website Test Karein
+----------------------------
+Browser mein website kholo aur contact form submit karo
+
+
+===========================================
+IMPORTANT COMMANDS
+===========================================
+
+Backend Status Check:
+  pm2 status
+
+Backend Logs Dekhne Ke Liye:
+  pm2 logs email-server
+
+Backend Restart:
+  pm2 restart email-server
+
+Backend Stop:
+  pm2 stop email-server
+
+===========================================
