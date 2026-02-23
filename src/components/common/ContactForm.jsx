@@ -365,8 +365,8 @@ const ContactForm = ({ variant = "default" }) => {
                 />
               </svg>
             </div>
-            <p className="font-heading text-sm sm:text-base font-normal text-black dark:text-white">
-              +91 xxxxx xxxxx
+            <p className="font-heading text-sm sm:text-lg font-normal text-black dark:text-white">
+             +1 603-833-0080
             </p>
           </div>
 
@@ -386,8 +386,8 @@ const ContactForm = ({ variant = "default" }) => {
                 />
               </svg>
             </div>
-            <p className="font-heading text-xl leading-[1.6] sm:text-base font-normal text-black dark:text-white">
-              blockchainappadvisor@gmail.com
+            <p className="font-heading text-xl leading-[1.6] sm:text-lg font-normal text-black dark:text-white">
+              ptorresinsurancepro@gmail.com
             </p>
           </div>
 
@@ -413,18 +413,22 @@ const ContactForm = ({ variant = "default" }) => {
                 />
               </svg>
             </div>
-            <p className="font-heading text-xl leading-[1.6] sm:text-base font-normal text-black dark:text-white">
-              Address...
+            <p className="font-heading text-xl leading-[2.5] sm:text-lg font-normal text-black dark:text-white">
+             Portsmouth, New Hampshire
+          170 Commerce Way, NH 03801
             </p>
           </div>
 
-          <div className="mt-6">
-            <img
-              src={map}   // 👈 apni image ka path yaha daalo
-              alt="Contact Illustration"
-              className="w-full max-w-md mx-auto lg:mx-0 object-contain"
-            />
-          </div>
+       <div className="mt-6 w-full max-w-md mx-auto lg:mx-0">
+  <iframe
+    src="https://www.google.com/maps?q=170+Commerce+Way+Portsmouth+NH+03801&output=embed"
+    width="100%"
+    height="300"
+    className="rounded-xl shadow-md"
+    loading="lazy"
+    allowFullScreen
+  ></iframe>
+</div>
         </div>
       </div>
     </div>

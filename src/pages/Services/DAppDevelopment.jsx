@@ -374,12 +374,14 @@ const monetizationIcons = [
             </h2>
           </div>
 
-          <div className="mx-auto grid max-w-[1000px] grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5 justify-items-center">
+<div className="mx-auto flex max-w-[980px] flex-wrap justify-center gap-6">
+          {/* <div className="mx-auto grid max-w-[1000px] grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5 justify-items-center"> */}
             {techStack.map((n, i) => (
               <div
                 key={n}
-                className={`flex items-center w-full justify-center rounded-xl  hover:text-brand-blue border border-brand-blue/30 bg-white px-7 py-5 text-[17px] font-semibold text-black shadow-[0_10px_24px_rgba(0,0,0,0.10)] transition-all duration-300  hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]
-                ''`}
+                // className={`flex items-center w-full justify-center rounded-xl  hover:text-brand-blue border border-brand-blue/30 bg-white px-7 py-5 text-[17px] font-semibold text-black shadow-[0_10px_24px_rgba(0,0,0,0.10)] transition-all duration-300  hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]
+                // ''`}
+                className='min-w-[120px] sm:min-w-[150px] px-5 sm:px-6 py-3 text-sm sm:text-base rounded-[10px] border border-brand-blue/25 bg-transparent text-center font-sans hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] hover:text-brand-blue font-semibold text-black shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300'
               >
                 {n}
               </div>

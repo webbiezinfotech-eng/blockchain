@@ -156,7 +156,7 @@ const Services = () => {
     <div className="bg-white transition-colors duration-300">
 
       {/* ================= HERO SECTION ================= */}
-     <section className="relative min-h-[90vh] md:min-h-[100vh] w-full overflow-hidden">
+      <section className="relative min-h-[90vh] md:min-h-[100vh] w-full overflow-hidden">
         {/* Background Video */}
         <video
           src={serviceHeroVideoLight}
@@ -191,7 +191,7 @@ const Services = () => {
                 </span>
               </h1>
 
-             <p className="mt-6 max-w-[620px] text-[17px] sm:text-xl leading-relaxed text-black/90">
+              <p className="mt-6 max-w-[620px] text-[17px] sm:text-xl leading-relaxed text-black/90">
 
                 Future-ready solutions designed to help businesses innovate, automate, and scale with intelligent Web3 and AI technologies.
               </p>
@@ -261,7 +261,7 @@ const Services = () => {
     "
                     >
                       {/* IMAGE */}
-                      <div className="rounded-xl bg-white/90 mb-4 ">
+                      <div className="rounded-xl bg-white/90 mb-10 ">
                         <img
                           src={card.image}
                           alt={card.title}
@@ -275,7 +275,7 @@ const Services = () => {
                       </h3>
 
                       {/* DESC */}
-                      <p className="mb-10 text-xl leading-[1.6] sm:text-base text-black/70">
+                      <p className="mb-10 text-xl leading-[1.6] sm:text-base text-black/70 ml-5">
                         {card.description}
                       </p>
                     </div>
@@ -288,41 +288,41 @@ const Services = () => {
 
           {/* Controls */}
 
-            <div className=" flex items-center justify-center pt-10  gap-6">
+          <div className=" flex items-center justify-center pt-10  gap-6">
 
-      {/* LEFT */}
-      <button
-        onClick={prevSlide}
-        aria-label="Previous feature"
-        className="
+            {/* LEFT */}
+            <button
+              onClick={prevSlide}
+              aria-label="Previous feature"
+              className="
           flex h-11 w-11 items-center justify-center
           rounded-full border border-black/20
           transition-all duration-300
           hover:bg-brand-blue hover:text-white
         "
-      >
-        <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
-      </button>
+            >
+              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
 
-      {/* RIGHT */}
-      <button
-        onClick={nextSlide}
-        aria-label="Next feature"
-        className="
+            {/* RIGHT */}
+            <button
+              onClick={nextSlide}
+              aria-label="Next feature"
+              className="
           flex h-11 w-11 items-center justify-center
           rounded-full border border-black/20
           transition-all duration-300
           hover:bg-brand-blue hover:text-white
         "
-      >
-        <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M9 6l6 6-6 6" />
-        </svg>
-      </button>
+            >
+              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 6l6 6-6 6" />
+              </svg>
+            </button>
 
-    </div>
+          </div>
 
         </div>
       </section>
@@ -371,7 +371,7 @@ const Services = () => {
         title="Build With The Best In Blockchain & AI"
         description="We transform ideas into secure, scalable, and high-performing digital products."
         buttonText="Get A Quote"
-        
+
         buttonLink="/contact"
       />
     </div>

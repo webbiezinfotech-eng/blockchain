@@ -1302,12 +1302,24 @@ const Home = () => {
                       disabled={currentWorkSlide === 0}
                       className="flex h-10 w-10 items-center justify-center rounded-full
       border border-black text-black transition-all duration-300
-      hover:bg-black hover:text-white
+      hover:bg-brand-blue hover:text-white
       disabled:cursor-not-allowed disabled:opacity-40
      "
                       aria-label="Previous slide"
                     >
-                      ←
+ <svg
+                        className="h-5 w-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 19l-7-7 7-7"
+                        />
+                      </svg>
                     </button>
 
                     <button
@@ -1322,12 +1334,24 @@ const Home = () => {
                       disabled={currentWorkSlide === maxWorkSlides}
                       className="flex h-10 w-10 items-center justify-center rounded-full
       border border-black text-black transition-all duration-300
-      hover:bg-black hover:text-white
+      hover:bg-brand-blue hover:text-white
       disabled:cursor-not-allowed disabled:opacity-40
      "
                       aria-label="Next slide"
                     >
-                      →
+                        <svg
+                        className="h-5 w-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
                     </button>
                   </div>
 

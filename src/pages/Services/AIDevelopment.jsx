@@ -317,7 +317,7 @@ const AIDevelopment = () => {
             {toolsAndFrameworks.map((t) => (
               <div
                 key={t}
-                className="inline-flex hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] items-center justify-center rounded-lg hover:text-brand-blue border border-[#c8d7e4] bg-white px-10 py-[10px] font-sans text-[18px] font-medium text-black shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue"
+                className="inline-flex shadow-[0_10px_28px_rgba(0,0,0,0.10)] hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] items-center justify-center rounded-lg hover:text-brand-blue border border-[#c8d7e4] bg-white px-10 py-[10px] font-sans text-[18px] font-medium text-black shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue"
               >
                 {t}
               </div>
