@@ -496,7 +496,7 @@ const CryptoExchangeDevelopment = () => {
               transition-all duration-300
               hover:-translate-y-[2px]
              hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]
-              hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)]
+              hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)] hover:text-brand-blue
             "
           >
             {n}

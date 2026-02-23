@@ -443,7 +443,7 @@ const DeFiDevelopment = () => {
         font-medium text-black shadow-[0_6px_18px_rgba(0,0,0,0.06)]
         transition-all duration-300 hover:-translate-y-[2px]
         hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]
-        justify-self-center
+        justify-self-center hover:text-brand-blue
       "
                   >
                     {n}
@@ -456,7 +456,7 @@ const DeFiDevelopment = () => {
                 {tokenIntegration.slice(4).map((n) => (
                   <div
                     key={n}
-                    className="w-full hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] max-w-[280px] rounded-[10px] border border-[#c8d7e4] bg-white px-10 py-4 text-center font-sans text-[18px] font-medium text-black shadow-[0_6px_18px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_10px_26px_rgba(0,0,0,0.10)] sm:text-[20px]"
+                    className="w-full hover:border-brand-blue hover:bg-gradient-to-b hover:text-brand-blue hover:from-white hover:to-[#cfe6fb] max-w-[280px] rounded-[10px] border border-[#c8d7e4] bg-white px-10 py-4 text-center font-sans text-[18px] font-medium text-black shadow-[0_6px_18px_rgba(0,0,0,0.06)] transition-all duration-300 sm:text-[20px]"
                   >
                     {n}
                   </div>

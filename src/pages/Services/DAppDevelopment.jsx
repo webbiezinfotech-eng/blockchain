@@ -378,7 +378,7 @@ const monetizationIcons = [
             {techStack.map((n, i) => (
               <div
                 key={n}
-                className={`flex items-center w-full justify-center rounded-xl border border-brand-blue/30 bg-white px-7 py-5 text-[17px] font-semibold text-black shadow-[0_10px_24px_rgba(0,0,0,0.10)] transition-all duration-300  hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]
+                className={`flex items-center w-full justify-center rounded-xl  hover:text-brand-blue border border-brand-blue/30 bg-white px-7 py-5 text-[17px] font-semibold text-black shadow-[0_10px_24px_rgba(0,0,0,0.10)] transition-all duration-300  hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]
                 ''`}
               >
                 {n}

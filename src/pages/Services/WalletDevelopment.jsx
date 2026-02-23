@@ -248,7 +248,7 @@ const WalletDevelopment = () => {
               <div className="grid grid-cols-3 gap-10 justify-items-start">
                 {securityTop.map((i) => (
                   <div key={i.t} className="flex flex-col items-center">
-                    <div className="flex w-[260px] min-h-[220px] flex-col items-center justify-start rounded-[10px] border border-[#c8d7e4] bg-white py-10 text-center shadow-[0_10px_28px_rgba(0,0,0,0.06)] transition-colors duration-300">
+                    <div className="flex w-[260px] min-h-[220px] flex-col items-center justify-start rounded-[10px] border border-[#c8d7e4] bg-white py-10 text-center shadow-[0_10px_28px_rgba(0,0,0,0.06)]  transition-all duration-300 hover:shadow-[0_10px_38px_rgba(0,0,0,0.20)] hover:-translate-y-2 hover:scale-[1.02]  hover:border-brand-blue">
                       <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-brand-blue/45 bg-white text-brand-blue transition-colors duration-300">
                         <img src={i.icon} alt="" className="h-10 w-10 object-contain" loading="lazy" />
                       </div>
@@ -271,7 +271,7 @@ const WalletDevelopment = () => {
                   <div key={i.t} className="flex flex-col items-center">
                     <div className="h-20 w-0 border-l-2 border-dashed border-brand-blue/60" />
 
-                    <div className="flex w-[260px] min-h-[220px] flex-col items-center justify-start rounded-[10px] border border-[#c8d7e4] bg-white py-10 text-center shadow-[0_10px_28px_rgba(0,0,0,0.06)] transition-colors duration-300">
+                    <div className="flex w-[260px] min-h-[220px] flex-col items-center justify-start rounded-[10px] border border-[#c8d7e4] bg-white py-10 text-center shadow-[0_10px_28px_rgba(0,0,0,0.06)]  transition-all duration-300 hover:shadow-[0_10px_38px_rgba(0,0,0,0.20)] hover:-translate-y-2 hover:scale-[1.02]  hover:border-brand-blue">
                       <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-brand-blue/45 bg-white text-brand-blue transition-colors duration-300">
                         <img src={i.icon} alt="" className="h-10 w-10 object-contain" loading="lazy" />
                       </div>
@@ -317,7 +317,7 @@ const WalletDevelopment = () => {
             {supportedChains.map((name) => (
               <div
                 key={name}
-                className="w-fulls hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] rounded-[10px] border border-brand-blue/25 bg-transparent px-8 py-4 text-center font-sans text-[18px] font-semibold text-black shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300"
+                className="w-fulls hover:border-brand-blue hover:text-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] rounded-[10px] border border-brand-blue/25 bg-transparent px-8 py-4 text-center font-sans text-[18px] font-semibold text-black shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300"
               >
                 {name}
               </div>

@@ -287,14 +287,7 @@ const Services = () => {
           </div>
 
           {/* Controls */}
-          {/* <div className="mt-8 flex justify-center gap-4">
-            <button onClick={prevSlide} disabled={currentSlide === 0} className="rounded-full bg-brand-blue p-3 text-white disabled:opacity-40">
-              ‹
-            </button>
-            <button onClick={nextSlide} disabled={currentSlide >= maxSlide} className="rounded-full bg-brand-blue p-3 text-white disabled:opacity-40">
-              ›
-            </button>
-          </div> */}
+
             <div className=" flex items-center justify-center pt-10  gap-6">
 
       {/* LEFT */}

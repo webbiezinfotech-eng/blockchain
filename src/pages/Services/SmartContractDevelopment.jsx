@@ -194,7 +194,7 @@ const SmartContractDevelopment = () => {
               {securityStandards.map((it) => (
                 <div
                   key={it.label}
-                  className="flex items-center gap-4 w-[35rem] rounded-xl border border-brand-blue/35 bg-white px-4 py-3 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300"
+                  className="flex items-center gap-4 w-[35rem] rounded-xl border border-brand-blue/35 bg-white px-4 py-3 shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_14px_36px_rgba(0,0,0,0.14)]"
                 >
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg  border-brand-blue/40 bg-white/80 text-brand-blue transition-colors duration-300">
                     <img src={it.icon} alt="" className="h-7 w-7 sm:h-8 sm:w-8 object-contain" loading="lazy" />
@@ -289,7 +289,7 @@ const SmartContractDevelopment = () => {
             {compatibility.map((name) => (
               <div
                 key={name}
-                className="min-w-[120px] sm:min-w-[150px] px-5 sm:px-6 py-3 text-sm sm:text-base rounded-[10px] border border-brand-blue/25 bg-transparent text-center font-sans hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] font-semibold text-black shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300"
+                className="min-w-[120px] sm:min-w-[150px] px-5 sm:px-6 py-3 text-sm sm:text-base rounded-[10px] border border-brand-blue/25 bg-transparent text-center font-sans hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] hover:text-brand-blue font-semibold text-black shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300"
               >
                 {name}
               </div>

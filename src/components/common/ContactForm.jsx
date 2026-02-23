@@ -144,7 +144,7 @@ const ContactForm = ({ variant = "default" }) => {
     <div className="mx-auto max-w-layout ">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4">
 
-        <div className="lg:col-span-7 flex flex-col gap-3 sm:gap-4">
+        <div className="lg:col-span-6 flex flex-col gap-3 sm:gap-4">
           {/* <div className="lg:col-span-6"> */}
           <div className="bg-blue-50 border border-blue-200 rounded-3xl p-6 sm:p-8 md:p-10 shadow-sm flex flex-col gap-3 sm:gap-4">
             <form
@@ -345,7 +345,7 @@ const ContactForm = ({ variant = "default" }) => {
         </div>
 
 
-        {/* <div className="hidden lg:block lg:col-span-1"></div> */}
+        <div className="hidden lg:block lg:col-span-1"></div>
 
         <div className="lg:col-span-5 flex flex-col gap-3 sm:gap-4">
 

@@ -207,7 +207,7 @@ const MobileApplicationDevelopment = () => {
               {useCases.map((item) => (
                 <div
                   key={item.title}
-                  className="flex hover:border-brand-blue hover:text-white items-center items-center gap-3 rounded-xl border border-[#c8d7e4] bg-white px-[10px] py-[10px] shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300"
+                  className="flex transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_14px_36px_rgba(0,0,0,0.14)] items-center items-center gap-3 rounded-xl border border-[#c8d7e4] bg-white px-[10px] py-[10px] shadow-[0_2px_10px_rgba(0,0,0,0.06)] "
                 >
                   <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-lg border-[#c8d7e4] bg-white transition-colors duration-300">
                     {item.icon}
@@ -238,7 +238,7 @@ const MobileApplicationDevelopment = () => {
               {capabilitiesTop.map((c) => (
                 <div
                   key={c.title}
-                  className="relative w-full max-w-[260px] rounded-[10px] border border-brand-blue/45 bg-white px-5 py-6 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue"
+                  className="relative w-full max-w-[260px] rounded-[10px] border border-brand-blue/45 bg-white px-5 py-6 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)]  transition-all duration-300 hover:shadow-[0_10px_38px_rgba(0,0,0,0.20)] hover:-translate-y-2 hover:scale-[1.02]  hover:border-brand-blue"
                 >
                   <div className="mx-auto mb-4 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-md border border-brand-blue/45 bg-white transition-colors duration-300">
                     {c.icon}
@@ -265,7 +265,7 @@ const MobileApplicationDevelopment = () => {
               {capabilitiesBottom.map((c) => (
                 <div
                   key={c.title}
-                  className="relative w-full max-w-[260px] rounded-[10px] border border-brand-blue/45 bg-white px-5 py-6 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue"
+                  className="relative w-full max-w-[260px] rounded-[10px] border border-brand-blue/45 bg-white px-5 py-6 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)]  transition-all duration-300 hover:shadow-[0_10px_38px_rgba(0,0,0,0.20)] hover:-translate-y-2 hover:scale-[1.02]  hover:border-brand-blue"
                 >
                   {/* connector up to line (desktop) */}
                   <span className="pointer-events-none hidden lg:block">
@@ -300,7 +300,7 @@ const MobileApplicationDevelopment = () => {
             {toolsAndFrameworks.map((t) => (
               <div
                 key={t}
-                className="inline-flex items-center justify-center rounded-lg border border-[#c8d7e4] bg-white px-6 sm:px-8 py-3 hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] font-sans text-[15px] sm:text-[18px] font-medium text-black shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue"
+                className="inline-flex items-center justify-center hover:text-brand-blue rounded-lg border border-[#c8d7e4] bg-white px-6 sm:px-8 py-3 hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] font-sans text-[15px] sm:text-[18px] font-medium text-black shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue"
               >
                 {t}
               </div>

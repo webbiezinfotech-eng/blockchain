@@ -1008,12 +1008,12 @@ const Home = () => {
                             <img
                               src={card.image}
                               alt={card.title || `Service ${card.id}`}
-                              className="absolute inset-0 h-full w-full object-cover"
+                              className="absolute inset-0 h-80 w-full object-cover"
                             />
-                            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_30%,rgba(0,0,0,0.7)_70%,rgba(0,0,0,0.9)_100%)]" />
+                            <div className="absolute inset-0  bg-[linear-gradient(180deg,rgba(0,0,0,0)_30%,rgba(0,0,0,0.7)_70%,rgba(0,0,0,0.9)_100%)]" />
                             {card.title && (
-                              <div className="absolute inset-x-0 bottom-0">
-                                <div className="backdrop-blur-sm bg-black/30 p-4">
+                              <div className="absolute inset-x-0  h-50 bottom-0">
+                                <div className="backdrop-blur-sm bg-black/30 p-4 h-[295px]">
                                   <div className="font-heading text-xl font-bold uppercase text-white sm:text-xl md:text-2xl lg:text-2xl mb-3 sm:mb-4 whitespace-nowrap">
                                     {card.title}
                                   </div>
@@ -1032,11 +1032,11 @@ const Home = () => {
                   </div>
 
                   {/* Carousel Navigation Buttons */}
-                  <div className="mt-6 flex items-center gap-3 sm:mt-8 lg:mt-10">
+                  <div className="mt-6 flex items-center justify-center gap-3 sm:mt-8 lg:mt-10">
                     <button
                       onClick={prevSlide}
                       disabled={currentSlide === 0}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-black/20 bg-white transition-all duration-300 hover:bg-black hover:text-white  disabled:cursor-not-allowed sm:h-12 sm:w-12"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-black/20 bg-white transition-all duration-300  hover:bg-brand-blue hover:text-white  disabled:cursor-not-allowed sm:h-12 sm:w-12"
                       aria-label="Previous slide"
                     >
                       <svg
@@ -1056,7 +1056,7 @@ const Home = () => {
                     <button
                       onClick={nextSlide}
                       disabled={currentSlide >= maxServiceSlide}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-black/20 bg-white transition-all duration-300 hover:bg-black hover:text-white  disabled:cursor-not-allowed sm:h-12 sm:w-12"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-black/20 bg-white transition-all duration-300  hover:bg-brand-blue hover:text-white  disabled:cursor-not-allowed sm:h-12 sm:w-12"
                       aria-label="Next slide"
                     >
                       <svg

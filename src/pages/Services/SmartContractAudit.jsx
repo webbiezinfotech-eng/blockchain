@@ -195,7 +195,7 @@ const SmartContractAudit = () => {
           rounded-[12px] border border-[#c8d7e4] bg-white
           hover:border-brand-blue
           px-5 py-6 text-center shadow-[0_10px_28px_rgba(0,0,0,0.06)]
-          transition-colors duration-300
+          transition-all duration-300 hover:shadow-[0_10px_38px_rgba(0,0,0,0.20)] hover:-translate-y-2 hover:scale-[1.02] 
 
           lg:${idx % 2 === 0 ? '-translate-y-6' : 'translate-y-6'}
         `}
@@ -231,7 +231,7 @@ const SmartContractAudit = () => {
           relative w-full max-w-[220px] min-h-[180px] sm:min-h-[220px]
           rounded-[12px] border border-[#c8d7e4] bg-white
           px-5 py-6 text-center shadow-[0_10px_28px_rgba(0,0,0,0.06)]
-          transition-colors duration-300
+           transition-all duration-300 hover:shadow-[0_10px_38px_rgba(0,0,0,0.20)] hover:-translate-y-2 hover:scale-[1.02]   hover:border-brand-blue
 
           lg:${idx % 2 === 0 ? 'translate-y-6' : '-translate-y-6'}
         `}
@@ -326,12 +326,10 @@ const SmartContractAudit = () => {
  flex flex-col items-center
     rounded-2xl
     border border-black/10
-    bg-[#f7f7f7]
-    
     px-6 py-8
     sm:px-8 sm:py-10
     md:px-10 md:py-12
-    
+    transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/55 hover:shadow-[0_14px_36px_rgba(0,0,0,0.12)]
     text-center
     shadow-sm
     transition-all duration-300
@@ -360,7 +358,8 @@ const SmartContractAudit = () => {
                 text-sm
                 font-medium
                 text-black/80
-                shadow-sm
+                shadow-sm hover:text-brand-blue
+                  hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]
               "
             >
               {t}
@@ -374,10 +373,10 @@ const SmartContractAudit = () => {
         flex flex-col justify-center
         rounded-2xl
         border border-black/10
-        bg-[#f7f7f7]
         px-10 py-12
         text-center
-        shadow-sm
+        shadow-sm 
+        transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/55 hover:shadow-[0_14px_36px_rgba(0,0,0,0.12)]
       ">
         <h3 className="
           font-heading
@@ -387,6 +386,7 @@ const SmartContractAudit = () => {
           tracking-wide
           text-brand-blue
           mb-8
+          
         ">
           Manual Testing
         </h3>
@@ -403,7 +403,8 @@ const SmartContractAudit = () => {
                 text-sm
                 font-medium
                 text-black/80
-                shadow-sm
+                shadow-sm hover:text-brand-blue
+                  hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]
               "
             >
               {t}

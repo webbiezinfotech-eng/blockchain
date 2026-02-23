@@ -149,7 +149,7 @@ const FAQ = () => {
 
     <div className="w-full bg-white transition-colors duration-300">
       {/* Hero */}
-      <section className="mx-auto max-w-layout px-4 sm:px-8 md:px-10 py-8 lg:py-10">
+      <section className="mx-auto  px-4 sm:px-8 md:px-10 py-8 lg:py-10">
         <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
           <div className="mx-2 max-10 flex w-full flex-col justify-center gap-5 leading-[1.2] px-12 sm:px-10 md:px-10">
             <h1 className="font-heading font-bold uppercase tracking-tight text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] text-black transition-colors duration-300">
@@ -182,7 +182,7 @@ const FAQ = () => {
         <span className="text-black">FREQUENTLY </span>
          ASKED QUESTIONS</h1>
         
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
+        <div className="mx-auto px-10 sm:px-10 md:px-16 lg:px-[5rem]">
           <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-10 gap-y-3 border-b border-black/10 pb-4 text-center transition-colors duration-300">
             {categories.map((c) => {
               const isActive = c === activeCategory;

@@ -267,7 +267,7 @@ const NFTMarketplaceDevelopment = () => {
             className="min-w-[170px] hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] rounded-[10px] border border-brand-blue bg-white px-8 py-4
               text-center font-sans text-[18px] font-semibold text-black
               shadow-[0_10px_28px_rgba(0,0,0,0.10)]
-              transition-colors duration-300"
+              transition-colors duration-300 hover:text-brand-blue"
           >
             {name}
           </div>
@@ -282,7 +282,7 @@ const NFTMarketplaceDevelopment = () => {
             className="min-w-[170px] hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] rounded-[10px] border border-brand-blue bg-white px-8 py-4
               text-center font-sans text-[18px] font-semibold text-black
               shadow-[0_10px_28px_rgba(0,0,0,0.10)]
-              transition-colors duration-300"
+              transition-colors duration-300 hover:text-brand-blue"
           >
             {name}
           </div>

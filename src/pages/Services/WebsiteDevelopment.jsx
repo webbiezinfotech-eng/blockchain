@@ -148,8 +148,8 @@ const WebsiteDevelopment = () => {
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
             {/* Left */}
-            <div className="mx-2 flex w-full flex-col justify-start gap-5 leading-[1.25]">
-              <h2 className="font-heading font-bold uppercase leading-[1.45] tracking-tight text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]" >
+            <div className="mx-2 flex w-full flex-col justify-start gap-5 leading-[1.15]">
+              <h2 className="font-heading font-bold uppercase leading-[1.45] tracking-tight text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]" >
                 <span className="block text-black transition-colors duration-300 sm:whitespace-nowrap">
                   PROFESSIONAL
                 </span>
@@ -161,7 +161,7 @@ const WebsiteDevelopment = () => {
                 <span className="block text-brand-blue sm:whitespace-nowrap">BUSINESSES</span>
               </h2>
 
-              <p className="mt-8 max-w-[720px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 sm:text-xl">
+              <p className="mt-2 max-w-[720px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 sm:text-xl">
                 Build powerful, scalable, and user-friendly websites that drive business growth. We create responsive web solutions using modern technologies, ensuring optimal performance, SEO optimization, and seamless user experiences across all devices and platforms.
               </p>
             </div>
@@ -203,7 +203,7 @@ const WebsiteDevelopment = () => {
               {useCases.map((item) => (
                 <div
                   key={item.title}
-                  className="flex items-center gap-3 hover:border-brand-blue hover:text-white items-center gap-[9px] rounded-xl border border-[#c8d7e4] bg-white px-[10px] py-[10px] shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300"
+                  className="flex items-center gap-3  items-center gap-[9px] rounded-xl border border-[#c8d7e4] bg-white px-[10px] py-[10px] shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-[1px] hover:border-brand-blue/60 hover:shadow-[0_14px_36px_rgba(0,0,0,0.14)]"
                 >
                   <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-lg  border-[#c8d7e4] bg-white transition-colors duration-300">
                     {item.icon}
@@ -234,7 +234,7 @@ const WebsiteDevelopment = () => {
               {capabilitiesTop.map((c) => (
                 <div
                   key={c.title}
-                  className="relative w-full  rounded-[10px] border border-brand-blue/45 bg-white px-5 py-6 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue"
+                  className="relative w-full  rounded-[10px] border border-brand-blue/45 bg-white px-5 py-6 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)]  transition-all duration-300 hover:shadow-[0_10px_38px_rgba(0,0,0,0.20)] hover:-translate-y-2 hover:scale-[1.02]  hover:border-brand-blue"
                 >
                   <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md border border-brand-blue/45 bg-white transition-colors duration-300">
                     {c.icon}
@@ -261,7 +261,7 @@ const WebsiteDevelopment = () => {
               {capabilitiesBottom.map((c) => (
                 <div
                   key={c.title}
-                  className="relative w-full  rounded-[10px] border border-brand-blue/45 bg-white px-5 py-6 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-brand-blue"
+                  className="relative w-full  rounded-[10px] border border-brand-blue/45 bg-white px-5 py-6 text-center shadow-[0_2px_10px_rgba(0,0,0,0.06)]  transition-all duration-300 hover:shadow-[0_10px_38px_rgba(0,0,0,0.20)] hover:-translate-y-2 hover:scale-[1.02]  hover:border-brand-blue"
                 >
                   {/* connector up to line (desktop) */}
                   <span className="pointer-events-none hidden lg:block">
@@ -296,7 +296,7 @@ const WebsiteDevelopment = () => {
             {toolsAndFrameworks.map((name) => (
               <div
                 key={name}
-                className="min-w-[140px] sm:min-w-[170px] hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] rounded-[10px] border border-brand-blue/25 bg-transparent px-8 py-4 text-center font-sans text-[18px] font-semibold text-black shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300"
+                className="min-w-[140px] sm:min-w-[170px] hover:border-brand-blue hover:text-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb] rounded-[10px] border border-brand-blue/25 bg-transparent px-8 py-4 text-center font-sans text-[18px] font-semibold text-black shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-colors duration-300"
               >
                 {name}
               </div>
