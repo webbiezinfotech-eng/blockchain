@@ -7,6 +7,7 @@ import DevelopmentProcess from '../../components/common/DevelopmentProcess';
 import heroImg from '../../assets/services images/WesbiteDevimages/hero.png';
 import second from '../../assets/services images/WesbiteDevimages/second.png';
 // Icons for use cases
+import PageHero from "../../components/common/PageHero";
 import iconEcommerce from '../../assets/services images/AIDevimages/icons/RecommendationSystem.gif';
 import iconCMS from '../../assets/services images/CustomDevimages/icons/UIUXDesign.gif';
 import iconWebApps from '../../assets/services images/CustomDevimages/icons/DiscoveryPlanning.gif';
@@ -144,10 +145,10 @@ const WebsiteDevelopment = () => {
 
     <div className="w-full bg-white transition-colors duration-300">
       {/* Hero Section */}
-      <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-16 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-8">
+      {/* <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-16 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-8">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
-            {/* Left */}
+            
             <div className="mx-2 flex w-full flex-col justify-start gap-5 leading-[1.15]">
               <h2 className="font-heading font-bold uppercase leading-[1.45] tracking-tight text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]" >
                 <span className="block text-black transition-colors duration-300 sm:whitespace-nowrap">
@@ -166,7 +167,7 @@ const WebsiteDevelopment = () => {
               </p>
             </div>
 
-            {/* Right */}
+            
             <div className="flex w-full items-center justify-center lg:justify-end">
               <div className="w-full max-w-[460px]">
                 <div className="overflow-hidden rounded-3xl">
@@ -176,7 +177,20 @@ const WebsiteDevelopment = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+<PageHero
+  titleLines={[
+    { text: "PROFESSIONAL", highlight: false },
+    { text: "WEBSITE DEVELOPMENT", highlight: false },
+    { text: "FOR MODERN", highlight: true },
+    { text: "BUSINESSES", highlight: true },
+  ]}
+  // highlightedWords={["DEVELOPMENT"]}
+  description="Build powerful, scalable, and user-friendly websites that drive business growth. We create responsive web solutions using modern technologies, ensuring optimal performance, SEO optimization, and seamless user experiences across all devices and platforms."
+  image={heroImg}
+  imageAlt="Website development"
+ 
+/>
 
       {/* Website Use Cases (Section 2) */}
       <section className="w-full bg-white py-4 transition-colors duration-300 sm:py-8">

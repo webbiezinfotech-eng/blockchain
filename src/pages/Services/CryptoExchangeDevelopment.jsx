@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { useEffect, useRef, useLayoutEffect, useState } from 'react';
 import BeforeFooter from '../../components/common/BeforeFooter';
 import ServiceCard from '../../components/common/ServiceCard';
-
+import PageHero from "../../components/common/PageHero";
 import heroImg from '../../assets/services images/CryptoExchangeDevimages/CryptoExchangeDev-hero.png';
 import cexImg from '../../assets/services images/CryptoExchangeDevimages/CentralizedExchange.png';
 import dexImg from '../../assets/services images/CryptoExchangeDevimages/DecentralizedExchange.png';
@@ -241,7 +241,7 @@ const CryptoExchangeDevelopment = () => {
   </Helmet>
     <div className="w-full bg-white transition-colors duration-300">
       {/* Hero */}
-      <section className="w-full bg-white pt-6 pb-12 transition-colors duration-300 sm:pt-12 sm:pb-14 lg:pt-16 lg:pb-16">
+      {/* <section className="w-full bg-white pt-6 pb-12 transition-colors duration-300 sm:pt-12 sm:pb-14 lg:pt-16 lg:pb-16">
         <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10  lg:grid-cols-[58%_42%] px-4 sm:px-6 md:px-10 lg:px-14">
           <div className="flex w-full flex-col gap-6">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300">
@@ -266,7 +266,7 @@ const CryptoExchangeDevelopment = () => {
 
           <div className="flex w-full items-center justify-center lg:justify-end">
             <div className="w-full max-w-[640px]">
-              {/* Hero graphic (no frame/extra box) */}
+              
               <img
                 src={heroImg}
                 alt="Crypto exchange development"
@@ -276,7 +276,19 @@ const CryptoExchangeDevelopment = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+<PageHero
+  titleLines={[
+    { text: "FULL-SCALE CRYPTO", highlight: false },
+    { text: "EXCHANGE DEVELOPMENT", highlight: false },
+    { text: "FOR", highlight: false },
+    { text: "CEX, DEX & HYBRID PLATFORMS", highlight: true },
+  ]}
+  description="Create a world-class crypto trading platform with institutional-grade performance and security. Whether centralized, decentralized, or hybrid, we develop exchanges with advanced trading engines, liquidity systems, KYC/AML modules, and multi-chain support—ready for high-volume global users."
+  image={heroImg}
+  imageAlt="Crypto exchange development"
+/>
 
       {/* Types of Exchanges */}
       <section className="w-full bg-white py-4 transition-colors duration-300 sm:py-10">

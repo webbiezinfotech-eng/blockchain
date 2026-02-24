@@ -204,9 +204,9 @@ const Home = () => {
             "Thank you! Your message has been sent successfully.",
           );
           // Show success alert
-          alert(
-            "✅ Form Submitted Successfully!\n\nThank you for contacting us. We will get back to you soon.",
-          );
+          // alert(
+          //   "✅ Form Submitted Successfully!\n\nThank you for contacting us. We will get back to you soon.",
+          // );
           // Reset form
           setFormData({
             firstName: "",
@@ -918,25 +918,26 @@ const Home = () => {
       </Helmet>
       <div className="w-full bg-white transition-colors duration-300">
         {/* Hero Section */}
-        <section className="relative w-full bg-white pt-4 pb-8 sm:pb-16 md:pt-6 md:pb-18 lg:pt-8 lg:pb-18 xl:pt-10 xl:pb-18">
-          <div className="mx-auto grid w-full grid-cols-1 items-center gap-0 lg:grid-cols-[65%_35%]">
+           <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-4 lg:pb-8">
+        <div className="mx-auto max-w-layout pl-6 sm:pl-10 md:pl-16 lg:pl-[3rem]">
+          <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             {/* Left Side - Text Content */}
-            <div className="mx-2 md:mx-20 flex w-full flex-col justify-start gap-5 leading-[1.4]">
+            <div>
               <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
                 <div
-                  className="block w-full  text-black text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
+                  className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.25] text-black text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
 "
                 >
                   BUILD THE FUTURE WITH
                 </div>
                 <div
-                  className="block w-full  text-brand-blue text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
+                  className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.25] text-brand-blue text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
 "
                 >
                   WORLD-CLASS BLOCKCHAIN
                 </div>
                 <div
-                  className="block w-full  text-brand-blue text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
+                  className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.25] text-brand-blue text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
 "
                 >
                   & AI DEVELOPMENT
@@ -954,15 +955,16 @@ const Home = () => {
                 </button>
               </Link>
             </div>
-
             {/* Right Side - Graphics Placeholder */}
-            <div className="flex w-full items-center justify-center">
+            <div className="flex w-full items-end justify-end">
               <img
                 src={heroImages.light}
                 alt="Blockchain & AI Development"
                 className="h-full w-full object-contain"
               />
             </div>
+          {/* </div> */}
+          </div>
           </div>
         </section>
 

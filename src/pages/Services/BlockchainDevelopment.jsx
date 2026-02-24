@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { useState, useEffect } from 'react';
 import BeforeFooter from '../../components/common/BeforeFooter';
 import DevelopmentProcess from '../../components/common/DevelopmentProcess';
-
+import PageHero from "../../components/common/PageHero";
 import heroImg from '../../assets/services images/BlockchainDevimages/hero.png';
 import solution1Img from '../../assets/services images/BlockchainDevimages/CustomBlockchainApplications.png';
 import solution2Img from '../../assets/services images/BlockchainDevimages/PrivateConsortiumBlockchainNetworks.png';
@@ -162,30 +162,13 @@ const BlockchainDevelopment = () => {
 
     <div className="w-full bg-white transition-colors duration-300">
       {/* Hero Section */}
-      <section className="relative w-full bg-white pt-4 pb-4 transition-colors duration-300 sm:pb-16 md:pt-6 md:pb-18 lg:pt-8 lg:pb-18 xl:pt-10 xl:pb-10">
-        {/* Background Decorative Lines */}
-        <div className="absolute z-0 opacity-10">
-          <div className="absolute left-[10%] top-0 h-full w-[1px] bg-brand-blue" />
-          <div className="absolute left-[30%] top-0 h-full w-[1px] bg-brand-blue" />
-          <div className="absolute left-[50%] top-0 h-full w-[1px] bg-brand-blue" />
-          <div className="absolute left-[70%] top-0 h-full w-[1px] bg-brand-blue" />
-          <div className="absolute left-[90%] top-0 h-full w-[1px] bg-brand-blue" />
-
-          <div className="absolute top-[20%] left-0 w-full h-[1px] bg-brand-blue" />
-          <div className="absolute top-[40%] left-0 w-full h-[1px] bg-brand-blue" />
-          <div className="absolute top-[60%] left-0 w-full h-[1px] bg-brand-blue" />
-          <div className="absolute top-[80%] left-0 w-full h-[1px] bg-brand-blue" />
-        </div>
-
-        <div className="relative z-10 mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-4 sm:px-6 md:px-10 lg:px-14 lg:grid-cols-[60%_40%] lg:pl-[3rem] lg:pr-[5rem]">
-
-          {/* Left Side - Text Content */}
-          <div className="flex w-full flex-col justify-start gap-4 leading-[1.05] sm:gap-6">
-            <h3
-              className="font-heading font-bold uppercase tracking-tight text-left
-text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
-leading-[1.1] sm:leading-[1.15]"
-              // style={{ fontSize: 'clamp(60px, 5vw, 61px)', lineHeight: 'clamp(56px, 7vw, 86px)' }}
+     {/* <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
+        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
+          <div className="grid grid-cols-1 items-center lg:grid-cols-[1.35fr_0.65fr] lg:gap-16">
+          
+          <div className="">
+            <h2
+              className="font-heading font-bold uppercase leading-[1.26] tracking-tight text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]"
             >
               <div className="block w-full transition-colors duration-300">
                 <span className="text-black">ENTERPRISE-GRADE </span>
@@ -199,9 +182,9 @@ leading-[1.1] sm:leading-[1.15]"
               <div className="block w-full text-brand-blue transition-colors duration-300">
                 INNOVATION
               </div>
-            </h3>
+            </h2>
 
-            <div className="flex flex-col gap-4 max-w-[650px]">
+            <div className="flex flex-col gap-4 mt-4 max-w-[650px]">
               <p className="font-normal text-xl leading-[1.6] text-black transition-colors duration-300 sm:text-base md:text-lg lg:text-xl">
                 Build next-generation decentralized ecosystems with secure,
                 high-performance blockchain solutions engineered for real-world use.
@@ -212,7 +195,7 @@ leading-[1.1] sm:leading-[1.15]"
             </div>
           </div>
 
-          {/* Right Side - Hero Graphic */}
+          
           <div className="flex w-full items-center justify-center mt-8 lg:mt-0">
             <div className="w-full max-w-[560px]">
               <div className="overflow-hidden rounded-3xl duration-300 ">
@@ -221,7 +204,19 @@ leading-[1.1] sm:leading-[1.15]"
             </div>
           </div>
         </div>
-      </section>
+        </div>
+      </section> */}
+      <PageHero
+  titleLines={[
+    { text: "ENTERPRISE-GRADE", highlight: false },
+    { text: "BLOCKCHAIN DEVELOPMENT", highlight: false },
+    { text: "FOR SCALABLE WEB3", highlight: true },
+    { text: "INNOVATION", highlight: true },
+  ]}
+  description="Build next-generation decentralized ecosystems with secure, high-performance blockchain solutions engineered for real-world use. From custom dApps to private enterprise networks and tokenization systems, we deliver blockchain products that are scalable, trustworthy, and built for long-term growth."
+  image={heroImg}
+  imageAlt="Blockchain development"
+/>
 
       {/* Solutions We Provide Section */}
       <section className="w-full bg-white pt-4 pb-16 transition-colors duration-300 sm:pt-8 sm:pb-10">

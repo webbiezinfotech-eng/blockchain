@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import BeforeFooter from '../../components/common/BeforeFooter';
-
+import PageHero from "../../components/common/PageHero";
 import heroImg from '../../assets/services images/BlockchainConsultingimages/ConsultingService-hero.png';
 
 // Consulting approach graphics
@@ -305,7 +305,7 @@ const BlockchainConsulting = () => {
       </Helmet>
       <div className="w-full bg-white transition-colors duration-300">
         {/* Hero */}
-        <section className="relative w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-8">
+        {/* <section className="relative w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-8">
           <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
             <div className="px-4 sm:px-8 md:px-16 lg:px-20 flex w-full flex-col justify-start gap-5 leading-[1.4]">
               <h1 className="font-heading font-bold uppercase tracking-tight transition-colors duration-300">
@@ -333,8 +333,20 @@ const BlockchainConsulting = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
+<PageHero
+  titleLines={[
+    { text: "EXPERT BLOCKCHAIN", highlight: true },
+    { text: "CONSULTING FOR SCALABLE", highlight: false },
+    { text: "SOLUTIONS", highlight: true },
+  ]}
+  // highlightedWords={["CONSULTING", "SCALABLE"]}
+  description="Unlock the full potential of blockchain with expert guidance, proven frameworks, and strategic planning. Our blockchain consulting services help businesses understand, design, and implement blockchain solutions that are scalable, secure, and commercially viable. Whether you're validating an idea, refining tokenomics, or designing a complete architecture — we help you build with confidence."
+  image={heroImg}
+  imageAlt="Blockchain consulting"
+  // imageMaxWidth="400px"
+/>
         {/* Consulting Approach */}
         <section className="w-full bg-white py-4 transition-colors duration-300 sm:py-8">
           <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">

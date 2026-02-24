@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import BeforeFooter from '../../components/common/BeforeFooter';
 import ServiceCard from '../../components/common/ServiceCard';
-
+import PageHero from "../../components/common/PageHero";
 import heroImg from '../../assets/services images/WalletDevimages/WalletDev-hero.png';
 
 import wCustodialImg from '../../assets/services images/WalletDevimages/CentralizedExchanges.png';
@@ -142,7 +142,7 @@ const WalletDevelopment = () => {
     
     <div className="w-full bg-white transition-colors duration-300">
       {/* Hero */}
-      <section className="relative w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-6">
+      {/* <section className="relative w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-6">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem] grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-[65%_35%]">
           <div className="mx-2  flex w-full flex-col justify-start gap-5 leading-[1.4]">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300">
@@ -170,7 +170,19 @@ const WalletDevelopment = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+<PageHero
+  titleLines={[
+    { text: "NEXT-GEN CRYPTO WALLET", highlight: false },
+    { text: "DEVELOPMENT FOR", highlight: false },
+    { text: "SECURE", highlight: true },
+    { text: "DIGITAL ASSET MANAGEMENT", highlight: true },
+  ]}
+  description="Build a modern wallet experience with multi-chain support, high-performance UX, secure key management, and optional compliance tooling. We ship mobile and web wallets designed for real users and real scale."
+  image={heroImg}
+  imageAlt="Wallet development"
+/>
 
       {/* Wallet Types */}
       <section className="w-full bg-white py-4 transition-colors duration-300 sm:py-8">

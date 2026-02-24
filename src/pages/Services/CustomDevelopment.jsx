@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 
 import BeforeFooter from "../../components/common/BeforeFooter";
-
+import PageHero from "../../components/common/PageHero";
 import heroImg from "../../assets/services images/CustomDevimages/CustomDev-hero.png";
 import capability1Img from "../../assets/services images/CustomDevimages/CustomSoftwareDev.png";
 import capability2Img from "../../assets/services images/CustomDevimages/WebsiteDevServices.png";
@@ -188,7 +188,7 @@ const CustomDevelopment = () => {
 
     <div className="w-full bg-white transition-colors duration-300">
       {/* Hero */}
-      <section className="relative w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-8">
+      {/* <section className="relative w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-8">
         <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
           <div className="px-4 sm:px-8 md:px-16 lg:px-20 flex w-full flex-col justify-start gap-5 leading-[1.4]">
             <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
@@ -226,7 +226,20 @@ const CustomDevelopment = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <PageHero
+  titleLines={[
+    { text: "END-TO-END", highlight: false },
+    { text: "CUSTOM DEVELOPMENT", highlight: true },
+    { text: "FOR,", highlight: false },
+    { text: "WEB MOBILE & DIGITAL PRODUCTS", highlight: true },
+  ]}
+  highlightedWords={["CUSTOM", "DIGITAL PRODUCTS"]}
+  description="We architect, design, and develop digital products that deliver transparency, automation, and seamless user experiences. Whether you need web platforms, mobile apps, or custom software, we build secure and scalable systems tailored to your goals."
+  image={heroImg}
+  imageAlt="Custom development"
+/>
 
       {/* Capabilities */}
       <section className="w-full bg-white py-4 transition-colors duration-300 sm:py-8">

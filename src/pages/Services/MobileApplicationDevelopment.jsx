@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 
 import BeforeFooter from '../../components/common/BeforeFooter';
 import DevelopmentProcess from '../../components/common/DevelopmentProcess';
-
+import PageHero from "../../components/common/PageHero";
 // Using placeholder images - replace with actual images when available
 import heroImg from '../../assets/services images/MobileAppDevimages/hero.png';
 import second from '../../assets/services images/MobileAppDevimages/second.png';
@@ -146,12 +146,13 @@ const MobileApplicationDevelopment = () => {
     />
   </Helmet>
 
+
     <div className="w-full bg-white transition-colors duration-300">
       {/* Hero Section */}
-      <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
+      {/* <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-            {/* Left */}
+            
             <div>
               <h1 className="font-heading font-bold uppercase leading-[1.26] tracking-tight text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]">
                 <span className="block text-black transition-colors duration-300 sm:whitespace-nowrap">
@@ -170,7 +171,7 @@ const MobileApplicationDevelopment = () => {
               </p>
             </div>
 
-            {/* Right */}
+            
             <div className="flex w-full items-center justify-center">
               <div className="w-full max-w-[560px]">
                 <div className="overflow-hidden rounded-3xl">
@@ -180,7 +181,21 @@ const MobileApplicationDevelopment = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <PageHero
+  titleLines={[
+    { text: "MOBILE APPLICATION", highlight: false },
+    { text: "DEVELOPMENT FOR", highlight: false },
+    { text: "IOS & ANDROID", highlight: true },
+    { text: "PLATFORMS", highlight: true },
+  ]}
+  highlightedWords={["FOR"]}
+  description="Create powerful, user-friendly mobile applications that engage users and drive business growth. We develop native and cross-platform mobile apps with cutting-edge technologies, ensuring optimal performance, seamless user experiences, and successful app store launches."
+  image={heroImg}
+  imageAlt="Mobile application development"
+  
+/>
 
       {/* Mobile App Use Cases (Section 2) */}
       <section className="w-full bg-white py-4 transition-colors duration-300 sm:py-8">

@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-
+import PageHero from "../../components/common/PageHero";
 import heroImg from '../../assets/services images/SmartContractAuditimages/SmartContractAudit-hero.png';
 import auditProcessImg from '../../assets/services images/SmartContractAuditimages/AuditProcess.png';
 import sampleReportImg from '../../assets/services images/SmartContractAuditimages/SampleAuditReport.png';
@@ -95,9 +95,9 @@ const SmartContractAudit = () => {
 
     <div className="w-full bg-white transition-colors duration-300">
       {/* Hero */}
-      <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-16 md:pt-6 md:pb-14 lg:pt-8 lg:pb-14 xl:pt-10 xl:pb-12">
+      {/* <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-16 md:pt-6 md:pb-14 lg:pt-8 lg:pb-14 xl:pt-10 xl:pb-12">
         <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
-          {/* Left */}
+          
           <div className="px-4 sm:px-6 md:px-10 lg:px-16  flex w-full flex-col justify-start gap-5 leading-[1.4]">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300">
               <span className="block  leading-[1.2]  sm:leading-[1.35] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[65px] lg:leading-[1.35]">
@@ -116,7 +116,7 @@ const SmartContractAudit = () => {
             </p>
           </div>
 
-          {/* Right (media) */}
+          
           <div className="flex w-full items-center justify-center">
             <div className="w-full max-w-[360px]">
               <div className="overflow-hidden rounded-3xl  duration-300 ">
@@ -125,7 +125,17 @@ const SmartContractAudit = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <PageHero
+  titleLines={[
+    { text: "EXPERT SMART CONTRACT", highlight: false },
+    { text: "AUDITS FOR MAXIMUM SECURITY", highlight: false },
+    { text: "& ZERO VULNERABILITIES", highlight: true },
+  ]}
+  description="Protect your Web3 ecosystem with industry-leading smart contract audits that uncover vulnerabilities before attackers do. Our auditors combine automated testing, manual code review, and real-world exploit simulation to ensure your contract is secure, optimized, and ready for mainnet deployment."
+  image={heroImg}
+  imageAlt="Smart contract audit"
+/>
 
       {/* Audit Process Overview */}
       <section className="w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pt-8 sm:pb-10">

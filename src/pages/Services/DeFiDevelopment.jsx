@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import BeforeFooter from '../../components/common/BeforeFooter';
 import { Helmet } from "react-helmet";
-
+import PageHero from "../../components/common/PageHero";
 import heroImg from '../../assets/services images/DefiDevimages/DefiDev-hero.png';
 import solution1Img from '../../assets/services images/DefiDevimages/StakingPlatforms.png';
 import solution2Img from '../../assets/services images/DefiDevimages/YieldFarming.png';
@@ -253,9 +253,9 @@ const DeFiDevelopment = () => {
 
       <div className="w-full bg-white transition-colors duration-300">
         {/* Hero */}
-        <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-8">
+        {/* <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-8">
           <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
-            {/* Left */}
+            
             <div className="mx-2 md:mx-20 flex w-full flex-col justify-start gap-5 leading-[1.4]">
               <h1 className="font-heading font-bold uppercase tracking-tight text-black">
                 <span className="block  leading-[1.2] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] lg:leading-[1.50]">
@@ -283,14 +283,26 @@ const DeFiDevelopment = () => {
               </p>
             </div>
 
-            {/* Right */}
+            
             <div className="flex w-full items-center justify-center">
               <div className="w-full max-w-[400px]">
                 <img src={heroImg} alt="DeFi development" className="h-auto w-full object-contain" loading="eager" />
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+
+<PageHero
+  titleLines={[
+    { text: "END-TO-END DEFI DEVELOPMENT", highlight: false },
+    { text: "FOR", highlight: false },
+    { text: "NEXT-GENERATION", highlight: true },
+    { text: "FINANCIAL PROTOCOLS", highlight: true },
+  ]}
+  description="Build powerful decentralized finance solutions that deliver transparency, automation, and real yield. We craft lending, staking, and launch-ready DeFi products on EVM and non-EVM networks with secure, scalable architecture."
+  image={heroImg}
+  imageAlt="DeFi development"
+/>
 
         {/* DeFi Solutions */}
         <section className="w-full bg-white py-10">

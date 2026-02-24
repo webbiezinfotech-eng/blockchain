@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-
+import PageHero from "../../components/common/PageHero";
 import heroImg from '../../assets/services images/AIDevimages/AIDev-hero.png';
 import useCaseImg from '../../assets/services images/AIDevimages/AIusecase.png';
 import processImg from '../../assets/services images/AIDevimages/AIDevProcess.png';
@@ -163,12 +163,12 @@ const AIDevelopment = () => {
 
     <div className="w-full bg-white transition-colors duration-300">
       {/* Hero Section (Figma) */}
-      <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
+      {/* <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
         <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
           <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-            {/* Left */}
+            
             <div>
-              <h2 className="font-heading font-bold uppercase tracking-tight  text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] leading-[1.1]">
+              <h2 className="font-heading font-bold uppercase tracking-tight  text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] leading-[1.26]">
                 <span className="block text-black transition-colors duration-300 sm:whitespace-nowrap">
                   AI &amp; MACHINE LEARNING
                 </span>
@@ -187,7 +187,7 @@ const AIDevelopment = () => {
               </p>
             </div>
 
-            {/* Right */}
+            
             <div className="flex w-full items-center justify-center">
               <div className="w-full max-w-[360px]">
                 <div className="overflow-hidden rounded-3xl ">
@@ -197,7 +197,18 @@ const AIDevelopment = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <PageHero
+  titleLines={[
+    { text: "AI & MACHINE LEARNING", highlight: false },
+    { text: "DEVELOPMENT FOR", highlight: false },
+    { text: "INTELLIGENT ENTERPRISE", highlight: true },
+    { text: "AUTOMATION", highlight: true },
+  ]}
+  description="Transform your business with custom AI systems that think, learn, and optimize processes at scale. We build cutting-edge automation tools, predictive models, generative AI solutions, and neural network architectures that unlock efficiency, accuracy, and new digital capabilities across your operations."
+  image={heroImg}
+  imageAlt="AI development"
+/>
 
       {/* AI Use Cases (Section 2) */}
       <section className="w-full bg-white py-8 transition-colors duration-300 sm:py-10">

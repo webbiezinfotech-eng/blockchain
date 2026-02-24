@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 
 import { useEffect, useState } from 'react';
 import BeforeFooter from '../../components/common/BeforeFooter';
-
+import PageHero from "../../components/common/PageHero";
 import heroImg from '../../assets/services images/TokenDevimages/TokenDev-hero.png';
 import tokenomicsImg from '../../assets/services images/TokenDevimages/TokenomicsSupport.png';
 
@@ -243,7 +243,7 @@ const handlePrev = () => {
 
       <div className="w-full bg-white transition-colors duration-300">
         {/* Hero */}
-        <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-10 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-12">
+        {/* <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-10 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-12">
           <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
             <div className="px-4 sm:px-6 md:px-10 lg:px-16
  flex w-full flex-col justify-start gap-5 leading-[1.4]">
@@ -271,7 +271,18 @@ const handlePrev = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+        <PageHero
+  titleLines={[
+    { text: "CUSTOM TOKEN DEVELOPMENT", highlight: false },
+    { text: "FOR", highlight: false },
+    { text: "UTILITY, GOVERNANCE", highlight: true },
+    { text: "AND DIGITAL ASSETS", highlight: true },
+  ]}
+  description="Launch your cryptocurrency with confidence. We build secure, scalable tokens for Ethereum, BNB Chain, Solana, and more—whether you’re creating a utility token, memecoin, governance asset, or stablecoin. From tokenomics to deployment, we handle the full lifecycle of token creation."
+  image={heroImg}
+  imageAlt="Token development"
+/>
 
         {/* Token Types */}
         <section className="w-full bg-white py-8 transition-colors duration-300 sm:py-4">

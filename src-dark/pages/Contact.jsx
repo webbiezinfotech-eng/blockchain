@@ -89,7 +89,7 @@ const Contact = () => {
         console.log('Form Submitted:', formData);
         setLoading(false);
         setFormData(initialFormState);
-        alert('Form submitted successfully!');
+        // alert('Form submitted successfully!');
       }, 1000);
     }
   };

@@ -96,9 +96,9 @@ const Contact = () => {
           );
           setFormData(initialFormState);
           // Show success alert
-          alert(
-            "✅ Form Submitted Successfully!\n\nThank you for contacting us. We will get back to you soon.",
-          );
+          // alert(
+          //   "✅ Form Submitted Successfully!\n\nThank you for contacting us. We will get back to you soon.",
+          // );
         } else {
           setSubmitMessage(
             result.message || "Failed to send message. Please try again.",

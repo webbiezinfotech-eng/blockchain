@@ -107,7 +107,7 @@ const ContactForm = ({ variant = "default" }) => {
       const result = await sendContactEmail(formData, "contact");
 
       if (result.success) {
-        setSubmitMessage("Form submitted successfully!");
+        // setSubmitMessage("Form submitted successfully!");
         setFormData(initialFormState);
       } else {
         setSubmitMessage("Failed to send. Try again.");

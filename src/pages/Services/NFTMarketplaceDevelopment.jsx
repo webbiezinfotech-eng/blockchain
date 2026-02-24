@@ -1,5 +1,6 @@
 
 import BeforeFooter from '../../components/common/BeforeFooter';
+import PageHero from "../../components/common/PageHero";
 import heroImg from '../../assets/services images/NFTMarkletplaceDevimages/NFTMarketplaceDev-hero.png';
 import monetizationImg from '../../assets/services images/NFTMarkletplaceDevimages/MonetizationOptions.png';
 import auditImg from '../../assets/services images/NFTMarkletplaceDevimages/AuditProcess.png';
@@ -118,7 +119,7 @@ const NFTMarketplaceDevelopment = () => {
 
     <div className="w-full bg-white transition-colors duration-300">
       {/* Hero */}
-      <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-8 xl:pb-8">
+      {/* <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-8 xl:pb-8">
         <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
           <div className="mx-4 md:mx-20 flex w-full flex-col justify-start gap-5 leading-[1.4] lg:text-left">
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300">
@@ -148,7 +149,18 @@ const NFTMarketplaceDevelopment = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <PageHero
+  titleLines={[
+    { text: "CUSTOM NFT MARKETPLACE", highlight: false },
+    { text: "DEVELOPMENT FOR", highlight: false },
+    { text: "WEB3", highlight: true },
+    { text: "CREATORS & INNOVATORS", highlight: true },
+  ]}
+  description="Launch a launch-ready NFT marketplace with minting, listings, auctions, royalties, wallets, and scalable storage. We build secure, performant platforms with a clean UX and production-grade architecture."
+  image={heroImg}
+  imageAlt="NFT marketplace development"
+/>
 
       {/* NFT Marketplace Features */}
       <section className="w-full bg-white py-4 transition-colors duration-300 sm:py-8">
