@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import  ServiceCard  from "../components/common/ServiceCard";
+import ServiceCard from "../components/common/ServiceCard";
 import ContactForm from "../components/common/ContactForm";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -918,53 +918,53 @@ const Home = () => {
       </Helmet>
       <div className="w-full bg-white transition-colors duration-300">
         {/* Hero Section */}
-           <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-4 lg:pb-8">
-        <div className="mx-auto max-w-layout pl-6 sm:pl-10 md:pl-16 lg:pl-[3rem]">
-          <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-            {/* Left Side - Text Content */}
-            <div>
-              <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
-                <div
-                  className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.25] text-black text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
+        <section className="w-full bg-white pt-8 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
+          <div className="mx-auto pl-10 sm:pl-10 md:pl-16 lg:pl-[3rem]">
+            <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-0">
+              {/* Left Side - Text Content */}
+              <div className="flex flex-col ml-10">
+                <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
+                  <div
+                    className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.15] text-black text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
 "
-                >
-                  BUILD THE FUTURE WITH
-                </div>
-                <div
-                  className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.25] text-brand-blue text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
+                  >
+                    BUILD THE FUTURE WITH
+                  </div>
+                  <div
+                    className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.15] text-brand-blue text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
 "
-                >
-                  WORLD-CLASS BLOCKCHAIN
-                </div>
-                <div
-                  className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.25] text-brand-blue text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
+                  >
+                    WORLD-CLASS BLOCKCHAIN
+                  </div>
+                  <div
+                    className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.15] text-brand-blue text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
 "
-                >
-                  & AI DEVELOPMENT
-                </div>
-              </h1>
+                  >
+                    & AI DEVELOPMENT
+                  </div>
+                </h1>
 
-              <p className="w-full max-w-[600px] leading-[1.6] text-black sm:leading-[1.65] text-xl md:text-2xl">
-                We engineer secure, scalable and intelligent blockchain
-                ecosystems –powered by advanced smart contracts, AI automation,
-                token development, and next-gen decentralized applications.
-              </p>
-              <Link to="/contact">
-                <button className="mt-2 flex w-fit items-center gap-2 rounded border border-[#4A9EFF] bg-white px-4 py-2 text-xs font-semibold text-black transition-all duration-300 hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]  hover:text-brand-blue sm:mt-4 sm:px-5 sm:py-2.5 sm:text-xl leading-[1.6] md:px-6 md:py-3 md:text-base">
-                  Get a Quote →
-                </button>
-              </Link>
+                <p className="w-full max-w-[600px] leading-[1.6] text-black sm:leading-[1.65] text-xl md:text-2xl">
+                  We engineer secure, scalable and intelligent blockchain
+                  ecosystems –powered by advanced smart contracts, AI automation,
+                  token development, and next-gen decentralized applications.
+                </p>
+                <Link to="/contact">
+                  <button className="mt-2 flex w-fit items-center gap-2 rounded border border-[#4A9EFF] bg-white px-4 py-2 text-xs font-semibold text-black transition-all duration-300 hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]  hover:text-brand-blue sm:mt-4 sm:px-5 sm:py-2.5 sm:text-xl leading-[1.6] md:px-6 md:py-3 md:text-base">
+                    Get a Quote →
+                  </button>
+                </Link>
+              </div>
+              {/* Right Side - Graphics Placeholder */}
+              <div className="flex justify-end">
+                <img
+                  src={heroImages.light}
+                  alt="Blockchain & AI Development"
+                  className="h-full w-full max-w-[500px] object-contain shadow-sm rounded-lg"
+                />
+              </div>
+              {/* </div> */}
             </div>
-            {/* Right Side - Graphics Placeholder */}
-            <div className="flex w-full items-end justify-end">
-              <img
-                src={heroImages.light}
-                alt="Blockchain & AI Development"
-                className="h-full w-full object-contain"
-              />
-            </div>
-          {/* </div> */}
-          </div>
           </div>
         </section>
 
@@ -996,7 +996,7 @@ const Home = () => {
                 <div className="relative mt-6 sm:mt-8 lg:mt-10">
                   <div className="overflow-hidden" ref={carouselRef}>
                     <div
-                      className="flex transition-transform duration-500 ease-in-out gap-4 sm:gap-6 lg:gap-8"
+                      className="flex bg-white transition-transform duration-500 ease-in-out gap-4 sm:gap-6 lg:gap-8"
                       style={{
                         transform: `translateX(calc(-${currentSlide * (100 / cardsPerView)}% - ${currentSlide * (cardsPerView === 3 ? 1.33 : cardsPerView === 2 ? 1.5 : 1)}rem))`,
                       }}
@@ -1004,7 +1004,7 @@ const Home = () => {
                       {serviceCards.map((card) => (
                         <div
                           key={card.id}
-                          className="flex-shrink-0 w-full sm:w-[90%] md:w-[48%] lg:w-[32%] min-h-[400px] sm:min-h-[450px] lg:min-h-[500px] overflow-hidden rounded-lg border border-transparent bg-black/[0.04] shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:-translate-y-1 sm:rounded-xl sm:shadow-[0_12px_40px_rgba(0,0,0,0.25)] md:rounded-2xl md:shadow-[0_18px_60px_rgba(0,0,0,0.35)]"
+                          className="flex-shrink-0 w-full sm:w-[90%] md:w-[48%] lg:w-[32%] min-h-[400px] sm:min-h-[450px] lg:min-h-[500px] overflow-hidden rounded-lg border border-transparent  transition-transform duration-300 hover:-translate-y-1 sm:rounded-xl  md:rounded-2xl "
                         >
                           <div className="relative w-full h-full overflow-hidden">
                             <img
@@ -1309,7 +1309,7 @@ const Home = () => {
      "
                       aria-label="Previous slide"
                     >
- <svg
+                      <svg
                         className="h-5 w-5"
                         fill="none"
                         stroke="currentColor"
@@ -1341,7 +1341,7 @@ const Home = () => {
      "
                       aria-label="Next slide"
                     >
-                        <svg
+                      <svg
                         className="h-5 w-5"
                         fill="none"
                         stroke="currentColor"
@@ -1364,11 +1364,10 @@ const Home = () => {
                         <button
                           key={index}
                           onClick={() => setCurrentWorkSlide(index)}
-                          className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                            currentWorkSlide === index
+                          className={`h-2 w-2 rounded-full transition-all duration-300 ${currentWorkSlide === index
                               ? "bg-brand-blue w-8"
                               : "bg-gray-300 hover:bg-gray-400"
-                          }`}
+                            }`}
                           aria-label={`Go to slide ${index + 1}`}
                         />
                       ),
@@ -1406,11 +1405,10 @@ const Home = () => {
                       <button
                         key={item.id}
                         onClick={() => setSelectedTechStack(index)}
-                        className={`rounded-lg border p-2 sm:p-2.5 text-left transition-all duration-300 ${
-                          selectedTechStack === index
+                        className={`rounded-lg border p-2 sm:p-2.5 text-left transition-all duration-300 ${selectedTechStack === index
                             ? "border-brand-blue bg-brand-blue/10 text-brand-white"
                             : "border-black/20 bg-black/[0.03] text-black hover:border-brand-blue/50"
-                        }`}
+                          }`}
                       >
                         <span className="font-heading text-xs font-normal sm:text-xl leading-[1.6] md:text-base">
                           {item.name}
@@ -1445,24 +1443,24 @@ const Home = () => {
                           </div>
                           {techStackItems[selectedTechStack].techStack.length >
                             0 && (
-                            <div className="mt-4">
-                              <h4 className="mb-3 font-heading text-base font-semibold text-brand-blue transition-all duration-500 ease-in-out sm:text-xl">
-                                Tech We Use:
-                              </h4>
-                              <ul className="flex flex-col gap-2">
-                                {techStackItems[
-                                  selectedTechStack
-                                ].techStack.map((tech, idx) => (
-                                  <li
-                                    key={idx}
-                                    className="text-xl leading-[1.6] text-black/80 transition-all duration-500 ease-in-out sm:text-base"
-                                  >
-                                    • {tech}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
+                              <div className="mt-4">
+                                <h4 className="mb-3 font-heading text-base font-semibold text-brand-blue transition-all duration-500 ease-in-out sm:text-xl">
+                                  Tech We Use:
+                                </h4>
+                                <ul className="flex flex-col gap-2">
+                                  {techStackItems[
+                                    selectedTechStack
+                                  ].techStack.map((tech, idx) => (
+                                    <li
+                                      key={idx}
+                                      className="text-xl leading-[1.6] text-black/80 transition-all duration-500 ease-in-out sm:text-base"
+                                    >
+                                      • {tech}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
                         </div>
 
                         {/* Image */}
@@ -1622,11 +1620,10 @@ const Home = () => {
                       <button
                         key={faq.id}
                         onClick={() => handleFaqClick(index)}
-                        className={`text-left rounded-lg border p-0 transition-all duration-300 ${
-                          selectedFaq === index
+                        className={`text-left rounded-lg border p-0 transition-all duration-300 ${selectedFaq === index
                             ? "border-brand-blue bg-brand-blue/10 text-brand-blue"
                             : "border-gray-200 bg-gray-50 text-black hover:border-brand-blue/50"
-                        }`}
+                          }`}
                       >
                         <div className="flex items-start gap-2.5 px-3 py-2 sm:px-4 sm:py-2.5">
                           <span className="font-normal text-sm sm:text-base md:text-xl flex-shrink-0">

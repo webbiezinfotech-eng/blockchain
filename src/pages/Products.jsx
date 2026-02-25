@@ -124,20 +124,22 @@ const Products = () => {
 
       <div className="w-full bg-white transition-colors duration-300">
         {/* Hero Section */}
-        {/* <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-16 md:pt-6 md:pb-18 lg:pt-8 lg:pb-18 xl:pt-10 xl:pb-18">
-        <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
-          <div className="mx-2 md:mx-20 flex w-full flex-col justify-start gap-5 leading-[1.4]">
+        <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
+        {/* <div className="mx-auto pl-6 sm:pl-10 md:pl-16 lg:pl-[3rem]"> */}
+          <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[58%_42%] lg:pl-[3rem] lg:pr-[5rem]">
+          <div className='flex w-full flex-col gap-6'>
             <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300">
-              <span className="block  leading-[1.2]  sm:leading-[1.50] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] lg:leading-[1.35]">
-                BLOCKCHAIN &amp; AI
+              <span className="block  leading-[1.2]  sm:leading-[1.50] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] lg:leading-[1.15]">
+                Next-Generation 
               </span>
-              <span className="block  leading-[1.2]  sm:leading-[1.50] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] lg:leading-[1.35]">
-                PRODUCTS |{' '}
-                <span className="text-brand-blue">BLOCKCHAIN APP ADVISOR</span>
+               <span className="block  leading-[1.2]  sm:leading-[1.50] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] lg:leading-[1.15] text-brand-blue">Blockchain and</span>
+              <span className="block  leading-[1.2]  sm:leading-[1.50] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] lg:leading-[1.15]">
+                 
+                <span className="text-brand-blue">AI Solutions</span>
               </span>
             </h1>
-
-            <p className="max-w-[820px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 text-[15px] sm:text-[17px] md:text-[19px]">
+{/* Next-Generation Blockchain and AI Solutions */}
+            <p className="max-w-[760px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px]s">
               Discover our comprehensive suite of blockchain and AI products designed to transform your business operations. From enterprise blockchain infrastructure to intelligent AI solutions, our products deliver measurable value, enhanced security, and scalable performance.
               <span className="mt-3 block">
                 Each product combines <span className="font-semibold text-brand-blue">Innovation</span> —{' '}
@@ -147,17 +149,21 @@ const Products = () => {
             </p>
           </div>
 
-          <div className="flex w-full items-center justify-center">
+          {/* <div className="flex w-full items-center justify-center">
             <div className="w-full max-w-[380px]">
-              <div className="overflow-hidden rounded-3xl transition-colors duration-300">
-                <img src={heroImg} alt="Products" className="h-full w-full object-cover" />
-              </div>
+              <div className="overflow-hidden rounded-3xl transition-colors duration-300"> */}
+              <div className='flex  justify-center'>
+                <img src={heroImg} alt="Products" className="h-full w-full max-w-[450px] object-cover shadow-sm rounded-lg" />
+                </div>
+              {/* </div>
             </div>
-          </div>
-        </div>
-      </section> */}
+          </div> */}
+            </div>
+        {/* </div> */}
+        
+      </section>
 
-        <PageHero
+        {/* <PageHero
           titleLines={[
             { text: "BLOCKCHAIN & AI", highlight: true },
             { text: "PRODUCTS | BLOCKCHAIN APP ADVISOR", highlight: false },
@@ -167,7 +173,7 @@ const Products = () => {
 Each product combines Innovation — Security — Scalability, ensuring enterprise-grade solutions for modern businesses."
           image={heroImg}
           imageAlt="Products"
-        />
+        /> */}
 
         {/* Category Filters */}
         <section className="w-full bg-white py-4 transition-colors duration-300 sm:py-8">

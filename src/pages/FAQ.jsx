@@ -149,46 +149,47 @@ const FAQ = () => {
 
       <div className="w-full bg-white transition-colors duration-300">
         {/* Hero */}
-        {/* <section className="mx-auto  px-4 sm:px-8 md:px-10 py-8 lg:py-10">
-        <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
-          <div className="mx-2 max-10 flex w-full flex-col justify-center gap-5 leading-[1.2] px-12 sm:px-10 md:px-10">
-            <h1 className="font-heading font-bold uppercase tracking-tight text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] text-black transition-colors duration-300">
-              <span className="block leading-[1.2]  lg:leading-[1.35]">
-                CLARITY ON <span className="text-brand-blue">BLOCKCHAIN</span>,
-              </span>
-              <span className="block leading-[1.2]  lg:leading-[1.35]">
-                <span className="text-brand-blue">AI &amp;</span>  <span className="text-brand-blue">WEB3 DEVELOPMENT</span>  
-              </span>
-            </h1>
+        <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
+          <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[58%_42%] lg:pl-[3rem] lg:pr-[5rem]">
+            {/* <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-16"> */}
 
-            <p className="max-w-[760px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px]">
-              From idea validation and MVP development to enterprise-scale deployment, we answer the most common questions founders
-              and organizations ask before building blockchain or AI-powered solutions.
-            </p>
-          </div>
+              <div className="flex w-full flex-col gap-6">
+                <h1 className="font-heading font-bold uppercase leading-[1.15] ">
+                  <div className="block w-full  transition-colors duration-300 text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
+                    <span className="text-black">CLARITY ON </span>
+                  </div>
+                  <div className="block w-full  transition-colors duration-300 text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
+                    <span className="text-brand-blue">BLOCKCHAIN </span>
+                  </div>
+                  <div className="block w-full  transition-colors duration-300 text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
+                    <span className="text-brand-blue">AI &amp; </span><span className="text-brand-blue">WEB3 DEVELOPMENT</span>
+                  </div>
+                </h1>
 
-          <div className="flex w-full items-center justify-center ">
-            <div className="w-full max-w-[360px] lg:max-w-[350px]">
-              <div className="overflow-hidden rounded-3xl transition-colors duration-300">
-                <img src={heroImg} alt="FAQ illustration" className="h-full w-full object-cover" />
+                <p className="max-w-[860px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px]">
+                  Gain complete clarity before you build. From idea validation and MVP strategy to enterprise-grade deployment, we address the most important questions founders and organizations have about blockchain, AI, and Web3 development. Our insights help you reduce risk, optimize investment, and confidently move forward with scalable, secure, and future-ready digital solutions.
+                </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
-        <PageHero
+              <div className="flex  justify-center">
+                <img src={heroImg} alt="FAQ illustration" className="h-full w-full max-w-[400px] object-cover shadow-sm rounded-lg" />
+              </div>
+            {/* </div> */}
+          </div>
+        </section>
+
+        {/* <PageHero
           titleLines={[
             { text: "CLARITY ON BLOCKCHAIN,", highlight: false },
             { text: "AI & WEB3 DEVELOPMENT", highlight: true },
           ]}
-          description="From idea validation and MVP development to enterprise-scale deployment, we answer the most common questions founders and organizations ask before building blockchain or AI-powered solutions."
+          description="Gain complete clarity before you build. From idea validation and MVP strategy to enterprise-grade deployment, we address the most important questions founders and organizations have about blockchain, AI, and Web3 development. Our insights help you reduce risk, optimize investment, and confidently move forward with scalable, secure, and future-ready digital solutions."
           image={heroImg}
           imageAlt="FAQ illustration"
-        />
+        /> */}
 
         {/* Tabs + Accordion */}
-        <section className="w-full bg-white pb-14 transition-colors duration-300 sm:pb-16"><h1 className="text-brand-blue font-heading text-center mb-5 md:mb-10 font-bold uppercase tracking-tight text-[26px] sm:text-[34px] md:text-[42px] lg:text-[68px] transition-colors duration-300">
+        <section className="w-full bg-white py-14 transition-colors duration-300 sm:pb-16"><h1 className="text-brand-blue font-heading text-center mb-5 md:mb-10 font-bold uppercase tracking-tight text-[26px] sm:text-[34px] md:text-[42px] lg:text-[68px] transition-colors duration-300">
           <span className="text-black">FREQUENTLY </span>
           ASKED QUESTIONS</h1>
 

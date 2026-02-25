@@ -147,7 +147,7 @@ const SmartContractAudit = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[42%_58%] lg:gap-14">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[50%_50%] ">
             {/* Left media */}
             <div className="flex items-center justify-center lg:justify-start">
               <div className="w-full max-w-[520px]">
@@ -158,7 +158,7 @@ const SmartContractAudit = () => {
             </div>
 
             {/* Right list */}
-            <div className="flex w-full flex-col gap-4 lg:max-w-[480px]">
+            <div className="flex w-full justify-center lg:justify-start flex-col gap-4 lg:max-w-[480px]">
               {auditProcess.map((it) => (
                 <div
                   key={it.label}
