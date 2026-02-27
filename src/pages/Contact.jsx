@@ -177,7 +177,7 @@ const Contact = () => {
 </section>
 
         {/* CTA */}
-        <section className="bg-brand-blue py-16 text-center">
+        {/* <section className="bg-brand-blue py-16 text-center">
           <h2 className="text-3xl font-bold text-white">
             Ready To Start Your Project?
           </h2>
@@ -187,7 +187,7 @@ const Contact = () => {
           >
             Contact Us
           </button>
-        </section>
+        </section> */}
       </div>
     </>
   );

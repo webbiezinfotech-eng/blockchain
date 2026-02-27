@@ -271,7 +271,7 @@ const FAQ = () => {
           </div>
         </section>
 
-        <BeforeFooter title="Still Have Questions? Contact Us" buttonText="Contact Us Today" />
+        <BeforeFooter title="Still Have Questions? Contact Us" buttonText="Contact Us Today"  buttonLink="/contact"/>
       </div>
     </>
   );

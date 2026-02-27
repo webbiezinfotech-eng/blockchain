@@ -918,11 +918,11 @@ const Home = () => {
       </Helmet>
       <div className="w-full bg-white transition-colors duration-300">
         {/* Hero Section */}
-        <section className="w-full bg-white pt-8 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
-          <div className="mx-auto pl-10 sm:pl-10 md:pl-16 lg:pl-[3rem]">
+        <section className="w-full bg-white pb-8 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
+         <div className="mx-auto text-center sm:text-left pl-0 sm:pl-10 md:pl-16 lg:pl-[3rem]">
             <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-0">
               {/* Left Side - Text Content */}
-              <div className="flex flex-col ml-10">
+              <div className="flex flex-col gap-6  ml-0 p-2 sm:ml-10">
                 <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
                   <div
                     className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.15] text-black text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
