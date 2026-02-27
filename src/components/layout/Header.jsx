@@ -38,7 +38,7 @@ const Header = () => {
             <img
               src={lightLogo}
               alt="Blockchain App Advisor Logo"
-              className="block h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-[180px] xl:w-[180px]"
+              className="block object-contain h-32 w-32 lg:h-48 lg:w-48"
             />
           </NavLink>
         </div>

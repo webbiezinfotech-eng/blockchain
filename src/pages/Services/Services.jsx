@@ -165,7 +165,7 @@ const Services = () => {
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
 
         {/* Overlay */}
@@ -191,12 +191,12 @@ const Services = () => {
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-[620px] text-[17px] sm:text-xl leading-relaxed text-black/90">
+              <p className="mt-6 max-w-[620px] text-xl md:text-2xl leading-relaxed ">
 
                 Future-ready solutions designed to help businesses innovate, automate, and scale with intelligent Web3 and AI technologies.
               </p>
 
-              <p className="mt-6 max-w-[620px] text-[17px] sm:text-xl leading-relaxed text-black/90">
+              <p className="mt-6 max-w-[620px] text-xl md:text-2xl leading-relaxed ">
 
                 Blockchain App Advisor offers an extensive suite of development services that combine decentralized architecture with advanced automation, security, and high-performance engineering. From smart contracts to AI-driven systems — our solutions empower startups, enterprises, and global innovators to thrive in the digital future.
               </p>

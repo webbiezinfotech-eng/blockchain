@@ -918,20 +918,20 @@ const Home = () => {
       </Helmet>
       <div className="w-full bg-white transition-colors duration-300">
         {/* Hero Section */}
-        <section className="w-full bg-white pb-8 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-8 lg:pb-8">
-         <div className="mx-auto text-center sm:text-left pl-0 sm:pl-10 md:pl-16 lg:pl-[3rem]">
+        <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-2 lg:pb-8">
+         <div className="mx-auto text-center sm:text-left lg:ps-12">
             <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-0">
               {/* Left Side - Text Content */}
               <div className="flex flex-col gap-6  ml-0 p-2 sm:ml-10">
                 <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
                   <div
-                    className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.15] text-black text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
+                    className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.15] text-black text-[32px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
 "
                   >
                     BUILD THE FUTURE WITH
                   </div>
                   <div
-                    className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.15] text-brand-blue text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
+                    className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.15] text-brand-blue text-[32px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
 "
                   >
                     WORLD-CLASS BLOCKCHAIN
@@ -944,7 +944,7 @@ const Home = () => {
                   </div>
                 </h1>
 
-                <p className="w-full max-w-[600px] leading-[1.6] text-black sm:leading-[1.65] text-xl md:text-2xl">
+                <p className="w-full text-start max-w-[600px] leading-[1.6] text-black sm:leading-[1.65] text-xl md:text-2xl">
                   We engineer secure, scalable and intelligent blockchain
                   ecosystems –powered by advanced smart contracts, AI automation,
                   token development, and next-gen decentralized applications.

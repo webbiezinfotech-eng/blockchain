@@ -324,7 +324,7 @@ const Industries = () => {
 
             </h1>
 
-            <p className="max-w-[760px] font-sans text-base font-medium leading-[1.45] text-black/75 transition-colors duration-300 sm:text-xl">
+            <p className="max-w-[760px] font-sans text-xl md:text-2xl leading-[1.45] transition-colors duration-300">
               Our industry-specific expertise enables organizations to accelerate digital transformation, improve operational efficiency, and unlock new revenue models through decentralized technologies and intelligent automation. </p>
             {/* <p className="max-w-[760px] font-sans text-base font-medium leading-[1.45] text-black/75 transition-colors duration-300 sm:text-xl">
               Our industry-specific expertise enables organizations to accelerate digital transformation, improve operational efficiency, and unlock new revenue models through decentralized technologies and intelligent automation. </p>

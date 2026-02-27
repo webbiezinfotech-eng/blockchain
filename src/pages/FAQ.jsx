@@ -154,19 +154,19 @@ const FAQ = () => {
             {/* <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-16"> */}
 
               <div className="flex w-full flex-col gap-6">
-                <h1 className="font-heading font-bold uppercase leading-[1.15] ">
-                  <div className="block w-full  transition-colors duration-300 text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
+                <h1 className="font-heading font-bold uppercase leading-[1.15] text-[32px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]">
+                  <div className="block w-full  transition-colors duration-300">
                     <span className="text-black">CLARITY ON </span>
                   </div>
-                  <div className="block w-full  transition-colors duration-300 text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
+                  <div className="block w-full  transition-colors duration-300">
                     <span className="text-brand-blue">BLOCKCHAIN </span>
                   </div>
-                  <div className="block w-full  transition-colors duration-300 text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
+                  <div className="block w-full  transition-colors duration-300">
                     <span className="text-brand-blue">AI &amp; </span><span className="text-brand-blue">WEB3 DEVELOPMENT</span>
                   </div>
                 </h1>
 
-                <p className="max-w-[860px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px]">
+                <p className="max-w-[860px] font-sans leading-[1.7] transition-colors duration-300 text-xl md:text-2xl">
                   Gain complete clarity before you build. From idea validation and MVP strategy to enterprise-grade deployment, we address the most important questions founders and organizations have about blockchain, AI, and Web3 development. Our insights help you reduce risk, optimize investment, and confidently move forward with scalable, secure, and future-ready digital solutions.
                 </p>
               </div>

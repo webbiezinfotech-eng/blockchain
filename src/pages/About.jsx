@@ -88,24 +88,24 @@ const About = () => {
            Main hero area with title and tagline
       ======================================== */}
      <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-2 lg:pb-8">
-        <div className="mx-auto text-center sm:text-left pl-0 sm:pl-10 md:pl-16 lg:pl-[3rem]">
+        <div className="mx-auto text-center sm:text-left lg:ps-12">
           <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-0">
           {/* Left Side - Text Content */}
           <div className="flex flex-col ml-0 p-2 sm:ml-10 gap-6">
             <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
-              <div className="block w-full  text-brand-blue transition-colors duration-300 text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
+              <div className="block w-full  text-brand-blue transition-colors duration-300 text-[32px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
                 EMPOWERING THE
               </div>
-              <div className="block w-full  transition-colors duration-300 text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
+              <div className="block w-full  transition-colors duration-300 text-[32px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
                 <span className="text-brand-blue">WORLD </span>
                 <span className="text-black">WITH</span>
               </div>
-              <div className="block w-full  text-brand-blue transition-colors duration-300 text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
+              <div className="block w-full  text-brand-blue transition-colors duration-300 text-[32px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
                 BLOCKCHAIN & AI
               </div>
           </h1>
 
-            <p className="w-full max-w-[600px] leading-[1.6] text-black transition-colors duration-300 sm:leading-[1.65] text-xl md:text-2xl">
+            <p className="text-start w-full max-w-[600px] leading-[1.6] text-black transition-colors duration-300 sm:leading-[1.65] text-xl md:text-2xl">
             We are a technology-driven company focused on building next-generation digital solutions using
   Blockchain, Artificial Intelligence, and decentralized architectures. Our mission is to help
   businesses move beyond traditional systems and adopt secure, transparent, and scalable technologies.

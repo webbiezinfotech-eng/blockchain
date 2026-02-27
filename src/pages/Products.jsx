@@ -128,18 +128,18 @@ const Products = () => {
         {/* <div className="mx-auto pl-6 sm:pl-10 md:pl-16 lg:pl-[3rem]"> */}
           <div className="mx-auto grid w-full max-w-layout grid-cols-1 items-center gap-10 px-6 sm:px-10 md:px-16 lg:grid-cols-[58%_42%] lg:pl-[3rem] lg:pr-[5rem]">
           <div className='flex w-full flex-col gap-6'>
-            <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300">
-              <span className="block  leading-[1.2]  sm:leading-[1.50] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] lg:leading-[1.15]">
+            <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300 text-[32px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]">
+              <span className="block  leading-[1.2]  sm:leading-[1.50] lg:leading-[1.15]">
                 Next-Generation 
               </span>
-               <span className="block  leading-[1.2]  sm:leading-[1.50] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] lg:leading-[1.15] text-brand-blue">Blockchain and</span>
-              <span className="block  leading-[1.2]  sm:leading-[1.50] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] lg:leading-[1.15]">
+               <span className="block  leading-[1.2]  sm:leading-[1.50] lg:leading-[1.15] text-brand-blue">Blockchain and</span>
+              <span className="block  leading-[1.2]  sm:leading-[1.50] lg:leading-[1.15]">
                  
                 <span className="text-brand-blue">AI Solutions</span>
               </span>
             </h1>
 {/* Next-Generation Blockchain and AI Solutions */}
-            <p className="max-w-[760px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px]s">
+            <p className="max-w-[760px] font-sans leading-[1.7] transition-colors duration-300 text-xl md:text-2xl">
               Discover our comprehensive suite of blockchain and AI products designed to transform your business operations. From enterprise blockchain infrastructure to intelligent AI solutions, our products deliver measurable value, enhanced security, and scalable performance.
               <span className="mt-3 block">
                 Each product combines <span className="font-semibold text-brand-blue">Innovation</span> —{' '}
@@ -182,7 +182,7 @@ Each product combines Innovation — Security — Scalability, ensuring enterpri
               <h2 className="font-heading  font-bold uppercase tracking-tight text-black text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]">
                 PRODUCT <span className="text-brand-blue">CATEGORIES</span>
               </h2>
-              <p className="mx-auto mt-3 max-w-2xl font-sans text-[19px] text-black/65">
+              <p className="mx-auto mt-3 max-w-2xl font-sans text-xl ">
                 Browse products by category
               </p>
             </div>
