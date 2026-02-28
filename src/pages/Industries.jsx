@@ -295,7 +295,7 @@ const Industries = () => {
     <title>Industries We Serve | Blockchain & AI Solutions</title>
     <meta
       name="description"
-      content="Explore how Blockchain App Advisor delivers blockchain, AI, and Web3 solutions across fintech, healthcare, supply chain, real estate, gaming, retail, and more."
+      content="Explore how BlueFalcon Technologies delivers blockchain, AI, and Web3 solutions across fintech, healthcare, supply chain, real estate, gaming, retail, and more."
     />
     <meta
       name="keywords"

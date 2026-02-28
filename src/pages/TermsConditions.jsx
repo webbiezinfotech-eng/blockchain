@@ -29,7 +29,7 @@ const TermsConditions = () => {
               </h2>
               <div className="space-y-4 font-sans text-base leading-relaxed text-black/75 transition-colors duration-300 sm:text-xl">
                 <p>
-                  By accessing and using the services provided by Blockchain App Advisor, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                  By accessing and using the services provided by BlueFalcon Technologies, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
                 </p>
               </div>
             </div>
@@ -41,7 +41,7 @@ const TermsConditions = () => {
               </h2>
               <div className="space-y-4 font-sans text-base leading-relaxed text-black/75 transition-colors duration-300 sm:text-xl">
                 <p>
-                  Blockchain App Advisor provides blockchain development, AI development, smart contract development, token development, and related consulting services. We reserve the right to modify, suspend, or discontinue any service at any time without prior notice.
+                  BlueFalcon Technologies provides blockchain development, AI development, smart contract development, token development, and related consulting services. We reserve the right to modify, suspend, or discontinue any service at any time without prior notice.
                 </p>
               </div>
             </div>
@@ -89,7 +89,7 @@ const TermsConditions = () => {
               </h2>
               <div className="space-y-4 font-sans text-base leading-relaxed text-black/75 transition-colors duration-300 sm:text-xl">
                 <p>
-                  All content, features, and functionality of our services, including but not limited to text, graphics, logos, and software, are the exclusive property of Blockchain App Advisor or its licensors and are protected by copyright, trademark, and other intellectual property laws.
+                  All content, features, and functionality of our services, including but not limited to text, graphics, logos, and software, are the exclusive property of BlueFalcon Technologies or its licensors and are protected by copyright, trademark, and other intellectual property laws.
                 </p>
                 <p>
                   Upon full payment, ownership of custom-developed code and deliverables will be transferred to the client as specified in the service agreement.
@@ -104,7 +104,7 @@ const TermsConditions = () => {
               </h2>
               <div className="space-y-4 font-sans text-base leading-relaxed text-black/75 transition-colors duration-300 sm:text-xl">
                 <p>
-                  To the maximum extent permitted by law, Blockchain App Advisor shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses.
+                  To the maximum extent permitted by law, BlueFalcon Technologies shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses.
                 </p>
               </div>
             </div>
@@ -128,7 +128,7 @@ const TermsConditions = () => {
               </h2>
               <div className="space-y-4 font-sans text-base leading-relaxed text-black/75 transition-colors duration-300 sm:text-xl">
                 <p>
-                  You agree to indemnify and hold harmless Blockchain App Advisor, its officers, directors, employees, and agents from and against any claims, damages, obligations, losses, liabilities, costs, or debt, and expenses arising from your use of our services or violation of these terms.
+                  You agree to indemnify and hold harmless BlueFalcon Technologies, its officers, directors, employees, and agents from and against any claims, damages, obligations, losses, liabilities, costs, or debt, and expenses arising from your use of our services or violation of these terms.
                 </p>
               </div>
             </div>
@@ -179,7 +179,7 @@ const TermsConditions = () => {
                   If you have any questions about these Terms and Conditions, please contact us:
                 </p>
                 <p className="font-semibold text-black">
-                  Blockchain App Advisor
+                  BlueFalcon Technologies
                 </p>
                 <p>
                   Email: legal@blockchainappadvisor.com

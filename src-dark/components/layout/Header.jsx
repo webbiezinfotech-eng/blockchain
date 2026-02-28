@@ -40,7 +40,7 @@ const Header = () => {
           <NavLink to="/" className="flex items-center justify-center">
             <img
               src={theme === 'dark' ? darkLogo : lightLogo}
-              alt="Blockchain App Advisor Logo"
+              alt="BlueFalcon Technologies Logo"
               className="block h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-[180px] xl:w-[180px]"
             />
           </NavLink>

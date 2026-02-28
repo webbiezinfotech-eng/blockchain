@@ -295,7 +295,7 @@ const Industries = () => {
     <title>Industries We Serve | Blockchain & AI Solutions</title>
     <meta
       name="description"
-      content="Explore how Blockchain App Advisor delivers blockchain, AI, and Web3 solutions across fintech, healthcare, supply chain, real estate, gaming, retail, and more."
+      content="Explore how BlueFalcon Technologies delivers blockchain, AI, and Web3 solutions across fintech, healthcare, supply chain, real estate, gaming, retail, and more."
     />
     <meta
       name="keywords"
@@ -325,7 +325,7 @@ const Industries = () => {
             </h1>
 
             <p className="max-w-[760px] font-sans text-base font-medium leading-[1.45] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-xl">
-              Blockchain App Advisor delivers future-ready blockchain, AI, and Web3 solutions tailored to the needs of modern enterprises, startups, and global brands.
+              BlueFalcon Technologies delivers future-ready blockchain, AI, and Web3 solutions tailored to the needs of modern enterprises, startups, and global brands.
             </p>
             <p className="max-w-[760px] font-sans text-base font-medium leading-[1.45] text-black/75 transition-colors duration-300 dark:text-white/75 sm:text-xl">
               Our industry-specific expertise enables organizations to accelerate digital transformation, improve operational efficiency, and unlock new revenue models through decentralized technologies and intelligent automation. </p>

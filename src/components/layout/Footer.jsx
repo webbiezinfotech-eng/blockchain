@@ -1,4 +1,4 @@
-import lightLogo from '../../assets/common/light_logo.png';
+import lightLogo from '../../assets/common/logo.png';
 import { Link, NavLink } from 'react-router-dom';
 
 
@@ -14,8 +14,8 @@ const Footer = () => {
       <div className=" lg:col-span-4 flex flex-col gap-6 text-center sm:text-left">
         <img
           src={lightLogo}
-          alt="Blockchain App Advisor Logo"
-          className="h-16 w-auto object-contain mr-[30px] lg:mr-[150px]"
+          alt="BlueFalcon Technologies Logo"
+          className="w-[65%] object-contain"
         />
 
         <p className="max-w-[420px] text-[18px] sm:text-[18px] leading-[1.8] text-gray-600 mx-auto sm:mx-0">
@@ -137,7 +137,7 @@ const Footer = () => {
     {/* ===== BOTTOM ===== */}
     <div className="border-t border-gray-200 pt-5 text-center">
       <p className="text-[12px] sm:text-[13px] text-gray-600">
-        © 2026 Blockchain App Advisor. All Rights Reserved.
+        © 2026 BlueFalcon Technologies. All Rights Reserved.
       </p>
     </div>
 

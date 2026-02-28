@@ -122,11 +122,11 @@ const Contact = () => {
   return (
     <>
   <Helmet>
-    <title>Contact Blockchain App Advisor | Blockchain & AI Experts</title>
+    <title>Contact BlueFalcon Technologies | Blockchain & AI Experts</title>
 
     <meta
       name="description"
-      content="Contact Blockchain App Advisor for blockchain development, AI solutions, Web3, DeFi, NFT marketplace, and smart contract development. Get a free consultation today."
+      content="Contact BlueFalcon Technologies for blockchain development, AI solutions, Web3, DeFi, NFT marketplace, and smart contract development. Get a free consultation today."
     />
 
     <meta
@@ -150,7 +150,7 @@ const Contact = () => {
           <h1 className="text-center font-heading text-[36px] font-extrabold uppercase text-black dark:text-white md:text-[44px] lg:text-[76px]">
             GET IN TOUCH WITH{' '}
             <span className="text-brand-blue">
-              BLOCKCHAIN APP ADVISOR
+              BlueFalcon Technologies
             </span>
           </h1>
         </div>

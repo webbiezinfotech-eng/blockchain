@@ -291,7 +291,7 @@ const BlockchainConsulting = () => {
         content="blockchain consulting, tokenomics consulting, blockchain architecture design, web3 consulting services, defi product strategy, enterprise blockchain consulting"
       />
 
-      <meta name="author" content="Blockchain App Advisor" />
+      <meta name="author" content="BlueFalcon Technologies" />
       <meta name="robots" content="index, follow" />
 
       <meta property="og:type" content="website" />

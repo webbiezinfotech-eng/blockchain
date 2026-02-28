@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="sm:col-span-2 lg:col-span-4 flex flex-col gap-6 text-center sm:text-left">
         <img
           src={theme === 'dark' ? darkLogo : lightLogo}
-          alt="Blockchain App Advisor Logo"
+          alt="BlueFalcon Technologies Logo"
           className="h-16 w-auto object-contain mx-auto sm:mx-0"
         />
 
@@ -136,7 +136,7 @@ const Footer = () => {
     {/* ===== BOTTOM ===== */}
     <div className="border-t border-gray-200 pt-5 text-center dark:border-white/20">
       <p className="text-[12px] sm:text-[13px] text-gray-600 dark:text-gray-400">
-        © 2026 Blockchain App Advisor. All Rights Reserved.
+        © 2026 BlueFalcon Technologies. All Rights Reserved.
       </p>
     </div>
 

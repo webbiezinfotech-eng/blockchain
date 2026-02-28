@@ -640,7 +640,7 @@ const Home = () => {
     {
       id: 1,
       quote:
-        "Blockcha  in App Advisor helped us design a scalable DeFi protocol from scratch. The smart contracts were flawless and the audit was incredibly detailed.",
+        "BlueFalcon Technologies helped us design a scalable DeFi protocol from scratch. The smart contracts were flawless and the audit was incredibly detailed.",
       name: "Founder, FinTech Startup",
       profileImage: profile1,
     },
@@ -703,7 +703,7 @@ const Home = () => {
   const faqs = [
     {
       id: 1,
-      question: "What services does Blockchain App Advisor provide?",
+      question: "What services does BlueFalcon Technologies provide?",
       answer:
         "We offer a complete suite of blockchain and AI development services including smart contract development, smart contract audits, token creation, DeFi platforms, DApps, NFT marketplaces, crypto exchanges, AI automation, and custom blockchain architecture.",
     },
@@ -838,7 +838,7 @@ const Home = () => {
 
         <meta
           name="description"
-          content="Blockchain App Advisor is a leading Blockchain & AI development company delivering smart contract development, token creation, DeFi platforms, NFT marketplaces, crypto exchanges, DApps, and enterprise-grade Web3 solutions."
+          content="BlueFalcon Technologies is a leading Blockchain & AI development company delivering smart contract development, token creation, DeFi platforms, NFT marketplaces, crypto exchanges, DApps, and enterprise-grade Web3 solutions."
         />
 
         <meta
@@ -846,7 +846,7 @@ const Home = () => {
           content="blockchain development company, AI development company, smart contract development, DeFi development, NFT marketplace development, crypto exchange development, token development, web3 development company"
         />
 
-        <meta name="author" content="Blockchain App Advisor" />
+        <meta name="author" content="BlueFalcon Technologies" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph */}
@@ -859,7 +859,7 @@ const Home = () => {
           content="Secure, scalable and intelligent blockchain ecosystems powered by smart contracts, AI automation and next-gen Web3 architecture."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Blockchain App Advisor" />
+        <meta property="og:site_name" content="BlueFalcon Technologies" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -1057,7 +1057,7 @@ const Home = () => {
                     </span>
                     <span className="text-black dark:text-white">TRUST </span>
                     <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">
-                      BLOCKCHAIN APP ADVISOR{" "}
+                      BlueFalcon Technologies{" "}
                     </span>
                   </div>
                 </h2>

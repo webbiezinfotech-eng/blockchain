@@ -166,7 +166,7 @@ const Products = () => {
         {/* <PageHero
           titleLines={[
             { text: "BLOCKCHAIN & AI", highlight: true },
-            { text: "PRODUCTS | BLOCKCHAIN APP ADVISOR", highlight: false },
+            { text: "PRODUCTS | BlueFalcon Technologies", highlight: false },
           ]}
           description="Discover our comprehensive suite of blockchain and AI products designed to transform your business operations. From enterprise blockchain infrastructure to intelligent AI solutions, our products deliver measurable value, enhanced security, and scalable performance.
 

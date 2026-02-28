@@ -73,7 +73,7 @@ const SmartContractAudit = () => {
     <>
   
   <Helmet>
-    <title>Smart Contract Audit Services | Blockchain App Advisor</title>
+    <title>Smart Contract Audit Services | BlueFalcon Technologies</title>
     
     <meta
       name="description"

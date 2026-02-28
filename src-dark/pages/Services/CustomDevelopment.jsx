@@ -158,7 +158,7 @@ const CustomDevelopment = () => {
       <>
     <Helmet>
       <title>
-        Custom Software, Website & Mobile App Development Company | Blockchain App Advisor
+        Custom Software, Website & Mobile App Development Company | BlueFalcon Technologies
       </title>
 
       <meta
@@ -171,7 +171,7 @@ const CustomDevelopment = () => {
         content="custom software development, website development services, mobile app development company, digital product development, web application development, scalable software solutions"
       />
 
-      <meta name="author" content="Blockchain App Advisor" />
+      <meta name="author" content="BlueFalcon Technologies" />
       <meta name="robots" content="index, follow" />
 
       <meta property="og:type" content="website" />
@@ -440,7 +440,7 @@ const CustomDevelopment = () => {
           <div>
             <h2 className="font-heading text-[28px] sm:text-[40px] lg:text-[60px] font-bold uppercase tracking-tight text-black transition-colors duration-300 dark:text-white sm:text-[48px] lg:text-[60px]">
               WHY CHOOSE{" "}
-              <span className="text-brand-blue">BLOCKCHAIN APP ADVISOR?</span>
+              <span className="text-brand-blue">BlueFalcon Technologies?</span>
             </h2>
 
             {/* CARD STYLE LIST */}

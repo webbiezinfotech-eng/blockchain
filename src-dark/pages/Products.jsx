@@ -133,7 +133,7 @@ const Products = () => {
               </span>
               <span className="block  leading-[1.2]  sm:leading-[1.50] text-[30px] sm:text-[48px] md:text-[56px] lg:text-[76px] lg:leading-[1.35]">
                 PRODUCTS |{' '}
-                <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">BLOCKCHAIN APP ADVISOR</span>
+                <span className="text-brand-blue dark:[-webkit-text-stroke:1px_#ffffff]">BlueFalcon Technologies</span>
               </span>
             </h1>
 

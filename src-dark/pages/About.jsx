@@ -45,12 +45,12 @@ const About = () => {
     <>
   <Helmet>
     <title>
-      About Us | Blockchain & AI Development Company | Blockchain App Advisor
+      About Us | Blockchain & AI Development Company | BlueFalcon Technologies
     </title>
 
     <meta
       name="description"
-      content="Learn about Blockchain App Advisor — a next-generation Blockchain & AI development company building secure, scalable Web3 ecosystems, smart contracts, AI automation systems, and enterprise digital solutions."
+      content="Learn about BlueFalcon Technologies — a next-generation Blockchain & AI development company building secure, scalable Web3 ecosystems, smart contracts, AI automation systems, and enterprise digital solutions."
     />
 
     <meta
@@ -61,7 +61,7 @@ const About = () => {
     {/* Open Graph */}
     <meta
       property="og:title"
-      content="Empowering the World with Blockchain & AI | Blockchain App Advisor"
+      content="Empowering the World with Blockchain & AI | BlueFalcon Technologies"
     />
     <meta
       property="og:description"
@@ -73,7 +73,7 @@ const About = () => {
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Blockchain & AI Experts | About Blockchain App Advisor"
+      content="Blockchain & AI Experts | About BlueFalcon Technologies"
     />
     <meta
       name="twitter:description"
@@ -150,7 +150,7 @@ const About = () => {
             {/* Right content */}
             <div className="max-w-[600px]">
               <p className="  text-base sm:text-xl md:text-xl lg:text-2xl leading-[1.7] text-black/80 transition-colors duration-300 dark:text-white dark:font-medium">
-                Blockchain App Advisor is a next-generation Blockchain & AI development company dedicated to building decentralized, automated, and enterprise-grade digital ecosystems. We help startups, enterprises, and global innovators harness the power of distributed technology to create meaningful business transformation.
+                BlueFalcon Technologies is a next-generation Blockchain & AI development company dedicated to building decentralized, automated, and enterprise-grade digital ecosystems. We help startups, enterprises, and global innovators harness the power of distributed technology to create meaningful business transformation.
               </p>
 
               <p className="mt-6 text-base sm:text-xl md:text-xl lg:text-2xl leading-[1.7] text-black/80 transition-colors duration-300 dark:text-white dark:font-medium">
@@ -175,7 +175,7 @@ const About = () => {
 
             <div className="mt-6 space-y-4 md:mt-8 lg:mt-10">
               <p className="text-base sm:text-xl md:text-xl lg:text-2xl  leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white dark:font-medium">
-                Blockchain App Advisor began with a mission to make decentralized technology accessible and business-ready. As blockchain grew beyond cryptocurrencies, we saw the need for a development partner that understood both cutting-edge engineering and real-world business challenges.
+                BlueFalcon Technologies began with a mission to make decentralized technology accessible and business-ready. As blockchain grew beyond cryptocurrencies, we saw the need for a development partner that understood both cutting-edge engineering and real-world business challenges.
               </p>
 
               <p className="text-base sm:text-xl md:text-xl lg:text-2xl  leading-[1.6] text-black/80 transition-colors duration-300 dark:text-white dark:font-medium">
@@ -309,7 +309,7 @@ const About = () => {
 
               <div className="max-w-[750px] space-y-4">
                 <p className="font-sans text-xl leading-[1.6] font-medium  text-black/80 transition-colors duration-300 dark:text-white sm:text-base md:text-xl">
-                  Behind Blockchain App Advisor is a team of expert blockchain developers, AI engineers, security auditors, architects, researchers, designers, and strategists.
+                  Behind BlueFalcon Technologies is a team of expert blockchain developers, AI engineers, security auditors, architects, researchers, designers, and strategists.
                 </p>
 
                 <div className="space-y-2">
@@ -517,7 +517,7 @@ const About = () => {
           </h2>
           <div className="flex justify-center">
             <p className="mt-4 max-w-[600px] text-center font-sans text-xl leading-[1.6] font-medium text-black/80 transition-colors duration-300 dark:text-white sm:text-base md:text-xl">
-              A strategic path shaping the future of Blockchain App Advisor:
+              A strategic path shaping the future of BlueFalcon Technologies:
             </p>
           </div>
 

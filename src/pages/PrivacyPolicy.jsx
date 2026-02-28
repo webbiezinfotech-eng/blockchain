@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
               <span className="text-brand-blue">POLICY</span>
             </h1>
             <p className="mx-auto mt-6 max-w-3xl font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 sm:text-xl">
-              Your privacy is important to us. This Privacy Policy explains how Blockchain App Advisor collects, uses, and protects your personal information.
+              Your privacy is important to us. This Privacy Policy explains how BlueFalcon Technologies collects, uses, and protects your personal information.
             </p>
           </div>
         </div>
@@ -140,7 +140,7 @@ const PrivacyPolicy = () => {
                   If you have any questions about this Privacy Policy, please contact us:
                 </p>
                 <p className="font-semibold text-black">
-                  Blockchain App Advisor
+                  BlueFalcon Technologies
                 </p>
                 <p>
                   Email: privacy@blockchainappadvisor.com

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import lightLogo from '../../assets/common/light_logo.png';
+import logo from '../../assets/common/logo.png';
 import { SERVICES } from '../../constants/services';
 
 const Header = () => {
@@ -31,14 +31,14 @@ const Header = () => {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-[1000] border-b border-gray-100 bg-white/95 backdrop-blur transition-colors duration-300">
-      <div className="mx-auto flex h-16 max-w-layout items-center justify-between px-4 sm:h-20 sm:px-5 md:px-10">
+      <div className="mx-auto flex h-16 max-w-layout items-center justify-between px-1 sm:h-20 sm:px-10 md:px-10 lg:px-8">
         {/* Logo Section */}
         <div className="flex items-center gap-3">
           <NavLink to="/" className="flex items-center justify-center">
             <img
-              src={lightLogo}
-              alt="Blockchain App Advisor Logo"
-              className="block object-contain h-32 w-32 lg:h-48 lg:w-48"
+              src={logo}
+              alt="BlueFalcon Technologies Logo"
+              className="block object-contain h-36 w-36 md:h-48 md:w-48 lg:h-48 lg:w-48"
             />
           </NavLink>
         </div>

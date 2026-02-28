@@ -198,7 +198,7 @@ const Services = () => {
 
               <p className="mt-6 max-w-[620px] text-xl md:text-2xl leading-relaxed ">
 
-                Blockchain App Advisor offers an extensive suite of development services that combine decentralized architecture with advanced automation, security, and high-performance engineering. From smart contracts to AI-driven systems — our solutions empower startups, enterprises, and global innovators to thrive in the digital future.
+                BlueFalcon Technologies offers an extensive suite of development services that combine decentralized architecture with advanced automation, security, and high-performance engineering. From smart contracts to AI-driven systems — our solutions empower startups, enterprises, and global innovators to thrive in the digital future.
               </p>
 
             </div>
@@ -333,7 +333,7 @@ const Services = () => {
           <div>
             <h2 className="font-heading text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] font-bold uppercase leading-tight">
               <span className="text-black">WHY CHOOSE</span>{' '}
-              <span className="text-brand-blue">BLOCKCHAIN APP ADVISOR</span>{' '}
+              <span className="text-brand-blue">BlueFalcon Technologies</span>{' '}
               <span className="text-black">FOR </span>
               <span className="text-brand-blue">YOUR PROJECT?</span>{' '}
             </h2>
@@ -358,7 +358,7 @@ const Services = () => {
             {/* <div className="h-[360px] w-[260px] rounded-[40px] border-8 border-black/20 bg-gradient-to-br from-gray-100 to-gray-200 shadow-2xl"> */}
             <img
               src={whyChooseImg}
-              alt="Why choose Blockchain App Advisor"
+              alt="Why choose BlueFalcon Technologies"
               className="h-full w-full object-contain p-4"
               loading="lazy"
             />

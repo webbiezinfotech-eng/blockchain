@@ -206,7 +206,7 @@ const handleNext = () => {
   return (
 
     <>  <Helmet>
-    <title>Custom Token Development Services | Blockchain App Advisor</title>
+    <title>Custom Token Development Services | BlueFalcon Technologies</title>
 
     <meta
       name="description"

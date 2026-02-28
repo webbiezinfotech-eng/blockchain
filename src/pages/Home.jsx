@@ -681,7 +681,7 @@ const Home = () => {
     {
       id: 1,
       quote:
-        "Blockcha  in App Advisor helped us design a scalable DeFi protocol from scratch. The smart contracts were flawless and the audit was incredibly detailed.",
+        "BlueFalcon Technologies helped us design a scalable DeFi protocol from scratch. The smart contracts were flawless and the audit was incredibly detailed.",
       name: "Founder, FinTech Startup",
       profileImage: profile1,
     },
@@ -744,7 +744,7 @@ const Home = () => {
   const faqs = [
     {
       id: 1,
-      question: "What services does Blockchain App Advisor provide?",
+      question: "What services does BlueFalcon Technologies provide?",
       answer:
         "We offer a complete suite of blockchain and AI development services including smart contract development, smart contract audits, token creation, DeFi platforms, DApps, NFT marketplaces, crypto exchanges, AI automation, and custom blockchain architecture.",
     },
@@ -879,7 +879,7 @@ const Home = () => {
 
         <meta
           name="description"
-          content="Blockchain App Advisor is a leading Blockchain & AI development company delivering smart contract development, token creation, DeFi platforms, NFT marketplaces, crypto exchanges, DApps, and enterprise-grade Web3 solutions."
+          content="BlueFalcon Technologies is a leading Blockchain & AI development company delivering smart contract development, token creation, DeFi platforms, NFT marketplaces, crypto exchanges, DApps, and enterprise-grade Web3 solutions."
         />
 
         <meta
@@ -887,7 +887,7 @@ const Home = () => {
           content="blockchain development company, AI development company, smart contract development, DeFi development, NFT marketplace development, crypto exchange development, token development, web3 development company"
         />
 
-        <meta name="author" content="Blockchain App Advisor" />
+        <meta name="author" content="BlueFalcon Technologies" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph */}
@@ -900,7 +900,7 @@ const Home = () => {
           content="Secure, scalable and intelligent blockchain ecosystems powered by smart contracts, AI automation and next-gen Web3 architecture."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Blockchain App Advisor" />
+        <meta property="og:site_name" content="BlueFalcon Technologies" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -919,10 +919,10 @@ const Home = () => {
       <div className="w-full bg-white transition-colors duration-300">
         {/* Hero Section */}
         <section className="w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pt-6 sm:pb-10 lg:pt-2 lg:pb-8">
-         <div className="mx-auto text-center sm:text-left lg:ps-12">
+         <div className="mx-auto text-center sm:text-left lg:ps-2 2xl:ps-10">
             <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-0">
               {/* Left Side - Text Content */}
-              <div className="flex flex-col gap-6  ml-0 p-2 sm:ml-10">
+              <div className="flex flex-col gap-6 ml-0 p-2 sm:ml-10 ">
                 <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
                   <div
                     className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.15] text-black text-[32px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
@@ -937,7 +937,7 @@ const Home = () => {
                     WORLD-CLASS BLOCKCHAIN
                   </div>
                   <div
-                    className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.15] text-brand-blue text-[32px] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
+                    className="block leading-[1.2]  sm:leading-[1.25] lg:leading-[1.15] text-brand-blue text-[32px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px]
 "
                   >
                     & AI DEVELOPMENT
@@ -950,7 +950,7 @@ const Home = () => {
                   token development, and next-gen decentralized applications.
                 </p>
                 <Link to="/contact">
-                  <button className="mt-2 flex w-fit items-center gap-2 rounded border border-[#4A9EFF] bg-white px-4 py-2 text-xs font-semibold text-black transition-all duration-300 hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]  hover:text-brand-blue sm:mt-4 sm:px-5 sm:py-2.5 sm:text-xl leading-[1.6] md:px-6 md:py-3 md:text-base">
+                  <button className="mt-2 rounded border border-[#4A9EFF] bg-white px-4 py-2 text-xs font-semibold text-black transition-all duration-300 hover:border-brand-blue hover:bg-gradient-to-b hover:from-white hover:to-[#cfe6fb]  hover:text-brand-blue sm:mt-4 sm:px-5 sm:py-2.5 sm:text-xl leading-[1.6] md:px-6 md:py-3 ">
                     Get a Quote →
                   </button>
                 </Link>
@@ -1093,7 +1093,7 @@ const Home = () => {
                     <span className="text-brand-blue">BUSINESS </span>
                     <span className="text-black">TRUST </span>
                     <span className="text-brand-blue">
-                      BLOCKCHAIN APP ADVISOR{" "}
+                      BlueFalcon Technologies{" "}
                     </span>
                   </div>
                 </h2>

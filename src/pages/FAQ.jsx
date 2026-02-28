@@ -10,7 +10,7 @@ const FAQ = () => {
     () => ({
       'General FAQs': [
         {
-          q: 'What services does Blockchain App Advisor offer?',
+          q: 'What services does BlueFalcon Technologies offer?',
           a: 'We provide end-to-end solutions including blockchain development, AI & automation, Web3/NFT platforms, tokenization, DeFi solutions, smart contract development, enterprise consulting, app design, and post-launch support.',
         },
         {
@@ -131,7 +131,7 @@ const FAQ = () => {
   return (
     <>
       <Helmet>
-        <title>Blockchain & AI FAQs | Blockchain App Advisor</title>
+        <title>Blockchain & AI FAQs | BlueFalcon Technologies</title>
         <meta
           name="description"
           content="Find answers to common questions about blockchain development, AI solutions, Web3 platforms, NFT marketplaces, DeFi projects, pricing, and technical processes."
