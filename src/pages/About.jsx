@@ -91,7 +91,7 @@ const About = () => {
         <div className="mx-auto text-center sm:text-left lg:ps-2 2xl:ps-10">
           <div className="grid grid-cols-1 items-center lg:grid-cols-[1.05fr_0.95fr] lg:gap-0">
           {/* Left Side - Text Content */}
-          <div className="flex flex-col ml-0 p-2 sm:ml-10 gap-6">
+          <div className="flex flex-col ml-0 p-2 sm:ml-10 lg:ml-8 xl:ml-16 2xl:ml-20 2xl:ms-32 gap-6">
             <h1 className="font-heading font-bold uppercase tracking-[0%] text-left">
               <div className="block w-full  text-brand-blue transition-colors duration-300 text-[32px] sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]">
                 EMPOWERING THE

@@ -38,7 +38,7 @@ const Header = () => {
             <img
               src={logo}
               alt="BlueFalcon Technologies Logo"
-              className="block object-contain h-36 w-36 md:h-48 md:w-48 lg:h-48 lg:w-48"
+              className="block object-contain w-44 md:w-52 lg:w-60 "
             />
           </NavLink>
         </div>
