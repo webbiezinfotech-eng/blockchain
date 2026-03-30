@@ -387,7 +387,7 @@ const ContactForm = ({ variant = "default" }) => {
               </svg>
             </div>
             <p className="font-heading text-xl leading-[1.6] sm:text-lg font-normal text-black dark:text-white">
-              ptorresinsurancepro@gmail.com
+              info.bluefalcontechnologies@gmail.com
             </p>
           </div>
 
@@ -850,7 +850,7 @@ export default ContactForm;
           </svg>
         </div>
         <p className="font-heading text-xl leading-[1.6] sm:text-base font-normal text-black dark:text-white">
-          blockchainappadvisor@gmail.com
+          info.bluefalcontechnologies@gmail.com
         </p>
       </div>
 

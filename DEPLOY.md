@@ -20,8 +20,8 @@ nano .env
 
 `.env` file mein yeh add karein:
 ```env
-GMAIL_USER=poojadhameja36@gmail.com
-GMAIL_APP_PASSWORD=deyydbermjzmxiky
+GMAIL_USER=info.bluefalcontechnologies@gmail.com
+GMAIL_APP_PASSWORD=skwtfnpgezxwespy
 PORT=3001
 NODE_ENV=production
 ```

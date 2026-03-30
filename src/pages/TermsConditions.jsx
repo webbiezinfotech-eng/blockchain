@@ -182,7 +182,7 @@ const TermsConditions = () => {
                   BlueFalcon Technologies
                 </p>
                 <p>
-                  Email: legal@blockchainappadvisor.com
+                  Email: info.bluefalcontechnologies@gmail.com
                 </p>
               </div>
             </div>

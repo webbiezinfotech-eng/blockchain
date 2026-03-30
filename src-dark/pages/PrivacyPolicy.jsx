@@ -143,7 +143,7 @@ const PrivacyPolicy = () => {
                   BlueFalcon Technologies
                 </p>
                 <p>
-                  Email: privacy@blockchainappadvisor.com
+                  Email: info.bluefalcontechnologies@gmail.com
                 </p>
               </div>
             </div>

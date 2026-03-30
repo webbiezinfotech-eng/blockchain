@@ -5,8 +5,8 @@ export const sendContactEmail = async (formData) => {
 
     // 1️⃣ ADMIN EMAIL
     await emailjs.send(
-      "service_xwlixw9",
-      "template_fgadw4v",
+      "service_yu29irk",
+      "template_jkdavtj",
       {
         firstName: formData.firstName,
         email: formData.email,
@@ -16,18 +16,18 @@ export const sendContactEmail = async (formData) => {
         budget: formData.budget || "",
         projectDescription: formData.projectDescription || "",
       },
-      "RBud6t59udKtkSaME"
+      "GWPDChu54ftWmbjZL"
     );
 
     // 2️⃣ THANK YOU EMAIL TO USER
     await emailjs.send(
-      "service_xwlixw9",
-      "template_c346b8i",  // 👈 new template id
+      "service_yu29irk",
+      "template_dk1fuox",  // 👈 new template id
       {
         firstName: formData.firstName,
         email: formData.email,
       },
-      "RBud6t59udKtkSaME"
+      "GWPDChu54ftWmbjZL"
     );
 
 // console.log("Thank you email response:");

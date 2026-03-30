@@ -414,7 +414,7 @@ const Contact = () => {
               </div>
 
               <div className="rounded-lg border p-4 dark:border-white/20 dark:bg-gray-800">
-                contact@blockchainappadvisor.com
+                info.bluefalcontechnologies@gmail.com
               </div>
 
               <div className="rounded-lg border p-4 dark:border-white/20 dark:bg-gray-800">
