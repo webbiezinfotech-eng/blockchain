@@ -247,7 +247,7 @@ const DeFiDevelopment = () => {
         content="DeFi development, staking platform development, yield farming development, lending protocol development, liquid staking, cross-chain DeFi, smart contract development"
       />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://yourdomain.com/services/defi-development" />
+      <link rel="canonical" href="https://bluefalcon-technologies.com/services/defi-development" />
     </Helmet>
 
 

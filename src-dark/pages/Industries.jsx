@@ -303,7 +303,7 @@ const Industries = () => {
     />
     <link
       rel="canonical"
-      href="https://yourdomain.com/industries"
+      href="https://bluefalcon-technologies.com/industries"
     />
   </Helmet>
 

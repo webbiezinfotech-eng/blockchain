@@ -183,7 +183,7 @@ const CustomDevelopment = () => {
 
       <meta name="twitter:card" content="summary_large_image" />
 
-      <link rel="canonical" href="https://yourdomain.com/custom-development" />
+      <link rel="canonical" href="https://bluefalcon-technologies.com/custom-development" />
     </Helmet>
 
     <div className="w-full bg-white transition-colors duration-300 dark:bg-black">

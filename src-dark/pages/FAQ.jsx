@@ -142,7 +142,7 @@ const FAQ = () => {
     />
     <link
       rel="canonical"
-      href="https://yourdomain.com/faq"
+      href="https://bluefalcon-technologies.com/faq"
     />
   </Helmet>
 

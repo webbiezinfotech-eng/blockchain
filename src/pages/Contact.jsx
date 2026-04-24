@@ -154,7 +154,7 @@ const Contact = () => {
           content="contact blockchain developer, AI development consultation, Web3 company contact, DeFi development company"
         />
 
-        <link rel="canonical" href="https://yourdomain.com/contact" />
+        <link rel="canonical" href="https://bluefalcon-technologies.com/contact" />
       </Helmet>
 
       <div className="w-full bg-white">

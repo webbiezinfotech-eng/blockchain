@@ -132,7 +132,7 @@ const MobileApplicationDevelopment = () => {
     />
     <link
       rel="canonical"
-      href="https://yourdomain.com/services/mobile-application-development"
+      href="https://bluefalcon-technologies.com/services/mobile-application-development"
     />
   </Helmet>
 

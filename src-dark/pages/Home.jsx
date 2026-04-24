@@ -873,7 +873,7 @@ const Home = () => {
         />
 
         {/* Canonical (IMPORTANT) */}
-        <link rel="canonical" href="https://yourdomain.com/" />
+        <link rel="canonical" href="https://bluefalcon-technologies.com/" />
       </Helmet>
       <div className="w-full bg-white transition-colors duration-300 dark:bg-black">
         {/* Hero Section */}

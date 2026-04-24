@@ -118,7 +118,7 @@ const Products = () => {
         />
         <link
           rel="canonical"
-          href="https://yourdomain.com/products"
+          href="https://bluefalcon-technologies.com/products"
         />
       </Helmet>
 

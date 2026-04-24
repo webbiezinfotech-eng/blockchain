@@ -140,7 +140,7 @@ const WebsiteDevelopment = () => {
       name="keywords"
       content="website development, responsive web design, ecommerce development, React development, Next.js website, SEO optimization"
     />
-    <link rel="canonical" href="https://yourdomain.com/services/website-development" />
+    <link rel="canonical" href="https://bluefalcon-technologies.com/services/website-development" />
   </Helmet>
 
     <div className="w-full bg-white transition-colors duration-300">

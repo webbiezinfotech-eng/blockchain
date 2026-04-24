@@ -52,7 +52,7 @@ Agar kabhi server crash ho jaye aur manually start karna ho:
 
 **Browser mein open karein:**
 ```
-https://blockchain.webbiezinfotech.in/backend/auto-start.php
+https://bluefalcon-technologies.com/backend/auto-start.php
 ```
 
 Yeh script automatically check karega aur start kar dega.

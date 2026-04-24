@@ -136,7 +136,7 @@ const Contact = () => {
 
     <link
       rel="canonical"
-      href="https://yourdomain.com/contact"
+      href="https://bluefalcon-technologies.com/contact"
     />
   </Helmet>
 
