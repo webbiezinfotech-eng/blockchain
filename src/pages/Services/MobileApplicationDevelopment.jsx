@@ -131,10 +131,10 @@ const MobileApplicationDevelopment = () => {
   return (
     <>
   <Helmet>
-    <title>Mobile Application Development Services | iOS & Android Apps</title>
+    <title>Enterprise Mobile Application Development Services Company</title>
     <meta
       name="description"
-      content="Professional mobile application development services for iOS and Android. We build native and cross-platform apps using React Native, Flutter, Swift, and Kotlin."
+      content="A top digital firm providing enterprise mobile application development services, mobile app consulting services, and cross-platform mobile app development.  "
     />
     <meta
       name="keywords"

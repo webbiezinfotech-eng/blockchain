@@ -131,10 +131,10 @@ const FAQ = () => {
   return (
     <>
       <Helmet>
-        <title>Blockchain & AI FAQs | BlueFalcon Technologies</title>
+        <title>Web3 & Blockchain Development Consulting | Expert FAQs  </title>
         <meta
           name="description"
-          content="Find answers to common questions about blockchain development, AI solutions, Web3 platforms, NFT marketplaces, DeFi projects, pricing, and technical processes."
+          content=" Gain complete clarity before you build. Read our expert FAQs on AI automation, Web3 infrastructure, and expert blockchain development consulting services.  "
         />
         <meta
           name="keywords"

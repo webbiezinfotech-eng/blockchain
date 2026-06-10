@@ -142,11 +142,11 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact BlueFalcon Technologies | Blockchain & AI Experts</title>
+        <title>Contact Us | Web3 & AI Software Development Company</title>
 
         <meta
           name="description"
-          content="Contact BlueFalcon Technologies for blockchain development, AI solutions, Web3, DeFi, NFT marketplace, and smart contract development. Get a free consultation today."
+          content=" Get in touch to discuss your next project. Hire blockchain developers and AI engineers for custom enterprise software development and Web3 solutions. "
         />
 
         <meta

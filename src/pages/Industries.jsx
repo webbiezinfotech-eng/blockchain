@@ -292,10 +292,10 @@ const Industries = () => {
   return (
     <>
   <Helmet>
-    <title>Industries We Serve | Blockchain & AI Solutions</title>
+    <title>AI & Enterprise Blockchain Solutions Company | Industries </title>
     <meta
       name="description"
-      content="Explore how BlueFalcon Technologies delivers blockchain, AI, and Web3 solutions across fintech, healthcare, supply chain, real estate, gaming, retail, and more."
+      content="Accelerate your digital transformation with a top enterprise blockchain solutions company providing AI and blockchain integration services across industries.  "
     />
     <meta
       name="keywords"

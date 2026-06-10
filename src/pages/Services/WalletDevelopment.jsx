@@ -129,10 +129,10 @@ const WalletDevelopment = () => {
   return (
     <>
        <Helmet>
-        <title>Crypto Wallet Development Company | Secure Multi-Chain Wallet Solutions</title>
+        <title>Cryptocurrency & Blockchain Wallet Development Company </title>
         <meta
           name="description"
-          content="Build secure multi-chain crypto wallets with MPC security, biometric login, NFT support, staking, and enterprise-grade architecture."
+          content="A secure digital wallet development company providing expert cryptocurrency wallet development and custom blockchain wallet development services.  "
         />
         <meta
           name="keywords"

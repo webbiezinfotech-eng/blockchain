@@ -199,43 +199,15 @@ const DAppDevelopment = () => {
   return (
     <>
       <Helmet>
-        <title>DApp Development Services | High-Performance Web3 Applications</title>
+        <title>Blockchain dApps Development Company</title>
         <meta
           name="description"
-          content="Build secure, scalable, high-performance decentralized applications (dApps) for DeFi, Web3 gaming, DAOs, NFT apps and more."
+          content="A leading decentralized application development company providing end-to-end decentralized application development services and blockchain dapp development services."
         />
       </Helmet>
 
       <div className="w-full bg-white transition-colors duration-300">
-        {/* Hero */}
-        {/* <section className="relative w-full bg-white pt-4 pb-2 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-8">
-        <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
-          <div className="mx-4 md:mx-20 flex w-full flex-col justify-start gap-5 leading-[1.4] lg:text-left">
-            <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300">
-              <span className="block  leading-[1.2]  sm:leading-[1.25] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px] lg:leading-[1.50]">
-                HIGH-PERFORMANCE DAPP
-              </span>
-              <span className="block  leading-[1.2]  sm:leading-[1.25] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[72px] lg:leading-[1.50]">
-                DEVELOPMENT FOR
-              </span>
-              <span className="block  leading-[1.2]  sm:leading-[1.25] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[65px] lg:leading-[1.50">
-                <span className="text-brand-blue">DECENTRALIZED INNOVATION</span>
-              </span>
-            </h1>
-
-            <p className="max-w-[760px] font-sans font-medium leading-[1.7] text-black/75 transition-colors duration-300 text-sm sm:text-base md:text-lg lg:text-xl">
-              Turn your Web3 idea into a powerful decentralized application—secure, scalable, and user-friendly. We design and
-              develop full-stack dApps with modern blockchain frameworks and optimized token-based adoption.
-            </p>
-          </div>
-
-         <div className="flex w-full items-center justify-center mt-6 lg:mt-0">
-            <div className="w-full max-w-[440px] lg:max-w-[400px]">
-              <img src={heroImg} alt="DApp development" className="h-auto w-full object-contain" loading="eager" />
-            </div>
-          </div>
-        </div>
-      </section> */}
+      
 
         <PageHero
           titleLines={[

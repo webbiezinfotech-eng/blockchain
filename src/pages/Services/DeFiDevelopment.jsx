@@ -237,10 +237,10 @@ const DeFiDevelopment = () => {
   return (
 
     <><Helmet>
-      <title>DeFi Development Services | Staking, Yield Farming & Lending Protocols</title>
+      <title> DeFi Development Solutions & Services  </title>
       <meta
         name="description"
-        content="Build secure and scalable DeFi platforms including staking, yield farming, lending protocols, liquid staking, and cross-chain decentralized finance solutions."
+        content="An elite decentralised finance development company providing secure DeFi development solutions, DeFi wallet development services, and custom financial protocols.  "
       />
       <meta
         name="keywords"

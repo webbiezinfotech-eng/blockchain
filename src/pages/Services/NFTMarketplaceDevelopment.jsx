@@ -109,47 +109,16 @@ const NFTMarketplaceDevelopment = () => {
 
   return (
     <><Helmet>
-  <title>NFT Marketplace Development Company | Web3 NFT Platform</title>
+  <title> NFT Marketplace Development Solutions & Services </title>
   <meta
     name="description"
-    content="Launch a scalable NFT marketplace with minting, auctions, royalties, wallets, and multi-chain compatibility. Secure and production-ready Web3 development."
+    content="A leading non-fungible token development company providing custom nft token development services and a scalable nft marketplace development service.  "
   />
   <meta name="keywords" content="NFT Marketplace Development, Web3 NFT Platform, NFT Minting, NFT Auctions, Multi-chain NFT" />
 </Helmet>
 
     <div className="w-full bg-white transition-colors duration-300">
-      {/* Hero */}
-      {/* <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-8 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-8 xl:pb-8">
-        <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
-          <div className="mx-4 md:mx-20 flex w-full flex-col justify-start gap-5 leading-[1.4] lg:text-left">
-            <h1 className="font-heading font-bold uppercase tracking-tight text-black transition-colors duration-300">
-              <span className="block  leading-[1.2]  sm:leading-[1.25] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px] lg:leading-[1.50]">
-                CUSTOM NFT MARKETPLACE
-              </span>
-              <span className="block  leading-[1.2]  sm:leading-[1.25] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px] lg:leading-[1.50]">
-                DEVELOPMENT FOR{' '}
-                <span className="text-brand-blue">WEB3</span>
-              </span>
-              <span className="block leading-[1.25]  sm:leading-[1.25] text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px] lg:leading-[1.50]">
-                <span className="text-brand-blue">CREATORS</span>{' '}
-                <span className="text-black transition-colors duration-300">&amp; </span>
-                <span className="text-brand-blue">INNOVATORS</span>
-              </span>
-            </h1>
-
-            <p className="max-w-[660px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 sm:text-xl">
-              Launch a launch-ready NFT marketplace with minting, listings, auctions, royalties, wallets, and scalable storage.
-              We build secure, performant platforms with a clean UX and production-grade architecture.
-            </p>
-          </div>
-
-          <div className="flex w-full items-center justify-center">
-            <div className="w-full max-w-[440px] lg:max-w-[380px]">
-              <img src={heroImg} alt="NFT marketplace development" className="h-auto w-full object-contain" loading="eager" />
-            </div>
-          </div>
-        </div>
-      </section> */}
+    
       <PageHero
   titleLines={[
     { text: "CUSTOM NFT MARKETPLACE", highlight: false },

@@ -220,11 +220,11 @@ const CryptoExchangeDevelopment = () => {
 
   return (
     <>  <Helmet>
-    <title>Crypto Exchange Development Company | CEX, DEX & Hybrid Solutions</title>
+    <title>Cryptocurrency Exchange Platform Development Company </title>
 
     <meta
       name="description"
-      content="Build secure, scalable crypto exchanges including CEX, DEX, hybrid, P2P, and derivatives platforms with advanced trading engines, KYC/AML modules, and multi-chain support."
+      content="Build a secure trading platform with a leading crypto exchange software development company providing cryptocurrency exchange software development services. "
     />
 
     <meta
@@ -232,10 +232,10 @@ const CryptoExchangeDevelopment = () => {
       content="crypto exchange development, cex development, dex development, p2p exchange, derivatives exchange, blockchain trading platform"
     />
 
-    <meta property="og:title" content="Crypto Exchange Development Services" />
+    <meta property="og:title" content="Cryptocurrency Exchange Platform Development Company " />
     <meta
       property="og:description"
-      content="Enterprise-grade crypto exchange solutions with high-performance matching engines, liquidity systems, and institutional security."
+      content="Build a secure trading platform with a leading crypto exchange software development company providing cryptocurrency exchange software development services. "
     />
     <meta property="og:type" content="website" />
   </Helmet>

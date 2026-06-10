@@ -131,10 +131,10 @@ const WebsiteDevelopment = () => {
   return (
     <>
   <Helmet>
-    <title>Professional Website Development Services | BlueFalcon Technologies</title>
+    <title> B2B Web Development company & Consultants </title>
     <meta
       name="description"
-      content="Professional website development services for modern businesses. We build responsive, SEO-optimized, scalable websites using React, Next.js, Node.js and modern technologies."
+      content="A premium b2b web development company providing custom web development consultants and professional website development services in the USA.  "
     />
     <meta
       name="keywords"
@@ -144,40 +144,7 @@ const WebsiteDevelopment = () => {
   </Helmet>
 
     <div className="w-full bg-white transition-colors duration-300">
-      {/* Hero Section */}
-      {/* <section className="relative w-full bg-white pt-4 pb-8 transition-colors duration-300 sm:pb-16 md:pt-6 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-8">
-        <div className="mx-auto max-w-layout px-6 sm:px-10 md:px-16 lg:px-[3rem]">
-          <div className="mx-auto grid w-full grid-cols-1 items-start gap-0 lg:grid-cols-[65%_35%]">
-            
-            <div className="mx-2 flex w-full flex-col justify-start gap-5 leading-[1.15]">
-              <h2 className="font-heading font-bold uppercase leading-[1.45] tracking-tight text-[32px]  sm:text-[36px] md:text-[44px] lg:text-[56px] xl:text-[68px]" >
-                <span className="block text-black transition-colors duration-300 sm:whitespace-nowrap">
-                  PROFESSIONAL
-                </span>
-                <span className="block sm:whitespace-nowrap">
-                  <span className="text-black transition-colors duration-300">WEBSITE </span>
-                  <span className="text-brand-blue">DEVELOPMENT</span>
-                </span>
-                <span className="block text-brand-blue sm:whitespace-nowrap">FOR MODERN</span>
-                <span className="block text-brand-blue sm:whitespace-nowrap">BUSINESSES</span>
-              </h2>
 
-              <p className="mt-2 max-w-[720px] font-sans text-base font-medium leading-[1.7] text-black/75 transition-colors duration-300 sm:text-xl">
-                Build powerful, scalable, and user-friendly websites that drive business growth. We create responsive web solutions using modern technologies, ensuring optimal performance, SEO optimization, and seamless user experiences across all devices and platforms.
-              </p>
-            </div>
-
-            
-            <div className="flex w-full items-center justify-center lg:justify-end">
-              <div className="w-full max-w-[460px]">
-                <div className="overflow-hidden rounded-3xl">
-                  <img src={heroImg} alt="Website development" className="h-auto w-full object-contain" loading="eager" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 <PageHero
   titleLines={[
     { text: "PROFESSIONAL", highlight: false },

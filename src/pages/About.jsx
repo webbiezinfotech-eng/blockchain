@@ -45,12 +45,12 @@ const About = () => {
     <>
   <Helmet>
     <title>
-      About Us | Blockchain & AI Development Company | BlueFalcon Technologies
+      About Blue Falcon | Private Blockchain Development Company  
     </title>
 
     <meta
       name="description"
-      content="Learn about BlueFalcon Technologies — a next-generation Blockchain & AI development company building secure, scalable Web3 ecosystems, smart contracts, AI automation systems, and enterprise digital solutions."
+      content=" Blue Falcon is an AI automation company delivering enterprise Web3 solutions. Hire smart contract developers for custom smart contract development."
     />
 
     <meta

@@ -125,12 +125,12 @@ const AIDevelopment = () => {
     <>
   <Helmet>
     <title>
-      AI & Machine Learning Development Company | Custom AI Solutions for Enterprise
+      AI & ML Development Company | AI Solutions Development 
     </title>
 
     <meta
       name="description"
-      content="We build custom AI and Machine Learning solutions including LLMs, predictive analytics, automation workflows, computer vision, NLP systems, and enterprise AI deployment services."
+      content="A leading ai & ml development company providing enterprise ai development services, adaptive ai development services, and ai development services in usa.  "
     />
 
     <meta
@@ -141,11 +141,11 @@ const AIDevelopment = () => {
     {/* Open Graph */}
     <meta
       property="og:title"
-      content="AI & Machine Learning Development for Intelligent Enterprise Automation"
+      content="AI & ML Development Company | AI Solutions Development "
     />
     <meta
       property="og:description"
-      content="Custom AI systems including LLMs, predictive models, automation tools, neural networks, and enterprise-grade AI deployment."
+      content="A leading ai & ml development company providing enterprise ai development services, adaptive ai development services, and ai development services in usa.  "
     />
     <meta property="og:type" content="website" />
 

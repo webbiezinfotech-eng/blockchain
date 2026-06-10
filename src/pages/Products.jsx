@@ -107,10 +107,10 @@ const Products = () => {
   return (
     <>
       <Helmet>
-        <title>Blockchain & AI Products | Enterprise Solutions</title>
+        <title>Enterprise Web3 Solutions & Blockchain Products </title>
         <meta
           name="description"
-          content="Explore enterprise blockchain and AI products including DeFi platforms, NFT marketplaces, smart contract tools, and AI-powered analytics solutions."
+          content="Deploy faster with our suite of enterprise Web3 solutions. We provide a scalable blockchain infrastructure platform, white label software, and AI analytics. "
         />
         <meta
           name="keywords"

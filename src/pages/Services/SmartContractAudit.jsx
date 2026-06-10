@@ -73,11 +73,11 @@ const SmartContractAudit = () => {
     <>
   
   <Helmet>
-    <title>Smart Contract Audit Services | BlueFalcon Technologies</title>
+    <title> Smart Contract Audit Services & Tokenomics Audit  </title>
     
     <meta
       name="description"
-      content="Expert smart contract audit services to detect vulnerabilities, optimize gas usage, and secure your Web3 project before mainnet launch."
+      content="Work with a top smart contract audit company. We provide expert smart contract audit services, tokenomics audits, and transparent smart contract audit costs. "
     />
 
     <meta
@@ -85,10 +85,10 @@ const SmartContractAudit = () => {
       content="smart contract audit, blockchain audit, solidity audit, web3 security, smart contract security review"
     />
 
-    <meta property="og:title" content="Smart Contract Audit Services" />
+    <meta property="og:title" content=" Smart Contract Audit Services & Tokenomics Audit  " />
     <meta
       property="og:description"
-      content="Comprehensive manual and automated smart contract audits for maximum blockchain security."
+      content="Work with a top smart contract audit company. We provide expert smart contract audit services, tokenomics audits, and transparent smart contract audit costs. "
     />
     <meta property="og:type" content="website" />
   </Helmet>

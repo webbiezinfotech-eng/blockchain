@@ -95,12 +95,12 @@ const SmartContractDevelopment = () => {
     <>
       <Helmet>
         <title>
-          Smart Contract Development Company | Secure & Audited Web3 Contracts
+          Custom Smart Contract Development & Audit Services 
         </title>
 
         <meta
           name="description"
-          content="We build secure, audited smart contracts for tokens, DeFi protocols, NFTs, DAOs, and real-world asset tokenization. Expert Solidity, Rust & Web3 contract development services."
+          content="Secure your Web3 applications with top-tier smart contract development services. Hire smart contract developers for custom logic, tokenisation, and audits.  "
         />
 
         <meta
@@ -109,7 +109,7 @@ const SmartContractDevelopment = () => {
         />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Smart Contract Development Company | Secure Web3 Contracts" />
+        <meta property="og:title" content="Custom Smart Contract Development & Audit Services " />
         <meta
           property="og:description"
           content="Enterprise-grade smart contract development with auditing, gas optimization, and multi-chain compatibility."

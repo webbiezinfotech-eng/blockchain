@@ -124,12 +124,12 @@ const BlockchainDevelopment = () => {
     <>
   <Helmet>
     <title>
-      Enterprise Blockchain Development Company | Scalable Web3 Solutions
+       Enterprise Blockchain Development Services | Blue Falcon 
     </title>
 
     <meta
       name="description"
-      content="Enterprise-grade blockchain development services including custom dApps, private blockchain networks, smart contracts, tokenization, DeFi solutions, and scalable Web3 ecosystems."
+      content="Blue Falcon is a custom blockchain development company providing scalable, enterprise blockchain development services and custom blockchain solutions.  "
     />
 
     <meta
@@ -140,7 +140,7 @@ const BlockchainDevelopment = () => {
     {/* Open Graph */}
     <meta
       property="og:title"
-      content="Enterprise Blockchain Development for Scalable Web3 Innovation"
+      content=" Enterprise Blockchain Development Services | Blue Falcon "
     />
     <meta
       property="og:description"

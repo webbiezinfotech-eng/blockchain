@@ -221,11 +221,11 @@ const handlePrev = () => {
   return (
 
     <>  <Helmet>
-      <title>Custom Token Development Services | BlueFalcon Technologies</title>
+      <title> DeFi & Crypto Token Development Services   </title>
 
       <meta
         name="description"
-        content="Launch secure and scalable custom tokens including utility tokens, governance tokens, memecoins, stablecoins, and asset-backed tokens across major blockchain networks."
+        content=" Launch your asset with our crypto token development services. We provide end-to-end token development services and custom defi token development services.  "
       />
 
       <meta
@@ -233,10 +233,10 @@ const handlePrev = () => {
         content="token development, erc20 token development, bep20 token creation, cryptocurrency development, tokenomics support, blockchain token services"
       />
 
-      <meta property="og:title" content="Custom Token Development Services" />
+      <meta property="og:title" content=" DeFi & Crypto Token Development Services   " />
       <meta
         property="og:description"
-        content="End-to-end token development with tokenomics, vesting, staking, cross-chain compatibility, and secure smart contract deployment."
+        content=" Launch your asset with our crypto token development services. We provide end-to-end token development services and custom defi token development services.  "
       />
       <meta property="og:type" content="website" />
     </Helmet>

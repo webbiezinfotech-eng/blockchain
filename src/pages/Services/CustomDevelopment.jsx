@@ -158,12 +158,12 @@ const CustomDevelopment = () => {
       <>
     <Helmet>
       <title>
-        Custom Software, Website & Mobile App Development Company | BlueFalcon Technologies
+        Custom Blockchain Software Development Agency 
       </title>
 
       <meta
         name="description"
-        content="End-to-end custom development services including software development, website development, and mobile app development. We build scalable, secure, and high-performance digital products."
+        content=" Top blockchain development agency providing custom blockchain software development and enterprise-grade custom blockchain development services.  "
       />
 
       <meta
@@ -175,10 +175,10 @@ const CustomDevelopment = () => {
       <meta name="robots" content="index, follow" />
 
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="End-to-End Custom Development for Web & Mobile" />
+      <meta property="og:title" content="Custom Blockchain Software Development Agency " />
       <meta
         property="og:description"
-        content="Scalable web platforms, mobile apps and enterprise-grade custom software built for performance and growth."
+        content=" Top blockchain development agency providing custom blockchain software development and enterprise-grade custom blockchain development services.  "
       />
 
       <meta name="twitter:card" content="summary_large_image" />

@@ -873,13 +873,12 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          Blockchain & AI Development Company | Web3 Experts | Blockchain App
-          Advisor
+          Custom blockchain development company in USA | BlueFalcon
         </title>
 
         <meta
           name="description"
-          content="BlueFalcon Technologies is a leading Blockchain & AI development company delivering smart contract development, token creation, DeFi platforms, NFT marketplaces, crypto exchanges, DApps, and enterprise-grade Web3 solutions."
+          content="Blockchain software development & smart contract development services by BlueFalcon Technologies, a reliable Web3 development company in USA for enterprises ."
         />
 
         <meta

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Helmet } from "react-helmet";
 import { NavLink } from 'react-router-dom';
 import { SERVICES } from '../../constants/services';
 import cutCardLbg from '../../assets/common/cut_card_lbg.png';
@@ -24,6 +25,26 @@ import webjpg from '../../assets/services images/website.jpg.jpeg';
 
 
 const Services = () => {
+
+  <Helmet>
+    <title>
+      AI & Enterprise Blockchain Development Services | Blue Falcon
+    </title>
+
+    <meta
+      name="description"
+      content=" Explore our custom blockchain solutions. Blue Falcon is a leading Web3 development agency providing AI and blockchain development for modern enterprises. "
+    />
+    {/* Open Graph */}
+    <meta
+      property="og:title"
+      content="AI & Enterprise Blockchain Development Services | Blue Falcon"
+    />
+  </Helmet>
+
+
+
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef(null);
 

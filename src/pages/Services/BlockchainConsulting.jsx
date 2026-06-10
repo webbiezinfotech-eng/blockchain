@@ -278,12 +278,12 @@ const BlockchainConsulting = () => {
     <>
       <Helmet>
         <title>
-          Blockchain Consulting Services | Strategy, Tokenomics & Architecture
+          Blockchain Consulting and Advisory Services
         </title>
 
         <meta
           name="description"
-          content="Expert blockchain consulting services including tokenomics design, technical architecture, Web3 product strategy, and enterprise blockchain implementation planning."
+          content=" A leading firm providing expert blockchain consulting and advisory services, professional services consulting, and business development consulting services.  "
         />
 
         <meta
@@ -295,10 +295,10 @@ const BlockchainConsulting = () => {
         <meta name="robots" content="index, follow" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Expert Blockchain Consulting for Scalable Web3 Solutions" />
+        <meta property="og:title" content="Blockchain Consulting and Advisory Services" />
         <meta
           property="og:description"
-          content="Strategic blockchain consulting covering architecture, tokenomics, security, compliance, and implementation planning."
+          content=" A leading firm providing expert blockchain consulting and advisory services, professional services consulting, and business development consulting services.  "
         />
 
         <meta name="twitter:card" content="summary_large_image" />
